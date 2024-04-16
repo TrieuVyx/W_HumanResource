@@ -60,6 +60,12 @@
     <Compile Include="src\View\Auth\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\View\Employee\Read.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\Employee\Read.Designer.cs">
+      <DependentUpon>Read.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\View\Employee\Update.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </Compile>
     <EmbeddedResource Include="src\View\Auth\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\Employee\Read.resx">
+      <DependentUpon>Read.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Employee\Update.resx">
       <DependentUpon>Update.cs</DependentUpon>

@@ -1,0 +1,12 @@
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.csproj.AssemblyReference.cache
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.Properties.Resources.resources
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Auth.Login.resources
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Employee.Read.resources
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Employee.Update.resources
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.csproj.GenerateResource.cache
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.csproj.CoreCompileInputs.cache
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\bin\Debug\HumanResource.exe.config
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\bin\Debug\HumanResource.exe
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\bin\Debug\HumanResource.pdb
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.exe
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.pdb
