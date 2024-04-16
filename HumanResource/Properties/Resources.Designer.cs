@@ -103,6 +103,16 @@ namespace HumanResource.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fe787aedfc33ff52b0b31e213edca486 {
+            get {
+                object obj = ResourceManager.GetObject("fe787aedfc33ff52b0b31e213edca486", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search {
             get {
                 object obj = ResourceManager.GetObject("search", resourceCulture);

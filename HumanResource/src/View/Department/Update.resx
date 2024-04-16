@@ -117,23 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="5faf49f042395c7404637803e8d62136" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5faf49f042395c7404637803e8d621361.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="6d6e8f9de3f5b55a6581d1f4f6585afd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6d6e8f9de3f5b55a6581d1f4f6585afd.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="2426e2debd837b2b90f9bfbf06f182bb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2426e2debd837b2b90f9bfbf06f182bb.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="4aa4681e2c09a02e8c4ee8e56e54d302" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4aa4681e2c09a02e8c4ee8e56e54d302.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fe787aedfc33ff52b0b31e213edca486" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fe787aedfc33ff52b0b31e213edca486.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>
