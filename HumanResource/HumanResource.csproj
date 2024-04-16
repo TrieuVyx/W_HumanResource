@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +61,18 @@
     <Compile Include="src\View\Auth\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\View\Department\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\Department\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\Employee\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\Employee\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\View\Employee\Read.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +84,12 @@
     </Compile>
     <Compile Include="src\View\Employee\Update.Designer.cs">
       <DependentUpon>Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\Role\Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\Role\Create.Designer.cs">
+      <DependentUpon>Create.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,11 +104,20 @@
     <EmbeddedResource Include="src\View\Auth\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\View\Department\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\Employee\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\View\Employee\Read.resx">
       <DependentUpon>Read.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Employee\Update.resx">
       <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\Role\Create.resx">
+      <DependentUpon>Create.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -107,12 +135,19 @@
   <ItemGroup>
     <Folder Include="src\Controller\" />
     <Folder Include="src\Model\" />
-    <Folder Include="src\View\Department\" />
-    <Folder Include="src\View\Role\" />
     <Folder Include="src\View\Salary\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\5faf49f042395c7404637803e8d621361.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4aa4681e2c09a02e8c4ee8e56e54d302.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2426e2debd837b2b90f9bfbf06f182bb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

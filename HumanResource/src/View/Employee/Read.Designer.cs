@@ -34,7 +34,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox6 = new System.Windows.Forms.RichTextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -54,6 +53,7 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -118,21 +118,11 @@
             this.richTextBox6.TabIndex = 12;
             this.richTextBox6.Text = "";
             // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::HumanResource.Properties.Resources._5faf49f042395c7404637803e8d62136;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(35, 37);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(176, 166);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(83, 24);
+            this.label1.Location = new System.Drawing.Point(83, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(362, 54);
             this.label1.TabIndex = 1;
@@ -326,6 +316,16 @@
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::HumanResource.Properties.Resources._5faf49f042395c7404637803e8d62136;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(35, 37);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(176, 166);
+            this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // Read
             // 

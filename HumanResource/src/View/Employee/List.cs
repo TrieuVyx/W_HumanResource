@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HumanResource.src.View.Role
+namespace HumanResource.src.View.Employee
 {
-    public partial class Create : Form
+    public partial class List : Form
     {
-        public Create()
+        public List()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
