@@ -63,6 +63,26 @@ namespace HumanResource.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2426e2debd837b2b90f9bfbf06f182bb {
+            get {
+                object obj = ResourceManager.GetObject("2426e2debd837b2b90f9bfbf06f182bb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4aa4681e2c09a02e8c4ee8e56e54d302 {
+            get {
+                object obj = ResourceManager.GetObject("4aa4681e2c09a02e8c4ee8e56e54d302", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _5faf49f042395c7404637803e8d62136 {
             get {
                 object obj = ResourceManager.GetObject("5faf49f042395c7404637803e8d62136", resourceCulture);
