@@ -123,7 +123,7 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(265, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(790, 515);
+            this.panel3.Size = new System.Drawing.Size(626, 515);
             this.panel3.TabIndex = 2;
             // 
             // label3
@@ -253,6 +253,7 @@
             this.richTextBox7.Size = new System.Drawing.Size(219, 34);
             this.richTextBox7.TabIndex = 14;
             this.richTextBox7.Text = "";
+            this.richTextBox7.TextChanged += new System.EventHandler(this.richTextBox7_TextChanged);
             // 
             // label9
             // 
@@ -331,7 +332,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1067, 537);
+            this.ClientSize = new System.Drawing.Size(909, 537);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Name = "Read";

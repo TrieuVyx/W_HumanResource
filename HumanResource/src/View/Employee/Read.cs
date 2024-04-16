@@ -36,5 +36,10 @@ namespace HumanResource.src.View.Employee
         {
 
         }
+
+        private void richTextBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
