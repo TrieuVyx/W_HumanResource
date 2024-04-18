@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace HumanResource.src.View.Employee
 {
-    public partial class List : Form
+    public partial class ListEmployee : Form
     {
-        public List()
+        public ListEmployee()
         {
             InitializeComponent();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

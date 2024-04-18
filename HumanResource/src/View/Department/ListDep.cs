@@ -36,5 +36,10 @@ namespace HumanResource.src.View.Employee
         {
 
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

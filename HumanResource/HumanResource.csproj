@@ -375,17 +375,17 @@
     <Compile Include="src\View\Department\Update.Designer.cs">
       <DependentUpon>Update.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\View\Department\List.cs">
+    <Compile Include="src\View\Department\ListDep.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\View\Department\List.Designer.cs">
-      <DependentUpon>List.cs</DependentUpon>
+    <Compile Include="src\View\Department\ListDep.Designer.cs">
+      <DependentUpon>ListDep.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\View\Employee\List.cs">
+    <Compile Include="src\View\Employee\ListEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\View\Employee\List.Designer.cs">
-      <DependentUpon>List.cs</DependentUpon>
+    <Compile Include="src\View\Employee\ListEmployee.Designer.cs">
+      <DependentUpon>ListEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="src\View\Employee\Read.cs">
       <SubType>Form</SubType>
@@ -398,6 +398,12 @@
     </Compile>
     <Compile Include="src\View\Employee\Update.Designer.cs">
       <DependentUpon>Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="src\View\Role\Create.cs">
       <SubType>Form</SubType>
@@ -421,14 +427,17 @@
     <EmbeddedResource Include="src\View\Auth\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\View\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\View\Department\Update.resx">
       <DependentUpon>Update.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\View\Department\List.resx">
-      <DependentUpon>List.cs</DependentUpon>
+    <EmbeddedResource Include="src\View\Department\ListDep.resx">
+      <DependentUpon>ListDep.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\View\Employee\List.resx">
-      <DependentUpon>List.cs</DependentUpon>
+    <EmbeddedResource Include="src\View\Employee\ListEmployee.resx">
+      <DependentUpon>ListEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Employee\Read.resx">
       <DependentUpon>Read.cs</DependentUpon>
@@ -455,6 +464,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\Controller\" />
+    <Folder Include="src\DTO\" />
     <Folder Include="src\Model\" />
     <Folder Include="src\View\Salary\" />
   </ItemGroup>
@@ -475,6 +485,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fe787aedfc33ff52b0b31e213edca486.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2ac7013cfd3e1cc86b60ec9be2f8ef97.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

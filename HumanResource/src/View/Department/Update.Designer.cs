@@ -33,13 +33,13 @@
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +101,43 @@
             this.panel3.Size = new System.Drawing.Size(546, 515);
             this.panel3.TabIndex = 6;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(70, 162);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(215, 25);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Department Description";
+            // 
+            // richTextBox5
+            // 
+            this.richTextBox5.Location = new System.Drawing.Point(75, 190);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.Size = new System.Drawing.Size(423, 40);
+            this.richTextBox5.TabIndex = 23;
+            this.richTextBox5.Text = "";
+            this.richTextBox5.TextChanged += new System.EventHandler(this.richTextBox5_TextChanged);
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(75, 113);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(423, 40);
+            this.richTextBox3.TabIndex = 22;
+            this.richTextBox3.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(70, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(170, 25);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Department Name";
+            // 
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(74, 261);
@@ -130,43 +167,6 @@
             this.panel1.Size = new System.Drawing.Size(327, 515);
             this.panel1.TabIndex = 5;
             // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Location = new System.Drawing.Point(75, 113);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(423, 40);
-            this.richTextBox3.TabIndex = 22;
-            this.richTextBox3.Text = "";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(70, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 25);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Department Name";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(70, 162);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(215, 25);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Department Description";
-            // 
-            // richTextBox5
-            // 
-            this.richTextBox5.Location = new System.Drawing.Point(75, 190);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(423, 40);
-            this.richTextBox5.TabIndex = 23;
-            this.richTextBox5.Text = "";
-            this.richTextBox5.TextChanged += new System.EventHandler(this.richTextBox5_TextChanged);
-            // 
             // Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -175,6 +175,7 @@
             this.ClientSize = new System.Drawing.Size(909, 537);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Update";
             this.Text = "Update Department";
             this.panel3.ResumeLayout(false);

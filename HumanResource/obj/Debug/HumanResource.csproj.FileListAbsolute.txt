@@ -12,7 +12,6 @@ C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResour
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.pdb
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Department.Update.resources
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Employee.ListDep.resources
-C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Employee.List.resources
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Role.Create.resources
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\bin\Debug\DotNetEnv.dll
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
@@ -138,3 +137,5 @@ C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResour
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\bin\Debug\System.Collections.Immutable.xml
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.csproj.SuggestedBindingRedirects.cache
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.exe.config
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Employee.ListEmployee.resources
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Dashboard.resources

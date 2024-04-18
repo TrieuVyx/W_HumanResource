@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.richTextBox6 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -76,6 +76,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(882, 515);
             this.panel3.TabIndex = 5;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(30, 449);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(105, 39);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "Delete";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -237,15 +247,6 @@
             this.label1.Text = "List Department";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(30, 449);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 39);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Delete";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // ListDep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -253,6 +254,7 @@
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(909, 537);
             this.Controls.Add(this.panel3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListDep";
             this.Text = "List Department";
             this.panel3.ResumeLayout(false);
