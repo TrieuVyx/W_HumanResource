@@ -254,7 +254,7 @@
             this.ClientSize = new System.Drawing.Size(909, 537);
             this.Controls.Add(this.panel3);
             this.Name = "ListDep";
-            this.Text = "Form1";
+            this.Text = "List Department";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
