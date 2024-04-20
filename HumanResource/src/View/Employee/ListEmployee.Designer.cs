@@ -34,10 +34,10 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -53,9 +53,10 @@
             this.panel3.Controls.Add(this.richTextBox1);
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(13, 11);
+            this.panel3.Location = new System.Drawing.Point(15, 14);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(882, 515);
+            this.panel3.Size = new System.Drawing.Size(992, 644);
             this.panel3.TabIndex = 6;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -63,97 +64,108 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(820, 109);
+            this.label7.Location = new System.Drawing.Point(922, 136);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 25);
+            this.label7.Size = new System.Drawing.Size(36, 29);
             this.label7.TabIndex = 19;
             this.label7.Text = "ID";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(804, 137);
+            this.richTextBox2.Location = new System.Drawing.Point(904, 171);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(47, 39);
+            this.richTextBox2.Size = new System.Drawing.Size(52, 48);
             this.richTextBox2.TabIndex = 9;
             this.richTextBox2.Text = "";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(719, 137);
+            this.button4.Location = new System.Drawing.Point(809, 171);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(79, 39);
+            this.button4.Size = new System.Drawing.Size(89, 49);
             this.button4.TabIndex = 7;
             this.button4.Text = "Delete";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(634, 137);
+            this.button3.Location = new System.Drawing.Point(713, 171);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 39);
+            this.button3.Size = new System.Drawing.Size(89, 49);
             this.button3.TabIndex = 6;
             this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(549, 137);
+            this.button2.Location = new System.Drawing.Point(618, 171);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 39);
+            this.button2.Size = new System.Drawing.Size(89, 49);
             this.button2.TabIndex = 5;
             this.button2.Text = "Detail";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::HumanResource.Properties.Resources.search;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(30, 137);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 39);
-            this.button1.TabIndex = 4;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(81, 137);
+            this.richTextBox1.Location = new System.Drawing.Point(91, 171);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(203, 39);
+            this.richTextBox1.Size = new System.Drawing.Size(228, 48);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 182);
+            this.dataGridView1.Location = new System.Drawing.Point(34, 228);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(821, 261);
+            this.dataGridView1.Size = new System.Drawing.Size(924, 326);
             this.dataGridView1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 17);
+            this.label1.Location = new System.Drawing.Point(24, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(316, 54);
+            this.label1.Size = new System.Drawing.Size(388, 65);
             this.label1.TabIndex = 1;
             this.label1.Text = "List Employee";
             // 
-            // List
+            // button1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.button1.BackgroundImage = global::HumanResource.Properties.Resources.search;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(34, 171);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(51, 49);
+            this.button1.TabIndex = 4;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // ListEmployee
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(909, 537);
+            this.ClientSize = new System.Drawing.Size(1023, 671);
             this.Controls.Add(this.panel3);
             this.Enabled = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "List";
+            this.Name = "ListEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "List";
             this.panel3.ResumeLayout(false);

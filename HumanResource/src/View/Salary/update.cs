@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HumanResource.src.View.Employee
+namespace HumanResource.src.View.sal
 {
-    public partial class Update : Form
+    public partial class update : Form
     {
-        public Update()
+        public update()
         {
             InitializeComponent();
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

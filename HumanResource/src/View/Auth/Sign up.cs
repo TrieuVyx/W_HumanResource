@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HumanResource.src.View.Employee
+namespace HumanResource.src.View.Auth
 {
-    public partial class Update : Form
+    public partial class Sign_up : Form
     {
-        public Update()
+        public Sign_up()
         {
             InitializeComponent();
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

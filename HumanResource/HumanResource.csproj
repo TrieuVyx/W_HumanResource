@@ -387,6 +387,12 @@
     <Compile Include="src\View\Employee\ListEmployee.Designer.cs">
       <DependentUpon>ListEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\View\Employee\MoreEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\Employee\MoreEmployee.Designer.cs">
+      <DependentUpon>MoreEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\View\Employee\Read.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -438,6 +444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Employee\ListEmployee.resx">
       <DependentUpon>ListEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\Employee\MoreEmployee.resx">
+      <DependentUpon>MoreEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Employee\Read.resx">
       <DependentUpon>Read.cs</DependentUpon>
