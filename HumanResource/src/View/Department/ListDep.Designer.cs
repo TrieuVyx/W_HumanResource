@@ -118,7 +118,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::HumanResource.Properties.Resources._6d6e8f9de3f5b55a6581d1f4f6585afd;
+            this.pictureBox1.BackgroundImage = global::HumanResource.Properties.Resources.z5364415860738_916bcc38543cec0ed991fd4ad8e102d1;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(506, 24);
             this.pictureBox1.Name = "pictureBox1";

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace HumanResource.src.View.Employee
 {
-    public partial class Update : Form
+    public partial class MoreEmployee : Form
     {
-        public Update()
+        public MoreEmployee()
         {
             InitializeComponent();
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

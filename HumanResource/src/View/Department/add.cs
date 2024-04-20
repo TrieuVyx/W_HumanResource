@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HumanResource.src.View.Employee
+namespace HumanResource.src.View.Department
 {
-    public partial class Update : Form
+    public partial class add : Form
     {
-        public Update()
+        public add()
         {
             InitializeComponent();
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

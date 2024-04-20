@@ -387,6 +387,12 @@
     <Compile Include="src\View\Employee\ListEmployee.Designer.cs">
       <DependentUpon>ListEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\View\Employee\MoreEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\Employee\MoreEmployee.Designer.cs">
+      <DependentUpon>MoreEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\View\Employee\Read.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -439,6 +445,9 @@
     <EmbeddedResource Include="src\View\Employee\ListEmployee.resx">
       <DependentUpon>ListEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\View\Employee\MoreEmployee.resx">
+      <DependentUpon>MoreEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\View\Employee\Read.resx">
       <DependentUpon>Read.cs</DependentUpon>
     </EmbeddedResource>
@@ -488,6 +497,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\2ac7013cfd3e1cc86b60ec9be2f8ef97.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z5364415860738_916bcc38543cec0ed991fd4ad8e102d1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

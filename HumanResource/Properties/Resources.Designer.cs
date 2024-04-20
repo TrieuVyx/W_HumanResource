@@ -129,5 +129,15 @@ namespace HumanResource.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z5364415860738_916bcc38543cec0ed991fd4ad8e102d1 {
+            get {
+                object obj = ResourceManager.GetObject("z5364415860738_916bcc38543cec0ed991fd4ad8e102d1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
