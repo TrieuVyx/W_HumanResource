@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HumanResource.src.View.Auth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace HumanResource
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainApplication());
+            Application.Run(new Login());
         }
     }
 }

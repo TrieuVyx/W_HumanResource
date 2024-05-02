@@ -17,6 +17,7 @@ namespace HumanResource.src.DbContext
             using (connection = new SqlConnection(connectStringDb))
             {
                 OpenConnection();
+
             }
 
         }

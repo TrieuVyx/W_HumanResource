@@ -43,6 +43,26 @@ CREATE TABLE Account (
 	PRIMARY KEY (AccountId),
 	FOREIGN KEY (RoleId) REFERENCES Roles(RoleId)
 );
+CREATE TABLE Education (
+    EducationId INTEGER NOT NULL,
+    EducationName NVARCHAR(255) NOT NULL,
+    PRIMARY KEY (EducationId)
+);
+CREATE TABLE Degree (
+    DegreeId INTEGER NOT NULL,
+    DegreeName NVARCHAR(255) NOT NULL,
+    PRIMARY KEY (DegreeId)
+);
+
+CREATE TABLE RelativeEmployee (
+    RelativeId INTEGER NOT NULL,
+    EmployeeId INTEGER NOT NULL,
+    FullName NVARCHAR(255) NOT NULL,
+    Relationship NVARCHAR(255) NOT NULL,
+	PhoneNumber VARCHAR(255) NOT NULL,
+    AddressRelative NVARCHAR(255) NOT NULL,
+    PRIMARY KEY (RelativeId),
+);
 
 CREATE TABLE Employee (
 	EmployId INTEGER NOT NULL ,
@@ -55,12 +75,17 @@ CREATE TABLE Employee (
 	AccountId INTEGER NOT NULL,
 	DepId INTEGER NOT NULL,
 	SalaryId INTEGER NOT NULL,
-
+	EducationId INTEGER NOT NULL,
+    DegreeId INTEGER NOT NULL,
+	RelativeId INTEGER NOT NULL,
 	PRIMARY KEY(EmployId),
 	FOREIGN KEY(AccountId) REFERENCES Account(AccountId),
 	FOREIGN KEY(RoleId) REFERENCES Roles(RoleId),
 	FOREIGN KEY(DepId) REFERENCES Department(DepId),
 	FOREIGN KEY(SalaryId) REFERENCES Salary(SalaryId),
+	FOREIGN KEY(EducationId) REFERENCES Education(EducationId),
+	FOREIGN KEY(DegreeId) REFERENCES Degree(DegreeId),
+	FOREIGN KEY(RelativeId) REFERENCES RelativeEmployee(RelativeId),
 
 );
 
@@ -108,39 +133,54 @@ DECLARE @FullName NVARCHAR(255) = 'John Doe';
 DECLARE @Email NVARCHAR(255) = 'admin1@gmail.com';
 	   
 INSERT INTO Account ( AccountId,FullName, PassWords, Email, RoleId)
-VALUES (1, 'John Doe', 'password123', 'johndoe@example.com', 1),
-       (2, 'Jane Smith', 'pass456', 'janesmith@example.com', 3),
-       (3, 'Mike Johnson', 'abc123', 'mikejohnson@example.com', 2),
-       (4, 'Sarah Williams', 'pwd789', 'sarahwilliams@example.com', 4),
-       (5, 'David Brown', 'securepass', 'davidbrown@example.com', 5),
-       (6, 'Emily Davis', 'mypassword', 'emilydavis@example.com', 6),
-       (7, 'Michael Wilson', 'password321', 'michaelwilson@example.com', 7),
-       (8, 'Jessica Taylor', 'ilovecoding', 'jessicataylor@example.com', 8),
-       (9, 'Andrew Thomas', 'thomaspass', 'andrewthomas@example.com', 9),
-       (10, 'Olivia Clark', 'mypwd123', 'oliviaclark@example.com', 10),
+VALUES (1, 'John Doe', CONVERT(nvarchar(max), HASHBYTES('MD5', 'password123'),2), 'johndoe@example.com', 1),
+       (2, 'Jane Smith', CONVERT(nvarchar(max), HASHBYTES('MD5', 'pass456'),2), 'janesmith@example.com', 3),
+       (3, 'Mike Johnson', CONVERT(nvarchar(max), HASHBYTES('MD5', 'abc123'),2), 'mikejohnson@example.com', 2),
+       (4, 'Sarah Williams', CONVERT(nvarchar(max), HASHBYTES('MD5', 'pwd789'),2), 'sarahwilliams@example.com', 4),
+       (5, 'David Brown', CONVERT(nvarchar(max), HASHBYTES('MD5', 'securepass'),2), 'davidbrown@example.com', 5),
+       (6, 'Emily Davis', CONVERT(nvarchar(max), HASHBYTES('MD5','mypassword'),2), 'emilydavis@example.com', 6),
+       (7, 'Michael Wilson', CONVERT(nvarchar(max), HASHBYTES('MD5', 'password321'),2), 'michaelwilson@example.com', 7),
+       (8, 'Jessica Taylor', CONVERT(nvarchar(max), HASHBYTES('MD5', 'ilovecoding'),2) , 'jessicataylor@example.com', 8),
+       (9, 'Andrew Thomas',CONVERT(nvarchar(max), HASHBYTES('MD5', 'thomaspass'),2) , 'andrewthomas@example.com', 9),
+       (10, 'Olivia Clark',CONVERT(nvarchar(max), HASHBYTES('MD5', 'mypwd123') ,2), 'oliviaclark@example.com', 10),
 	   (@AccountId, @FullName, CONVERT(nvarchar(max), HASHBYTES('MD5', '123'), 2),@Email, 2);
 
 
+INSERT INTO Education (EducationId, EducationName)
+VALUES
+    (1, 'High school'),
+    (2, 'Intermediate'),
+    (3, 'College'),
+    (4, 'Undergraduate'),
+    (5, 'Postgraduate');
 
-INSERT INTO Employee (EmployId, Email, EmployeeName, Avatar, AddressEmployee, Phone, RoleId, AccountId, DepId, SalaryId)
-VALUES (1, 'employee1@example.com', 'Employee 1', 'avatar1.jpg', '123 ABC Street', '1234567890', 3, 1, 1, 3),
-       (2, 'employee2@example.com', 'Employee 2', 'avatar2.jpg', '456 XYZ Street', '9876543210', 3, 2, 1, 3),
-       (3, 'employee3@example.com', 'Employee 3', 'avatar3.jpg', '789 PQR Street', '5555555555', 2, 3, 2, 2),
-       (4, 'employee4@example.com', 'Employee 4', 'avatar4.jpg', '321 DEF Street', '4444444444', 4, 4, 3, 4),
-       (5, 'employee5@example.com', 'Employee 5', 'avatar5.jpg', '654 UVW Street', '3333333333', 6, 5, 4, 5),
-       (6, 'employee6@example.com', 'Employee 6', 'avatar6.jpg', '987 HIJ Street', '2222222222', 7, 6, 5,6),
-       (7, 'employee7@example.com', 'Employee 7', 'avatar7.jpg', '654 KLM Street', '1111111111', 8, 7, 6, 7),
-       (8, 'employee8@example.com', 'Employee 8', 'avatar8.jpg', '321 XYZ Street', '9999999999', 9, 8, 7, 8),
-       (9, 'employee9@example.com', 'Employee 9', 'avatar9.jpg', '789 PQR Street', '8888888888', 5, 9, 8, 9),
-       (10, 'employee10@example.com', 'Employee 10', 'avatar10.jpg', '123 ABC Street', '7777777777', 10, 10, 9, 10),
-       (11, 'employee11@example.com', 'Employee 11', 'avatar11.jpg', '456 XYZ Street', '6666666666', 3, 1, 2, 3),
-       (12, 'employee12@example.com', 'Employee 12', 'avatar12.jpg', '789 PQR Street', '5555555555', 2, 2, 3, 2),
-       (13, 'employee13@example.com', 'Employee 13', 'avatar13.jpg', '321 DEF Street', '4444444444', 4, 3, 4, 4),
-       (14, 'employee14@example.com', 'Employee 14', 'avatar14.jpg', '654 UVW Street', '3333333333', 6, 4, 5, 5),
-       (15, 'employee15@example.com', 'Employee 15', 'avatar15.jpg', '987 HIJ Street', '2222222222', 7, 5, 6, 6),
-       (16, 'employee16@example.com', 'Employee 16', 'avatar16.jpg', '654 KLM Street', '1111111111', 8, 6, 7, 7),
-       (17, 'employee17@example.com', 'Employee 17', 'avatar17.jpg', '321 XYZ Street', '9999999999', 9, 7, 8, 8),
-       (18, 'employee18@example.com', 'Employee 18', 'avatar18.jpg', '789 PQR Street', '8888888888', 5, 8, 9, 9),
-       (19, 'employee19@example.com', 'Employee 19', 'avatar19.jpg', '123 ABC Street', '7777777777', 10, 9, 10, 10),
-       (20, 'employee20@example.com', 'Employee 20', 'avatar20.jpg', '456 XYZ Street', '6666666666', 3, 8, 1, 3);
+INSERT INTO Degree (DegreeId, DegreeName)
+VALUES
+    (1, 'Bachelor'),
+    (2, 'Master'),
+    (3, 'Doctorate'),
+    (4, 'Engineer'),
+    (5, 'Professor');
+INSERT INTO RelativeEmployee (RelativeId, EmployeeId, FullName, Relationship, PhoneNumber, AddressRelative)
+VALUES
+    (10, 1, 'Relative 1', 'Sibling', '1111111111', '123 ABC Street'),
+    (11, 2, 'Relative 2', 'Spouse', '2222222222', '456 XYZ Street'),
+    (12, 3, 'Relative 3', 'Parent', '3333333333', '789 PQR Street'),
+    (13, 4, 'Relative 4', 'Child', '4444444444', '321 DEF Street'),
+    (14, 5, 'Relative 5', 'Sibling', '5555555555', '654 UVW Street'),
+    (15, 6, 'Relative 6', 'Spouse', '6666666666', '987 HIJ Street'),
+    (16, 7, 'Relative 7', 'Parent', '7777777777', '654 KLM Street'),
+    (17, 8, 'Relative 8', 'Child', '8888888888', '321 XYZ Street'),
+    (18, 9, 'Relative 9', 'Sibling', '9999999999', '789 PQR Street');
 
+INSERT INTO Employee (EmployId, Email, EmployeeName, Avatar, AddressEmployee, Phone, RoleId, AccountId, DepId, SalaryId, EducationId, DegreeId, RelativeId)
+VALUES 
+    (1, 'employee1@example.com', 'Employee 1', 'avatar1.jpg', '123 ABC Street', '1234567890', 3, 1, 1, 3, 4, 1, 10),
+    (2, 'employee2@example.com', 'Employee 2', 'avatar2.jpg', '456 XYZ Street', '9876543210', 3, 2, 1, 3, 4, 2, 11),
+    (3, 'employee3@example.com', 'Employee 3', 'avatar3.jpg', '789 PQR Street', '5555555555', 2, 3, 2, 2, 4, 1, 12),
+    (4, 'employee4@example.com', 'Employee 4', 'avatar4.jpg', '321 DEF Street', '4444444444', 4, 4, 3, 4, 5, 3, 13),
+    (5, 'employee5@example.com', 'Employee 5', 'avatar5.jpg', '654 UVW Street', '3333333333', 6, 5, 4, 5, 3, 2, 14),
+    (6, 'employee6@example.com', 'Employee 6', 'avatar6.jpg', '987 HIJ Street', '2222222222', 7, 6, 5, 6, 2, 1, 15),
+    (7, 'employee7@example.com', 'Employee 7', 'avatar7.jpg', '654 KLM Street', '1111111111', 8, 7, 6, 7, 1, 4, 16),
+    (8, 'employee8@example.com', 'Employee 8', 'avatar8.jpg', '321 XYZ Street', '9999999999', 9, 8, 7, 8, 5, 2, 17),
+    (9, 'employee9@example.com', 'Employee 9', 'avatar9.jpg', '789 PQR Street', '8888888888', 5, 9, 8, 9, 4, 3, 18);
