@@ -64,7 +64,6 @@ namespace HumanResource.src.DbContext
         }
         public string HashMD5(string password)
         {
-            MessageBox.Show(password.ToString());
             using (MD5 md5 = MD5.Create())
             {
                 byte[] inputBytes = Encoding.UTF8.GetBytes(password);

@@ -21,15 +21,21 @@ namespace HumanResource.src.Service
         {
             this.authorRepository = authorRepository;
         }
-        internal void Authenticate(LoginReqDTO loginReq)
+        internal bool Authenticate(LoginReqDTO loginReq)
         {
             try
             {
-                authorRepository.CheckLogin(loginReq);
+                bool check = authorRepository.CheckLogin(loginReq);
+                if(check)
+                {
+                    return true;
+                }
+                return false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi Phát Sinh Từ AuthorService " + ex.Message);
+                return false;
 
             }
         }

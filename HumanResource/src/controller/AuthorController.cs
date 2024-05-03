@@ -27,8 +27,14 @@ namespace HumanResource.src.Controller
         {
             try
             {
-                authorService.Authenticate(loginReq);
-                return true;
+                bool author  = authorService.Authenticate(loginReq);
+                if(author)
+                {
+                    return true;
+
+                }
+                    return false;
+
             }
             catch (Exception ex)
             {
@@ -38,3 +44,4 @@ namespace HumanResource.src.Controller
         }
     }
 }
+ 

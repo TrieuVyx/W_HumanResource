@@ -17,15 +17,14 @@ namespace HumanResource.src.Repository
         public AuthorRepository()
         {
             dbContext = new Dbcontext();
-            getQuery = new GetQuery();  
-            dbContext.connectDB();
+            getQuery = new GetQuery();
 
         }
         public AuthorRepository(Dbcontext dbContext)
         {
             this.dbContext = dbContext;
         }
-        internal void CheckLogin(LoginReqDTO loginReq)
+        internal bool CheckLogin(LoginReqDTO loginReq)
         {
             try
             {
@@ -39,18 +38,18 @@ namespace HumanResource.src.Repository
                         string password = dbContext.HashMD5(loginReq.InPass);
                         sqlCommand.Parameters.AddWithValue("@Email", loginReq.InEmail);
                         sqlCommand.Parameters.AddWithValue("@PassWords", dbContext.HashMD5(loginReq.InPass));
-                    
+
                         //sqlCommand.Parameters.AddWithValue("@PassWords", loginReq.InPass);
                         connection.Open();
                         int count = (int)sqlCommand.ExecuteScalar();
                         connection.Close();
                         if (count > 0)
                         {
-                            MessageBox.Show("Đăng nhập thành công! từ AuthorRepo");
+                            return true;
                         }
                         else
                         {
-                            MessageBox.Show("Đăng nhập thất bại! từ AuthorRepo");
+                            return false;
                         }
                     }
                 }
@@ -58,8 +57,10 @@ namespace HumanResource.src.Repository
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi Phát Sinh Từ AuthorRepository " + ex.Message);
+                return false;
             }
 
         }
+      
     }
 }

@@ -16,10 +16,14 @@ namespace HumanResource.src.View.Auth
     {
         private LoginReqDTO loginReqDTO;
         private AuthorController authorController;
+        private MainApplication mainApplication;
+        
         public LoginForm()
         {
             InitializeComponent();
             authorController = new AuthorController();
+            mainApplication = new MainApplication();    
+
         }
         public LoginForm(AuthorController authorController, LoginReqDTO loginReqDTO)
         {
@@ -51,7 +55,12 @@ namespace HumanResource.src.View.Auth
                     loginReqDTO.InEmail = InEmail;
                     loginReqDTO.InPass = InPass;
                     bool isAuthenticated = authorController.Authorization(loginReqDTO);
-
+                    if(isAuthenticated )
+                    {
+                        MessageBox.Show(isAuthenticated.ToString());
+                        mainApplication.Show();
+                        this.Hide();    
+                    } 
                 }
 
             }
