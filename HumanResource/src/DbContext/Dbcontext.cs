@@ -3,6 +3,8 @@ using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Security.Cryptography;
+using System.Text;
 namespace HumanResource.src.DbContext
 {
     
@@ -27,7 +29,7 @@ namespace HumanResource.src.DbContext
             }
 
         }
-        private void OpenConnection()
+        public void OpenConnection()
         {
             try
             {
@@ -44,7 +46,7 @@ namespace HumanResource.src.DbContext
             }
         }
 
-        private void CloseConnection()
+        public void CloseConnection()
         {
             try
             {
@@ -58,6 +60,23 @@ namespace HumanResource.src.DbContext
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi đóng kết nối: " + ex.Message);
+            }
+        }
+        public string HashMD5(string password)
+        {
+            MessageBox.Show(password.ToString());
+            using (MD5 md5 = MD5.Create())
+            {
+                byte[] inputBytes = Encoding.UTF8.GetBytes(password);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    builder.Append(hashBytes[i].ToString("x2"));
+
+                }
+                return builder.ToString();
             }
         }
     }

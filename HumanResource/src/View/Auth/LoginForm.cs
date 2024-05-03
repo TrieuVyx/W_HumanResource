@@ -51,7 +51,7 @@ namespace HumanResource.src.View.Auth
                     loginReqDTO.InEmail = InEmail;
                     loginReqDTO.InPass = InPass;
                     bool isAuthenticated = authorController.Authorization(loginReqDTO);
-                    MessageBox.Show(isAuthenticated.ToString());
+
                 }
 
             }
@@ -61,9 +61,6 @@ namespace HumanResource.src.View.Auth
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

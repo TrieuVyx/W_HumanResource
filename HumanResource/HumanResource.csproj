@@ -364,6 +364,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Controller\AuthorController.cs" />
     <Compile Include="src\DbContext\Dbcontext.cs" />
+    <Compile Include="src\DbContext\GetQuery.cs" />
     <Compile Include="src\DTO\Request\LoginReqDTO.cs" />
     <Compile Include="src\DTO\Response\LoginResDTO.cs" />
     <Compile Include="src\Entity\Account.cs" />

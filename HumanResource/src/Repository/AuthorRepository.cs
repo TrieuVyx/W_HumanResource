@@ -13,9 +13,11 @@ namespace HumanResource.src.Repository
     internal class AuthorRepository
     {
         private Dbcontext dbContext;
+        private GetQuery getQuery;
         public AuthorRepository()
         {
             dbContext = new Dbcontext();
+            getQuery = new GetQuery();  
             dbContext.connectDB();
 
         }
@@ -29,23 +31,26 @@ namespace HumanResource.src.Repository
             {
                 using (SqlConnection connection = dbContext.connectOpen())
                 {
+                    //string query = "SELECT COUNT(*) FROM Account WHERE Email = @Email AND PassWords = CONVERT(nvarchar(max), HASHBYTES('MD5', @PassWords), 2)";
                     string query = "SELECT COUNT(*) FROM Account WHERE Email = @Email AND PassWords = @PassWords";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                    //using (SqlCommand sqlCommand = getQuery.QueryLogin())
                     {
+                        string password = dbContext.HashMD5(loginReq.InPass);
                         sqlCommand.Parameters.AddWithValue("@Email", loginReq.InEmail);
-                        sqlCommand.Parameters.AddWithValue("@PassWords", loginReq.InPass);
-                        connection.Open(); // Open the connection before executing the command
+                        sqlCommand.Parameters.AddWithValue("@PassWords", dbContext.HashMD5(loginReq.InPass));
+                    
+                        //sqlCommand.Parameters.AddWithValue("@PassWords", loginReq.InPass);
+                        connection.Open();
                         int count = (int)sqlCommand.ExecuteScalar();
-
+                        connection.Close();
                         if (count > 0)
                         {
                             MessageBox.Show("Đăng nhập thành công! từ AuthorRepo");
-                            //return true;
                         }
                         else
                         {
                             MessageBox.Show("Đăng nhập thất bại! từ AuthorRepo");
-                            //return false;
                         }
                     }
                 }
