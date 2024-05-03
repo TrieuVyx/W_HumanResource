@@ -409,7 +409,6 @@ C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\W_HumanResource\HumanReso
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\W_HumanResource\HumanResource\obj\Debug\HumanResource.exe.config
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\W_HumanResource\HumanResource\obj\Debug\HumanResource.MainApplication.resources
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\W_HumanResource\HumanResource\obj\Debug\HumanResource.Properties.Resources.resources
-C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\W_HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Auth.Login.resources
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\W_HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Dashboard.resources
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\W_HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Department.Update.resources
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\W_HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Employee.ListDep.resources
@@ -423,3 +422,4 @@ C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\W_HumanResource\HumanReso
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\W_HumanResource\HumanResource\obj\Debug\HumanRes.8F25D126.Up2Date
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\W_HumanResource\HumanResource\obj\Debug\HumanResource.exe
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\W_HumanResource\HumanResource\obj\Debug\HumanResource.pdb
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\W_HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Auth.LoginForm.resources

@@ -11,6 +11,12 @@ namespace HumanResource.src.DbContext
         string connectStringDb = "";
         private SqlConnection connection;
 
+
+        public SqlConnection connectOpen() { 
+            connectStringDb = ConfigurationManager.ConnectionStrings["connectStringDb"].ConnectionString;
+            connection = new SqlConnection(connectStringDb);
+            return connection;
+        }
         public void connectDB()
         {
             connectStringDb = ConfigurationManager.ConnectionStrings["connectStringDb"].ConnectionString;

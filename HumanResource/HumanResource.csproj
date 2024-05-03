@@ -366,13 +366,21 @@
     <Compile Include="src\DbContext\Dbcontext.cs" />
     <Compile Include="src\DTO\Request\LoginReqDTO.cs" />
     <Compile Include="src\DTO\Response\LoginResDTO.cs" />
+    <Compile Include="src\Entity\Account.cs" />
+    <Compile Include="src\Entity\Degree.cs" />
+    <Compile Include="src\Entity\Department.cs" />
+    <Compile Include="src\Entity\Education.cs" />
+    <Compile Include="src\Entity\Employee.cs" />
+    <Compile Include="src\Entity\RelativeEmployee.cs" />
+    <Compile Include="src\Entity\Role.cs" />
+    <Compile Include="src\Entity\Salary.cs" />
     <Compile Include="src\Repository\AuthorRepository.cs" />
     <Compile Include="src\Service\AuthorService.cs" />
-    <Compile Include="src\View\Auth\Login.cs">
+    <Compile Include="src\View\Auth\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\View\Auth\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="src\View\Auth\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="src\View\Department\Update.cs">
       <SubType>Form</SubType>
@@ -435,8 +443,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="src\View\Auth\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="src\View\Auth\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -477,7 +485,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\Entity\" />
     <Folder Include="src\View\Salary\" />
   </ItemGroup>
   <ItemGroup>

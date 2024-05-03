@@ -1,4 +1,5 @@
-﻿using HumanResource.src.Repository;
+﻿using HumanResource.src.DTO.Request;
+using HumanResource.src.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,20 +12,25 @@ namespace HumanResource.src.Service
     internal class AuthorService
     {
         private AuthorRepository authorRepository;
+
+        public AuthorService()
+        {
+            authorRepository = new AuthorRepository();
+        }
         public AuthorService(AuthorRepository authorRepository)
         {
             this.authorRepository = authorRepository;
         }
-
-        internal bool Authenticate(string inEmail, string inPass)
+        internal void Authenticate(LoginReqDTO loginReq)
         {
-            try {
-                authorRepository.CheckLogin(inEmail, inPass);
-                return true;
+            try
+            {
+                authorRepository.CheckLogin(loginReq);
             }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-                return false;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Phát Sinh Từ AuthorService " + ex.Message);
+
             }
         }
     }

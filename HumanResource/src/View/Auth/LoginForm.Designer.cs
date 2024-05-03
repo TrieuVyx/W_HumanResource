@@ -1,6 +1,6 @@
 ﻿namespace HumanResource.src.View.Auth
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -124,6 +124,7 @@
             this.label1.Size = new System.Drawing.Size(322, 50);
             this.label1.TabIndex = 20;
             this.label1.Text = "USER ACCOUNT";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Login
             // 
