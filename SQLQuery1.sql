@@ -33,4 +33,8 @@ WHERE EmployId IN (
 
 xem danh sách
 SELECT * FROM Department d, Employee e WHERE e.DepId = d.DepId
+
+
+xem danh sách employee
+SELECT * FROM Employee
 */

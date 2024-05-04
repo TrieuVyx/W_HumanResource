@@ -49,6 +49,8 @@ namespace HumanResource.src.Repository
                                 employee.EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName"));
                                 employee.AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee"));
                                 employee.Phone = reader.GetString(reader.GetOrdinal("Phone"));
+                                employee.Email = reader.GetString(reader.GetOrdinal("Email"));
+                                employee.Avatar = reader.GetString(reader.GetOrdinal("Avatar"));
                                 employeeRes.Add(employee);
                             }
                         }
@@ -61,6 +63,49 @@ namespace HumanResource.src.Repository
             {
                 return null;
             }
+        }
+
+      
+
+        internal List<Employees> FindNameEmployee(Employees employee)
+        {
+            List<Employees> employees = new List<Employees>();
+            try
+            {
+                using (SqlConnection connection = dbContext.connectOpen())
+                {
+                    string query = "SELECT * FROM Employee WHERE EmployeeName LIKE  '%' + @EmployeeName + '%'";
+                    using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@EmployeeName", employee.EmployeeName);
+                        connection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Employees employees1 = new Employees();
+                                employees1.EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"));
+                                employees1.EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName"));
+                                employees1.AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee"));
+                                employees1.Phone = reader.GetString(reader.GetOrdinal("Phone"));
+                                employees1.Email = reader.GetString(reader.GetOrdinal("Email"));
+                                employees1.Avatar = reader.GetString(reader.GetOrdinal("Avatar"));
+
+                                employees.Add(employees1);
+                            }
+                        }
+                        connection.Close();
+                    }
+                    return (employees);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
         }
     }
 }

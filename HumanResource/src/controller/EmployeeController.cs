@@ -1,4 +1,5 @@
-﻿using HumanResource.src.DTO.Response;
+﻿using HumanResource.src.DTO.Request;
+using HumanResource.src.DTO.Response;
 using HumanResource.src.Entity;
 using HumanResource.src.Service;
 using System;
@@ -20,6 +21,18 @@ namespace HumanResource.src.Controller
             try
             {
                 return employeeService.findAllList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
+            }
+        }
+
+        internal List<Employees> FindNameEmployee(Employees employee)
+        {
+            try
+            {
+                return employeeService.FindNameEmployee(employee);
             }
             catch (Exception ex)
             {

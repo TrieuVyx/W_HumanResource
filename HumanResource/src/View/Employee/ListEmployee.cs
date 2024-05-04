@@ -1,4 +1,5 @@
 ﻿using HumanResource.src.Controller;
+using HumanResource.src.DTO.Request;
 using HumanResource.src.DTO.Response;
 using HumanResource.src.Entity;
 using System;
@@ -16,12 +17,12 @@ namespace HumanResource.src.View.Employee
     public partial class ListEmployee : Form
     {
         private EmployeeController employeeController;
-        private EmployeeResDTO employeeResDTO;
+        private Employees employee;
         public ListEmployee()
         {
             InitializeComponent();
             employeeController = new EmployeeController();
-            employeeResDTO = new EmployeeResDTO();  
+            employee = new Employees();
             ShowEmployee();
         }
         private void ShowEmployee()
@@ -41,7 +42,7 @@ namespace HumanResource.src.View.Employee
             }
         }
 
-       
+
         private void AutoMode()
         {
             txtAmout.ReadOnly = true;
@@ -54,7 +55,38 @@ namespace HumanResource.src.View.Employee
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            string txtSearchValue = txtSearchBox.Text;
+            employee = new Employees();
+            try
+            {
+                if (string.IsNullOrEmpty(txtSearchValue))
+                {
+                    MessageBox.Show("Vui lòng nhập PHÒNG BAN bạn muốn tìm.");
+                }
+                else
+                {
+                    employee.EmployeeName = txtSearchValue;
+                    MessageBox.Show(employee.EmployeeName);
+                    List<Employees> employees = employeeController.FindNameEmployee(employee);
+                    if (employees.Count > 0)
+                    {
+                        GridViewEmployee.DataSource = employees;
+                        txtAmout.Text = employees.Count.ToString();
 
+                        AutoMode();
+
+                    }
+                    else
+                    {
+                        GridViewEmployee.DataSource = null;
+                        MessageBox.Show("Không tìm thấy nhân viên nào trong phòng ban này.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Phát Sinh Từ ListEmployee " + ex.Message);
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -62,6 +94,14 @@ namespace HumanResource.src.View.Employee
             ShowEmployee();
         }
 
-        
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReset_Click_1(object sender, EventArgs e)
+        {
+            txtSearchBox.Clear();
+        }
     }
 }

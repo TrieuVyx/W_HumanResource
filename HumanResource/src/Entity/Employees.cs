@@ -16,22 +16,17 @@ namespace HumanResource.src.Entity
         private string avatar;
         private string addressEmployee;
         private string phone;
-        private int roleId;
-        private int accountId;
-        private int depId;
-        private int salaryId;
-        private int educationId;
-        private int degreeId;
-        private int relativeId;
-      
+       
         public int EmployId
         {
             get { return employId; }
             set { employId = value; }
         }
 
-     
-
+        public Employees()
+        { }
+        public Employees(int employId)
+        { }
         public string EmployeeName
         {
             get { return employeeName; }
@@ -61,46 +56,6 @@ namespace HumanResource.src.Entity
             set { avatar = value; }
         }
 
-        public int RoleId
-        {
-            get { return roleId; }
-            set { roleId = value; }
-        }
-
-        public int AccountId
-        {
-            get { return accountId; }
-            set { accountId = value; }
-        }
-
-        public int DepId
-        {
-            get { return depId; }
-            set { depId = value; }
-        }
-
-        public int SalaryId
-        {
-            get { return salaryId; }
-            set { salaryId = value; }
-        }
-
-        public int EducationId
-        {
-            get { return educationId; }
-            set { educationId = value; }
-        }
-
-        public int DegreeId
-        {
-            get { return degreeId; }
-            set { degreeId = value; }
-        }
-
-        public int RelativeId
-        {
-            get { return relativeId; }
-            set { relativeId = value; }
-        }
+        
     }
 }

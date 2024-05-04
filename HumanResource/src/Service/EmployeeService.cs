@@ -1,4 +1,5 @@
-﻿using HumanResource.src.DTO.Response;
+﻿using HumanResource.src.DTO.Request;
+using HumanResource.src.DTO.Response;
 using HumanResource.src.Entity;
 using HumanResource.src.Repository;
 using System;
@@ -28,6 +29,19 @@ namespace HumanResource.src.Service
                 throw new Exception("Lỗi Phát Sinh Từ EmployeeService " + ex.Message);
             }
 
+        }
+
+
+        internal List<Employees> FindNameEmployee(Employees employee)
+        {
+            try
+            {
+                return employeeRepository.FindNameEmployee(employee);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ DepartmentService " + ex.Message);
+            }
         }
     }
 }

@@ -23,24 +23,6 @@ namespace HumanResource.src.Service
             departmentRepository = new DepartmentRepository();
         }
 
-        //internal bool FindNameDepart(DepartmentReqDTO departmentReqDTO)
-        //{
-        //    try
-        //    {
-        //        bool depart = departmentRepository.FindNameDepart(departmentReqDTO);
-        //        if (depart)
-        //        {
-        //            return true;
-        //        }
-        //        return false;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Lỗi Phát Sinh Từ DepartmentService " + ex.Message);
-        //        return false;
-
-        //    }
-        //}
         internal List<EmployeeResDTO> FindNameDepart(DepartmentReqDTO departmentReqDTO)
         {
             try
