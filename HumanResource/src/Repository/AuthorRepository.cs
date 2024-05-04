@@ -38,7 +38,6 @@ namespace HumanResource.src.Repository
                         string password = dbContext.HashMD5(loginReq.InPass);
                         sqlCommand.Parameters.AddWithValue("@Email", loginReq.InEmail);
                         sqlCommand.Parameters.AddWithValue("@PassWords", dbContext.HashMD5(loginReq.InPass));
-
                         //sqlCommand.Parameters.AddWithValue("@PassWords", loginReq.InPass);
                         connection.Open();
                         int count = (int)sqlCommand.ExecuteScalar();

@@ -178,6 +178,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Update";
             this.Text = "Update Department";
+            this.Load += new System.EventHandler(this.Update_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);

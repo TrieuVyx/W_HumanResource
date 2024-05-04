@@ -149,7 +149,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1062, 553);
+            this.ClientSize = new System.Drawing.Size(1199, 553);
             this.Controls.Add(this.panel1);
             this.Name = "MainApplication";
             this.Text = "Form1";

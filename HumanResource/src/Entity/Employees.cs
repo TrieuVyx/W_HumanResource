@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace HumanResource.src.Entity
 {
 
-    internal class Employee
+    internal class Employees
     {
         private int employId;
         private string email;
@@ -23,6 +23,7 @@ namespace HumanResource.src.Entity
         private int educationId;
         private int degreeId;
         private int relativeId;
+        public Employees() { }
         public Role Role { get; set; }
         public Account Account { get; set; }
         public Department Department { get; set; }

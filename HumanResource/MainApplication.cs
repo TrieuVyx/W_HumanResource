@@ -4,6 +4,7 @@ using HumanResource.src.View;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using HumanResource.src.View.Department;
 
 namespace HumanResource
 {

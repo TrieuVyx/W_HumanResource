@@ -363,20 +363,25 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Controller\AuthorController.cs" />
+    <Compile Include="src\Controller\DepartmentController.cs" />
     <Compile Include="src\DbContext\Dbcontext.cs" />
     <Compile Include="src\DbContext\GetQuery.cs" />
+    <Compile Include="src\DTO\Request\DepartmentReqDTO.cs" />
     <Compile Include="src\DTO\Request\LoginReqDTO.cs" />
+    <Compile Include="src\DTO\Response\EmployeeResDTO.cs" />
     <Compile Include="src\DTO\Response\LoginResDTO.cs" />
     <Compile Include="src\Entity\Account.cs" />
     <Compile Include="src\Entity\Degree.cs" />
     <Compile Include="src\Entity\Department.cs" />
     <Compile Include="src\Entity\Education.cs" />
-    <Compile Include="src\Entity\Employee.cs" />
+    <Compile Include="src\Entity\Employees.cs" />
     <Compile Include="src\Entity\RelativeEmployee.cs" />
     <Compile Include="src\Entity\Role.cs" />
     <Compile Include="src\Entity\Salary.cs" />
     <Compile Include="src\Repository\AuthorRepository.cs" />
+    <Compile Include="src\Repository\DepartmentRepository.cs" />
     <Compile Include="src\Service\AuthorService.cs" />
+    <Compile Include="src\Service\DepartmentService.cs" />
     <Compile Include="src\View\Auth\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

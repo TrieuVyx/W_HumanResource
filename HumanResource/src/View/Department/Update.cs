@@ -46,5 +46,10 @@ namespace HumanResource.src.View.Department
         {
 
         }
+
+        private void Update_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
