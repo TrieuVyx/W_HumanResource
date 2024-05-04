@@ -5,6 +5,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using HumanResource.src.View.Department;
+using System.Linq.Expressions;
 
 namespace HumanResource
 {
@@ -17,7 +18,6 @@ namespace HumanResource
         ListEmployee employee = new ListEmployee();
         ListDep department = new ListDep();
         Dashboard dashboard = new Dashboard();
-
 
         int height = 470;
         int width = 700;
@@ -38,10 +38,12 @@ namespace HumanResource
                 dashboard.MdiParent = this;
                 dashboard.StartPosition = FormStartPosition.Manual;
                 dashboard.Bounds = new Rectangle(175, 10, width, height);
-                dashboard.Show();
 
+
+                dashboard.Show();
                 employee.Hide();
                 department.Hide();
+
             }
 
         }
@@ -75,18 +77,14 @@ namespace HumanResource
                 employee.StartPosition = FormStartPosition.Manual;
                 employee.Bounds = new Rectangle(175, 10, width, height);
                 employee.Show();
-
-
                 department.Hide();
-                dashboard.Hide();   
-
+                dashboard.Hide();
                 buttonFormDepartment = false;
                 buttonFormDashboard = false;
 
             }
 
         }
-
         private void MainApplication_Load(object sender, EventArgs e)
         {
 
@@ -98,19 +96,14 @@ namespace HumanResource
 
             if (buttonFormDepartment)
             {
-
                 department.MdiParent = this;
                 department.StartPosition = FormStartPosition.Manual;
                 department.Bounds = new Rectangle(175, 10, width, height);
-
-
                 buttonFormEmployee = false;
                 buttonFormDashboard = false;
-
                 department.Show();
                 employee.Hide();
                 dashboard.Hide();
-
 
             }
 
@@ -125,13 +118,9 @@ namespace HumanResource
                 dashboard.MdiParent = this;
                 dashboard.StartPosition = FormStartPosition.Manual;
                 dashboard.Bounds = new Rectangle(175, 10, width, height);
-
                 buttonFormDepartment = false;
                 buttonFormEmployee = false;
-                
-                
                 dashboard.Show();
-
                 employee.Hide();
                 department.Hide();
             }

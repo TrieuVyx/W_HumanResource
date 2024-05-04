@@ -57,13 +57,37 @@ namespace HumanResource.src.Service
         {
             try
             {
-
                 return departmentRepository.findAllList();
             }
             catch (Exception ex)
             {
                 throw new Exception("Lỗi Phát Sinh Từ DepartmentService " + ex.Message);
             }
+        }
+
+        internal List<DepartmentResDTO> findIdDepartMent(DepartmentReqDTO departmentReqDTO)
+        {
+            try
+            {
+                return departmentRepository.findIdDepartMent(departmentReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ DepartmentService " + ex.Message);
+            }
+        }
+
+
+        internal List<EmployeeResDTO> findAndDelete(EmployeeResDTO employeeResDTO)
+        {
+            try
+            {
+                return departmentRepository.findAndDelete(employeeResDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ DepartmentService " + ex.Message);
+            };
         }
     }
 }

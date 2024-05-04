@@ -28,141 +28,150 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.txtLabel = new System.Windows.Forms.Label();
+            this.txtAmout = new System.Windows.Forms.RichTextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDetail = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearchBox = new System.Windows.Forms.RichTextBox();
+            this.GridViewEmployee = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.richTextBox2);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.richTextBox1);
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.btnReset);
+            this.panel3.Controls.Add(this.txtLabel);
+            this.panel3.Controls.Add(this.txtAmout);
+            this.panel3.Controls.Add(this.btnDelete);
+            this.panel3.Controls.Add(this.btnUpdate);
+            this.panel3.Controls.Add(this.btnDetail);
+            this.panel3.Controls.Add(this.btnSearch);
+            this.panel3.Controls.Add(this.txtSearchBox);
+            this.panel3.Controls.Add(this.GridViewEmployee);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(15, 14);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel3.Location = new System.Drawing.Point(13, 11);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(992, 644);
-            this.panel3.TabIndex = 6;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.panel3.Size = new System.Drawing.Size(882, 515);
+            this.panel3.TabIndex = 5;
             // 
-            // label7
+            // btnReset
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(922, 136);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 29);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "ID";
+            this.btnReset.Location = new System.Drawing.Point(451, 137);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(79, 39);
+            this.btnReset.TabIndex = 20;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // richTextBox2
+            // txtLabel
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(904, 171);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(52, 48);
-            this.richTextBox2.TabIndex = 9;
-            this.richTextBox2.Text = "";
+            this.txtLabel.AutoSize = true;
+            this.txtLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLabel.Location = new System.Drawing.Point(782, 100);
+            this.txtLabel.Name = "txtLabel";
+            this.txtLabel.Size = new System.Drawing.Size(69, 25);
+            this.txtLabel.TabIndex = 19;
+            this.txtLabel.Text = "Amout";
             // 
-            // button4
+            // txtAmout
             // 
-            this.button4.Location = new System.Drawing.Point(809, 171);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 49);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Delete";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.txtAmout.Location = new System.Drawing.Point(804, 137);
+            this.txtAmout.Name = "txtAmout";
+            this.txtAmout.Size = new System.Drawing.Size(47, 39);
+            this.txtAmout.TabIndex = 9;
+            this.txtAmout.Text = "";
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.Location = new System.Drawing.Point(713, 171);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 49);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnDelete.Location = new System.Drawing.Point(706, 137);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(79, 39);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.Location = new System.Drawing.Point(618, 171);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 49);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Detail";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnUpdate.Location = new System.Drawing.Point(621, 137);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(79, 39);
+            this.btnUpdate.TabIndex = 6;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // btnDetail
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(91, 171);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(228, 48);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
+            this.btnDetail.Location = new System.Drawing.Point(536, 137);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(79, 39);
+            this.btnDetail.TabIndex = 5;
+            this.btnDetail.Text = "Detail";
+            this.btnDetail.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // btnSearch
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 228);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(924, 326);
-            this.dataGridView1.TabIndex = 2;
+            this.btnSearch.BackgroundImage = global::HumanResource.Properties.Resources.search;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Location = new System.Drawing.Point(30, 137);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(45, 39);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearchBox
+            // 
+            this.txtSearchBox.Location = new System.Drawing.Point(81, 137);
+            this.txtSearchBox.Name = "txtSearchBox";
+            this.txtSearchBox.Size = new System.Drawing.Size(203, 39);
+            this.txtSearchBox.TabIndex = 3;
+            this.txtSearchBox.Text = "";
+            // 
+            // GridViewEmployee
+            // 
+            this.GridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridViewEmployee.DefaultCellStyle = dataGridViewCellStyle1;
+            this.GridViewEmployee.Location = new System.Drawing.Point(30, 182);
+            this.GridViewEmployee.Name = "GridViewEmployee";
+            this.GridViewEmployee.RowHeadersWidth = 51;
+            this.GridViewEmployee.RowTemplate.Height = 24;
+            this.GridViewEmployee.Size = new System.Drawing.Size(821, 315);
+            this.GridViewEmployee.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 21);
+            this.label1.Location = new System.Drawing.Point(21, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(388, 65);
+            this.label1.Size = new System.Drawing.Size(316, 54);
             this.label1.TabIndex = 1;
             this.label1.Text = "List Employee";
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::HumanResource.Properties.Resources.search;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(34, 171);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 49);
-            this.button1.TabIndex = 4;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // ListEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1023, 671);
+            this.ClientSize = new System.Drawing.Size(909, 537);
             this.Controls.Add(this.panel3);
             this.Enabled = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListEmployee";
@@ -170,7 +179,7 @@
             this.Text = "List";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewEmployee)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,14 +187,15 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.RichTextBox txtSearchBox;
+        private System.Windows.Forms.DataGridView GridViewEmployee;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RichTextBox txtAmout;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDetail;
+        private System.Windows.Forms.Label txtLabel;
+        private System.Windows.Forms.Button btnReset;
     }
 }

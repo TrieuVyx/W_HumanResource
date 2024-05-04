@@ -36,6 +36,30 @@ namespace HumanResource.src.Controller
             }
         }
 
+        internal List<EmployeeResDTO> findAndDelete(EmployeeResDTO employeeResDTO)
+        {
+            try
+            {
+                return departmentService.findAndDelete(employeeResDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ DepartmentService " + ex.Message);
+            }
+        }
+
+        internal List<DepartmentResDTO> findIdDepartMent(DepartmentReqDTO departmentReqDTO)
+        {
+            try
+            {
+                return departmentService.findIdDepartMent(departmentReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ DepartmentService " + ex.Message);
+            }
+        }
+
         internal List<EmployeeResDTO> FindNameDepart(DepartmentReqDTO departmentReqDTO)
         {
             try

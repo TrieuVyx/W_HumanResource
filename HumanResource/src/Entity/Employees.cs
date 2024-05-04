@@ -23,25 +23,14 @@ namespace HumanResource.src.Entity
         private int educationId;
         private int degreeId;
         private int relativeId;
-        public Employees() { }
-        public Role Role { get; set; }
-        public Account Account { get; set; }
-        public Department Department { get; set; }
-        public Salary Salary { get; set; }
-        public Education Education { get; set; }
-        public Degree Degree { get; set; }
-        public RelativeEmployee Relative { get; set; }
+      
         public int EmployId
         {
             get { return employId; }
             set { employId = value; }
         }
 
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
+     
 
         public string EmployeeName
         {
@@ -49,12 +38,7 @@ namespace HumanResource.src.Entity
             set { employeeName = value; }
         }
 
-        public string Avatar
-        {
-            get { return avatar; }
-            set { avatar = value; }
-        }
-
+     
         public string AddressEmployee
         {
             get { return addressEmployee; }
@@ -65,6 +49,16 @@ namespace HumanResource.src.Entity
         {
             get { return phone; }
             set { phone = value; }
+        }
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+        public string Avatar
+        {
+            get { return avatar; }
+            set { avatar = value; }
         }
 
         public int RoleId
