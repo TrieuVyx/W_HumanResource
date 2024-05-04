@@ -188,10 +188,10 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(353, 277);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(45, 20);
+            this.radioButton2.Size = new System.Drawing.Size(74, 20);
             this.radioButton2.TabIndex = 16;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nữ";
+            this.radioButton2.Text = "Female";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
@@ -199,16 +199,16 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(353, 253);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(57, 20);
+            this.radioButton1.Size = new System.Drawing.Size(58, 20);
             this.radioButton1.TabIndex = 15;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nam";
+            this.radioButton1.Text = "Male";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(92, 316);
+            this.dateTimePicker1.Location = new System.Drawing.Point(92, 327);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 14;
@@ -219,9 +219,9 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(348, 223);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(47, 25);
+            this.label10.Size = new System.Drawing.Size(77, 25);
             this.label10.TabIndex = 13;
-            this.label10.Text = "Sex";
+            this.label10.Text = "Gender";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label9

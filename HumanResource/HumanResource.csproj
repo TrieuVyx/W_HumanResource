@@ -338,6 +338,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -368,6 +369,7 @@
     <Compile Include="src\DbContext\GetQuery.cs" />
     <Compile Include="src\DTO\Request\DepartmentReqDTO.cs" />
     <Compile Include="src\DTO\Request\LoginReqDTO.cs" />
+    <Compile Include="src\DTO\Response\DepartmentResDTO.cs" />
     <Compile Include="src\DTO\Response\EmployeeResDTO.cs" />
     <Compile Include="src\DTO\Response\LoginResDTO.cs" />
     <Compile Include="src\Entity\Account.cs" />

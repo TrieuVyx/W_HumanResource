@@ -16,7 +16,11 @@ namespace HumanResource
 
         ListEmployee employee = new ListEmployee();
         ListDep department = new ListDep();
-        Dashboard dashboard = new Dashboard();  
+        Dashboard dashboard = new Dashboard();
+
+
+        int height = 470;
+        int width = 700;
 
         private bool buttonFormSalary = false;
         private bool buttonFormDepartment= false;
@@ -33,7 +37,7 @@ namespace HumanResource
             {
                 dashboard.MdiParent = this;
                 dashboard.StartPosition = FormStartPosition.Manual;
-                dashboard.Bounds = new Rectangle(175, 10, 700, 400);
+                dashboard.Bounds = new Rectangle(175, 10, width, height);
                 dashboard.Show();
 
                 employee.Hide();
@@ -69,7 +73,7 @@ namespace HumanResource
             {
                 employee.MdiParent = this;
                 employee.StartPosition = FormStartPosition.Manual;
-                employee.Bounds = new Rectangle(175, 10, 700, 400);
+                employee.Bounds = new Rectangle(175, 10, width, height);
                 employee.Show();
 
 
@@ -97,7 +101,7 @@ namespace HumanResource
 
                 department.MdiParent = this;
                 department.StartPosition = FormStartPosition.Manual;
-                department.Bounds = new Rectangle(175, 10, 700, 400);
+                department.Bounds = new Rectangle(175, 10, width, height);
 
 
                 buttonFormEmployee = false;
@@ -120,7 +124,7 @@ namespace HumanResource
             {
                 dashboard.MdiParent = this;
                 dashboard.StartPosition = FormStartPosition.Manual;
-                dashboard.Bounds = new Rectangle(175, 10, 700, 400);
+                dashboard.Bounds = new Rectangle(175, 10, width, height);
 
                 buttonFormDepartment = false;
                 buttonFormEmployee = false;

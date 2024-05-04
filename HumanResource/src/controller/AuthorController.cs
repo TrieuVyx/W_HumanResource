@@ -31,7 +31,6 @@ namespace HumanResource.src.Controller
                 if(author)
                 {
                     return true;
-
                 }
                     return false;
 

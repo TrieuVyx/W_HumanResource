@@ -52,5 +52,18 @@ namespace HumanResource.src.Service
                 throw new Exception("Lỗi Phát Sinh Từ DepartmentService " + ex.Message);
             }
         }
+
+        internal List<DepartmentResDTO> findAllList()
+        {
+            try
+            {
+
+                return departmentRepository.findAllList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ DepartmentService " + ex.Message);
+            }
+        }
     }
 }

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using HumanResource.src.Entity;
 using HumanResource.src.Service;
 using HumanResource.src.DTO.Response;
-
+using System.Web.UI.WebControls;
 
 namespace HumanResource.src.View.Department
 {
@@ -26,42 +26,23 @@ namespace HumanResource.src.View.Department
             InitializeComponent();
             departmentController = new DepartmentController();
             departmentReqDTO = new DepartmentReqDTO();
+            ShowEmployee();
         }
+        private void ShowEmployee() {
+            try
+            {
+                List<DepartmentResDTO> departments =  departmentController.findAllList();
+                GridViewDepartment.DataSource = departments;
+              
+                txtAmout.Text = departments.Count.ToString();
+                AutoMode();
 
-
-        //private void btnSearchDepart_Click(object sender, EventArgs e)
-        //{
-        //    string txtSearchValue = txtSearch.Text;
-        //    departmentReqDTO = new DepartmentReqDTO();
-        //    try
-        //    {
-        //        if (txtSearchValue == null ||
-        //           txtSearchValue == "" 
-        //        )
-        //        {
-        //            MessageBox.Show("Vui lòng nhập PHÒNG BAN bạn muốn tìm?");
-        //        }
-        //        else
-        //        {
-        //            departmentReqDTO.DepDesc = txtSearchValue;
-        //            bool depart = departmentController.FindNameDepart(departmentReqDTO);
-        //            if (depart)
-        //            {
-
-        //                MessageBox.Show("Đã tìm thấy ");
-        //            }
-        //            else
-        //            {
-        //                MessageBox.Show("PHÒNG BAN KHÔNG TỒN TẠI ");
-
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Lỗi Phát Sinh Từ ListDep " + ex.Message);
-        //    }
-        //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Phát Sinh Từ ListDep " + ex.Message);
+            }
+        }
         private void btnSearchDepart_Click(object sender, EventArgs e)
         {
             string txtSearchValue = txtSearch.Text;
@@ -79,10 +60,12 @@ namespace HumanResource.src.View.Department
                     if (employees.Count > 0)
                     {
                         GridViewDepartment.DataSource = employees;
-                        txtAmout.Text = employees.Count.ToString(); 
-                        txtAmout.ReadOnly = true;
-                        txtAmout.Enabled = true;
-                    }
+                        
+                        txtAmout.Text = employees.Count.ToString();
+                        AutoMode();
+
+                       
+                    }   
                     else
                     {
                         GridViewDepartment.DataSource = null;
@@ -94,6 +77,16 @@ namespace HumanResource.src.View.Department
             {
                 MessageBox.Show("Lỗi Phát Sinh Từ ListDep " + ex.Message);
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            ShowEmployee();
+        }
+        private void AutoMode()
+        {
+            txtAmout.ReadOnly = true;
+            txtAmout.Enabled = false;
         }
     }
 }

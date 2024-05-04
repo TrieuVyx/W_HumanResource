@@ -21,59 +21,60 @@ CREATE TABLE Roles (
 
 CREATE TABLE Salary (
 	SalaryId INTEGER NOT NULL,
-	SalaryAmount INTEGER NOT NULL,
-	SalaryDesc NVARCHAR(255) NOT NULL,
+	SalaryAmount INTEGER  NULL,
+	SalaryDesc NVARCHAR(255)  NULL,
 	PRIMARY KEY (SalaryId)
 
 );
 
 CREATE TABLE Department (
 	DepId INTEGER NOT NULL,
-	DepDesc NVARCHAR(255) NOT NULL,
-	DepType VARCHAR(255) NOT NULL,
-	DepPlace NVARCHAR(255) NOT NULL,
+	DepDesc VARCHAR(255)  NULL,
+	DepType VARCHAR(255)  NULL,
+	DepPlace VARCHAR(255)  NULL,
 	PRIMARY KEY (DepId) 
 );
 CREATE TABLE Account (
 	AccountId INTEGER NOT NULL,
-	FullName NVARCHAR(255) NOT NULL,
-	PassWords NVARCHAR(255) NOT NULL,
-	Email NVARCHAR(255) NOT NULL,
+	FullName NVARCHAR(255)  NULL,
+	PassWords NVARCHAR(255)  NULL,
+	Email NVARCHAR(255)  NULL,
 	RoleId INTEGER NOT NULL,
 	PRIMARY KEY (AccountId),
 	FOREIGN KEY (RoleId) REFERENCES Roles(RoleId)
 );
 CREATE TABLE Education (
     EducationId INTEGER NOT NULL,
-    EducationName NVARCHAR(255) NOT NULL,
+    EducationName NVARCHAR(255)  NULL,
     PRIMARY KEY (EducationId)
 );
 CREATE TABLE Degree (
     DegreeId INTEGER NOT NULL,
-    DegreeName NVARCHAR(255) NOT NULL,
+    DegreeName NVARCHAR(255)  NULL,
     PRIMARY KEY (DegreeId)
 );
 
 CREATE TABLE RelativeEmployee (
     RelativeId INTEGER NOT NULL,
-    EmployeeId INTEGER NOT NULL,
-    FullName NVARCHAR(255) NOT NULL,
-    Relationship NVARCHAR(255) NOT NULL,
-	PhoneNumber VARCHAR(255) NOT NULL,
-    AddressRelative NVARCHAR(255) NOT NULL,
+    EmployeeId INTEGER  NOT NULL,
+    FullName NVARCHAR(255)  NULL,
+    Relationship NVARCHAR(255)  NULL,
+	PhoneNumber VARCHAR(255)  NULL,
+    AddressRelative NVARCHAR(255)  NULL,
     PRIMARY KEY (RelativeId),
 );
 
 CREATE TABLE Employee (
 	EmployId INTEGER NOT NULL ,
-	Email NVARCHAR(255) NOT NULL,
-	EmployeeName NVARCHAR(255) NOT NULL,
-	Avatar NVARCHAR(255) NOT NULL,
-	AddressEmployee NVARCHAR(255) NOT NULL ,
-	Phone VARCHAR(255) NOT NULL,
+	Email NVARCHAR(255)  NULL,
+	EmployeeName NVARCHAR(255)  NULL,
+	Avatar NVARCHAR(255)  NULL,
+	AddressEmployee NVARCHAR(255)  NULL ,
+	DateOfBirth DATE NULL,
+	Phone VARCHAR(255)  NULL,
 	RoleId INTEGER NOT NULL,
 	AccountId INTEGER NOT NULL,
-	DepId INTEGER NOT NULL,
+	DepId INTEGER NULL,
 	SalaryId INTEGER NOT NULL,
 	EducationId INTEGER NOT NULL,
     DegreeId INTEGER NOT NULL,
@@ -175,12 +176,12 @@ VALUES
 
 INSERT INTO Employee (EmployId, Email, EmployeeName, Avatar, AddressEmployee, Phone, RoleId, AccountId, DepId, SalaryId, EducationId, DegreeId, RelativeId)
 VALUES 
-    (1, 'NguyenNgocHieu@example.com', 'Nguyễn Ngọc Hiếu', 'avatar1.jpg', '123 ABC Street', '1234567890', 3, 1, 1, 3, 4, 1, 1),
-    (2, 'NguyenNgocTrung@example.com', 'Nguyễn Ngọc Trung', 'avatar2.jpg', '456 XYZ Street', '9876543210', 3, 2, 1, 3, 4, 2, 2),
-    (3, 'NgoDangDangTrung@example.com', 'Ngô Đặng Đăng Trung', 'avatar3.jpg', '789 PQR Street', '5555555555', 2, 3, 2, 2, 4, 1, 3),
-    (4, 'HoQuocThang@example.com', 'Hồ Quốc Thắng', 'avatar4.jpg', '321 DEF Street', '4444444444', 4, 4, 3, 4, 5, 3, 4),
-    (5, 'DangDinhHuy@example.com', 'Đặng Đình Huy', 'avatar5.jpg', '654 UVW Street', '3333333333', 6, 5, 4, 5, 3, 2, 5),
-    (6, 'TranVanPhong@example.com', 'Trần Văn Phong', 'avatar6.jpg', '987 HIJ Street', '2222222222', 7, 6, 5, 6, 2, 1, 6),
-    (7, 'NguyenPhanBaoQuy@example.com', 'Nguyễn Phan Bảo Quý', 'avatar7.jpg', '654 KLM Street', '1111111111', 8, 7, 6, 7, 1, 4, 7),
-    (8, 'PhamMinhNhut@example.com', 'Phạm Minh Nhựt', 'avatar8.jpg', '321 XYZ Street', '9999999999', 9, 8, 7, 8, 5, 2, 8),
-    (9, 'HuynhPhuocTri@example.com', 'Huỳnh Phước Trí', 'avatar9.jpg', '789 PQR Street', '8888888888', 5, 9, 8, 9, 4, 3, 9);
+    (1, 'NguyenNgocHieu@example.com', N'Nguyễn Ngọc Hiếu', 'avatar1.jpg', '123 ABC Street', '1234567890', 3, 1, 1, 3, 4, 1, 1),
+    (2, 'NguyenNgocTrung@example.com', N'Nguyễn Ngọc Trung', 'avatar2.jpg', '456 XYZ Street', '9876543210', 3, 2, 1, 3, 4, 2, 2),
+    (3, 'NgoDangDangTrung@example.com', N'Ngô Đặng Đăng Trung', 'avatar3.jpg', '789 PQR Street', '5555555555', 2, 3, 2, 2, 4, 1, 3),
+    (4, 'HoQuocThang@example.com', N'Hồ Quốc Thắng', 'avatar4.jpg', '321 DEF Street', '4444444444', 4, 4, 3, 4, 5, 3, 4),
+    (5, 'DangDinhHuy@example.com', N'Đặng Đình Huy', 'avatar5.jpg', '654 UVW Street', '3333333333', 6, 5, 4, 5, 3, 2, 5),
+    (6, 'TranVanPhong@example.com', N'Trần Văn Phong', 'avatar6.jpg', '987 HIJ Street', '2222222222', 7, 6, 5, 6, 2, 1, 6),
+    (7, 'NguyenPhanBaoQuy@example.com', N'Nguyễn Phan Bảo Quý', 'avatar7.jpg', '654 KLM Street', '1111111111', 8, 7, 6, 7, 1, 4, 7),
+    (8, 'PhamMinhNhut@example.com', N'Phạm Minh Nhựt', 'avatar8.jpg', '321 XYZ Street', '9999999999', 9, 8, 7, 8, 5, 2, 8),
+    (9, 'HuynhPhuocTri@example.com', N'Huỳnh Phước Trí', 'avatar9.jpg', '789 PQR Street', '8888888888', 5, 9, 8, 9, 4, 3, 9);

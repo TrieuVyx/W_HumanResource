@@ -24,6 +24,18 @@ namespace HumanResource.src.Controller
             this.departmentService = departmentService;
         }
 
+        internal List<DepartmentResDTO> findAllList()
+        {
+            try
+            {
+                return departmentService.findAllList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ DepartmentService " + ex.Message);
+            }
+        }
+
         internal List<EmployeeResDTO> FindNameDepart(DepartmentReqDTO departmentReqDTO)
         {
             try

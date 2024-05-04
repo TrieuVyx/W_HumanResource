@@ -26,48 +26,45 @@ namespace HumanResource.src.Repository
         {
             this.dbContext = dbcontext;
         }
-        //internal bool FindNameDepart(DepartmentReqDTO departmentReqDTO)
-        //{
-        //    try
-        //    {
-        //        List<Employee> employees = new List<Employee>();
-        //        BindingSource bindingSource = new BindingSource();
-        //        using (SqlConnection connection = dbContext.connectOpen())
-        //        {
-        //            string query = "SELECT * FROM  Employee e, Department d   WHERE e.DepId = d.DepId AND DepDesc LIKE '%' + @DepDesc + '%'";
-        //            using (SqlCommand sqlCommand = new SqlCommand(query, connection))
-        //            {
-        //                sqlCommand.Parameters.AddWithValue("@DepDesc", departmentReqDTO.DepDesc );
-        //                connection.Open();
-        //                int count = (int)sqlCommand.ExecuteScalar();
-        //                using (SqlDataReader reader = sqlCommand.ExecuteReader())
-        //                {
-        //                    while (reader.Read())
-        //                    {
-        //                        Employee employee = new Employee();
-        //                        employee.EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"));
-        //                        employee.EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName"));
-        //                        employees.Add(employee); 
-        //                    }
-        //                }
-        //                connection.Close();
-        //                if (count > 0)
-        //                {
-        //                    return true;
-        //                }
-        //                else
-        //                {
-        //                    return false;
-        //                }
-        //            }
-        //        }
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
-        //}
+        internal List<DepartmentResDTO> findAllList()
+        {
+
+                List<DepartmentResDTO> departmentRes = new List<DepartmentResDTO>();
+            try
+            {
+
+                using (SqlConnection connection = dbContext.connectOpen())
+                {
+                    string query = "SELECT * FROM Employee e, Department d WHERE e.DepId = d.DepId ";
+                    using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                    {
+                        connection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                DepartmentResDTO department = new DepartmentResDTO();
+                               
+                                department.DepId = reader.GetInt32(reader.GetOrdinal("DepId"));
+                                department.DepDesc = reader.GetString(reader.GetOrdinal("DepDesc"));
+                                department.DepType = reader.GetString(reader.GetOrdinal("DepType"));
+                                departmentRes.Add(department);
+                            }
+                        }
+
+                    }
+                    return departmentRes;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         internal List<EmployeeResDTO> FindNameDepart(DepartmentReqDTO departmentReqDTO)
         {
             List<EmployeeResDTO> employees = new List<EmployeeResDTO>();
@@ -76,7 +73,6 @@ namespace HumanResource.src.Repository
                 using (SqlConnection connection = dbContext.connectOpen())
                 {
                     string query = "SELECT * FROM Employee e, Department d WHERE e.DepId = d.DepId AND DepDesc LIKE @DepDesc ";
-                    //string query = "SELECT * FROM Employee e, Department d WHERE e.DepId = d.DepId AND DepDesc LIKE '%' + @DepDesc + '%'";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
                     {
                         sqlCommand.Parameters.AddWithValue("@DepDesc", departmentReqDTO.DepDesc);
@@ -90,17 +86,22 @@ namespace HumanResource.src.Repository
                                 employee.EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"));
                                 employee.EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName"));
                                 employee.AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee"));
+                                employee.DepId = reader.GetInt32(reader.GetOrdinal("DepId"));
+                                employee.DepDesc = reader.GetString(reader.GetOrdinal("DepDesc"));
+                                employee.DepType = reader.GetString(reader.GetOrdinal("DepType"));
                                 employees.Add(employee);
                             }
                         }
                     }
+                    return (employees);
+
                 }
             }
             catch (Exception ex)
             {
+                return null;
             }
 
-            return employees;
         }
     }
 }

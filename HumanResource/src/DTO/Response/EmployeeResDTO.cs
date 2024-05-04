@@ -15,8 +15,13 @@ namespace HumanResource.src.DTO.Response
         private string avatar;
         private string addressEmployee;
         private string phone;
-    
-        public EmployeeResDTO() { }
+        private int depId;
+        private string depDesc;
+        private string depType;
+        private string depPlace;
+
+        public EmployeeResDTO() {
+        }
         
         public int EmployId
         {
@@ -48,11 +53,34 @@ namespace HumanResource.src.DTO.Response
             set { addressEmployee = value; }
         }
 
+
         //public string Phone
         //{
         //    get { return phone; }
         //    set { phone = value; }
         //}
+        public int DepId
+        {
+            get { return depId; }
+            set { depId = value; }
+        }
+        public string DepDesc
+        {
+            get { return depDesc; }
+            set { depDesc = value; }
+        }
+
+        public string DepType
+        {
+            get { return depType; }
+            set { depType = value; }
+        }
+
+        public string DepPlace
+        {
+            get { return depPlace; }
+            set { depPlace = value; }
+        }
 
     }
 }
