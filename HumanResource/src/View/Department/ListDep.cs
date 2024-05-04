@@ -26,17 +26,15 @@ namespace HumanResource.src.View.Department
             InitializeComponent();
             departmentController = new DepartmentController();
             departmentReqDTO = new DepartmentReqDTO();
-            ShowEmployee();
+            ShowDepartment();
         }
-        private void ShowEmployee() {
+        private void ShowDepartment() {
             try
             {
                 List<DepartmentResDTO> departments =  departmentController.findAllList();
                 GridViewDepartment.DataSource = departments;
-              
                 txtAmout.Text = departments.Count.ToString();
                 AutoMode();
-
             }
             catch (Exception ex)
             {
@@ -60,11 +58,9 @@ namespace HumanResource.src.View.Department
                     if (employees.Count > 0)
                     {
                         GridViewDepartment.DataSource = employees;
-                        
                         txtAmout.Text = employees.Count.ToString();
                         AutoMode();
-
-                       
+                        //GridViewDepartment.Click += ButtonGetSelectedRows_Click;
                     }   
                     else
                     {
@@ -78,15 +74,26 @@ namespace HumanResource.src.View.Department
                 MessageBox.Show("Lỗi Phát Sinh Từ ListDep " + ex.Message);
             }
         }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
-            ShowEmployee();
+            ShowDepartment();
         }
         private void AutoMode()
         {
             txtAmout.ReadOnly = true;
             txtAmout.Enabled = false;
+        }
+        private void ButtonGetSelectedRows_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow selectedRow in GridViewDepartment.SelectedRows)
+            {
+                foreach (DataGridViewCell cell in selectedRow.Cells)
+                {
+                    // Thực hiện các thao tác với ô trong hàng được chọn tại đây
+                    string cellValue = cell.Value.ToString();
+                    MessageBox.Show("Selected Cell Value: " + cellValue.ToString());
+                }
+            }
         }
     }
 }

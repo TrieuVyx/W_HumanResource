@@ -16,11 +16,11 @@ namespace HumanResource.src.Repository
     {
         private Dbcontext dbContext;
         private EmployeeResDTO employeeResDTO;
-        
+
         public DepartmentRepository()
         {
             dbContext = new Dbcontext();
-            employeeResDTO = new EmployeeResDTO();  
+            employeeResDTO = new EmployeeResDTO();
         }
         public DepartmentRepository(Dbcontext dbcontext)
         {
@@ -30,13 +30,13 @@ namespace HumanResource.src.Repository
         internal List<DepartmentResDTO> findAllList()
         {
 
-                List<DepartmentResDTO> departmentRes = new List<DepartmentResDTO>();
+            List<DepartmentResDTO> departmentRes = new List<DepartmentResDTO>();
             try
             {
 
                 using (SqlConnection connection = dbContext.connectOpen())
                 {
-                    string query = "SELECT * FROM Employee e, Department d WHERE e.DepId = d.DepId ";
+                    string query = "SELECT * FROM Department";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
                     {
                         connection.Open();
@@ -46,7 +46,7 @@ namespace HumanResource.src.Repository
                             while (reader.Read())
                             {
                                 DepartmentResDTO department = new DepartmentResDTO();
-                               
+
                                 department.DepId = reader.GetInt32(reader.GetOrdinal("DepId"));
                                 department.DepDesc = reader.GetString(reader.GetOrdinal("DepDesc"));
                                 department.DepType = reader.GetString(reader.GetOrdinal("DepType"));
@@ -92,6 +92,7 @@ namespace HumanResource.src.Repository
                                 employees.Add(employee);
                             }
                         }
+                        connection.Close();
                     }
                     return (employees);
 
