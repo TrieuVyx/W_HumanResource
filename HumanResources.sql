@@ -65,21 +65,21 @@ CREATE TABLE RelativeEmployee (
 );
 
 CREATE TABLE Employee (
-	EmployId INTEGER NOT NULL ,
+	EmployId INTEGER  NOT NULL ,
 	Email NVARCHAR(255)  NULL,
 	EmployeeName NVARCHAR(255)  NULL,
 	Avatar NVARCHAR(255)  NULL,
 	AddressEmployee NVARCHAR(255)  NULL ,
 	DateOfBirth DATE NULL,
 	Phone VARCHAR(255)  NULL,
+	Gender NVARCHAR(255) NULL,
 	RoleId INTEGER NOT NULL,
-	AccountId INTEGER NOT NULL,
+	AccountId INTEGER  NULL,
 	DepId INTEGER NULL,
-	SalaryId INTEGER NOT NULL,
-	EducationId INTEGER NOT NULL,
-    DegreeId INTEGER NOT NULL,
-	RelativeId INTEGER NOT NULL,
-	Process NVARCHAR NULL,
+	SalaryId INTEGER  NULL,
+	EducationId INTEGER  NULL,
+    DegreeId INTEGER  NULL,
+	RelativeId INTEGER  NULL,
 	PRIMARY KEY(EmployId),
 	FOREIGN KEY(AccountId) REFERENCES Account(AccountId),
 	FOREIGN KEY(RoleId) REFERENCES Roles(RoleId),
@@ -112,7 +112,8 @@ VALUES (1, 'Administrator', 'Admin'),
        (7, 'Analyst', 'Analyst'),
        (8, 'Tester', 'Tester'),
        (9, 'Designer', 'Designer'),
-       (10, 'Intern', 'Intern');
+       (10, 'Intern', 'Intern'),
+       (11, 'Root', 'Big-Boss');
 
 INSERT INTO Salary (SalaryId, SalaryAmount, SalaryDesc)
 VALUES (1, 5000, 'Junior Salary'),
@@ -183,18 +184,17 @@ VALUES
     (8, 8, 'Relative 8', 'Child', '8888888888', '321 XYZ Street'),
     (9, 9, 'Relative 9', 'Sibling', '9999999999', '789 PQR Street');
 
-INSERT INTO Employee (EmployId, Email, EmployeeName, Avatar, AddressEmployee, Phone, RoleId, AccountId, DepId, SalaryId, EducationId, DegreeId, RelativeId, DateOfBirth)
+INSERT INTO Employee (EmployId, Email, EmployeeName, Avatar, AddressEmployee, Phone, RoleId, AccountId, DepId, SalaryId, EducationId, DegreeId, RelativeId, DateOfBirth, Gender)
 VALUES 
-    (1, 'NguyenNgocHieu@example.com', N'Nguyễn Ngọc Hiếu', 'avatar1.jpg', '123 ABC Street', '1234567890', 3, 1, 1, 3, 4, 1, 1, '1990-01-01'),
-    (2, 'NguyenNgocTrung@example.com', N'Nguyễn Ngọc Trung', 'avatar2.jpg', '456 XYZ Street', '9876543210', 3, 2, 1, 3, 4, 2, 2, '1992-03-15'),
-    (3, 'NgoDangDangTrung@example.com', N'Ngô Đặng Đăng Trung', 'avatar3.jpg', '789 PQR Street', '5555555555', 2, 3, 2, 2, 4, 1, 3, '1988-06-20'),
-    (4, 'HoQuocThang@example.com', N'Hồ Quốc Thắng', 'avatar4.jpg', '321 DEF Street', '4444444444', 4, 4, 3, 4, 5, 3, 4, '1995-09-10'),
-    (5, 'DangDinhHuy@example.com', N'Đặng Đình Huy', 'avatar5.jpg', '654 UVW Street', '3333333333', 6, 5, 4, 5, 3, 2, 5, '1993-12-25'),
-    (6, 'TranVanPhong@example.com', N'Trần Văn Phong', 'avatar6.jpg', '987 HIJ Street', '2222222222', 7, 6, 5, 6, 2, 1, 6, '1991-04-05'),
-    (7, 'NguyenPhanBaoQuy@example.com', N'Nguyễn Phan Bảo Quý', 'avatar7.jpg', '654 KLM Street', '1111111111', 8, 7, 6, 7, 1, 4, 7, '1989-07-15'),
-    (8, 'PhamMinhNhut@example.com', N'Phạm Minh Nhựt', 'avatar8.jpg', '321 XYZ Street', '9999999999', 9, 8, 7, 8, 5, 2, 8, '1996-10-30'),
-    (9, 'HuynhPhuocTri@example.com', N'Huỳnh Phước Trí', 'avatar9.jpg', '789 PQR Street', '8888888888', 5, 9, 8, 9, 4, 3, 9, '1994-02-14');
-
+    (1, 'NguyenNgocHieu@example.com', N'Nguyễn Ngọc Hiếu', 'avatar1.jpg', '123 ABC Street', '1234567890', 3, 1, 1, 3, 4, 1, 1, '1990-01-01', 'Male'),
+    (2, 'NguyenNgocTrung@example.com', N'Nguyễn Ngọc Trung', 'avatar2.jpg', '456 XYZ Street', '9876543210', 3, 2, 1, 3, 4, 2, 2, '1992-03-15', 'Male'),
+    (3, 'NgoDangDangTrung@example.com', N'Ngô Đặng Đăng Trung', 'avatar3.jpg', '789 PQR Street', '5555555555', 2, 3, 2, 2, 4, 1, 3, '1988-06-20', 'Male'),
+    (4, 'HoQuocThang@example.com', N'Hồ Quốc Thắng', 'avatar4.jpg', '321 DEF Street', '4444444444', 4, 4, 3, 4, 5, 3, 4, '1995-09-10', 'Male'),
+    (5, 'DangDinhHuy@example.com', N'Đặng Đình Huy', 'avatar5.jpg', '654 UVW Street', '3333333333', 6, 5, 4, 5, 3, 2, 5, '1993-12-25', 'Male'),
+    (6, 'TranVanPhong@example.com', N'Trần Văn Phong', 'avatar6.jpg', '987 HIJ Street', '2222222222', 7, 6, 5, 6, 2, 1, 6, '1991-04-05', 'Male'),
+    (7, 'NguyenPhanBaoQuy@example.com', N'Nguyễn Phan Bảo Quý', 'avatar7.jpg', '654 KLM Street', '1111111111', 8, 7, 6, 7, 1, 4, 7, '1989-07-15', 'Male'),
+    (8, 'PhamMinhNhut@example.com', N'Phạm Minh Nhựt', 'avatar8.jpg', '321 XYZ Street', '9999999999', 9, 8, 7, 8, 5, 2, 8, '1996-10-30', 'Male'),
+    (9, 'HuynhPhuocTri@example.com', N'Huỳnh Phước Trí', 'avatar9.jpg', '789 PQR Street', '8888888888', 5, 9, 8, 9, 4, 3, 9, '1994-02-14', 'Male');
 
 INSERT INTO EmployeeHistory (HistoryId, EmployId, StartDate, EndDate, Staging)
 VALUES

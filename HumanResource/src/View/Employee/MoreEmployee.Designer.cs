@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MoreEmployee));
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnxoa = new System.Windows.Forms.Button();
             this.btnthem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtBirthDay = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtRole = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cboGioiTinh = new System.Windows.Forms.ComboBox();
             this.TXTemail = new System.Windows.Forms.TextBox();
-            this.TXTLOP = new System.Windows.Forms.TextBox();
             this.TXTHOTEN = new System.Windows.Forms.TextBox();
             this.txtid = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,32 +50,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox3.SuspendLayout();
+            this.sqlConnection1 = new Microsoft.Data.SqlClient.SqlConnection();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.listView1);
-            this.groupBox3.Location = new System.Drawing.Point(-4, 258);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(785, 155);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Hien thi thong tin";
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 20);
-            this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(813, 136);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // label6
             // 
@@ -88,7 +68,7 @@
             // 
             this.groupBox2.Controls.Add(this.btnxoa);
             this.groupBox2.Controls.Add(this.btnthem);
-            this.groupBox2.Location = new System.Drawing.Point(479, 191);
+            this.groupBox2.Location = new System.Drawing.Point(489, 139);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -108,6 +88,7 @@
             this.btnxoa.TabIndex = 1;
             this.btnxoa.UseVisualStyleBackColor = true;
             this.btnxoa.UseWaitCursor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // btnthem
             // 
@@ -119,13 +100,19 @@
             this.btnthem.TabIndex = 0;
             this.btnthem.UseVisualStyleBackColor = true;
             this.btnthem.UseWaitCursor = true;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtBirthDay);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.txtRole);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtAddress);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.cboGioiTinh);
             this.groupBox1.Controls.Add(this.TXTemail);
-            this.groupBox1.Controls.Add(this.TXTLOP);
             this.groupBox1.Controls.Add(this.TXTHOTEN);
             this.groupBox1.Controls.Add(this.txtid);
             this.groupBox1.Controls.Add(this.label5);
@@ -134,77 +121,114 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(-4, 10);
+            this.groupBox1.Location = new System.Drawing.Point(12, 10);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(785, 177);
+            this.groupBox1.Size = new System.Drawing.Size(727, 217);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "thong tin chi tiet";
             // 
+            // txtBirthDay
+            // 
+            this.txtBirthDay.Location = new System.Drawing.Point(462, 103);
+            this.txtBirthDay.Name = "txtBirthDay";
+            this.txtBirthDay.Size = new System.Drawing.Size(234, 22);
+            this.txtBirthDay.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(361, 103);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 16);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "DateOfBirth";
+            // 
+            // txtRole
+            // 
+            this.txtRole.FormattingEnabled = true;
+            this.txtRole.Location = new System.Drawing.Point(462, 66);
+            this.txtRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRole.Name = "txtRole";
+            this.txtRole.Size = new System.Drawing.Size(234, 24);
+            this.txtRole.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 139);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 16);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Address";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(118, 133);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(234, 22);
+            this.txtAddress.TabIndex = 12;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 110);
+            this.label7.Location = new System.Drawing.Point(6, 174);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(30, 16);
+            this.label7.Size = new System.Drawing.Size(52, 16);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Sex";
+            this.label7.Text = "Gender";
             // 
             // cboGioiTinh
             // 
             this.cboGioiTinh.FormattingEnabled = true;
-            this.cboGioiTinh.Location = new System.Drawing.Point(126, 104);
+            this.cboGioiTinh.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cboGioiTinh.Location = new System.Drawing.Point(118, 166);
             this.cboGioiTinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboGioiTinh.Name = "cboGioiTinh";
-            this.cboGioiTinh.Size = new System.Drawing.Size(108, 24);
+            this.cboGioiTinh.Size = new System.Drawing.Size(234, 24);
             this.cboGioiTinh.TabIndex = 8;
             // 
             // TXTemail
             // 
-            this.TXTemail.Location = new System.Drawing.Point(420, 68);
+            this.TXTemail.Location = new System.Drawing.Point(118, 63);
             this.TXTemail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTemail.Name = "TXTemail";
-            this.TXTemail.Size = new System.Drawing.Size(244, 22);
+            this.TXTemail.Size = new System.Drawing.Size(234, 22);
             this.TXTemail.TabIndex = 10;
-            // 
-            // TXTLOP
-            // 
-            this.TXTLOP.Location = new System.Drawing.Point(420, 18);
-            this.TXTLOP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TXTLOP.Name = "TXTLOP";
-            this.TXTLOP.Size = new System.Drawing.Size(244, 22);
-            this.TXTLOP.TabIndex = 9;
             // 
             // TXTHOTEN
             // 
-            this.TXTHOTEN.Location = new System.Drawing.Point(76, 63);
+            this.TXTHOTEN.Location = new System.Drawing.Point(118, 33);
             this.TXTHOTEN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTHOTEN.Name = "TXTHOTEN";
-            this.TXTHOTEN.Size = new System.Drawing.Size(244, 22);
+            this.TXTHOTEN.Size = new System.Drawing.Size(234, 22);
             this.TXTHOTEN.TabIndex = 8;
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(76, 18);
+            this.txtid.Location = new System.Drawing.Point(462, 30);
             this.txtid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(244, 22);
+            this.txtid.Size = new System.Drawing.Size(234, 22);
             this.txtid.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(281, 110);
+            this.label5.Location = new System.Drawing.Point(6, 103);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 16);
+            this.label5.Size = new System.Drawing.Size(46, 16);
             this.label5.TabIndex = 4;
-            this.label5.Text = "TelephoneNumber";
+            this.label5.Text = "Phone";
             // 
             // txtsodienthoai
             // 
-            this.txtsodienthoai.Location = new System.Drawing.Point(420, 106);
+            this.txtsodienthoai.Location = new System.Drawing.Point(118, 97);
             this.txtsodienthoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtsodienthoai.Mask = "(999) 000-0000";
             this.txtsodienthoai.Name = "txtsodienthoai";
@@ -214,7 +238,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(357, 68);
+            this.label3.Location = new System.Drawing.Point(6, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 16);
             this.label3.TabIndex = 3;
@@ -223,7 +247,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(368, 18);
+            this.label4.Location = new System.Drawing.Point(400, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 16);
             this.label4.TabIndex = 4;
@@ -232,7 +256,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 18);
+            this.label1.Location = new System.Drawing.Point(418, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 16);
             this.label1.TabIndex = 0;
@@ -241,25 +265,29 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 56);
+            this.label2.Location = new System.Drawing.Point(6, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 16);
+            this.label2.Size = new System.Drawing.Size(106, 16);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Hoten";
+            this.label2.Text = "EmployeeName";
+            // 
+            // sqlConnection1
+            // 
+            this.sqlConnection1.AccessTokenCallback = null;
+            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
             // 
             // MoreEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 408);
-            this.Controls.Add(this.groupBox3);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(753, 408);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MoreEmployee";
             this.Text = "MoreEmployee";
-            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -269,9 +297,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnxoa;
@@ -280,7 +305,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cboGioiTinh;
         private System.Windows.Forms.TextBox TXTemail;
-        private System.Windows.Forms.TextBox TXTLOP;
         private System.Windows.Forms.TextBox TXTHOTEN;
         private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label label5;
@@ -289,5 +313,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox txtRole;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.DateTimePicker txtBirthDay;
+        private System.Windows.Forms.Label label9;
+        private Microsoft.Data.SqlClient.SqlConnection sqlConnection1;
     }
 }

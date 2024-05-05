@@ -37,4 +37,23 @@ SELECT * FROM Department d, Employee e WHERE e.DepId = d.DepId
 
 xem danh sách employee
 SELECT * FROM Employee
+
+
+solution 5  tìm kiếm nhân viên
+SELECT * FROM Employee WHERE EmployeeName LIKE  '%' + @EmployeeName + '%'
+
+
+solution 6 thêm nhân viên
+DECLARE  @Email NVARCHAR(255) = 'DangVanDung@example.com'
+DECLARE  @EmployeeName NVARCHAR(255) = N'Đặng Văn Dung'
+DECLARE  @AddressEmployee NVARCHAR(255) = '123 ABC Street'
+DECLARE  @Phone NVARCHAR(255) = '1234567890'
+DECLARE  @DateOfBirth DATE = '1990-01-01'
+DECLARE  @RoleId INTEGER = 3
+DECLARE  @Gender NVARCHAR(255) = 'Male'
+
+INSERT INTO Employee (EmployId, Email, EmployeeName, AddressEmployee, Phone, RoleId,  DateOfBirth, Gender)
+VALUES 
+    (12, @Email, @EmployeeName, @AddressEmployee,@Phone ,@RoleId,@DateOfBirth,@Gender);
+
 */

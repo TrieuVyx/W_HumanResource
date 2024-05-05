@@ -28,24 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.RichTextBox();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.txtLabel = new System.Windows.Forms.Label();
             this.txtAmout = new System.Windows.Forms.RichTextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearchBox = new System.Windows.Forms.RichTextBox();
             this.GridViewEmployee = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.txtId);
+            this.panel3.Controls.Add(this.btnCreate);
             this.panel3.Controls.Add(this.btnReset);
             this.panel3.Controls.Add(this.txtLabel);
             this.panel3.Controls.Add(this.txtAmout);
@@ -61,9 +67,37 @@
             this.panel3.Size = new System.Drawing.Size(869, 496);
             this.panel3.TabIndex = 6;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(731, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 25);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "ID";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(715, 69);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(47, 39);
+            this.txtId.TabIndex = 22;
+            this.txtId.Text = "";
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Location = new System.Drawing.Point(621, 69);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(79, 39);
+            this.btnCreate.TabIndex = 21;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(442, 69);
+            this.btnReset.Location = new System.Drawing.Point(281, 69);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(79, 39);
             this.btnReset.TabIndex = 20;
@@ -75,7 +109,7 @@
             // 
             this.txtLabel.AutoSize = true;
             this.txtLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLabel.Location = new System.Drawing.Point(773, 32);
+            this.txtLabel.Location = new System.Drawing.Point(773, 41);
             this.txtLabel.Name = "txtLabel";
             this.txtLabel.Size = new System.Drawing.Size(69, 25);
             this.txtLabel.TabIndex = 19;
@@ -83,15 +117,15 @@
             // 
             // txtAmout
             // 
-            this.txtAmout.Location = new System.Drawing.Point(795, 69);
+            this.txtAmout.Location = new System.Drawing.Point(778, 69);
             this.txtAmout.Name = "txtAmout";
-            this.txtAmout.Size = new System.Drawing.Size(47, 39);
+            this.txtAmout.Size = new System.Drawing.Size(64, 39);
             this.txtAmout.TabIndex = 9;
             this.txtAmout.Text = "";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(697, 69);
+            this.btnDelete.Location = new System.Drawing.Point(536, 69);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(79, 39);
             this.btnDelete.TabIndex = 7;
@@ -100,7 +134,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(612, 69);
+            this.btnUpdate.Location = new System.Drawing.Point(451, 69);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(79, 39);
             this.btnUpdate.TabIndex = 6;
@@ -109,12 +143,23 @@
             // 
             // btnDetail
             // 
-            this.btnDetail.Location = new System.Drawing.Point(527, 69);
+            this.btnDetail.Location = new System.Drawing.Point(366, 69);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(79, 39);
             this.btnDetail.TabIndex = 5;
             this.btnDetail.Text = "Detail";
             this.btnDetail.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::HumanResource.Properties.Resources.search;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Location = new System.Drawing.Point(21, 69);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(45, 39);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchBox
             // 
@@ -127,19 +172,19 @@
             // GridViewEmployee
             // 
             this.GridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridViewEmployee.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridViewEmployee.DefaultCellStyle = dataGridViewCellStyle1;
             this.GridViewEmployee.Location = new System.Drawing.Point(21, 114);
             this.GridViewEmployee.Name = "GridViewEmployee";
             this.GridViewEmployee.RowHeadersWidth = 51;
             this.GridViewEmployee.RowTemplate.Height = 24;
-            this.GridViewEmployee.Size = new System.Drawing.Size(821, 344);
+            this.GridViewEmployee.Size = new System.Drawing.Size(821, 354);
             this.GridViewEmployee.TabIndex = 2;
             // 
             // label1
@@ -152,17 +197,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "List Employee";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = global::HumanResource.Properties.Resources.search;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Location = new System.Drawing.Point(21, 69);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(45, 39);
-            this.btnSearch.TabIndex = 4;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // ListEmployee
             // 
@@ -196,5 +230,8 @@
         private System.Windows.Forms.RichTextBox txtSearchBox;
         private System.Windows.Forms.DataGridView GridViewEmployee;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox txtId;
+        private System.Windows.Forms.Button btnCreate;
     }
 }

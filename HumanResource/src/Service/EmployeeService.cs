@@ -13,6 +13,7 @@ namespace HumanResource.src.Service
     internal class EmployeeService
     {
         private readonly EmployeeRepository employeeRepository;
+
         public EmployeeService() {
             employeeRepository = new EmployeeRepository();  
 

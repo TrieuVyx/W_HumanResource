@@ -51,12 +51,12 @@ namespace HumanResource.src.Repository
                                 employee.Phone = reader.GetString(reader.GetOrdinal("Phone"));
                                 employee.Email = reader.GetString(reader.GetOrdinal("Email"));
                                 employee.Avatar = reader.GetString(reader.GetOrdinal("Avatar"));
+                                employee.Gender = reader.GetString(reader.GetOrdinal("Gender"));
                                 employeeRes.Add(employee);
                             }
                         }
                     }
                     return employeeRes;
-
                 }
             }
             catch (Exception ex)
@@ -91,7 +91,7 @@ namespace HumanResource.src.Repository
                                 employees1.Phone = reader.GetString(reader.GetOrdinal("Phone"));
                                 employees1.Email = reader.GetString(reader.GetOrdinal("Email"));
                                 employees1.Avatar = reader.GetString(reader.GetOrdinal("Avatar"));
-
+                                employees1.Gender = reader.GetString(reader.GetOrdinal("Gender"));
                                 employees.Add(employees1);
                             }
                         }

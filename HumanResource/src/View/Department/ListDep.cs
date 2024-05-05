@@ -66,9 +66,7 @@ namespace HumanResource.src.View.Department
                     {
                         GridViewDepartment.DataSource = employees;
                         txtAmout.Text = employees.Count.ToString();
-
                         AutoMode();
-
                         GridViewDepartment.CellContentClick += GridViewDepartment_CellContentClick;
                     }
                     else
@@ -133,9 +131,7 @@ namespace HumanResource.src.View.Department
             {
                 MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
             }
-
         }
-
         private void btnDeleteEmploy_Click(object sender, EventArgs e)
         {
             try
@@ -146,7 +142,6 @@ namespace HumanResource.src.View.Department
 
                     List<EmployeeResDTO> employeeRes = departmentController.findAndDelete(employeeResDTO);
                     MessageBox.Show("Bạn đã xoá nhân viên ra khỏi phòng ban");
-
                 }
                 else
                 {

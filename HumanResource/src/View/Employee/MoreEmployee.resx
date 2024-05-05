@@ -121,7 +121,7 @@
   <data name="btnxoa.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAADypJREFUeF7tnGtsW+d9xp80abM5QZLm4rlOUyRxsgUNgnRutxRFMwRBGq/13PlD
+        vAAADrwBlbxySQAADypJREFUeF7tnGtsW+d9xp80abM5QZLm4rlOUyRxsgUNgnRutxRFMwRBGq/13PlD
         shl1mtXL0rhY58RAihZrZgEOiqDoh3iOLVuWZdW32LpSpChSN4qkeBFFUrxTIiVLMimJFEldHEtuHfFy
         9pwjKpJq2bVE0ZGEPcAfhD9Y55yfnvf9X95D4f+1EiQIX4BKdSe8mk2wNTwHe8sWOHX/ApvudVhbd02H
         aQfM5m1oa3sBJtNTsNvvZXwx+xPWiJyy+xBUPo5O1cvwqt6AW/0LOBt+B3fjcTibzsGhkcHRooZd1wSb
@@ -220,4 +220,7 @@
         Af/Z
 </value>
   </data>
+  <metadata name="sqlConnection1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

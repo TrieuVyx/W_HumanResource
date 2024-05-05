@@ -18,6 +18,7 @@ namespace HumanResource.src.View.Employee
     {
         private EmployeeController employeeController;
         private Employees employee;
+
         public ListEmployee()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace HumanResource.src.View.Employee
             employee = new Employees();
             ShowEmployee();
         }
+      
         private void ShowEmployee()
         {
             try
@@ -61,18 +63,16 @@ namespace HumanResource.src.View.Employee
             {
                 if (string.IsNullOrEmpty(txtSearchValue))
                 {
-                    MessageBox.Show("Vui lòng nhập PHÒNG BAN bạn muốn tìm.");
+                    MessageBox.Show("Vui lòng nhập NHÂN VIÊN bạn muốn tìm.");
                 }
                 else
                 {
                     employee.EmployeeName = txtSearchValue;
-                    MessageBox.Show(employee.EmployeeName);
                     List<Employees> employees = employeeController.FindNameEmployee(employee);
                     if (employees.Count > 0)
                     {
                         GridViewEmployee.DataSource = employees;
                         txtAmout.Text = employees.Count.ToString();
-
                         AutoMode();
 
                     }
@@ -101,7 +101,20 @@ namespace HumanResource.src.View.Employee
 
         private void btnReset_Click_1(object sender, EventArgs e)
         {
+            ShowEmployee(); 
             txtSearchBox.Clear();
+        }
+        int x = 175;
+        int y = 10;
+        int height = 470;
+        int width = 700;
+        MoreEmployee MoreEmployee   = new MoreEmployee();   
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            MoreEmployee.StartPosition = FormStartPosition.Manual;
+            MoreEmployee.Bounds = new Rectangle(x, y, width, height);
+            MoreEmployee.Show();
+            this.Hide();
         }
     }
 }
