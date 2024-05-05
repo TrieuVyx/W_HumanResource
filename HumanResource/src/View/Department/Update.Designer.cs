@@ -33,6 +33,11 @@
             this.txtDepType = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtIDEmployee = new System.Windows.Forms.RichTextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.GridViewEmployee = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
             this.txtIDDepartment = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,9 +45,8 @@
             this.txtDesc = new System.Windows.Forms.RichTextBox();
             this.txtDepPlace = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.GridViewEmployee = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnReset = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,6 +93,10 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnReset);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.txtIDEmployee);
+            this.panel3.Controls.Add(this.btnDelete);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.GridViewEmployee);
             this.panel3.Controls.Add(this.btnClose);
@@ -107,6 +115,55 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(882, 515);
             this.panel3.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(748, 89);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 25);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "ID";
+            // 
+            // txtIDEmployee
+            // 
+            this.txtIDEmployee.Location = new System.Drawing.Point(785, 89);
+            this.txtIDEmployee.Name = "txtIDEmployee";
+            this.txtIDEmployee.Size = new System.Drawing.Size(54, 40);
+            this.txtIDEmployee.TabIndex = 32;
+            this.txtIDEmployee.Text = "";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDelete.Location = new System.Drawing.Point(742, 430);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(97, 37);
+            this.btnDelete.TabIndex = 31;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(436, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 25);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Employee ";
+            // 
+            // GridViewEmployee
+            // 
+            this.GridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridViewEmployee.Location = new System.Drawing.Point(436, 130);
+            this.GridViewEmployee.Name = "GridViewEmployee";
+            this.GridViewEmployee.RowHeadersWidth = 51;
+            this.GridViewEmployee.RowTemplate.Height = 24;
+            this.GridViewEmployee.Size = new System.Drawing.Size(403, 278);
+            this.GridViewEmployee.TabIndex = 28;
             // 
             // btnClose
             // 
@@ -173,26 +230,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Update Department";
             // 
-            // GridViewEmployee
-            // 
-            this.GridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridViewEmployee.Location = new System.Drawing.Point(436, 130);
-            this.GridViewEmployee.Name = "GridViewEmployee";
-            this.GridViewEmployee.RowHeadersWidth = 51;
-            this.GridViewEmployee.RowTemplate.Height = 24;
-            this.GridViewEmployee.Size = new System.Drawing.Size(403, 278);
-            this.GridViewEmployee.TabIndex = 28;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(431, 104);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 25);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Employee ";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -203,6 +240,16 @@
             this.pictureBox1.Size = new System.Drawing.Size(427, 438);
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnReset.Location = new System.Drawing.Point(619, 430);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(97, 37);
+            this.btnReset.TabIndex = 34;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
             // 
             // Update
             // 
@@ -239,5 +286,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView GridViewEmployee;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RichTextBox txtIDEmployee;
+        private System.Windows.Forms.Button btnReset;
     }
 }

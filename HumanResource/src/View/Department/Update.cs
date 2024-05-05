@@ -16,16 +16,19 @@ namespace HumanResource.src.View.Department
     public partial class Update : Form
     {
         private List<DepartmentResDTO> departmentRes;
-        private EmployeeResDTO employeeRes;
+        private EmployeeResDTO employeeResDTO;
         private DepartmentController departmentController;
         private DepartmentReqDTO departmentReqDTO;
+        private EmployeeReqDTO employeeReqDTO;
+
         public Update()
         {
             InitializeComponent();
             departmentRes = new List<DepartmentResDTO>();
-            employeeRes = new EmployeeResDTO();
+            employeeResDTO = new EmployeeResDTO();
             departmentController = new DepartmentController();
             departmentReqDTO = new DepartmentReqDTO();
+            employeeReqDTO = new EmployeeReqDTO();
         }
         int x = 175; 
         int y = 10;
@@ -114,6 +117,9 @@ namespace HumanResource.src.View.Department
                 if (employees.Count > 0)
                 {
                     GridViewEmployee.DataSource = employees;
+                    GridViewEmployee.CellContentClick += GridViewEmployee_CellContentClick;
+                    txtIDEmployee.ReadOnly = true;
+                    txtIDEmployee.Enabled = false;
                 }
                 else
                 {
@@ -127,5 +133,38 @@ namespace HumanResource.src.View.Department
                 MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
             }
         }
+
+        private void GridViewEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexOfContent = e.RowIndex;
+            DataGridViewRow dataGridViewRow = GridViewEmployee.Rows[indexOfContent];
+            txtIDEmployee.Text = dataGridViewRow.Cells[0].Value.ToString();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (!string.IsNullOrEmpty(txtIDEmployee.Text))
+                {
+                    employeeResDTO.EmployId = int.Parse(txtIDEmployee.Text);
+
+                    List<EmployeeResDTO> employeeRes = departmentController.findAndDelete(employeeResDTO);
+                    MessageBox.Show("Bạn đã xoá nhân viên ra khỏi phòng ban");
+                }
+                else
+                {
+                    MessageBox.Show("ID không được để trống: ");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
+            }
+
+        }
+
+      
     }
 }

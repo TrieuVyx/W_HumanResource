@@ -30,8 +30,6 @@
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtComboDep = new System.Windows.Forms.ComboBox();
-            this.btnDeleteEmploy = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtID = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,19 +40,19 @@
             this.btnUpdateDepartment = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtAmout = new System.Windows.Forms.RichTextBox();
-            this.btnSearchDepart = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.RichTextBox();
             this.GridViewDepartment = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSearchDepart = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewDepartment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.txtComboDep);
-            this.panel3.Controls.Add(this.btnDeleteEmploy);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.txtID);
             this.panel3.Controls.Add(this.label4);
@@ -80,34 +78,14 @@
             this.txtComboDep.FormattingEnabled = true;
             this.txtComboDep.Location = new System.Drawing.Point(214, 460);
             this.txtComboDep.Name = "txtComboDep";
-            this.txtComboDep.Size = new System.Drawing.Size(178, 24);
+            this.txtComboDep.Size = new System.Drawing.Size(310, 24);
             this.txtComboDep.TabIndex = 32;
-            // 
-            // btnDeleteEmploy
-            // 
-            this.btnDeleteEmploy.Location = new System.Drawing.Point(414, 452);
-            this.btnDeleteEmploy.Name = "btnDeleteEmploy";
-            this.btnDeleteEmploy.Size = new System.Drawing.Size(105, 39);
-            this.btnDeleteEmploy.TabIndex = 31;
-            this.btnDeleteEmploy.Text = "Delete";
-            this.btnDeleteEmploy.UseVisualStyleBackColor = true;
-            this.btnDeleteEmploy.Click += new System.EventHandler(this.btnDeleteEmploy_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::HumanResource.Properties.Resources.Image1;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(530, 404);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(321, 160);
-            this.pictureBox1.TabIndex = 30;
-            this.pictureBox1.TabStop = false;
             // 
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(214, 497);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(67, 39);
+            this.txtID.Size = new System.Drawing.Size(199, 39);
             this.txtID.TabIndex = 28;
             this.txtID.Text = "";
             // 
@@ -135,13 +113,13 @@
             // 
             this.txtDepartmentName.Location = new System.Drawing.Point(214, 407);
             this.txtDepartmentName.Name = "txtDepartmentName";
-            this.txtDepartmentName.Size = new System.Drawing.Size(178, 39);
+            this.txtDepartmentName.Size = new System.Drawing.Size(310, 39);
             this.txtDepartmentName.TabIndex = 24;
             this.txtDepartmentName.Text = "";
             // 
             // btnMoveHouse
             // 
-            this.btnMoveHouse.Location = new System.Drawing.Point(287, 497);
+            this.btnMoveHouse.Location = new System.Drawing.Point(419, 497);
             this.btnMoveHouse.Name = "btnMoveHouse";
             this.btnMoveHouse.Size = new System.Drawing.Size(105, 39);
             this.btnMoveHouse.TabIndex = 23;
@@ -171,9 +149,9 @@
             // 
             // btnUpdateDepartment
             // 
-            this.btnUpdateDepartment.Location = new System.Drawing.Point(414, 407);
+            this.btnUpdateDepartment.Location = new System.Drawing.Point(608, 82);
             this.btnUpdateDepartment.Name = "btnUpdateDepartment";
-            this.btnUpdateDepartment.Size = new System.Drawing.Size(105, 39);
+            this.btnUpdateDepartment.Size = new System.Drawing.Size(101, 32);
             this.btnUpdateDepartment.TabIndex = 18;
             this.btnUpdateDepartment.Text = "Update";
             this.btnUpdateDepartment.UseVisualStyleBackColor = true;
@@ -196,17 +174,6 @@
             this.txtAmout.Size = new System.Drawing.Size(50, 32);
             this.txtAmout.TabIndex = 16;
             this.txtAmout.Text = "";
-            // 
-            // btnSearchDepart
-            // 
-            this.btnSearchDepart.BackgroundImage = global::HumanResource.Properties.Resources.search;
-            this.btnSearchDepart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearchDepart.Location = new System.Drawing.Point(30, 82);
-            this.btnSearchDepart.Name = "btnSearchDepart";
-            this.btnSearchDepart.Size = new System.Drawing.Size(45, 32);
-            this.btnSearchDepart.TabIndex = 4;
-            this.btnSearchDepart.UseVisualStyleBackColor = true;
-            this.btnSearchDepart.Click += new System.EventHandler(this.btnSearchDepart_Click);
             // 
             // txtSearch
             // 
@@ -238,6 +205,27 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "List Department";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::HumanResource.Properties.Resources.Image1;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(530, 404);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(321, 160);
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnSearchDepart
+            // 
+            this.btnSearchDepart.BackgroundImage = global::HumanResource.Properties.Resources.search;
+            this.btnSearchDepart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearchDepart.Location = new System.Drawing.Point(30, 82);
+            this.btnSearchDepart.Name = "btnSearchDepart";
+            this.btnSearchDepart.Size = new System.Drawing.Size(45, 32);
+            this.btnSearchDepart.TabIndex = 4;
+            this.btnSearchDepart.UseVisualStyleBackColor = true;
+            this.btnSearchDepart.Click += new System.EventHandler(this.btnSearchDepart_Click);
+            // 
             // ListDep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -250,8 +238,8 @@
             this.Text = "List Department";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewDepartment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -274,7 +262,6 @@
         private System.Windows.Forms.Button btnMoveHouse;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnDeleteEmploy;
         private System.Windows.Forms.ComboBox txtComboDep;
     }
 }
