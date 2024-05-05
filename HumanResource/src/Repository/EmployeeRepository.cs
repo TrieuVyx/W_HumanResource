@@ -2,13 +2,9 @@
 using HumanResource.src.DTO.Response;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using HumanResource.src.DbContext;
 using System.Data.SqlClient;
 using HumanResource.src.Entity;
-using System.Windows.Forms;
 
 namespace HumanResource.src.Repository
 {
@@ -27,7 +23,6 @@ namespace HumanResource.src.Repository
             departmentReqDTO = new DepartmentReqDTO ();
             employees = new Employees ();   
         }
-
         internal bool createUser(EmployeeReqDTO employeeReqDTO)
         {
             try
@@ -166,37 +161,33 @@ namespace HumanResource.src.Repository
             }
         }
 
-        internal List<EmployeeReqDTO> findAndUpdate(EmployeeReqDTO employeeReqDTO)
+        internal bool findAndUpdate(EmployeeReqDTO employeeReqDTO)
         {
-            List<EmployeeReqDTO> employees = new List<EmployeeReqDTO>();
             try
             {
                 using (SqlConnection connection = dbContext.connectOpen())
                 {
-                    string query = "SELECT * FROM Employee WHERE EmployId = @EmployId ";
+                    string query = "UPDATE Employee SET EmployeeName = @EmployeeName, AddressEmployee = @AddressEmployee, Phone = @Phone, Email = @Email, DateOfBirth = @DateOfBirth , Gender = @Gender WHERE EmployId = @EmployId";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
                     {
                         sqlCommand.Parameters.AddWithValue("@EmployId", employeeReqDTO.EmployId);
+                        sqlCommand.Parameters.AddWithValue("@EmployeeName", employeeReqDTO.EmployeeName);
+                        sqlCommand.Parameters.AddWithValue("@AddressEmployee", employeeReqDTO.AddressEmployee);
+                        sqlCommand.Parameters.AddWithValue("@Phone", employeeReqDTO.Phone);
+                        sqlCommand.Parameters.AddWithValue("@Email", employeeReqDTO.Email);
+                        sqlCommand.Parameters.AddWithValue("@DateOfBirth", employeeReqDTO.DateOfBirth);
+                        sqlCommand.Parameters.AddWithValue("@Gender", employeeReqDTO.Gender);
                         connection.Open();
-
-                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                EmployeeReqDTO employees1 = new EmployeeReqDTO();
-                                employees1.EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"));
-                                employees.Add(employees1);
-                            }
-                        }
+                        sqlCommand.ExecuteNonQuery();
+                        sqlCommand.Parameters.Clear();
                         connection.Close();
                     }
-                    return (employees);
-
+                    return true;
                 }
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 

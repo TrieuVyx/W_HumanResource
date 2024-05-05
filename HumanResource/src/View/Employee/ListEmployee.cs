@@ -27,16 +27,13 @@ namespace HumanResource.src.View.Employee
             employeeReqDTO = new EmployeeReqDTO();  
             GridViewEmployee.CellContentClick += ChooseItem;
             ShowEmployee();
-
         }
-
         private void ChooseItem(object sender, DataGridViewCellEventArgs e)
         {
             int indexOfContent = e.RowIndex;
             DataGridViewRow dataGridViewRow = GridViewEmployee.Rows[indexOfContent];
             txtId.Text = dataGridViewRow.Cells[0].Value.ToString();
         }
-
         private void ShowEmployee()
         {
             try
@@ -53,8 +50,6 @@ namespace HumanResource.src.View.Employee
                 MessageBox.Show("Lỗi Phát Sinh Từ ListEmployee " + ex.Message);
             }
         }
-
-
         private void AutoMode()
         {
             txtAmout.ReadOnly = true;
@@ -100,9 +95,6 @@ namespace HumanResource.src.View.Employee
                 MessageBox.Show("Lỗi Phát Sinh Từ ListEmployee " + ex.Message);
             }
         }
-
-        
-
         private void btnReset_Click_1(object sender, EventArgs e)
         {
             ShowEmployee(); 
@@ -130,12 +122,11 @@ namespace HumanResource.src.View.Employee
                 {
                     employeeReqDTO.EmployId = int.Parse(txtId.Text);
 
-                    List<EmployeeReqDTO> employeeReqs = employeeController.findAndUpdate(employeeReqDTO);
+                    List<EmployeeReqDTO> employeeReqs = employeeController.findAndDetail(employeeReqDTO);
                     if (employeeReqs.Count > 0)
                     {
                         Update update = new Update();
                         update.ControlAdded(employeeReqs);
-
                         this.Hide();
                     }
                     else
@@ -200,7 +191,7 @@ namespace HumanResource.src.View.Employee
                         bool employeeReqs = employeeController.findAndDelete(employeeReqDTO);
                         if (employeeReqs)
                         {
-                            MessageBox.Show("Xoá thành công");
+                            MessageBox.Show("Xoá thành công, vui lòng reset để kiểm tra ^");
                         }
                         else
                         {

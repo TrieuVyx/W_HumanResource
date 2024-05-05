@@ -65,7 +65,7 @@ namespace HumanResource.src.Controller
             }
         }
 
-        internal List<EmployeeReqDTO> findAndUpdate(EmployeeReqDTO employeeReqDTO)
+        internal bool findAndUpdate(EmployeeReqDTO employeeReqDTO)
         {
             try
             {

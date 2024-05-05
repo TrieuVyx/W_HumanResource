@@ -74,6 +74,14 @@ solution 8  xoá người dùng
 DECLARE @EmployId INTEGER = 21122
 DELETE FROM Employee WHERE EmployId = @EmployId;
 
+SOLUTION 9 CẬP NHẬT NHÂN VIÊN
 
-
+"UPDATE Employee 
+SET EmployeeName = @EmployeeName,
+AddressEmployee = @AddressEmployee, 
+Phone = @Phone, 
+Email = @Email, 
+DateOfBirth = @DateOfBirth ,
+Gender = @Gender
+WHERE EmployeeId = @EmployeeId"
 */
