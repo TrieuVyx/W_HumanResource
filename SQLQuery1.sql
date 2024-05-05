@@ -76,12 +76,23 @@ DELETE FROM Employee WHERE EmployId = @EmployId;
 
 SOLUTION 9 CẬP NHẬT NHÂN VIÊN
 
-"UPDATE Employee 
-SET EmployeeName = @EmployeeName,
+DECLARE @EmployeeName NVARCHAR(255) = 'Tên nhân viên';
+DECLARE @AddressEmployee NVARCHAR(255)  = 'Địa chỉ nhân viên';
+DECLARE @Phone NVARCHAR(255) = 'Số điện thoại';
+DECLARE @Email NVARCHAR(255)= 'Email';
+DECLARE @DateOfBirth DATETIME  = '1990-01-01';
+DECLARE @Gender NVARCHAR(255) = 'Male';
+DECLARE @EmployId INTEGER = 1;
+
+
+
+UPDATE Employee 
+SET 
+EmployeeName = @EmployeeName,
 AddressEmployee = @AddressEmployee, 
 Phone = @Phone, 
 Email = @Email, 
 DateOfBirth = @DateOfBirth ,
 Gender = @Gender
-WHERE EmployeeId = @EmployeeId"
+WHERE EmployId = @EmployId
 */
