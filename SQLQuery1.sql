@@ -58,7 +58,7 @@ VALUES
     (12, @Email, @EmployeeName, @AddressEmployee,@Phone ,@RoleId,@DateOfBirth,@Gender);
 
 
-solution 7 employeee, department, education, degreee
+solution 7 employeee, department, education, degreee, roles
 
 DECLARE @EmployId INTEGER = 2
 
@@ -68,4 +68,7 @@ AND  e.DepId =  d.DepId
 AND e.EducationId = ed.EducationId
 AND e.DegreeId = de.DegreeId
 AND e.RoleId = r.RoleId
+
+
+
 */

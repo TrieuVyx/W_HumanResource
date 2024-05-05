@@ -43,26 +43,26 @@ namespace HumanResource.src.Repository
                         sqlCommand.Parameters.AddWithValue("@Phone", employeeReqDTO.Phone);
                         sqlCommand.Parameters.AddWithValue("@Email", employeeReqDTO.Email);
                         sqlCommand.Parameters.AddWithValue("@Gender", employeeReqDTO.Gender);
-                        sqlCommand.Parameters.AddWithValue("@EmployeeName", employeeReqDTO.EmployeeName);
-                        sqlCommand.Parameters.AddWithValue("@EmployeeName", employeeReqDTO.EmployeeName);
+                        sqlCommand.Parameters.AddWithValue("@DateOfBirth", employeeReqDTO.DateOfBirth);
+                        sqlCommand.Parameters.AddWithValue("@RoleId", employeeReqDTO.RoleId);
                         connection.Open();
 
-                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                EmployeeReqDTO employees1 = new EmployeeReqDTO();
-                                employees1.EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"));
-                                employees1.EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName"));
-                                employees1.AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee"));
-                                employees1.Phone = reader.GetString(reader.GetOrdinal("Phone"));
-                                employees1.Email = reader.GetString(reader.GetOrdinal("Email"));
-                                employees1.Gender = reader.GetString(reader.GetOrdinal("Gender"));
-                                employees1.DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
-                                employees1.RoleId = reader.GetInt32(reader.GetOrdinal("RoleId"));
-                                employees.Add(employees1);
-                            }
-                        }
+                        //using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        //{
+                        //    while (reader.Read())
+                        //    {
+                        //        EmployeeReqDTO employees1 = new EmployeeReqDTO();
+                        //        employees1.EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"));
+                        //        employees1.EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName"));
+                        //        employees1.AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee"));
+                        //        employees1.Phone = reader.GetString(reader.GetOrdinal("Phone"));
+                        //        employees1.Email = reader.GetString(reader.GetOrdinal("Email"));
+                        //        employees1.Gender = reader.GetString(reader.GetOrdinal("Gender"));
+                        //        employees1.DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
+                        //        employees1.RoleId = reader.GetInt32(reader.GetOrdinal("RoleId"));
+                        //        employees.Add(employees1);
+                        //    }
+                        //}
                         connection.Close();
                     }
                     return (employees);

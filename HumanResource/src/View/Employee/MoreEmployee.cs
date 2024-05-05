@@ -41,29 +41,19 @@ namespace HumanResource.src.View.Employee
             string Email = TXTemail.Text;
             string Address = txtAddress.Text;
             string Id = txtid.Text;
-            string valueCBRole = txtCboRole.SelectedItem.ToString();
             string valueCboGender = cboGioiTinh.SelectedItem.ToString();
             DateTime selectedDate = txtBirthDay.Value;
-            List<Roles> roles = GetRole();
-            int roleId = 0;
+            string valueCBRole = txtCboRole.SelectedItem.ToString();
+            MessageBox.Show(valueCBRole.ToString());
 
-            foreach (Roles role in roles)
-            {
-                if (role.RoleName == valueCBRole)
-                {
-                    roleId = role.RoleId;
-                    break;
-                }
-            }
             employeeReqDTO = new EmployeeReqDTO();
             try
             {
                 if (
-                   
-                    string.IsNullOrEmpty(Phone) &&
-                    string.IsNullOrEmpty(Email) &&
-                    string.IsNullOrEmpty(Address) &&
-                    string.IsNullOrEmpty(FullName) &&
+                    //string.IsNullOrEmpty(Phone) &&
+                    //string.IsNullOrEmpty(Email) &&
+                    //string.IsNullOrEmpty(Address) &&
+                    //string.IsNullOrEmpty(FullName) &&
                     string.IsNullOrEmpty(Id)
                     )
                 {
@@ -71,15 +61,21 @@ namespace HumanResource.src.View.Employee
                 }
                 else
                 {
-                    employeeReqDTO.EmployId = int.Parse(Id);
-                    employeeReqDTO.AddressEmployee = Address;
-                    employeeReqDTO.Phone = Phone;
-                    employeeReqDTO.Email = Email;
-                    employeeReqDTO.EmployeeName = FullName;
-                    employeeReqDTO.Gender = valueCboGender;
-                    employeeReqDTO.DateOfBirth = selectedDate;
-                    employeeReqDTO.RoleId = roleId;
-                    MessageBox.Show(employeeReqDTO.RoleId.ToString());
+                    //employeeReqDTO.EmployId = int.Parse(Id);
+                    //employeeReqDTO.AddressEmployee = Address;
+                    //employeeReqDTO.Phone = Phone;
+                    //employeeReqDTO.Email = Email;
+                    //employeeReqDTO.EmployeeName = FullName;
+                    //employeeReqDTO.Gender = valueCboGender;
+                    //employeeReqDTO.DateOfBirth = selectedDate;
+                    //employeeReqDTO.RoleId = valueCBRole;
+                    //MessageBox.Show(employeeReqDTO.EmployId.ToString());
+                    //MessageBox.Show(employeeReqDTO.AddressEmployee.ToString());
+                    //MessageBox.Show(employeeReqDTO.Phone.ToString());
+                    //MessageBox.Show(employeeReqDTO.Email.ToString());
+                    //MessageBox.Show(employeeReqDTO.EmployeeName.ToString());
+                    //MessageBox.Show(employeeReqDTO.Gender.ToString());
+                    //MessageBox.Show(employeeReqDTO.DateOfBirth.ToString());
                     List<EmployeeReqDTO> employees = employeeController.createUser(employeeReqDTO);
                     if (employees.Count > 0)
                     {
@@ -97,42 +93,7 @@ namespace HumanResource.src.View.Employee
             }
         }
 
-        private List<Roles> GetRole()
-        {
-            List<Roles> roles = new List<Roles>();
 
-            foreach (var item in txtCboRole.Items)
-            {
-                MessageBox.Show(item.ToString());
-                string roleName = item.ToString();
-                int roleId = GetRoleIdByRoleName(roleName);
-                Roles role = new Roles
-                {
-                    RoleId = roleId,
-                    RoleName = roleName
-                };
-                roles.Add(role);
-            }
-
-            return roles;
-        }
-
-        private int GetRoleIdByRoleName(string roleName)
-        {
-            List<RoleReqDTO> roles = roleController.findAllRole();
-
-
-            foreach (RoleReqDTO roleReq in roles)
-            {
-
-                if (roleReq.RoleName == roleName)
-                {
-                    return roleReq.RoleId;
-                }
-            }
-
-            return 0;
-        }
 
         private void btnxoa_Click(object sender, EventArgs e)
         {
@@ -143,11 +104,13 @@ namespace HumanResource.src.View.Employee
             cboGioiTinh.SelectedIndex = 0;
             try
             {
-                List<RoleReqDTO> roles = roleController.findAllRole();
-                if (roles.Count > 0)
+                List<RoleReqDTO> roleReqDTO = roleController.findAllRole();
+                if (roleReqDTO.Count > 0)
                 {
-                    txtCboRole.DataSource = roles;
-                    txtCboRole.DisplayMember = "RoleName";
+
+                    txtCboRole.DataSource = roleReqDTO;
+                    txtCboRole.DisplayMember = "RoleId";
+                    txtCboRole.SelectedIndex  = 10;
                 }
                 else
                 {
