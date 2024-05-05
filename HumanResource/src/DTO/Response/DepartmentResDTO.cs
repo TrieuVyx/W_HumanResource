@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 namespace HumanResource.src.DTO.Response
 {
     internal class DepartmentResDTO
+
     {
         private int depId;
         private string depDesc;
         private string depType;
         private string depPlace;
+        public DepartmentResDTO() {  }
 
         public int DepId
         {

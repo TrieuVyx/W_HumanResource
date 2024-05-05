@@ -36,7 +36,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBirthDay = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtRole = new System.Windows.Forms.ComboBox();
+            this.txtCboRole = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -107,7 +107,7 @@
             this.groupBox1.Controls.Add(this.txtBirthDay);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txtRole);
+            this.groupBox1.Controls.Add(this.txtCboRole);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtAddress);
             this.groupBox1.Controls.Add(this.label7);
@@ -146,14 +146,14 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "DateOfBirth";
             // 
-            // txtRole
+            // txtCboRole
             // 
-            this.txtRole.FormattingEnabled = true;
-            this.txtRole.Location = new System.Drawing.Point(462, 66);
-            this.txtRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(234, 24);
-            this.txtRole.TabIndex = 14;
+            this.txtCboRole.FormattingEnabled = true;
+            this.txtCboRole.Location = new System.Drawing.Point(462, 66);
+            this.txtCboRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCboRole.Name = "txtCboRole";
+            this.txtCboRole.Size = new System.Drawing.Size(234, 24);
+            this.txtCboRole.TabIndex = 14;
             // 
             // label8
             // 
@@ -313,7 +313,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox txtRole;
+        private System.Windows.Forms.ComboBox txtCboRole;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.DateTimePicker txtBirthDay;

@@ -1,6 +1,5 @@
 ﻿using HumanResource.src.Controller;
 using HumanResource.src.DTO.Request;
-using HumanResource.src.DTO.Response;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,11 +16,16 @@ namespace HumanResource.src.View.Employee
     {
         private EmployeeController employeeController;
         private EmployeeReqDTO employeeReqDTO;
+        private RoleReqDTO roleReqDTO;
+        private RoleController roleController;
         public MoreEmployee()
         {
             InitializeComponent();
             employeeController = new EmployeeController();
-            employeeReqDTO = new EmployeeReqDTO();  
+            employeeReqDTO = new EmployeeReqDTO();
+            roleReqDTO = new RoleReqDTO();
+            roleController = new RoleController();
+            DataLimit();
         }
 
         private void btnthem_Click(object sender, EventArgs e)
@@ -31,8 +35,6 @@ namespace HumanResource.src.View.Employee
             string Email = TXTemail.Text;
             string Address = txtAddress.Text;
             string Id = txtid.Text;
-
-
 
 
 
@@ -73,10 +75,27 @@ namespace HumanResource.src.View.Employee
         {
             this.Hide();
         }
-        private void Lock()
+        private void DataLimit()
         {
-            txtid.ReadOnly = true;
-            txtid.Enabled = false;
+            cboGioiTinh.SelectedIndex = 0;
+            try
+            {
+                List<RoleReqDTO> roles = roleController.findAllRole();
+                if(roles.Count > 0 )
+                {
+                    txtCboRole.DataSource = roles;
+                }
+                else
+                {
+                    txtCboRole.DataSource = null;
+                    MessageBox.Show("Lỗi không tồn tại danh sách Roles");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Phát Sinh Từ MoreEmployee " + ex.Message);
+
+            }
         }
     }
 }

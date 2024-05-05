@@ -1,5 +1,4 @@
 ﻿using HumanResource.src.DTO.Request;
-using HumanResource.src.DTO.Response;
 using HumanResource.src.Entity;
 using HumanResource.src.Repository;
 using HumanResource.src.Service;
@@ -9,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HumanResource.src.DTO.Response;
 
 namespace HumanResource.src.Controller
 {

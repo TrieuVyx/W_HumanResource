@@ -13,14 +13,7 @@ namespace HumanResource.src.DTO.Request
         private string depType;
         private string depPlace;
         public DepartmentReqDTO() { }
-        public DepartmentReqDTO(int depId, string depDesc, string depType, string depPlace)
-        {
-            this.DepId = depId;
-            this.DepDesc = depDesc;
-            this.DepType = depType;
-            this.DepPlace = depPlace;
-        }
-    
+   
         public int DepId
         {
             get { return depId; }

@@ -49,6 +49,8 @@ namespace HumanResource.src.View.Employee
         {
             txtAmout.ReadOnly = true;
             txtAmout.Enabled = false;
+            txtId.ReadOnly = true;
+            txtId.Enabled = false;   
         }
         private void GridViewLock()
         {
