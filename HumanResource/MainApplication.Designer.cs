@@ -30,6 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
@@ -44,7 +45,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.Location = new System.Drawing.Point(0, 409);
+            this.button1.Location = new System.Drawing.Point(2, 455);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 40);
             this.button1.TabIndex = 0;
@@ -54,6 +55,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button6);
@@ -67,6 +69,17 @@
             this.panel1.Size = new System.Drawing.Size(205, 599);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button8.Location = new System.Drawing.Point(3, 317);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(200, 40);
+            this.button8.TabIndex = 8;
+            this.button8.Text = "Transfer Management ";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.ButtonEmployeeDepartment);
             // 
             // button7
             // 
@@ -116,7 +129,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button4.Location = new System.Drawing.Point(0, 317);
+            this.button4.Location = new System.Drawing.Point(0, 363);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(200, 40);
             this.button4.TabIndex = 3;
@@ -127,7 +140,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Location = new System.Drawing.Point(0, 363);
+            this.button3.Location = new System.Drawing.Point(0, 409);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(200, 40);
             this.button3.TabIndex = 2;
@@ -137,7 +150,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button2.Location = new System.Drawing.Point(0, 455);
+            this.button2.Location = new System.Drawing.Point(0, 501);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(200, 40);
             this.button2.TabIndex = 1;
@@ -171,6 +184,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }
 

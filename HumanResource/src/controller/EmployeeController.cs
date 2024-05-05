@@ -41,6 +41,18 @@ namespace HumanResource.src.Controller
             }
         }
 
+        internal List<EmployeeAndDepartmentReqDTO> FindAllUserNotDep()
+        {
+            try
+            {
+                return employeeService.FindAllUserNotDep();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
+            }
+        }
+
         internal bool findAndDelete(EmployeeReqDTO employeeReqDTO)
         {
             try

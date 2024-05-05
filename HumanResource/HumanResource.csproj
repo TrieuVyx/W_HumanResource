@@ -339,6 +339,7 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -370,6 +371,7 @@
     <Compile Include="src\DbContext\Dbcontext.cs" />
     <Compile Include="src\DbContext\GetQuery.cs" />
     <Compile Include="src\DTO\Request\DepartmentReqDTO.cs" />
+    <Compile Include="src\DTO\Request\EmployeeAndDepartmentReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeReqDTO.cs" />
     <Compile Include="src\DTO\Request\LoginReqDTO.cs" />
     <Compile Include="src\DTO\Request\RoleReqDTO.cs" />
@@ -398,6 +400,12 @@
     </Compile>
     <Compile Include="src\View\Auth\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\Department\AddEmployeeCome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\Department\AddEmployeeCome.Designer.cs">
+      <DependentUpon>AddEmployeeCome.cs</DependentUpon>
     </Compile>
     <Compile Include="src\View\Department\Update.cs">
       <SubType>Form</SubType>
@@ -447,6 +455,12 @@
     <Compile Include="src\View\Role\Create.Designer.cs">
       <DependentUpon>Create.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\View\Salary\ListSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\Salary\ListSalary.Designer.cs">
+      <DependentUpon>ListSalary.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainApplication.resx">
       <DependentUpon>MainApplication.cs</DependentUpon>
     </EmbeddedResource>
@@ -465,6 +479,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\Department\AddEmployeeCome.resx">
+      <DependentUpon>AddEmployeeCome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Department\Update.resx">
       <DependentUpon>Update.cs</DependentUpon>
@@ -487,6 +504,9 @@
     <EmbeddedResource Include="src\View\Role\Create.resx">
       <DependentUpon>Create.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\View\Salary\ListSalary.resx">
+      <DependentUpon>ListSalary.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -501,9 +521,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\View\Salary\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\5faf49f042395c7404637803e8d621361.jpg" />
   </ItemGroup>

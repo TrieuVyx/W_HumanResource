@@ -565,3 +565,5 @@ C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\Hu
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.exe
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.pdb
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Department.ListDep.resources
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Department.AddEmployeeCome.resources
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Salary.ListSalary.resources

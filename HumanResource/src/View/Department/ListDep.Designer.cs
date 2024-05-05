@@ -139,7 +139,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(497, 82);
+            this.btnReset.Location = new System.Drawing.Point(312, 82);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(105, 32);
             this.btnReset.TabIndex = 19;
@@ -149,7 +149,7 @@
             // 
             // btnUpdateDepartment
             // 
-            this.btnUpdateDepartment.Location = new System.Drawing.Point(608, 82);
+            this.btnUpdateDepartment.Location = new System.Drawing.Point(423, 83);
             this.btnUpdateDepartment.Name = "btnUpdateDepartment";
             this.btnUpdateDepartment.Size = new System.Drawing.Size(101, 32);
             this.btnUpdateDepartment.TabIndex = 18;
@@ -180,7 +180,7 @@
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(81, 82);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(410, 33);
+            this.txtSearch.Size = new System.Drawing.Size(225, 33);
             this.txtSearch.TabIndex = 3;
             this.txtSearch.Text = "";
             // 
@@ -191,7 +191,7 @@
             this.GridViewDepartment.Name = "GridViewDepartment";
             this.GridViewDepartment.RowHeadersWidth = 51;
             this.GridViewDepartment.RowTemplate.Height = 24;
-            this.GridViewDepartment.Size = new System.Drawing.Size(821, 281);
+            this.GridViewDepartment.Size = new System.Drawing.Size(494, 281);
             this.GridViewDepartment.TabIndex = 2;
             this.GridViewDepartment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewDepartment_CellContentClick);
             // 
@@ -209,9 +209,9 @@
             // 
             this.pictureBox1.BackgroundImage = global::HumanResource.Properties.Resources.Image1;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(530, 404);
+            this.pictureBox1.Location = new System.Drawing.Point(530, 120);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(321, 160);
+            this.pictureBox1.Size = new System.Drawing.Size(321, 444);
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 

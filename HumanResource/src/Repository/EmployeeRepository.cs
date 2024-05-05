@@ -93,6 +93,46 @@ namespace HumanResource.src.Repository
             }
         }
 
+        internal List<EmployeeAndDepartmentReqDTO> FindAllUserNotDep()
+        {
+            List<EmployeeAndDepartmentReqDTO> employeeRes = new List<EmployeeAndDepartmentReqDTO>();
+            try
+            {
+
+                using (SqlConnection connection = dbContext.connectOpen())
+                {
+                    string query = "SELECT * FROM Employee WHERE DepId IS NULL";
+                    using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                    {
+                        connection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                EmployeeAndDepartmentReqDTO employee = new EmployeeAndDepartmentReqDTO();
+
+                                //employee.DepId = reader.GetInt32(reader.GetOrdinal("DepId"));
+                                employee.EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"));
+                                employee.EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName"));
+                                employee.AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee"));
+                                employee.Phone = reader.GetString(reader.GetOrdinal("Phone"));
+                                employee.Email = reader.GetString(reader.GetOrdinal("Email"));
+                                employee.Gender = reader.GetString(reader.GetOrdinal("Gender"));
+
+                                employeeRes.Add(employee);
+                            }
+                        }
+                    }
+                    return employeeRes;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         internal bool findAndDelete(EmployeeReqDTO employeeReqDTO)
         {
             try

@@ -137,4 +137,9 @@ UPDATE Employee SET DepId = @DepId WHERE EmployId = @EmployId
 
 solution 9 cập nhật phòng ban
 UPDATE Department SET DepPlace = @DepPlace, DepType = @DepType, DepDesc = @DepDesc WHERE DepId = @DepId 
+
+SOLUTION 10 TÌM NHÂN VIÊN CHƯA CÓ PHÒNG
+SELECT *
+FROM Employee
+WHERE DepId IS NULL;
 */

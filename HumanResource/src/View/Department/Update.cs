@@ -30,7 +30,7 @@ namespace HumanResource.src.View.Department
             departmentReqDTO = new DepartmentReqDTO();
             employeeReqDTO = new EmployeeReqDTO();
         }
-        int x = 175; 
+        int x = 175;
         int y = 10;
         int height = 470;
         int width = 700;
@@ -39,7 +39,7 @@ namespace HumanResource.src.View.Department
             MainApplication mainApplication = new MainApplication();
             this.Bounds = new Rectangle(x, y, width, height);
             this.StartPosition = FormStartPosition.Manual;
-            this.MdiParent = mainApplication.MdiParent; 
+            this.MdiParent = mainApplication.MdiParent;
             this.Show();
             foreach (var department in departmentRes)
             {
@@ -47,7 +47,7 @@ namespace HumanResource.src.View.Department
                 txtIDDepartment.ReadOnly = true;
                 txtIDDepartment.Enabled = false;
                 txtDesc.Text = department.DepDesc;
-                txtDepPlace.Text = department.DepPlace;  
+                txtDepPlace.Text = department.DepPlace;
                 txtDepType.Text = department.DepType;
                 employeeDep(txtDesc.Text);
             }
@@ -61,7 +61,7 @@ namespace HumanResource.src.View.Department
                 string DepType = txtDepType.Text;
                 string Desc = txtDesc.Text;
                 string Id = txtIDDepartment.Text;
-               
+
                 departmentReqDTO = new DepartmentReqDTO();
                 if (!string.IsNullOrEmpty(txtIDDepartment.Text))
                 {
@@ -143,15 +143,22 @@ namespace HumanResource.src.View.Department
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (!string.IsNullOrEmpty(txtIDEmployee.Text))
                 {
                     employeeResDTO.EmployId = int.Parse(txtIDEmployee.Text);
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn cập nhật không?!", "Xác nhận câp nhật", MessageBoxButtons.YesNo);
 
-                    List<EmployeeResDTO> employeeRes = departmentController.findAndDelete(employeeResDTO);
-                    MessageBox.Show("Bạn đã xoá nhân viên ra khỏi phòng ban");
+                    if (result == DialogResult.Yes)
+                    {
+                        List<EmployeeResDTO> employeeRes = departmentController.findAndDelete(employeeResDTO);
+                        MessageBox.Show("Bạn đã xoá nhân viên ra khỏi phòng ban, vui lòng reset lại");
+                    }
+                    else if (result == DialogResult.No)
+                    {
+                        MessageBox.Show("Bạn đã huỷ lựa chọn");
+                    }
                 }
                 else
                 {
@@ -165,6 +172,6 @@ namespace HumanResource.src.View.Department
 
         }
 
-      
+
     }
 }

@@ -46,7 +46,6 @@
             this.txtDepPlace = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnReset = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,7 +92,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnReset);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.txtIDEmployee);
             this.panel3.Controls.Add(this.btnDelete);
@@ -241,16 +239,6 @@
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
             // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnReset.Location = new System.Drawing.Point(619, 430);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(97, 37);
-            this.btnReset.TabIndex = 34;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = false;
-            // 
             // Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -289,6 +277,5 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RichTextBox txtIDEmployee;
-        private System.Windows.Forms.Button btnReset;
     }
 }

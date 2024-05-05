@@ -102,6 +102,10 @@ namespace HumanResource.src.View.Department
         private void GridViewLock()
         {
             GridViewDepartment.ReadOnly = true;
+            txtDepartmentName.Enabled = false;
+            txtID.Enabled = false;
+            txtDepartmentName.ReadOnly = true;
+            txtID.ReadOnly = true;
             //GridViewDepartment.Enabled = false;
         }
         private void GridViewDepartment_CellContentClick(object sender, DataGridViewCellEventArgs e)
