@@ -48,6 +48,18 @@ namespace HumanResource.src.Controller
             }
         }
 
+        internal bool findAndUpdate(DepartmentReqDTO departmentReqDTO)
+        {
+            try
+            {
+                return departmentService.findAndUpdate(departmentReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ DepartmentService " + ex.Message);
+            }
+        }
+
         internal List<DepartmentResDTO> findIdDepartMent(DepartmentReqDTO departmentReqDTO)
         {
             try

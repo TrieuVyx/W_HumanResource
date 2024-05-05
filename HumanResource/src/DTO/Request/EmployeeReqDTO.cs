@@ -17,6 +17,7 @@ namespace HumanResource.src.DTO.Request
         private string phone;
         private string gender;
         private int roleId;
+        private int depId;
         private string roleName;
         private string depDesc;
         private string educationName;
@@ -96,6 +97,10 @@ namespace HumanResource.src.DTO.Request
             get { return departmentName; }
             set { departmentName = value; }
         }
-
+        public int DepId
+        {
+            get { return depId; }
+            set { depId = value; }
+        }
     }
 }

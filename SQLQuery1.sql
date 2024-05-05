@@ -130,4 +130,11 @@ DegreeId = @DegreeId,
 EducationId = @EducationId 
 WHERE EmployId = @EmployId
 
+DECLARE @EmployId INTEGER = 2
+DECLARE @DepId INTEGER = 1
+
+UPDATE Employee SET DepId = @DepId WHERE EmployId = @EmployId
+
+solution 9 cập nhật phòng ban
+UPDATE Department SET DepPlace = @DepPlace, DepType = @DepType, DepDesc = @DepDesc WHERE DepId = @DepId 
 */

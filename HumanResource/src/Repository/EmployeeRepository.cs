@@ -243,5 +243,31 @@ namespace HumanResource.src.Repository
             }
 
         }
+
+        internal bool moveDepart(EmployeeReqDTO employeeReqDTO)
+        {
+            try
+            {
+                using (SqlConnection connection = dbContext.connectOpen())
+                {
+                    string query = "UPDATE Employee SET DepId = @DepId WHERE EmployId = @EmployId";
+                    using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@EmployId", employeeReqDTO.EmployId);
+                        sqlCommand.Parameters.AddWithValue("@DepId", employeeReqDTO.DepId);
+
+                        connection.Open();
+                        sqlCommand.ExecuteNonQuery();
+                        sqlCommand.Parameters.Clear();
+                        connection.Close();
+                    }
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

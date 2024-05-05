@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtComboDep = new System.Windows.Forms.ComboBox();
             this.btnDeleteEmploy = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtID = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.txtDepartmentName = new System.Windows.Forms.RichTextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnMoveHouse = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnUpdateDepartment = new System.Windows.Forms.Button();
@@ -53,14 +53,14 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.txtComboDep);
             this.panel3.Controls.Add(this.btnDeleteEmploy);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.txtID);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.richTextBox4);
             this.panel3.Controls.Add(this.txtDepartmentName);
-            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.btnMoveHouse);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.btnReset);
             this.panel3.Controls.Add(this.btnUpdateDepartment);
@@ -74,6 +74,14 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(882, 567);
             this.panel3.TabIndex = 5;
+            // 
+            // txtComboDep
+            // 
+            this.txtComboDep.FormattingEnabled = true;
+            this.txtComboDep.Location = new System.Drawing.Point(214, 460);
+            this.txtComboDep.Name = "txtComboDep";
+            this.txtComboDep.Size = new System.Drawing.Size(178, 24);
+            this.txtComboDep.TabIndex = 32;
             // 
             // btnDeleteEmploy
             // 
@@ -123,14 +131,6 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "Department Name";
             // 
-            // richTextBox4
-            // 
-            this.richTextBox4.Location = new System.Drawing.Point(214, 452);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(178, 39);
-            this.richTextBox4.TabIndex = 25;
-            this.richTextBox4.Text = "";
-            // 
             // txtDepartmentName
             // 
             this.txtDepartmentName.Location = new System.Drawing.Point(214, 407);
@@ -139,14 +139,15 @@
             this.txtDepartmentName.TabIndex = 24;
             this.txtDepartmentName.Text = "";
             // 
-            // button3
+            // btnMoveHouse
             // 
-            this.button3.Location = new System.Drawing.Point(287, 497);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 39);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Move";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnMoveHouse.Location = new System.Drawing.Point(287, 497);
+            this.btnMoveHouse.Name = "btnMoveHouse";
+            this.btnMoveHouse.Size = new System.Drawing.Size(105, 39);
+            this.btnMoveHouse.TabIndex = 23;
+            this.btnMoveHouse.Text = "Move";
+            this.btnMoveHouse.UseVisualStyleBackColor = true;
+            this.btnMoveHouse.Click += new System.EventHandler(this.btnMoveHouse_Click);
             // 
             // label2
             // 
@@ -269,11 +270,11 @@
         private System.Windows.Forms.RichTextBox txtID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox4;
         private System.Windows.Forms.RichTextBox txtDepartmentName;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnMoveHouse;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDeleteEmploy;
+        private System.Windows.Forms.ComboBox txtComboDep;
     }
 }

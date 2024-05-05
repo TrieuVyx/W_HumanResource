@@ -88,5 +88,17 @@ namespace HumanResource.src.Controller
                 throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
             }
         }
+
+        internal bool moveDepart(EmployeeReqDTO employeeReqDTO)
+        {
+            try
+            {
+                return employeeService.moveDepart(employeeReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
+            }
+        }
     }
 }

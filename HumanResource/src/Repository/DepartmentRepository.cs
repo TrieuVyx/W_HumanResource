@@ -103,6 +103,34 @@ namespace HumanResource.src.Repository
             }
         }
 
+        internal bool findAndUpdate(DepartmentReqDTO departmentReqDTO)
+        {
+            try
+            {
+                using (SqlConnection connection = dbContext.connectOpen())
+                {
+                    string query = "UPDATE Department SET DepPlace = @DepPlace, DepType = @DepType, DepDesc = @DepDesc WHERE DepId = @DepId ";
+                    using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@DepId", departmentReqDTO.DepId);
+                        sqlCommand.Parameters.AddWithValue("@DepPlace", departmentReqDTO.DepPlace);
+                        sqlCommand.Parameters.AddWithValue("@DepType", departmentReqDTO.DepType);
+                        sqlCommand.Parameters.AddWithValue("@DepDesc", departmentReqDTO.DepDesc);
+
+                        connection.Open();
+                        sqlCommand.ExecuteNonQuery();
+                        sqlCommand.Parameters.Clear();
+                        connection.Close();
+                    }
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         internal List<DepartmentResDTO> findIdDepartMent(DepartmentReqDTO departmentReqDTO)
         {
             List<DepartmentResDTO> departments= new List<DepartmentResDTO>();

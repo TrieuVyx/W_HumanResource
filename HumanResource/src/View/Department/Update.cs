@@ -1,4 +1,6 @@
-﻿using HumanResource.src.DTO.Response;
+﻿using HumanResource.src.Controller;
+using HumanResource.src.DTO.Request;
+using HumanResource.src.DTO.Response;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +16,16 @@ namespace HumanResource.src.View.Department
     public partial class Update : Form
     {
         private List<DepartmentResDTO> departmentRes;
-
+        private EmployeeResDTO employeeRes;
+        private DepartmentController departmentController;
+        private DepartmentReqDTO departmentReqDTO;
         public Update()
         {
             InitializeComponent();
             departmentRes = new List<DepartmentResDTO>();
-           
+            employeeRes = new EmployeeResDTO();
+            departmentController = new DepartmentController();
+            departmentReqDTO = new DepartmentReqDTO();
         }
         int x = 175; 
         int y = 10;
@@ -40,17 +46,86 @@ namespace HumanResource.src.View.Department
                 txtDesc.Text = department.DepDesc;
                 txtDepPlace.Text = department.DepPlace;  
                 txtDepType.Text = department.DepType;
+                employeeDep(txtDesc.Text);
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                string DepPlace = txtDepPlace.Text;
+                string DepType = txtDepType.Text;
+                string Desc = txtDesc.Text;
+                string Id = txtIDDepartment.Text;
+               
+                departmentReqDTO = new DepartmentReqDTO();
+                if (!string.IsNullOrEmpty(txtIDDepartment.Text))
+                {
+                    departmentReqDTO.DepId = int.Parse(txtIDDepartment.Text);
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn cập nhật không?!", "Xác nhận câp nhật", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        departmentReqDTO.DepId = int.Parse(Id);
+                        departmentReqDTO.DepDesc = Desc;
+                        departmentReqDTO.DepPlace = DepPlace;
+                        departmentReqDTO.DepType = DepType;
+
+                        bool employeeReqs = departmentController.findAndUpdate(departmentReqDTO);
+                        if (employeeReqs)
+                        {
+                            MessageBox.Show("CẬP NHẬT THÀNH CÔNG, VUI LÒNG ẤN RESET ĐỂ CẬP NHẬT LẠI");
+                        }
+                        else
+                        {
+                            MessageBox.Show("CẬP NHẬT THẤT BẠI");
+                        }
+                    }
+                    else if (result == DialogResult.No)
+                    {
+                        MessageBox.Show("Bạn đã huỷ lựa chọn");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ID không được để trống: ");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void employeeDep(string DepDecs)
+        {
+            departmentReqDTO = new DepartmentReqDTO();
+
+            try
+            {
+                departmentReqDTO.DepDesc = DepDecs;
+                List<EmployeeResDTO> employees = departmentController.FindNameDepart(departmentReqDTO);
+                if (employees.Count > 0)
+                {
+                    GridViewEmployee.DataSource = employees;
+                }
+                else
+                {
+                    GridViewEmployee.DataSource = null;
+                    MessageBox.Show("Không tìm thấy nhân viên nào trong phòng ban này.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
+            }
         }
     }
 }

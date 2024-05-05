@@ -15,6 +15,7 @@ using HumanResource.src.DTO.Response;
 using System.Web.UI.WebControls;
 using Microsoft.IdentityModel.Tokens;
 using HumanResource.src.View.Department;
+using System.Web.Security;
 
 namespace HumanResource.src.View.Department
 {
@@ -23,12 +24,16 @@ namespace HumanResource.src.View.Department
         private DepartmentReqDTO departmentReqDTO;
         private DepartmentController departmentController;
         private EmployeeResDTO employeeResDTO;
+        private EmployeeReqDTO employeeReqDTO;
+        private EmployeeController employeeController;
         public ListDep()
         {
             InitializeComponent();
             departmentController = new DepartmentController();
             departmentReqDTO = new DepartmentReqDTO();
             employeeResDTO = new EmployeeResDTO();  
+            employeeReqDTO = new EmployeeReqDTO();  
+            employeeController = new EmployeeController();
             ShowDepartment();
         }
       
@@ -38,6 +43,10 @@ namespace HumanResource.src.View.Department
             {
                 List<DepartmentResDTO> departments = departmentController.findAllList();
                 GridViewDepartment.DataSource = departments;
+                txtComboDep.DataSource = departments;
+                txtComboDep.DisplayMember = "DepDesc";
+                txtComboDep.ValueMember = "DepId";
+                txtComboDep.SelectedIndex = 1;
                 txtAmout.Text = departments.Count.ToString();
                 txtSearch.Clear();  
                 AutoMode();
@@ -115,7 +124,6 @@ namespace HumanResource.src.View.Department
                     {
                         Update update = new Update();
                         update.ControlAdded(departmentRes);
-
                         this.Hide();
                     }
                     else      
@@ -143,6 +151,49 @@ namespace HumanResource.src.View.Department
 
                     List<EmployeeResDTO> employeeRes = departmentController.findAndDelete(employeeResDTO);
                     MessageBox.Show("Bạn đã xoá nhân viên ra khỏi phòng ban");
+                }
+                else
+                {
+                    MessageBox.Show("ID không được để trống: ");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
+            }
+        }
+
+        private void btnMoveHouse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int DepId;
+                employeeReqDTO = new EmployeeReqDTO();
+                if (int.TryParse(txtComboDep.SelectedValue.ToString(), out DepId))
+                {
+                    employeeReqDTO.DepId = DepId;
+                }
+                if (!string.IsNullOrEmpty(txtID.Text))
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc muốn chuyển đổi phòng ban không?!", "Xác nhận câp nhật", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        employeeReqDTO.DepId = DepId;
+                        employeeReqDTO.EmployId = int.Parse(txtID.Text);
+                        bool employees = employeeController.moveDepart(employeeReqDTO);
+                        if (employees)
+                        {
+                            MessageBox.Show("Bạn đã di chuyển nhân viên đến nơi khác ^, vui lòng reset lại để cập nhật");
+                        }
+                        else
+                        {
+                            MessageBox.Show("đã xảy ra lỗi vui lòng thử lại");
+                        }
+                    }
+                    else if (result == DialogResult.No)
+                    {
+                        MessageBox.Show("Bạn đã huỷ lựa chọn");
+                    }
                 }
                 else
                 {
