@@ -18,15 +18,25 @@ namespace HumanResource.src.View.Employee
     {
         private EmployeeController employeeController;
         private Employees employee;
-
+        private EmployeeReqDTO employeeReqDTO;
         public ListEmployee()
         {
             InitializeComponent();
             employeeController = new EmployeeController();
             employee = new Employees();
+            employeeReqDTO = new EmployeeReqDTO();  
+            GridViewEmployee.CellContentClick += ChooseItem;
             ShowEmployee();
+
         }
-      
+
+        private void ChooseItem(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexOfContent = e.RowIndex;
+            DataGridViewRow dataGridViewRow = GridViewEmployee.Rows[indexOfContent];
+            txtId.Text = dataGridViewRow.Cells[0].Value.ToString();
+        }
+
         private void ShowEmployee()
         {
             try
@@ -91,15 +101,7 @@ namespace HumanResource.src.View.Employee
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            ShowEmployee();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnReset_Click_1(object sender, EventArgs e)
         {
@@ -117,6 +119,104 @@ namespace HumanResource.src.View.Employee
             MoreEmployee.Bounds = new Rectangle(x, y, width, height);
             MoreEmployee.Show();
             this.Hide();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(txtId.Text))
+                {
+                    employeeReqDTO.EmployId = int.Parse(txtId.Text);
+
+                    List<EmployeeReqDTO> employeeReqs = employeeController.findAndUpdate(employeeReqDTO);
+                    if (employeeReqs.Count > 0)
+                    {
+                        Update update = new Update();
+                        update.ControlAdded(employeeReqs);
+
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ID không được để trống: ");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
+            }
+        }
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(txtId.Text))
+                {
+                    employeeReqDTO.EmployId = int.Parse(txtId.Text);
+
+                    List<EmployeeReqDTO> employeeReqs = employeeController.findAndDetail(employeeReqDTO);
+                    if (employeeReqs.Count > 0)
+                    {
+                        Read read = new Read();
+                        read.ControlAdded(employeeReqs);
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ID không được để trống: ");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
+            }
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(txtId.Text))
+                {
+                    employeeReqDTO.EmployId = int.Parse(txtId.Text);
+
+                    List<EmployeeReqDTO> employeeReqs = employeeController.findAndDelete(employeeReqDTO);
+                    if (employeeReqs.Count > 0)
+                    {
+                        //Update update = new Update();
+                        //update.ControlAdded(departmentRes);
+
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ID không được để trống: ");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
+            }
+
         }
     }
 }

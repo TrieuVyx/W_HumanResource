@@ -45,12 +45,11 @@
             this.TXTHOTEN = new System.Windows.Forms.TextBox();
             this.txtid = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtsodienthoai = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.sqlConnection1 = new Microsoft.Data.SqlClient.SqlConnection();
+            this.txtsodienthoai = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -104,6 +103,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtsodienthoai);
             this.groupBox1.Controls.Add(this.txtBirthDay);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label9);
@@ -116,7 +116,6 @@
             this.groupBox1.Controls.Add(this.TXTHOTEN);
             this.groupBox1.Controls.Add(this.txtid);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtsodienthoai);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
@@ -226,15 +225,6 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Phone";
             // 
-            // txtsodienthoai
-            // 
-            this.txtsodienthoai.Location = new System.Drawing.Point(118, 97);
-            this.txtsodienthoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtsodienthoai.Mask = "(999) 000-0000";
-            this.txtsodienthoai.Name = "txtsodienthoai";
-            this.txtsodienthoai.Size = new System.Drawing.Size(234, 22);
-            this.txtsodienthoai.TabIndex = 5;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -271,10 +261,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "EmployeeName";
             // 
-            // sqlConnection1
+            // txtsodienthoai
             // 
-            this.sqlConnection1.AccessTokenCallback = null;
-            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
+            this.txtsodienthoai.Location = new System.Drawing.Point(118, 97);
+            this.txtsodienthoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtsodienthoai.Name = "txtsodienthoai";
+            this.txtsodienthoai.Size = new System.Drawing.Size(234, 22);
+            this.txtsodienthoai.TabIndex = 17;
             // 
             // MoreEmployee
             // 
@@ -308,7 +301,6 @@
         private System.Windows.Forms.TextBox TXTHOTEN;
         private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox txtsodienthoai;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
@@ -318,6 +310,6 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.DateTimePicker txtBirthDay;
         private System.Windows.Forms.Label label9;
-        private Microsoft.Data.SqlClient.SqlConnection sqlConnection1;
+        private System.Windows.Forms.TextBox txtsodienthoai;
     }
 }

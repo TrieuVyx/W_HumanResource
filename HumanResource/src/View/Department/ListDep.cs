@@ -115,6 +115,7 @@ namespace HumanResource.src.View.Department
                     {
                         Update update = new Update();
                         update.ControlAdded(departmentRes);
+
                         this.Hide();
                     }
                     else      

@@ -42,6 +42,7 @@ namespace HumanResource.src.Repository
                                 roleReq.Add(roles);
                             }
                         }
+                        connection.Close();
                     }
                     return roleReq;
                 }

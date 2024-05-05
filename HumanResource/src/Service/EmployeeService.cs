@@ -19,7 +19,7 @@ namespace HumanResource.src.Service
 
 
         }    
-        internal List<Employees> findAllList()
+        internal List<Employees> createUser()
         {
             try
             {
@@ -32,6 +32,53 @@ namespace HumanResource.src.Service
 
         }
 
+        internal List<EmployeeReqDTO> createUser(EmployeeReqDTO employeeReqDTO)
+        {
+            try
+            {
+                return employeeRepository.createUser(employeeReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeService " + ex.Message);
+            }
+        }
+
+        internal List<EmployeeReqDTO> findAndDelete(EmployeeReqDTO employeeReqDTO)
+        {
+            try
+            {
+                return employeeRepository.findAndDelete(employeeReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeService " + ex.Message);
+            }
+        }
+
+        internal List<EmployeeReqDTO> findAndDetail(EmployeeReqDTO employeeReqDTO)
+        {
+            try
+            {
+                return employeeRepository.findAndDetail(employeeReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeService " + ex.Message);
+            }
+        }
+
+        internal List<EmployeeReqDTO> findAndUpdate(EmployeeReqDTO employeeReqDTO)
+        {
+            try
+            {
+                return employeeRepository.findAndUpdate(employeeReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeService " + ex.Message);
+            }
+        }
 
         internal List<Employees> FindNameEmployee(Employees employee)
         {
@@ -41,7 +88,7 @@ namespace HumanResource.src.Service
             }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi Phát Sinh Từ DepartmentService " + ex.Message);
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeService " + ex.Message);
             }
         }
     }

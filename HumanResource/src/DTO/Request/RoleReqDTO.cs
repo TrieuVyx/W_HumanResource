@@ -11,7 +11,7 @@ namespace HumanResource.src.DTO.Request
         private int roleId;
         private string roleDesc;
         private string roleName;
-
+        public RoleReqDTO() {  }
         public int RoleId
         {
             get { return roleId; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,11 @@ namespace HumanResource.src.DTO.Request
         private string phone;
         private string gender;
         private int roleId;
-
+        private string roleName;
+        private string depDesc;
+        private string educationName;
+        private string degreeName;
+        private string departmentName;
         public int EmployId
         {
             get { return employId; }
@@ -66,5 +71,31 @@ namespace HumanResource.src.DTO.Request
             get { return roleId; }
             set { roleId = value; }
         }
+        public string RoleName
+        {
+            get { return roleName; }
+            set { roleName = value; }
+        }
+        public string DepDesc
+        {
+            get { return depDesc; }
+            set { depDesc = value; }
+        }
+        public string EducationName
+        {
+            get { return educationName; }
+            set { educationName = value; }
+        }
+        public string DegreeName
+        {
+            get { return degreeName; }
+            set { degreeName = value; }
+        }
+        public string DepartmentName
+        {
+            get { return departmentName; }
+            set { departmentName = value; }
+        }
+
     }
 }

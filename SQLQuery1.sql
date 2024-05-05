@@ -35,11 +35,12 @@ xem danh sách
 SELECT * FROM Department d, Employee e WHERE e.DepId = d.DepId
 
 
-xem danh sách employee
+xem danh sách 
 SELECT * FROM Employee
-
+SELECT * FROM Roles
 
 solution 5  tìm kiếm nhân viên
+DECLARE  @EmployeeName NVARCHAR(255) = N'Đ'
 SELECT * FROM Employee WHERE EmployeeName LIKE  '%' + @EmployeeName + '%'
 
 
@@ -56,4 +57,15 @@ INSERT INTO Employee (EmployId, Email, EmployeeName, AddressEmployee, Phone, Rol
 VALUES 
     (12, @Email, @EmployeeName, @AddressEmployee,@Phone ,@RoleId,@DateOfBirth,@Gender);
 
+
+solution 7 employeee, department, education, degreee
+
+DECLARE @EmployId INTEGER = 2
+
+SELECT * FROM Employee e, Department d, Education ed, Degree de, Roles r
+WHERE e.EmployId = @EmployId
+AND  e.DepId =  d.DepId
+AND e.EducationId = ed.EducationId
+AND e.DegreeId = de.DegreeId
+AND e.RoleId = r.RoleId
 */

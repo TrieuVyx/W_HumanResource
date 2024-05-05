@@ -1,5 +1,6 @@
 ﻿using HumanResource.src.Controller;
 using HumanResource.src.DTO.Request;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,12 +9,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 using System.Windows.Forms;
+using HumanResource.src.Entity;
+using Roles = HumanResource.src.Entity.Roles;
 
 namespace HumanResource.src.View.Employee
 {
     public partial class MoreEmployee : Form
     {
+        private Roles roles;
         private EmployeeController employeeController;
         private EmployeeReqDTO employeeReqDTO;
         private RoleReqDTO roleReqDTO;
@@ -25,6 +30,7 @@ namespace HumanResource.src.View.Employee
             employeeReqDTO = new EmployeeReqDTO();
             roleReqDTO = new RoleReqDTO();
             roleController = new RoleController();
+            roles = new Roles();
             DataLimit();
         }
 
@@ -35,40 +41,97 @@ namespace HumanResource.src.View.Employee
             string Email = TXTemail.Text;
             string Address = txtAddress.Text;
             string Id = txtid.Text;
+            string valueCBRole = txtCboRole.SelectedItem.ToString();
+            string valueCboGender = cboGioiTinh.SelectedItem.ToString();
+            DateTime selectedDate = txtBirthDay.Value;
+            List<Roles> roles = GetRole();
+            int roleId = 0;
 
-
-
+            foreach (Roles role in roles)
+            {
+                if (role.RoleName == valueCBRole)
+                {
+                    roleId = role.RoleId;
+                    break;
+                }
+            }
             employeeReqDTO = new EmployeeReqDTO();
             try
             {
-                //if (string.IsNullOrEmpty(txtSearchValue))
-                //{
-                //    MessageBox.Show("Vui lòng nhập PHÒNG BAN bạn muốn tìm.");
-                //}
-                //else
-                //{
-                //    departmentReqDTO.DepDesc = txtSearchValue;
-                //    List<EmployeeResDTO> employees = departmentController.FindNameDepart(departmentReqDTO);
-                //    if (employees.Count > 0)
-                //    {
-                //        GridViewDepartment.DataSource = employees;
-                //        txtAmout.Text = employees.Count.ToString();
-
-                //        AutoMode();
-
-                //        GridViewDepartment.CellContentClick += GridViewDepartment_CellContentClick;
-                //    }
-                //    else
-                //    {
-                //        GridViewDepartment.DataSource = null;
-                //        MessageBox.Show("Không tìm thấy nhân viên nào trong phòng ban này.");
-                //    }
-                //}
+                if (
+                   
+                    string.IsNullOrEmpty(Phone) &&
+                    string.IsNullOrEmpty(Email) &&
+                    string.IsNullOrEmpty(Address) &&
+                    string.IsNullOrEmpty(FullName) &&
+                    string.IsNullOrEmpty(Id)
+                    )
+                {
+                    MessageBox.Show("Vui lòng nhập các trường và không được để trông");
+                }
+                else
+                {
+                    employeeReqDTO.EmployId = int.Parse(Id);
+                    employeeReqDTO.AddressEmployee = Address;
+                    employeeReqDTO.Phone = Phone;
+                    employeeReqDTO.Email = Email;
+                    employeeReqDTO.EmployeeName = FullName;
+                    employeeReqDTO.Gender = valueCboGender;
+                    employeeReqDTO.DateOfBirth = selectedDate;
+                    employeeReqDTO.RoleId = roleId;
+                    MessageBox.Show(employeeReqDTO.RoleId.ToString());
+                    List<EmployeeReqDTO> employees = employeeController.createUser(employeeReqDTO);
+                    if (employees.Count > 0)
+                    {
+                        MessageBox.Show("Tạo Thành Công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể tạo");
+                    }
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi Phát Sinh Từ MoreEmployee " + ex.Message);
             }
+        }
+
+        private List<Roles> GetRole()
+        {
+            List<Roles> roles = new List<Roles>();
+
+            foreach (var item in txtCboRole.Items)
+            {
+                MessageBox.Show(item.ToString());
+                string roleName = item.ToString();
+                int roleId = GetRoleIdByRoleName(roleName);
+                Roles role = new Roles
+                {
+                    RoleId = roleId,
+                    RoleName = roleName
+                };
+                roles.Add(role);
+            }
+
+            return roles;
+        }
+
+        private int GetRoleIdByRoleName(string roleName)
+        {
+            List<RoleReqDTO> roles = roleController.findAllRole();
+
+
+            foreach (RoleReqDTO roleReq in roles)
+            {
+
+                if (roleReq.RoleName == roleName)
+                {
+                    return roleReq.RoleId;
+                }
+            }
+
+            return 0;
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
@@ -81,9 +144,10 @@ namespace HumanResource.src.View.Employee
             try
             {
                 List<RoleReqDTO> roles = roleController.findAllRole();
-                if(roles.Count > 0 )
+                if (roles.Count > 0)
                 {
                     txtCboRole.DataSource = roles;
+                    txtCboRole.DisplayMember = "RoleName";
                 }
                 else
                 {

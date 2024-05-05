@@ -383,7 +383,7 @@
     <Compile Include="src\Entity\EmployeeHistory.cs" />
     <Compile Include="src\Entity\Employees.cs" />
     <Compile Include="src\Entity\RelativeEmployee.cs" />
-    <Compile Include="src\Entity\Role.cs" />
+    <Compile Include="src\Entity\Roles.cs" />
     <Compile Include="src\Entity\Salary.cs" />
     <Compile Include="src\Repository\AuthorRepository.cs" />
     <Compile Include="src\Repository\DepartmentRepository.cs" />

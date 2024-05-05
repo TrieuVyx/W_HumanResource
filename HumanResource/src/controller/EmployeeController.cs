@@ -16,11 +16,60 @@ namespace HumanResource.src.Controller
         public EmployeeController() {
             employeeService = new EmployeeService();
         }
+
+        internal List<EmployeeReqDTO> createUser(EmployeeReqDTO employeeReqDTO)
+        {
+            try
+            {
+                return employeeService.createUser(employeeReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
+            }
+        }
+
         internal List<Employees> findAllList()
         {
             try
             {
-                return employeeService.findAllList();
+                return employeeService.createUser();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
+            }
+        }
+
+        internal List<EmployeeReqDTO> findAndDelete(EmployeeReqDTO employeeReqDTO)
+        {
+            try
+            {
+                return employeeService.findAndDelete(employeeReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
+            }
+        }
+
+        internal List<EmployeeReqDTO> findAndDetail(EmployeeReqDTO employeeReqDTO)
+        {
+            try
+            {
+                return employeeService.findAndDetail(employeeReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
+            }
+        }
+
+        internal List<EmployeeReqDTO> findAndUpdate(EmployeeReqDTO employeeReqDTO)
+        {
+            try
+            {
+                return employeeService.findAndUpdate(employeeReqDTO);
             }
             catch (Exception ex)
             {
