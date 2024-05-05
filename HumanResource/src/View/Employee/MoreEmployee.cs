@@ -1,17 +1,8 @@
 ﻿using HumanResource.src.Controller;
 using HumanResource.src.DTO.Request;
-using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Security;
 using System.Windows.Forms;
-using HumanResource.src.Entity;
 using Roles = HumanResource.src.Entity.Roles;
 
 namespace HumanResource.src.View.Employee
@@ -43,17 +34,19 @@ namespace HumanResource.src.View.Employee
             string Id = txtid.Text;
             string valueCboGender = cboGioiTinh.SelectedItem.ToString();
             DateTime selectedDate = txtBirthDay.Value;
-            string valueCBRole = txtCboRole.SelectedItem.ToString();
-            MessageBox.Show(valueCBRole.ToString());
-
+            int roleId;
             employeeReqDTO = new EmployeeReqDTO();
             try
             {
+                if (int.TryParse(txtCboRole.SelectedValue.ToString(), out roleId))
+                {
+                    employeeReqDTO.RoleId = roleId;
+                }
                 if (
-                    //string.IsNullOrEmpty(Phone) &&
-                    //string.IsNullOrEmpty(Email) &&
-                    //string.IsNullOrEmpty(Address) &&
-                    //string.IsNullOrEmpty(FullName) &&
+                    string.IsNullOrEmpty(Phone) &&
+                    string.IsNullOrEmpty(Email) &&
+                    string.IsNullOrEmpty(Address) &&
+                    string.IsNullOrEmpty(FullName) &&
                     string.IsNullOrEmpty(Id)
                     )
                 {
@@ -61,23 +54,16 @@ namespace HumanResource.src.View.Employee
                 }
                 else
                 {
-                    //employeeReqDTO.EmployId = int.Parse(Id);
-                    //employeeReqDTO.AddressEmployee = Address;
-                    //employeeReqDTO.Phone = Phone;
-                    //employeeReqDTO.Email = Email;
-                    //employeeReqDTO.EmployeeName = FullName;
-                    //employeeReqDTO.Gender = valueCboGender;
-                    //employeeReqDTO.DateOfBirth = selectedDate;
-                    //employeeReqDTO.RoleId = valueCBRole;
-                    //MessageBox.Show(employeeReqDTO.EmployId.ToString());
-                    //MessageBox.Show(employeeReqDTO.AddressEmployee.ToString());
-                    //MessageBox.Show(employeeReqDTO.Phone.ToString());
-                    //MessageBox.Show(employeeReqDTO.Email.ToString());
-                    //MessageBox.Show(employeeReqDTO.EmployeeName.ToString());
-                    //MessageBox.Show(employeeReqDTO.Gender.ToString());
-                    //MessageBox.Show(employeeReqDTO.DateOfBirth.ToString());
-                    List<EmployeeReqDTO> employees = employeeController.createUser(employeeReqDTO);
-                    if (employees.Count > 0)
+                    employeeReqDTO.EmployId = int.Parse(Id);
+                    employeeReqDTO.AddressEmployee = Address;
+                    employeeReqDTO.Phone = Phone;
+                    employeeReqDTO.Email = Email;
+                    employeeReqDTO.EmployeeName = FullName;
+                    employeeReqDTO.Gender = valueCboGender;
+                    employeeReqDTO.DateOfBirth = selectedDate;
+                    employeeReqDTO.RoleId = roleId;
+                    bool employees = employeeController.createUser(employeeReqDTO);
+                    if (employees)
                     {
                         MessageBox.Show("Tạo Thành Công");
                     }
@@ -92,9 +78,6 @@ namespace HumanResource.src.View.Employee
                 MessageBox.Show("Lỗi Phát Sinh Từ MoreEmployee " + ex.Message);
             }
         }
-
-
-
         private void btnxoa_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -102,15 +85,16 @@ namespace HumanResource.src.View.Employee
         private void DataLimit()
         {
             cboGioiTinh.SelectedIndex = 0;
+
             try
             {
                 List<RoleReqDTO> roleReqDTO = roleController.findAllRole();
                 if (roleReqDTO.Count > 0)
                 {
-
                     txtCboRole.DataSource = roleReqDTO;
                     txtCboRole.DisplayMember = "RoleId";
-                    txtCboRole.SelectedIndex  = 10;
+                    txtCboRole.ValueMember = "RoleId";
+                    txtCboRole.SelectedIndex = 1;
                 }
                 else
                 {

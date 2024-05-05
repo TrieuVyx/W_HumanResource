@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using HumanResource.src.DbContext;
 using System.Data.SqlClient;
 using HumanResource.src.Entity;
+using System.Windows.Forms;
 
 namespace HumanResource.src.Repository
 {
@@ -27,9 +28,8 @@ namespace HumanResource.src.Repository
             employees = new Employees ();   
         }
 
-        internal List<EmployeeReqDTO> createUser(EmployeeReqDTO employeeReqDTO)
+        internal bool createUser(EmployeeReqDTO employeeReqDTO)
         {
-            List<EmployeeReqDTO> employees = new List<EmployeeReqDTO>();
             try
             {
                 using (SqlConnection connection = dbContext.connectOpen())
@@ -37,6 +37,7 @@ namespace HumanResource.src.Repository
                     string query = "INSERT INTO Employee (EmployId, Email, EmployeeName, AddressEmployee, Phone, RoleId,  DateOfBirth, Gender) VALUES (@EmployId, @Email, @EmployeeName, @AddressEmployee,@Phone ,@RoleId,@DateOfBirth,@Gender);";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
                     {
+
                         sqlCommand.Parameters.AddWithValue("@EmployId", employeeReqDTO.EmployId);
                         sqlCommand.Parameters.AddWithValue("@EmployeeName", employeeReqDTO.EmployeeName);
                         sqlCommand.Parameters.AddWithValue("@AddressEmployee", employeeReqDTO.AddressEmployee);
@@ -45,33 +46,16 @@ namespace HumanResource.src.Repository
                         sqlCommand.Parameters.AddWithValue("@Gender", employeeReqDTO.Gender);
                         sqlCommand.Parameters.AddWithValue("@DateOfBirth", employeeReqDTO.DateOfBirth);
                         sqlCommand.Parameters.AddWithValue("@RoleId", employeeReqDTO.RoleId);
-                        connection.Open();
-
-                        //using (SqlDataReader reader = sqlCommand.ExecuteReader())
-                        //{
-                        //    while (reader.Read())
-                        //    {
-                        //        EmployeeReqDTO employees1 = new EmployeeReqDTO();
-                        //        employees1.EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"));
-                        //        employees1.EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName"));
-                        //        employees1.AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee"));
-                        //        employees1.Phone = reader.GetString(reader.GetOrdinal("Phone"));
-                        //        employees1.Email = reader.GetString(reader.GetOrdinal("Email"));
-                        //        employees1.Gender = reader.GetString(reader.GetOrdinal("Gender"));
-                        //        employees1.DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
-                        //        employees1.RoleId = reader.GetInt32(reader.GetOrdinal("RoleId"));
-                        //        employees.Add(employees1);
-                        //    }
-                        //}
-                        connection.Close();
+                        connection.Open(); 
+                        sqlCommand.ExecuteNonQuery();
+                        
+                        return true;
                     }
-                    return (employees);
-
                 }
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 
@@ -99,7 +83,6 @@ namespace HumanResource.src.Repository
                                 employee.AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee"));
                                 employee.Phone = reader.GetString(reader.GetOrdinal("Phone"));
                                 employee.Email = reader.GetString(reader.GetOrdinal("Email"));
-                                employee.Avatar = reader.GetString(reader.GetOrdinal("Avatar"));
                                 employee.Gender = reader.GetString(reader.GetOrdinal("Gender"));
                                 employeeRes.Add(employee);
                             }

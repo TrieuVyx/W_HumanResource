@@ -51,16 +51,17 @@ namespace HumanResource.src.Entity
             get { return email; }
             set { email = value; }
         }
-        public string Avatar
-        {
-            get { return avatar; }
-            set { avatar = value; }
-        }
+       
 
         public string Gender
         {
             get { return gender; }
             set { gender = value; }
+        }
+        public string Avatar
+        {
+            get { return avatar; }
+            set { avatar = value; }
         }
     }
 }

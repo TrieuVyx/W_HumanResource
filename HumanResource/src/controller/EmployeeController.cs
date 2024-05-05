@@ -17,7 +17,7 @@ namespace HumanResource.src.Controller
             employeeService = new EmployeeService();
         }
 
-        internal List<EmployeeReqDTO> createUser(EmployeeReqDTO employeeReqDTO)
+        internal bool createUser(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
@@ -33,7 +33,7 @@ namespace HumanResource.src.Controller
         {
             try
             {
-                return employeeService.createUser();
+                return employeeService.findAllList();
             }
             catch (Exception ex)
             {

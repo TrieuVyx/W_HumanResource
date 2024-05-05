@@ -19,24 +19,25 @@ namespace HumanResource.src.Service
 
 
         }    
-        internal List<Employees> createUser()
+        
+
+        internal bool createUser(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
-                return employeeRepository.findAllList();
+                return employeeRepository.createUser(employeeReqDTO);
             }
             catch (Exception ex)
             {
                 throw new Exception("Lỗi Phát Sinh Từ EmployeeService " + ex.Message);
             }
-
         }
 
-        internal List<EmployeeReqDTO> createUser(EmployeeReqDTO employeeReqDTO)
+        internal List<Employees> findAllList()
         {
             try
             {
-                return employeeRepository.createUser(employeeReqDTO);
+                return employeeRepository.findAllList();
             }
             catch (Exception ex)
             {

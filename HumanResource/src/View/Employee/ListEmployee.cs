@@ -197,10 +197,8 @@ namespace HumanResource.src.View.Employee
                     List<EmployeeReqDTO> employeeReqs = employeeController.findAndDelete(employeeReqDTO);
                     if (employeeReqs.Count > 0)
                     {
-                        //Update update = new Update();
-                        //update.ControlAdded(departmentRes);
 
-                        this.Hide();
+                        //this.Hide();
                     }
                     else
                     {
