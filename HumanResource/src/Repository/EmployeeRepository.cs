@@ -48,7 +48,8 @@ namespace HumanResource.src.Repository
                         sqlCommand.Parameters.AddWithValue("@RoleId", employeeReqDTO.RoleId);
                         connection.Open(); 
                         sqlCommand.ExecuteNonQuery();
-                        
+                        sqlCommand.Parameters.Clear();
+                        connection.Close();
                         return true;
                     }
                 }
@@ -97,37 +98,27 @@ namespace HumanResource.src.Repository
             }
         }
 
-        internal List<EmployeeReqDTO> findAndDelete(EmployeeReqDTO employeeReqDTO)
+        internal bool findAndDelete(EmployeeReqDTO employeeReqDTO)
         {
-            List<EmployeeReqDTO> employees = new List<EmployeeReqDTO>();
             try
             {
                 using (SqlConnection connection = dbContext.connectOpen())
                 {
-                    string query = "SELECT * FROM Employee WHERE EmployId = @EmployId ";
+                    string query = "DELETE FROM Employee WHERE EmployId = @EmployId";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
                     {
                         sqlCommand.Parameters.AddWithValue("@EmployId", employeeReqDTO.EmployId);
                         connection.Open();
-
-                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                EmployeeReqDTO employees1 = new EmployeeReqDTO();
-                                employees1.EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"));
-                                employees.Add(employees1);
-                            }
-                        }
+                        sqlCommand.ExecuteNonQuery();
+                        sqlCommand.Parameters.Clear();
                         connection.Close();
                     }
-                    return (employees);
-
+                    return true;
                 }
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 

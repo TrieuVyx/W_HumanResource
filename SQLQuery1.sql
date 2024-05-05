@@ -69,6 +69,11 @@ AND e.EducationId = ed.EducationId
 AND e.DegreeId = de.DegreeId
 AND e.RoleId = r.RoleId
 
+solution 8  xoá người dùng
+
+DECLARE @EmployId INTEGER = 21122
+DELETE FROM Employee WHERE EmployId = @EmployId;
+
 
 
 */

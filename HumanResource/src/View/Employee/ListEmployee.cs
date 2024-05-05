@@ -193,17 +193,26 @@ namespace HumanResource.src.View.Employee
                 if (!string.IsNullOrEmpty(txtId.Text))
                 {
                     employeeReqDTO.EmployId = int.Parse(txtId.Text);
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận xóa", MessageBoxButtons.YesNo);
 
-                    List<EmployeeReqDTO> employeeReqs = employeeController.findAndDelete(employeeReqDTO);
-                    if (employeeReqs.Count > 0)
+                    if (result == DialogResult.Yes)
                     {
+                        bool employeeReqs = employeeController.findAndDelete(employeeReqDTO);
+                        if (employeeReqs)
+                        {
+                            MessageBox.Show("Xoá thành công");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy");
+                        }
+                    }
+                    else if (result == DialogResult.No)
+                    {
+                        MessageBox.Show("Bạn đã huỷ lựa chọn");
 
-                        //this.Hide();
                     }
-                    else
-                    {
-                        MessageBox.Show("Không tìm thấy");
-                    }
+
                 }
                 else
                 {

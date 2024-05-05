@@ -45,7 +45,7 @@ namespace HumanResource.src.Service
             }
         }
 
-        internal List<EmployeeReqDTO> findAndDelete(EmployeeReqDTO employeeReqDTO)
+        internal bool findAndDelete(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
