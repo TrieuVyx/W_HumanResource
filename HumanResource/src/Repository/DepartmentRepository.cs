@@ -52,6 +52,7 @@ namespace HumanResource.src.Repository
                                 department.DepId = reader.GetInt32(reader.GetOrdinal("DepId"));
                                 department.DepDesc = reader.GetString(reader.GetOrdinal("DepDesc"));
                                 department.DepType = reader.GetString(reader.GetOrdinal("DepType"));
+                                department.DepPlace = reader.GetString(reader.GetOrdinal("DepPlace"));
                                 departmentRes.Add(department);
                             }
                         }

@@ -152,7 +152,7 @@ namespace HumanResource.src.View.Employee
                 if (!string.IsNullOrEmpty(txtId.Text))
                 {
                     employeeReqDTO.EmployId = int.Parse(txtId.Text);
-
+                    MessageBox.Show(txtId.Text.ToString());
                     List<EmployeeReqDTO> employeeReqs = employeeController.findAndDetail(employeeReqDTO);
                     if (employeeReqs.Count > 0)
                     {

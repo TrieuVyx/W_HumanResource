@@ -124,7 +124,14 @@ namespace HumanResource.src.Repository
             {
                 using (SqlConnection connection = dbContext.connectOpen())
                 {
-                    string query = "SELECT * FROM Employee e, Department d, Education ed, Degree de, Roles r\r\nWHERE e.EmployId = @EmployId\r\nAND  e.DepId =  d.DepId\r\nAND e.EducationId = ed.EducationId\r\nAND e.DegreeId = de.DegreeId\r\nAND e.RoleId = r.RoleId";
+                    //string query = "SELECT * FROM Employee e, Department d, Education ed, Degree de, Roles r\r\nWHERE e.EmployId = @EmployId\r\nAND  e.DepId =  d.DepId\r\nAND e.EducationId = ed.EducationId\r\nAND e.DegreeId = de.DegreeId\r\nAND e.RoleId = r.RoleId";
+                    string query = @"SELECT *
+                        FROM Employee e
+                        LEFT JOIN Department d ON e.DepId = d.DepId
+                        LEFT JOIN Education ed ON e.EducationId = ed.EducationId
+                        LEFT JOIN Degree de ON e.DegreeId = de.DegreeId
+                        LEFT JOIN Roles r ON e.RoleId = r.RoleId
+                        WHERE e.EmployId = @EmployId";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
                     {
                         sqlCommand.Parameters.AddWithValue("@EmployId", employeeReqDTO.EmployId);
@@ -142,9 +149,10 @@ namespace HumanResource.src.Repository
                                 employees1.Email = reader.GetString(reader.GetOrdinal("Email"));
                                 employees1.Gender = reader.GetString(reader.GetOrdinal("Gender"));
                                 employees1.DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
-                                employees1.EducationName = reader.GetString(reader.GetOrdinal("EducationName"));
-                                employees1.DegreeName = reader.GetString(reader.GetOrdinal("DegreeName"));
-                                employees1.DepDesc = reader.GetString(reader.GetOrdinal("DepDesc"));
+
+                                employees1.EducationName = reader.IsDBNull(reader.GetOrdinal("EducationName")) ? string.Empty : reader.GetString(reader.GetOrdinal("EducationName"));
+                                employees1.DegreeName = reader.IsDBNull(reader.GetOrdinal("DegreeName")) ? string.Empty : reader.GetString(reader.GetOrdinal("DegreeName"));
+                                employees1.DepDesc = reader.IsDBNull(reader.GetOrdinal("DepDesc")) ? string.Empty : reader.GetString(reader.GetOrdinal("DepDesc"));
                                 employees1.RoleName = reader.GetString(reader.GetOrdinal("RoleName"));
                                 employees.Add(employees1);
                             }

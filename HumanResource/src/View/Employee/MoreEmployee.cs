@@ -89,10 +89,11 @@ namespace HumanResource.src.View.Employee
             try
             {
                 List<RoleReqDTO> roleReqDTO = roleController.findAllRole();
+
                 if (roleReqDTO.Count > 0)
                 {
                     txtCboRole.DataSource = roleReqDTO;
-                    txtCboRole.DisplayMember = "RoleId";
+                    txtCboRole.DisplayMember = "RoleName";
                     txtCboRole.ValueMember = "RoleId";
                     txtCboRole.SelectedIndex = 1;
                 }
@@ -108,5 +109,6 @@ namespace HumanResource.src.View.Employee
 
             }
         }
+
     }
 }

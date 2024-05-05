@@ -60,7 +60,13 @@ VALUES
 
 solution 7 employeee, department, education, degreee, roles
 
-DECLARE @EmployId INTEGER = 2
+DECLARE @EmployId INTEGER = 12222
+
+SELECT * FROM Employee e
+WHERE e.EmployId = @EmployId
+
+
+DECLARE @EmployId INTEGER = 12222
 
 SELECT * FROM Employee e, Department d, Education ed, Degree de, Roles r
 WHERE e.EmployId = @EmployId
@@ -68,6 +74,18 @@ AND  e.DepId =  d.DepId
 AND e.EducationId = ed.EducationId
 AND e.DegreeId = de.DegreeId
 AND e.RoleId = r.RoleId
+
+
+khi các ID tương ứng là rỗng
+các dòng từ bảng Employee vẫn được hiển thị, ngay cả khi không có kết quả tương ứng
+SELECT *
+FROM Employee e
+LEFT JOIN Department d ON e.DepId = d.DepId
+LEFT JOIN Education ed ON e.EducationId = ed.EducationId
+LEFT JOIN Degree de ON e.DegreeId = de.DegreeId
+LEFT JOIN Roles r ON e.RoleId = r.RoleId
+WHERE e.EmployId = @EmployId
+
 
 solution 8  xoá người dùng
 
