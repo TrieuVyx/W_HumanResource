@@ -153,7 +153,7 @@ namespace HumanResource.src.Repository
                                 employees1.EducationName = reader.IsDBNull(reader.GetOrdinal("EducationName")) ? string.Empty : reader.GetString(reader.GetOrdinal("EducationName"));
                                 employees1.DegreeName = reader.IsDBNull(reader.GetOrdinal("DegreeName")) ? string.Empty : reader.GetString(reader.GetOrdinal("DegreeName"));
                                 employees1.DepDesc = reader.IsDBNull(reader.GetOrdinal("DepDesc")) ? string.Empty : reader.GetString(reader.GetOrdinal("DepDesc"));
-                                employees1.RoleName = reader.GetString(reader.GetOrdinal("RoleName"));
+                                employees1.RoleName = reader.IsDBNull(reader.GetOrdinal("RoleName")) ? string.Empty : reader.GetString(reader.GetOrdinal("RoleName"));
                                 employees.Add(employees1);
                             }
                         }
@@ -175,7 +175,8 @@ namespace HumanResource.src.Repository
             {
                 using (SqlConnection connection = dbContext.connectOpen())
                 {
-                    string query = "UPDATE Employee SET EmployeeName = @EmployeeName, AddressEmployee = @AddressEmployee, Phone = @Phone, Email = @Email, DateOfBirth = @DateOfBirth , Gender = @Gender WHERE EmployId = @EmployId";
+                    string query = "UPDATE Employee SET EmployeeName = @EmployeeName, AddressEmployee = @AddressEmployee, Phone = @Phone, Email = @Email, DateOfBirth = @DateOfBirth , Gender = @Gender  WHERE EmployId = @EmployId";
+                    //string query = "UPDATE Employee SET EmployeeName = @EmployeeName, AddressEmployee = @AddressEmployee, Phone = @Phone, Email = @Email, DateOfBirth = @DateOfBirth , Gender = @Gender , DepId = @DepId, DegreeId = @DegreeId,EducationId = @EducationId WHERE EmployId = @EmployId";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
                     {
                         sqlCommand.Parameters.AddWithValue("@EmployId", employeeReqDTO.EmployId);
@@ -185,6 +186,9 @@ namespace HumanResource.src.Repository
                         sqlCommand.Parameters.AddWithValue("@Email", employeeReqDTO.Email);
                         sqlCommand.Parameters.AddWithValue("@DateOfBirth", employeeReqDTO.DateOfBirth);
                         sqlCommand.Parameters.AddWithValue("@Gender", employeeReqDTO.Gender);
+                        //sqlCommand.Parameters.AddWithValue("@EducationId", employeeReqDTO.Gender);
+                        //sqlCommand.Parameters.AddWithValue("@DepId", employeeReqDTO.Gender);
+                        //sqlCommand.Parameters.AddWithValue("@DegreeId", employeeReqDTO.Gender);
                         connection.Open();
                         sqlCommand.ExecuteNonQuery();
                         sqlCommand.Parameters.Clear();

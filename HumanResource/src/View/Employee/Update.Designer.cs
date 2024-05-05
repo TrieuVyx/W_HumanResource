@@ -45,11 +45,21 @@
             this.TxtID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtComboDep = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtCboRole = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtComboEdu = new System.Windows.Forms.ComboBox();
+            this.txtComboDegree = new System.Windows.Forms.ComboBox();
+            this.txtComboAccount = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnRefer = new System.Windows.Forms.Button();
+            this.txtBirthday = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtBirthday = new System.Windows.Forms.DateTimePicker();
-            this.btnRefer = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -93,7 +103,7 @@
             // RdFemale
             // 
             this.RdFemale.AutoSize = true;
-            this.RdFemale.Location = new System.Drawing.Point(591, 48);
+            this.RdFemale.Location = new System.Drawing.Point(248, 366);
             this.RdFemale.Margin = new System.Windows.Forms.Padding(4);
             this.RdFemale.Name = "RdFemale";
             this.RdFemale.Size = new System.Drawing.Size(91, 24);
@@ -105,7 +115,7 @@
             // RdMale
             // 
             this.RdMale.AutoSize = true;
-            this.RdMale.Location = new System.Drawing.Point(513, 50);
+            this.RdMale.Location = new System.Drawing.Point(142, 366);
             this.RdMale.Margin = new System.Windows.Forms.Padding(4);
             this.RdMale.Name = "RdMale";
             this.RdMale.Size = new System.Drawing.Size(70, 24);
@@ -117,7 +127,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(429, 52);
+            this.label6.Location = new System.Drawing.Point(45, 368);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 20);
@@ -144,7 +154,7 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(346, 264);
+            this.BtnCancel.Location = new System.Drawing.Point(721, 401);
             this.BtnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(139, 46);
@@ -155,7 +165,7 @@
             // 
             // BtnUpdate
             // 
-            this.BtnUpdate.Location = new System.Drawing.Point(8, 264);
+            this.BtnUpdate.Location = new System.Drawing.Point(424, 401);
             this.BtnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(139, 46);
@@ -202,6 +212,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtComboDep);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.txtCboRole);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.txtComboEdu);
+            this.groupBox1.Controls.Add(this.txtComboDegree);
+            this.groupBox1.Controls.Add(this.txtComboAccount);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btnRefer);
             this.groupBox1.Controls.Add(this.txtBirthday);
             this.groupBox1.Controls.Add(this.BtnCancel);
@@ -221,14 +241,122 @@
             this.groupBox1.Controls.Add(this.TxtID);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(13, 106);
+            this.groupBox1.Location = new System.Drawing.Point(13, 77);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(908, 327);
+            this.groupBox1.Size = new System.Drawing.Size(908, 450);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Staff Information";
+            // 
+            // txtComboDep
+            // 
+            this.txtComboDep.FormattingEnabled = true;
+            this.txtComboDep.Location = new System.Drawing.Point(136, 314);
+            this.txtComboDep.Name = "txtComboDep";
+            this.txtComboDep.Size = new System.Drawing.Size(251, 28);
+            this.txtComboDep.TabIndex = 28;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(8, 322);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(107, 20);
+            this.label14.TabIndex = 27;
+            this.label14.Text = "Department";
+            // 
+            // txtCboRole
+            // 
+            this.txtCboRole.FormattingEnabled = true;
+            this.txtCboRole.Location = new System.Drawing.Point(513, 314);
+            this.txtCboRole.Name = "txtCboRole";
+            this.txtCboRole.Size = new System.Drawing.Size(347, 28);
+            this.txtCboRole.TabIndex = 25;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(413, 269);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(77, 20);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "Account";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(438, 322);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(47, 20);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Role";
+            // 
+            // txtComboEdu
+            // 
+            this.txtComboEdu.FormattingEnabled = true;
+            this.txtComboEdu.Location = new System.Drawing.Point(136, 261);
+            this.txtComboEdu.Name = "txtComboEdu";
+            this.txtComboEdu.Size = new System.Drawing.Size(251, 28);
+            this.txtComboEdu.TabIndex = 22;
+            // 
+            // txtComboDegree
+            // 
+            this.txtComboDegree.FormattingEnabled = true;
+            this.txtComboDegree.Location = new System.Drawing.Point(513, 211);
+            this.txtComboDegree.Name = "txtComboDegree";
+            this.txtComboDegree.Size = new System.Drawing.Size(347, 28);
+            this.txtComboDegree.TabIndex = 21;
+            // 
+            // txtComboAccount
+            // 
+            this.txtComboAccount.FormattingEnabled = true;
+            this.txtComboAccount.Location = new System.Drawing.Point(513, 261);
+            this.txtComboAccount.Name = "txtComboAccount";
+            this.txtComboAccount.Size = new System.Drawing.Size(347, 28);
+            this.txtComboAccount.TabIndex = 20;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(30, 269);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 20);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Education";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(420, 217);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 20);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Degree";
+            // 
+            // btnRefer
+            // 
+            this.btnRefer.Location = new System.Drawing.Point(571, 401);
+            this.btnRefer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefer.Name = "btnRefer";
+            this.btnRefer.Size = new System.Drawing.Size(139, 46);
+            this.btnRefer.TabIndex = 16;
+            this.btnRefer.Text = "References";
+            this.btnRefer.UseVisualStyleBackColor = true;
+            this.btnRefer.Click += new System.EventHandler(this.btnRefer_Click);
+            // 
+            // txtBirthday
+            // 
+            this.txtBirthday.Location = new System.Drawing.Point(136, 156);
+            this.txtBirthday.Name = "txtBirthday";
+            this.txtBirthday.Size = new System.Drawing.Size(251, 26);
+            this.txtBirthday.TabIndex = 15;
             // 
             // label3
             // 
@@ -255,38 +383,20 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(707, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(526, 26);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(166, 123);
+            this.pictureBox1.Size = new System.Drawing.Size(347, 123);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
-            // 
-            // txtBirthday
-            // 
-            this.txtBirthday.Location = new System.Drawing.Point(136, 156);
-            this.txtBirthday.Name = "txtBirthday";
-            this.txtBirthday.Size = new System.Drawing.Size(251, 26);
-            this.txtBirthday.TabIndex = 15;
-            // 
-            // btnRefer
-            // 
-            this.btnRefer.Location = new System.Drawing.Point(172, 264);
-            this.btnRefer.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRefer.Name = "btnRefer";
-            this.btnRefer.Size = new System.Drawing.Size(139, 46);
-            this.btnRefer.TabIndex = 16;
-            this.btnRefer.Text = "References";
-            this.btnRefer.UseVisualStyleBackColor = true;
-            this.btnRefer.Click += new System.EventHandler(this.btnRefer_Click);
             // 
             // Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(934, 446);
+            this.ClientSize = new System.Drawing.Size(934, 540);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -323,5 +433,15 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker txtBirthday;
         private System.Windows.Forms.Button btnRefer;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox txtComboEdu;
+        private System.Windows.Forms.ComboBox txtComboDegree;
+        private System.Windows.Forms.ComboBox txtComboAccount;
+        private System.Windows.Forms.ComboBox txtCboRole;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox txtComboDep;
+        private System.Windows.Forms.Label label14;
     }
 }

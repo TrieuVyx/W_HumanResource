@@ -78,6 +78,7 @@ AND e.RoleId = r.RoleId
 
 khi các ID tương ứng là rỗng
 các dòng từ bảng Employee vẫn được hiển thị, ngay cả khi không có kết quả tương ứng
+DECLARE @EmployId INTEGER = 2
 SELECT *
 FROM Employee e
 LEFT JOIN Department d ON e.DepId = d.DepId
@@ -113,4 +114,20 @@ Email = @Email,
 DateOfBirth = @DateOfBirth ,
 Gender = @Gender
 WHERE EmployId = @EmployId
+
+
+
+thêm 
+
+UPDATE Employee 
+SET EmployeeName = @EmployeeName, 
+AddressEmployee = @AddressEmployee, 
+Phone = @Phone, Email = @Email, 
+DateOfBirth = @DateOfBirth , 
+Gender = @Gender , 
+DepId = @DepId, 
+DegreeId = @DegreeId,
+EducationId = @EducationId 
+WHERE EmployId = @EmployId
+
 */
