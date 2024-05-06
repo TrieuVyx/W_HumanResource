@@ -97,9 +97,9 @@
             // 
             this.pictureBox1.BackgroundImage = global::HumanResource.Properties.Resources._2ac7013cfd3e1cc86b60ec9be2f8ef97;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 148);
+            this.pictureBox1.Size = new System.Drawing.Size(205, 175);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
