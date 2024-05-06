@@ -142,4 +142,7 @@ SOLUTION 10 TÌM NHÂN VIÊN CHƯA CÓ PHÒNG
 SELECT *
 FROM Employee
 WHERE DepId IS NULL;
+
+
+SELECT * FROM EmployeeHistory
 */

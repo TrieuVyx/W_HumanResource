@@ -367,11 +367,13 @@
     <Compile Include="src\Controller\AuthorController.cs" />
     <Compile Include="src\Controller\DepartmentController.cs" />
     <Compile Include="src\Controller\EmployeeController.cs" />
+    <Compile Include="src\Controller\EmployeeHistoryController.cs" />
     <Compile Include="src\Controller\RoleController.cs" />
     <Compile Include="src\DbContext\Dbcontext.cs" />
     <Compile Include="src\DbContext\GetQuery.cs" />
     <Compile Include="src\DTO\Request\DepartmentReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeAndDepartmentReqDTO.cs" />
+    <Compile Include="src\DTO\Request\EmployeeHistoryReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeReqDTO.cs" />
     <Compile Include="src\DTO\Request\LoginReqDTO.cs" />
     <Compile Include="src\DTO\Request\RoleReqDTO.cs" />
@@ -389,10 +391,12 @@
     <Compile Include="src\Entity\Salary.cs" />
     <Compile Include="src\Repository\AuthorRepository.cs" />
     <Compile Include="src\Repository\DepartmentRepository.cs" />
+    <Compile Include="src\Repository\EmployeeHistoryRepository.cs" />
     <Compile Include="src\Repository\EmployeeRepository.cs" />
     <Compile Include="src\Repository\RoleRepository.cs" />
     <Compile Include="src\Service\AuthorService.cs" />
     <Compile Include="src\Service\DepartmentService.cs" />
+    <Compile Include="src\Service\EmployeeHistoryService.cs" />
     <Compile Include="src\Service\EmployeeService.cs" />
     <Compile Include="src\Service\RoleService.cs" />
     <Compile Include="src\View\Auth\LoginForm.cs">

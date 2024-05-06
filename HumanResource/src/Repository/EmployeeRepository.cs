@@ -189,11 +189,15 @@ namespace HumanResource.src.Repository
                                 employees1.Email = reader.GetString(reader.GetOrdinal("Email"));
                                 employees1.Gender = reader.GetString(reader.GetOrdinal("Gender"));
                                 employees1.DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
+                              
+
 
                                 employees1.EducationName = reader.IsDBNull(reader.GetOrdinal("EducationName")) ? string.Empty : reader.GetString(reader.GetOrdinal("EducationName"));
                                 employees1.DegreeName = reader.IsDBNull(reader.GetOrdinal("DegreeName")) ? string.Empty : reader.GetString(reader.GetOrdinal("DegreeName"));
                                 employees1.DepDesc = reader.IsDBNull(reader.GetOrdinal("DepDesc")) ? string.Empty : reader.GetString(reader.GetOrdinal("DepDesc"));
                                 employees1.RoleName = reader.IsDBNull(reader.GetOrdinal("RoleName")) ? string.Empty : reader.GetString(reader.GetOrdinal("RoleName"));
+                                employees1.RoleId = reader.IsDBNull(reader.GetOrdinal("RoleId")) ? 0 : reader.GetInt32(reader.GetOrdinal("RoleId"));
+                                employees1.DepId = reader.IsDBNull(reader.GetOrdinal("DepId")) ? 0 : reader.GetInt32(reader.GetOrdinal("DepId"));
                                 employees.Add(employees1);
                             }
                         }

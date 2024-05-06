@@ -22,7 +22,6 @@ namespace HumanResource.src.DTO.Request
         private string depDesc;
         private string educationName;
         private string degreeName;
-        private string departmentName;
         public int EmployId
         {
             get { return employId; }
@@ -92,11 +91,7 @@ namespace HumanResource.src.DTO.Request
             get { return degreeName; }
             set { degreeName = value; }
         }
-        public string DepartmentName
-        {
-            get { return departmentName; }
-            set { departmentName = value; }
-        }
+       
         public int DepId
         {
             get { return depId; }
