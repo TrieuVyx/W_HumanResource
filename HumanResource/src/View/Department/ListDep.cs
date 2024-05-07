@@ -29,7 +29,7 @@ namespace HumanResource.src.View.Department
         {
             try
             {
-                List<DepartmentResDTO> departments = departmentController.findAllList();
+                List<DepartmentResDTO> departments = departmentController.FindAllList();
                 GridViewDepartment.DataSource = departments;
                 txtComboDep.DataSource = departments;
                 txtComboDep.DisplayMember = "DepDesc";
@@ -111,7 +111,7 @@ namespace HumanResource.src.View.Department
                 {
                     departmentReqDTO.DepId = int.Parse(txtID.Text);
 
-                    List<DepartmentResDTO> departmentRes = departmentController.findIdDepartMent(departmentReqDTO);
+                    List<DepartmentResDTO> departmentRes = departmentController.FindIdDepartMent(departmentReqDTO);
                     if (departmentRes.Count > 0)
                     {
                         Update update = new Update();
@@ -141,7 +141,7 @@ namespace HumanResource.src.View.Department
                 {
                     employeeResDTO.EmployId = int.Parse(txtID.Text);
 
-                    List<EmployeeResDTO> employeeRes = departmentController.findAndDelete(employeeResDTO);
+                    List<EmployeeResDTO> employeeRes = departmentController.FindAndDelete(employeeResDTO);
                     MessageBox.Show("Bạn đã xoá nhân viên ra khỏi phòng ban");
                 }
                 else
@@ -172,7 +172,7 @@ namespace HumanResource.src.View.Department
                     {
                         employeeReqDTO.DepId = DepId;
                         employeeReqDTO.EmployId = int.Parse(txtID.Text);
-                        bool employees = employeeController.moveDepart(employeeReqDTO);
+                        bool employees = employeeController.MoveDepart(employeeReqDTO);
                         if (employees)
                         {
                             MessageBox.Show("Bạn đã di chuyển nhân viên đến nơi khác ^, vui lòng reset lại để cập nhật");

@@ -58,7 +58,7 @@ namespace HumanResource.src.Service
         {
             try
             {
-                return employeeRepository.findAndDelete(employeeReqDTO);
+                return employeeRepository.FindAndDelete(employeeReqDTO);
             }
             catch (Exception ex)
             {

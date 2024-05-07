@@ -36,6 +36,7 @@
             this.ckShowPass = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPassWord
@@ -77,6 +78,7 @@
             this.btnCancel.TabIndex = 24;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // btnLogin
             // 
@@ -90,7 +92,7 @@
             this.btnLogin.TabIndex = 23;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // ckShowPass
             // 
@@ -125,12 +127,23 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "USER ACCOUNT";
             // 
-            // Login
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(121, 330);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 22);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Register";
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(449, 473);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPassWord);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label3);
@@ -139,7 +152,7 @@
             this.Controls.Add(this.ckShowPass);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Name = "Login";
+            this.Name = "LoginForm";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
@@ -157,5 +170,6 @@
         private System.Windows.Forms.CheckBox ckShowPass;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -60,7 +60,7 @@
             this.btnWatch.TabIndex = 1;
             this.btnWatch.Text = "Render";
             this.btnWatch.UseVisualStyleBackColor = true;
-            this.btnWatch.Click += new System.EventHandler(this.btnWatch_Click);
+            this.btnWatch.Click += new System.EventHandler(this.BtnWatch_Click);
             // 
             // btnReset
             // 
@@ -70,7 +70,7 @@
             this.btnReset.TabIndex = 2;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
             // btnExport
             // 
@@ -137,7 +137,7 @@
             this.btnWatchEmployee.TabIndex = 10;
             this.btnWatchEmployee.Text = "Watch";
             this.btnWatchEmployee.UseVisualStyleBackColor = true;
-            this.btnWatchEmployee.Click += new System.EventHandler(this.btnWatchEmployee_Click);
+            this.btnWatchEmployee.Click += new System.EventHandler(this.BtnWatchEmployee_Click);
             // 
             // Dashboard
             // 

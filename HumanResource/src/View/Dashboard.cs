@@ -8,15 +8,13 @@ namespace HumanResource.src.View
 {
     public partial class Dashboard : Form
     {
-        private EmployeeHistoryController employeeHistoryController;
-        private EmployeeHistoryReqDTO employeeHistoryReqDTO;
-        private EmployeeReqDTO employeeReqDTO;
-        private EmployeeController employeeController;
+        private readonly EmployeeHistoryController employeeHistoryController;
+        private readonly EmployeeReqDTO employeeReqDTO;
+        private readonly EmployeeController employeeController;
         public Dashboard()
         {
             InitializeComponent();
             employeeHistoryController = new EmployeeHistoryController();
-            employeeHistoryReqDTO = new EmployeeHistoryReqDTO();
             employeeReqDTO = new EmployeeReqDTO();
             employeeController = new EmployeeController();
             txtId.ReadOnly = true;
@@ -24,7 +22,7 @@ namespace HumanResource.src.View
 
         }
 
-        private void btnWatch_Click(object sender, EventArgs e)
+        private void BtnWatch_Click(object sender, EventArgs e)
         {
             ShowHistory();
 
@@ -36,7 +34,7 @@ namespace HumanResource.src.View
                 List<EmployeeHistoryReqDTO> employeeHistoryReqDTO = employeeHistoryController.FindHistory();
 
                 dataHistoryEmployee.DataSource = employeeHistoryReqDTO;
-                dataHistoryEmployee.CellContentClick += addID;
+                dataHistoryEmployee.CellContentClick += AddID;
 
             }
             catch (Exception ex)
@@ -46,26 +44,27 @@ namespace HumanResource.src.View
             }
         }
 
-        private void addID(object sender, DataGridViewCellEventArgs e)
+        private void AddID(object sender, DataGridViewCellEventArgs e)
         {
             int indexOfContent = e.RowIndex;
             DataGridViewRow dataGridViewRow = dataHistoryEmployee.Rows[indexOfContent];
             txtId.Text = dataGridViewRow.Cells[1].Value.ToString();
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void BtnReset_Click(object sender, EventArgs e)
         {
+
             ShowHistory();
         }
 
-        private void btnWatchEmployee_Click(object sender, EventArgs e)
+        private void BtnWatchEmployee_Click(object sender, EventArgs e)
         {
             try
             {
                 if (!string.IsNullOrEmpty(txtId.Text))
                 {
                     employeeReqDTO.EmployId = int.Parse(txtId.Text);
-                    List<EmployeeReqDTO> employeeReqs = employeeController.findAndDetail(employeeReqDTO);
+                    List<EmployeeReqDTO> employeeReqs = employeeController.FindAndDetail(employeeReqDTO);
                     if (employeeReqs.Count > 0)
                     {
                         dataRenderEmployee.DataSource = employeeReqs;

@@ -10,9 +10,9 @@ namespace HumanResource.src.View.Employee
 {
     public partial class ListEmployee : Form
     {
-        private EmployeeController employeeController;
+        private readonly EmployeeController employeeController;
         private Employees employee;
-        private EmployeeReqDTO employeeReqDTO;
+        private readonly EmployeeReqDTO employeeReqDTO;
         public ListEmployee()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace HumanResource.src.View.Employee
         {
             try
             {
-                List<Employees> employeeRes = employeeController.findAllList();
+                List<Employees> employeeRes = employeeController.FindAllList();
                 GridViewEmployee.DataSource = employeeRes;
                 txtAmout.Text = employeeRes.Count.ToString();
                 txtSearchBox.Clear();
@@ -56,7 +56,7 @@ namespace HumanResource.src.View.Employee
             GridViewEmployee.ReadOnly = true;
             //GridViewDepartment.Enabled = false;
         }
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void BtnSearch_Click(object sender, EventArgs e)
         {
             string txtSearchValue = txtSearchBox.Text;
             employee = new Employees();
@@ -89,17 +89,17 @@ namespace HumanResource.src.View.Employee
                 MessageBox.Show("Lỗi Phát Sinh Từ ListEmployee " + ex.Message);
             }
         }
-        private void btnReset_Click_1(object sender, EventArgs e)
+        private void BtnReset_Click_1(object sender, EventArgs e)
         {
             ShowEmployee();
             txtSearchBox.Clear();
         }
-        int x = 175;
-        int y = 10;
-        int height = 470;
-        int width = 700;
-        MoreEmployee MoreEmployee = new MoreEmployee();
-        private void btnCreate_Click(object sender, EventArgs e)
+        readonly int x = 175;
+        readonly int y = 10;
+        readonly int height = 470;
+        readonly int width = 700;
+        readonly MoreEmployee MoreEmployee = new MoreEmployee();
+        private void BtnCreate_Click(object sender, EventArgs e)
         {
             MoreEmployee.StartPosition = FormStartPosition.Manual;
             MoreEmployee.Bounds = new Rectangle(x, y, width, height);
@@ -107,7 +107,7 @@ namespace HumanResource.src.View.Employee
             this.Hide();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void BtnUpdate_Click(object sender, EventArgs e)
 
         {
             try
@@ -116,7 +116,7 @@ namespace HumanResource.src.View.Employee
                 {
                     employeeReqDTO.EmployId = int.Parse(txtId.Text);
 
-                    List<EmployeeReqDTO> employeeReqs = employeeController.findAndDetail(employeeReqDTO);
+                    List<EmployeeReqDTO> employeeReqs = employeeController.FindAndDetail(employeeReqDTO);
                     if (employeeReqs.Count > 0)
                     {
                         Update update = new Update();
@@ -139,15 +139,14 @@ namespace HumanResource.src.View.Employee
             }
         }
 
-        private void btnDetail_Click(object sender, EventArgs e)
+        private void BtnDetail_Click(object sender, EventArgs e)
         {
             try
             {
                 if (!string.IsNullOrEmpty(txtId.Text))
                 {
                     employeeReqDTO.EmployId = int.Parse(txtId.Text);
-                    MessageBox.Show(txtId.Text.ToString());
-                    List<EmployeeReqDTO> employeeReqs = employeeController.findAndDetail(employeeReqDTO);
+                    List<EmployeeReqDTO> employeeReqs = employeeController.FindAndDetail(employeeReqDTO);
                     if (employeeReqs.Count > 0)
                     {
                         Read read = new Read();
@@ -171,7 +170,7 @@ namespace HumanResource.src.View.Employee
 
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -182,7 +181,7 @@ namespace HumanResource.src.View.Employee
 
                     if (result == DialogResult.Yes)
                     {
-                        bool employeeReqs = employeeController.findAndDelete(employeeReqDTO);
+                        bool employeeReqs = employeeController.FindAndDelete(employeeReqDTO);
                         if (employeeReqs)
                         {
                             MessageBox.Show("Xoá thành công, vui lòng reset để kiểm tra ^");

@@ -8,8 +8,8 @@ namespace HumanResource.src.View.Auth
     internal partial class LoginForm : Form
     {
         private LoginReqDTO loginReqDTO;
-        private AuthorController authorController;
-        private MainApplication mainApplication;
+        private readonly AuthorController authorController;
+        private readonly MainApplication mainApplication;
 
         public LoginForm()
         {
@@ -28,7 +28,7 @@ namespace HumanResource.src.View.Auth
         {
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
             try
             {
@@ -63,6 +63,9 @@ namespace HumanResource.src.View.Auth
             }
         }
 
-
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

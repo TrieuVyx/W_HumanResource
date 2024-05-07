@@ -9,23 +9,19 @@ namespace HumanResource.src.View.Employee
 {
     public partial class MoreEmployee : Form
     {
-        private Roles roles;
-        private EmployeeController employeeController;
+        private readonly EmployeeController employeeController;
         private EmployeeReqDTO employeeReqDTO;
-        private RoleReqDTO roleReqDTO;
-        private RoleController roleController;
+        private readonly RoleController roleController;
         public MoreEmployee()
         {
             InitializeComponent();
             employeeController = new EmployeeController();
             employeeReqDTO = new EmployeeReqDTO();
-            roleReqDTO = new RoleReqDTO();
             roleController = new RoleController();
-            roles = new Roles();
             DataLimit();
         }
 
-        private void btnthem_Click(object sender, EventArgs e)
+        private void Btnthem_Click(object sender, EventArgs e)
         {
             string FullName = TXTHOTEN.Text;
             string Phone = txtsodienthoai.Text;
@@ -34,11 +30,10 @@ namespace HumanResource.src.View.Employee
             string Id = txtid.Text;
             string valueCboGender = cboGioiTinh.SelectedItem.ToString();
             DateTime selectedDate = txtBirthDay.Value;
-            int roleId;
             employeeReqDTO = new EmployeeReqDTO();
             try
             {
-                if (int.TryParse(txtCboRole.SelectedValue.ToString(), out roleId))
+                if (int.TryParse(txtCboRole.SelectedValue.ToString(), out int roleId))
                 {
                     employeeReqDTO.RoleId = roleId;
                 }
@@ -62,7 +57,7 @@ namespace HumanResource.src.View.Employee
                     employeeReqDTO.Gender = valueCboGender;
                     employeeReqDTO.DateOfBirth = selectedDate;
                     employeeReqDTO.RoleId = roleId;
-                    bool employees = employeeController.createUser(employeeReqDTO);
+                    bool employees = employeeController.CreateUser(employeeReqDTO);
                     if (employees)
                     {
                         MessageBox.Show("Tạo Thành Công");
@@ -78,7 +73,7 @@ namespace HumanResource.src.View.Employee
                 MessageBox.Show("Lỗi Phát Sinh Từ MoreEmployee " + ex.Message);
             }
         }
-        private void btnxoa_Click(object sender, EventArgs e)
+        private void Btnxoa_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
@@ -88,7 +83,7 @@ namespace HumanResource.src.View.Employee
 
             try
             {
-                List<RoleReqDTO> roleReqDTO = roleController.findAllRole();
+                List<RoleReqDTO> roleReqDTO = roleController.FindAllRole();
 
                 if (roleReqDTO.Count > 0)
                 {

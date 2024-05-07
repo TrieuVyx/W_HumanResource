@@ -87,7 +87,7 @@
             this.btnxoa.TabIndex = 1;
             this.btnxoa.UseVisualStyleBackColor = true;
             this.btnxoa.UseWaitCursor = true;
-            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
+            this.btnxoa.Click += new System.EventHandler(this.Btnxoa_Click);
             // 
             // btnthem
             // 
@@ -99,7 +99,7 @@
             this.btnthem.TabIndex = 0;
             this.btnthem.UseVisualStyleBackColor = true;
             this.btnthem.UseWaitCursor = true;
-            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
+            this.btnthem.Click += new System.EventHandler(this.Btnthem_Click);
             // 
             // groupBox1
             // 

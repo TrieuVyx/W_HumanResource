@@ -22,7 +22,7 @@ namespace HumanResource.src.Repository
             try
             {
 
-                using (SqlConnection connection = dbcontext.connectOpen())
+                using (SqlConnection connection = dbcontext.ConnectOpen())
                 {
                     string query = "SELECT * FROM EmployeeHistory";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))

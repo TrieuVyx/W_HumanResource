@@ -70,7 +70,7 @@ namespace HumanResource.src.View.Department
                         departmentReqDTO.DepPlace = DepPlace;
                         departmentReqDTO.DepType = DepType;
 
-                        bool employeeReqs = departmentController.findAndUpdate(departmentReqDTO);
+                        bool employeeReqs = departmentController.FindAndUpdate(departmentReqDTO);
                         if (employeeReqs)
                         {
                             MessageBox.Show("CẬP NHẬT THÀNH CÔNG, VUI LÒNG ẤN RESET ĐỂ CẬP NHẬT LẠI");
@@ -147,7 +147,7 @@ namespace HumanResource.src.View.Department
 
                     if (result == DialogResult.Yes)
                     {
-                        List<EmployeeResDTO> employeeRes = departmentController.findAndDelete(employeeResDTO);
+                        List<EmployeeResDTO> employeeRes = departmentController.FindAndDelete(employeeResDTO);
                         MessageBox.Show("Bạn đã xoá nhân viên ra khỏi phòng ban, vui lòng reset lại");
                     }
                     else if (result == DialogResult.No)

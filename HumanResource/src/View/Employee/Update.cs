@@ -110,7 +110,7 @@ namespace HumanResource.src.View.Employee
                         employeeReqDTO.EmployeeName = FullName;
                         employeeReqDTO.DateOfBirth = selectedDate;
                         employeeReqDTO.Gender = Gender;
-                        bool employeeReqs = employeeController.findAndUpdate(employeeReqDTO);
+                        bool employeeReqs = employeeController.FindAndUpdate(employeeReqDTO);
                         if (employeeReqs)
                         {
                             MessageBox.Show("CẬP NHẬT THÀNH CÔNG, VUI LÒNG ẤN RESET ĐỂ CẬP NHẬT LẠI");
@@ -140,7 +140,7 @@ namespace HumanResource.src.View.Employee
         {
             try
             {
-                List<RoleReqDTO> roleReqDTO = roleController.findAllRole();
+                List<RoleReqDTO> roleReqDTO = roleController.FindAllRole();
                 if (roleReqDTO.Count > 0)
                 {
                     //txtCboRole.DataSource = roleReqDTO;

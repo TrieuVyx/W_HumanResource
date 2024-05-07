@@ -31,7 +31,7 @@ namespace HumanResource.src.Repository
             try
             {
 
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     string query = "SELECT * FROM Department";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
@@ -70,7 +70,7 @@ namespace HumanResource.src.Repository
             List<EmployeeResDTO> employees = new List<EmployeeResDTO>();
             try
             {
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     string query = "UPDATE Employee SET DepId = NULL WHERE EmployId IN (SELECT e.EmployId FROM Department d,Employee e WHERE d.DepId = e.DepId AND e.EmployId = @EmployId) ";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
@@ -109,7 +109,7 @@ namespace HumanResource.src.Repository
         {
             try
             {
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     string query = "UPDATE Department SET DepPlace = @DepPlace, DepType = @DepType, DepDesc = @DepDesc WHERE DepId = @DepId ";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
@@ -140,7 +140,7 @@ namespace HumanResource.src.Repository
             List<DepartmentResDTO> departments = new List<DepartmentResDTO>();
             try
             {
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     string query = "SELECT * FROM Department  WHERE DepId = @DepId";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
@@ -181,7 +181,7 @@ namespace HumanResource.src.Repository
             List<EmployeeResDTO> employees = new List<EmployeeResDTO>();
             try
             {
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     string query = "SELECT * FROM Employee e, Department d WHERE e.DepId = d.DepId AND DepDesc LIKE @DepDesc ";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))

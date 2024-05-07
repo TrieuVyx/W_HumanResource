@@ -42,7 +42,7 @@ namespace HumanResource.src.View.Department
                     {
                         employeeReqDTO.DepId = int.Parse(depId);
                         employeeReqDTO.EmployId = int.Parse(employId);
-                        bool employees = employeeController.moveDepart(employeeReqDTO);
+                        bool employees = employeeController.MoveDepart(employeeReqDTO);
                         if (employees)
                         {
                             MessageBox.Show("Bạn đã di chuyển nhân viên đến nơi khác ^, vui lòng reset lại để cập nhật");
@@ -69,7 +69,7 @@ namespace HumanResource.src.View.Department
         }
         private void List()
         {
-            List<DepartmentResDTO> departments = departmentController.findAllList();
+            List<DepartmentResDTO> departments = departmentController.FindAllList();
             dataGridDepartMent.DataSource = departments;
             dataGridDepartMent.CellContentClick += addId;
             List<EmployeeAndDepartmentReqDTO> employeeAndDepartmentReqDTO = employeeController.FindAllUserNotDep();

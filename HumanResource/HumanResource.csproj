@@ -371,6 +371,7 @@
     <Compile Include="src\Controller\RoleController.cs" />
     <Compile Include="src\DbContext\Dbcontext.cs" />
     <Compile Include="src\DbContext\GetQuery.cs" />
+    <Compile Include="src\DbContext\Modify.cs" />
     <Compile Include="src\DTO\Request\DepartmentReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeAndDepartmentReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeHistoryReqDTO.cs" />
@@ -404,6 +405,12 @@
     </Compile>
     <Compile Include="src\View\Auth\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\Auth\RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\Auth\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="src\View\Department\AddEmployeeCome.cs">
       <SubType>Form</SubType>
@@ -480,6 +487,9 @@
     </Compile>
     <EmbeddedResource Include="src\View\Auth\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\Auth\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

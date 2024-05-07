@@ -26,7 +26,7 @@ namespace HumanResource.src.Repository
         {
             try
             {
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     string query = "INSERT INTO Employee (EmployId, Email, EmployeeName, AddressEmployee, Phone, RoleId,  DateOfBirth, Gender) VALUES (@EmployId, @Email, @EmployeeName, @AddressEmployee,@Phone ,@RoleId,@DateOfBirth,@Gender);";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
@@ -62,7 +62,7 @@ namespace HumanResource.src.Repository
             try
             {
 
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     string query = "SELECT * FROM Employee";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
@@ -103,7 +103,7 @@ namespace HumanResource.src.Repository
             try
             {
 
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     string query = "SELECT * FROM Employee WHERE DepId IS NULL";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
@@ -144,7 +144,7 @@ namespace HumanResource.src.Repository
         {
             try
             {
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     string query = "DELETE FROM Employee WHERE EmployId = @EmployId";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
@@ -171,7 +171,7 @@ namespace HumanResource.src.Repository
             List<EmployeeReqDTO> employees = new List<EmployeeReqDTO>();
             try
             {
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     //string query = "SELECT * FROM Employee e, Department d, Education ed, Degree de, Roles r\r\nWHERE e.EmployId = @EmployId\r\nAND  e.DepId =  d.DepId\r\nAND e.EducationId = ed.EducationId\r\nAND e.DegreeId = de.DegreeId\r\nAND e.RoleId = r.RoleId";
                     string query = @"SELECT *
@@ -230,7 +230,7 @@ namespace HumanResource.src.Repository
         {
             try
             {
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     string query = "UPDATE Employee SET EmployeeName = @EmployeeName, AddressEmployee = @AddressEmployee, Phone = @Phone, Email = @Email, DateOfBirth = @DateOfBirth , Gender = @Gender  WHERE EmployId = @EmployId";
                     //string query = "UPDATE Employee SET EmployeeName = @EmployeeName, AddressEmployee = @AddressEmployee, Phone = @Phone, Email = @Email, DateOfBirth = @DateOfBirth , Gender = @Gender , DepId = @DepId, DegreeId = @DegreeId,EducationId = @EducationId WHERE EmployId = @EmployId";
@@ -267,7 +267,7 @@ namespace HumanResource.src.Repository
             List<Employees> employees = new List<Employees>();
             try
             {
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     string query = "SELECT * FROM Employee WHERE EmployeeName LIKE  '%' + @EmployeeName + '%'";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
@@ -311,7 +311,7 @@ namespace HumanResource.src.Repository
         {
             try
             {
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     string query = "UPDATE Employee SET DepId = @DepId WHERE EmployId = @EmployId";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
@@ -335,7 +335,7 @@ namespace HumanResource.src.Repository
             }
         }
 
-        internal bool findAndDelete(EmployeeReqDTO employeeReqDTO)
+        internal bool FindAndDelete(EmployeeReqDTO employeeReqDTO)
         {
             throw new NotImplementedException();
         }

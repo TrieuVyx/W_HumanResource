@@ -8,7 +8,7 @@ namespace HumanResource.src.Service
 {
     internal class DepartmentService
     {
-        private DepartmentRepository departmentRepository;
+        private readonly DepartmentRepository departmentRepository;
         public DepartmentService(DepartmentRepository departmentRepository)
         {
             this.departmentRepository = departmentRepository;
@@ -30,7 +30,7 @@ namespace HumanResource.src.Service
             }
         }
 
-        internal List<DepartmentResDTO> findAllList()
+        internal List<DepartmentResDTO> FindAllList()
         {
             try
             {
@@ -42,7 +42,7 @@ namespace HumanResource.src.Service
             }
         }
 
-        internal List<DepartmentResDTO> findIdDepartMent(DepartmentReqDTO departmentReqDTO)
+        internal List<DepartmentResDTO> FindIdDepartMent(DepartmentReqDTO departmentReqDTO)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace HumanResource.src.Service
         }
 
 
-        internal List<EmployeeResDTO> findAndDelete(EmployeeResDTO employeeResDTO)
+        internal List<EmployeeResDTO> FindAndDelete(EmployeeResDTO employeeResDTO)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace HumanResource.src.Service
             };
         }
 
-        internal bool findAndUpdate(DepartmentReqDTO departmentReqDTO)
+        internal bool FindAndUpdate(DepartmentReqDTO departmentReqDTO)
         {
             try
             {

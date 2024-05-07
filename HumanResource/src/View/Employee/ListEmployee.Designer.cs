@@ -93,7 +93,7 @@
             this.btnCreate.TabIndex = 21;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.btnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
             // 
             // btnReset
             // 
@@ -103,7 +103,7 @@
             this.btnReset.TabIndex = 20;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click_1);
+            this.btnReset.Click += new System.EventHandler(this.BtnReset_Click_1);
             // 
             // txtLabel
             // 
@@ -131,7 +131,7 @@
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -141,7 +141,7 @@
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // btnDetail
             // 
@@ -151,7 +151,7 @@
             this.btnDetail.TabIndex = 5;
             this.btnDetail.Text = "Detail";
             this.btnDetail.UseVisualStyleBackColor = true;
-            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
+            this.btnDetail.Click += new System.EventHandler(this.BtnDetail_Click);
             // 
             // btnSearch
             // 
@@ -162,7 +162,7 @@
             this.btnSearch.Size = new System.Drawing.Size(45, 39);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // txtSearchBox
             // 

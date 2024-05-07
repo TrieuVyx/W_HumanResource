@@ -4,15 +4,15 @@ namespace HumanResource.src.DbContext
 {
     class GetQuery
     {
-        private Dbcontext dbcontext;
+        private readonly Dbcontext dbcontext;
         public GetQuery()
         {
             dbcontext = new Dbcontext();
-            dbcontext.connectDB();
+            dbcontext.ConnectDB();
         }
         public SqlCommand QueryLogin()
         {
-            using (SqlConnection connection = dbcontext.connectOpen())
+            using (SqlConnection connection = dbcontext.ConnectOpen())
             {
                 string query = "SELECT COUNT(*) FROM Account WHERE Email = @Email AND PassWords = @PassWords";
                 connection.Open();

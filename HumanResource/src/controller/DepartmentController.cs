@@ -8,7 +8,7 @@ namespace HumanResource.src.Controller
 {
     internal class DepartmentController
     {
-        private DepartmentService departmentService;
+        private readonly DepartmentService departmentService;
         public DepartmentController()
         {
             departmentService = new DepartmentService();
@@ -18,11 +18,11 @@ namespace HumanResource.src.Controller
             this.departmentService = departmentService;
         }
 
-        internal List<DepartmentResDTO> findAllList()
+        internal List<DepartmentResDTO> FindAllList()
         {
             try
             {
-                return departmentService.findAllList();
+                return departmentService.FindAllList();
             }
             catch (Exception ex)
             {
@@ -31,11 +31,11 @@ namespace HumanResource.src.Controller
         }
 
 
-        internal List<EmployeeResDTO> findAndDelete(EmployeeResDTO employeeResDTO)
+        internal List<EmployeeResDTO> FindAndDelete(EmployeeResDTO employeeResDTO)
         {
             try
             {
-                return departmentService.findAndDelete(employeeResDTO);
+                return departmentService.FindAndDelete(employeeResDTO);
             }
             catch (Exception ex)
             {
@@ -43,11 +43,11 @@ namespace HumanResource.src.Controller
             }
         }
 
-        internal bool findAndUpdate(DepartmentReqDTO departmentReqDTO)
+        internal bool FindAndUpdate(DepartmentReqDTO departmentReqDTO)
         {
             try
             {
-                return departmentService.findAndUpdate(departmentReqDTO);
+                return departmentService.FindAndUpdate(departmentReqDTO);
             }
             catch (Exception ex)
             {
@@ -55,11 +55,11 @@ namespace HumanResource.src.Controller
             }
         }
 
-        internal List<DepartmentResDTO> findIdDepartMent(DepartmentReqDTO departmentReqDTO)
+        internal List<DepartmentResDTO> FindIdDepartMent(DepartmentReqDTO departmentReqDTO)
         {
             try
             {
-                return departmentService.findIdDepartMent(departmentReqDTO);
+                return departmentService.FindIdDepartMent(departmentReqDTO);
             }
             catch (Exception ex)
             {

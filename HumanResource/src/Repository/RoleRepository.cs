@@ -21,7 +21,7 @@ namespace HumanResource.src.Repository
             List<RoleReqDTO> roleReq = new List<RoleReqDTO>();
             try
             {
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     string query = "SELECT * FROM Roles";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))

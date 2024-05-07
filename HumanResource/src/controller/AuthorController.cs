@@ -7,7 +7,7 @@ namespace HumanResource.src.Controller
 {
     internal class AuthorController
     {
-        private AuthorService authorService;
+        private readonly AuthorService authorService;
 
         public AuthorController()
         {

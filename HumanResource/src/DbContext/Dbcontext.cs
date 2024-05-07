@@ -13,13 +13,13 @@ namespace HumanResource.src.DbContext
         private SqlConnection connection;
 
 
-        public SqlConnection connectOpen()
+        public SqlConnection ConnectOpen()
         {
             connectStringDb = ConfigurationManager.ConnectionStrings["connectStringDb"].ConnectionString;
             connection = new SqlConnection(connectStringDb);
             return connection;
         }
-        public void connectDB()
+        public void ConnectDB()
         {
             connectStringDb = ConfigurationManager.ConnectionStrings["connectStringDb"].ConnectionString;
             using (connection = new SqlConnection(connectStringDb))

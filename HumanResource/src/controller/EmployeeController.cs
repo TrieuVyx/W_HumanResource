@@ -14,7 +14,7 @@ namespace HumanResource.src.Controller
             employeeService = new EmployeeService();
         }
 
-        internal bool createUser(EmployeeReqDTO employeeReqDTO)
+        internal bool CreateUser(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
@@ -26,7 +26,7 @@ namespace HumanResource.src.Controller
             }
         }
 
-        internal List<Employees> findAllList()
+        internal List<Employees> FindAllList()
         {
             try
             {
@@ -50,7 +50,7 @@ namespace HumanResource.src.Controller
             }
         }
 
-        internal bool findAndDelete(EmployeeReqDTO employeeReqDTO)
+        internal bool FindAndDelete(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
@@ -62,7 +62,7 @@ namespace HumanResource.src.Controller
             }
         }
 
-        internal List<EmployeeReqDTO> findAndDetail(EmployeeReqDTO employeeReqDTO)
+        internal List<EmployeeReqDTO> FindAndDetail(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace HumanResource.src.Controller
             }
         }
 
-        internal bool findAndUpdate(EmployeeReqDTO employeeReqDTO)
+        internal bool FindAndUpdate(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
@@ -98,7 +98,7 @@ namespace HumanResource.src.Controller
             }
         }
 
-        internal bool moveDepart(EmployeeReqDTO employeeReqDTO)
+        internal bool MoveDepart(EmployeeReqDTO employeeReqDTO)
         {
             try
             {

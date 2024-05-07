@@ -24,7 +24,7 @@ namespace HumanResource.src.Repository
         {
             try
             {
-                using (SqlConnection connection = dbContext.connectOpen())
+                using (SqlConnection connection = dbContext.ConnectOpen())
                 {
                     //string query = "SELECT COUNT(*) FROM Account WHERE Email = @Email AND PassWords = CONVERT(nvarchar(max), HASHBYTES('MD5', @PassWords), 2)";
                     string query = "SELECT COUNT(*) FROM Account WHERE Email = @Email AND PassWords = @PassWords";
