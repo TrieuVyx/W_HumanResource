@@ -1,39 +1,35 @@
-﻿using HumanResource.src.DbContext;
+﻿using HumanResource.src.View;
+using HumanResource.src.View.Department;
 using HumanResource.src.View.Employee;
-using HumanResource.src.View;
 using HumanResource.src.View.Salary;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using HumanResource.src.View.Department;
-using System.Linq.Expressions;
 
 namespace HumanResource
 {
     public partial class MainApplication : Form
     {
-        private Dbcontext dbcontext;
-        private Point Point;
 
 
-        ListEmployee employee = new ListEmployee();
-        ListDep department = new ListDep();
-        Dashboard dashboard = new Dashboard();
-        ListSalary listSalary = new ListSalary();
-        AddEmployeeCome employeeCome = new AddEmployeeCome();
-        int height = 470;
-        int width = 700;
+        readonly ListEmployee employee = new ListEmployee();
+        readonly ListDep department = new ListDep();
+        readonly Dashboard dashboard = new Dashboard();
+        readonly ListSalary listSalary = new ListSalary();
+        readonly AddEmployeeCome employeeCome = new AddEmployeeCome();
+        readonly int height = 470;
+        readonly int width = 700;
 
         private bool buttonFormSalary = false;
         private bool buttonFormDepartment = false;
         private bool buttonFormEmployee = false;
         private bool buttonFormDashboard = true;
-        private bool buttonRole = false;
+        //private bool buttonRole = false;
         private bool buttonEmployDepartment = false;
-
 
         public MainApplication()
         {
+
             InitializeComponent();
             this.IsMdiContainer = true;
             if (buttonFormDashboard)
@@ -52,20 +48,7 @@ namespace HumanResource
             }
 
         }
-        private MainApplication main;
-        private void ConnectToDatabase()
-        {
 
-            dbcontext = new Dbcontext();
-            dbcontext.connectDB();
-
-        }
-
-        private void connectDB(object sender, EventArgs e)
-        {
-            ConnectToDatabase();
-
-        }
 
         private void ButtonSalary(object sender, EventArgs e)
         {
@@ -128,7 +111,7 @@ namespace HumanResource
         }
         private void MainApplication_Load(object sender, EventArgs e)
         {
-           
+
 
         }
 
@@ -174,9 +157,6 @@ namespace HumanResource
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
     }
 }

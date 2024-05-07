@@ -1,14 +1,8 @@
 ﻿using HumanResource.src.DTO.Request;
-using HumanResource.src.Entity;
-using HumanResource.src.Repository;
+using HumanResource.src.DTO.Response;
 using HumanResource.src.Service;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using HumanResource.src.DTO.Response;
 
 namespace HumanResource.src.Controller
 {
@@ -36,7 +30,7 @@ namespace HumanResource.src.Controller
             }
         }
 
-      
+
         internal List<EmployeeResDTO> findAndDelete(EmployeeResDTO employeeResDTO)
         {
             try

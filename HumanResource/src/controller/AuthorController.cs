@@ -1,11 +1,6 @@
-﻿using HumanResource.src.DbContext;
-using HumanResource.src.DTO.Request;
+﻿using HumanResource.src.DTO.Request;
 using HumanResource.src.Service;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HumanResource.src.Controller
@@ -27,12 +22,12 @@ namespace HumanResource.src.Controller
         {
             try
             {
-                bool author  = authorService.Authenticate(loginReq);
-                if(author)
+                bool author = authorService.Authenticate(loginReq);
+                if (author)
                 {
                     return true;
                 }
-                    return false;
+                return false;
 
             }
             catch (Exception ex)
@@ -43,4 +38,3 @@ namespace HumanResource.src.Controller
         }
     }
 }
- 

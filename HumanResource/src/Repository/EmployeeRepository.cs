@@ -1,29 +1,28 @@
-﻿using HumanResource.src.DTO.Request;
-using HumanResource.src.DTO.Response;
+﻿using HumanResource.src.DbContext;
+using HumanResource.src.DTO.Request;
+using HumanResource.src.Entity;
 using System;
 using System.Collections.Generic;
-using HumanResource.src.DbContext;
 using System.Data.SqlClient;
-using HumanResource.src.Entity;
 
 namespace HumanResource.src.Repository
 {
-   
+
     internal class EmployeeRepository
     {
 
-        private Dbcontext dbContext;
-        private EmployeeResDTO employeeResDTO;
-        private Employees employees;
-        private DepartmentReqDTO departmentReqDTO;
-        public EmployeeRepository ()
+        private readonly Dbcontext dbContext;
+        //private EmployeeResDTO employeeResDTO;
+        //private Employees employees;
+        //private DepartmentReqDTO departmentReqDTO;
+        public EmployeeRepository()
         {
-            dbContext = new Dbcontext ();
-            employeeResDTO = new EmployeeResDTO ();
-            departmentReqDTO = new DepartmentReqDTO ();
-            employees = new Employees ();   
+            dbContext = new Dbcontext();
+            //employeeResDTO = new EmployeeResDTO ();
+            //departmentReqDTO = new DepartmentReqDTO ();
+            //employees = new Employees ();   
         }
-        internal bool createUser(EmployeeReqDTO employeeReqDTO)
+        internal bool CreateUser(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
@@ -41,7 +40,7 @@ namespace HumanResource.src.Repository
                         sqlCommand.Parameters.AddWithValue("@Gender", employeeReqDTO.Gender);
                         sqlCommand.Parameters.AddWithValue("@DateOfBirth", employeeReqDTO.DateOfBirth);
                         sqlCommand.Parameters.AddWithValue("@RoleId", employeeReqDTO.RoleId);
-                        connection.Open(); 
+                        connection.Open();
                         sqlCommand.ExecuteNonQuery();
                         sqlCommand.Parameters.Clear();
                         connection.Close();
@@ -51,11 +50,13 @@ namespace HumanResource.src.Repository
             }
             catch (Exception ex)
             {
+                new Exception("Lỗi Phát Sinh Từ EmployeeRepository " + ex.Message);
+
                 return false;
             }
         }
 
-        internal List<Employees> findAllList()
+        internal List<Employees> FindAllList()
         {
             List<Employees> employeeRes = new List<Employees>();
             try
@@ -72,14 +73,15 @@ namespace HumanResource.src.Repository
                         {
                             while (reader.Read())
                             {
-                                Employees employee= new Employees();
-
-                                employee.EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"));
-                                employee.EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName"));
-                                employee.AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee"));
-                                employee.Phone = reader.GetString(reader.GetOrdinal("Phone"));
-                                employee.Email = reader.GetString(reader.GetOrdinal("Email"));
-                                employee.Gender = reader.GetString(reader.GetOrdinal("Gender"));
+                                Employees employee = new Employees
+                                {
+                                    EmployId = reader.GetInt32(reader.GetOrdinal("EmployId")),
+                                    EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName")),
+                                    AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee")),
+                                    Phone = reader.GetString(reader.GetOrdinal("Phone")),
+                                    Email = reader.GetString(reader.GetOrdinal("Email")),
+                                    Gender = reader.GetString(reader.GetOrdinal("Gender"))
+                                };
                                 employeeRes.Add(employee);
                             }
                         }
@@ -89,6 +91,8 @@ namespace HumanResource.src.Repository
             }
             catch (Exception ex)
             {
+                new Exception("Lỗi Phát Sinh Từ EmployeeRepository " + ex.Message);
+
                 return null;
             }
         }
@@ -110,15 +114,16 @@ namespace HumanResource.src.Repository
                         {
                             while (reader.Read())
                             {
-                                EmployeeAndDepartmentReqDTO employee = new EmployeeAndDepartmentReqDTO();
-
-                                //employee.DepId = reader.GetInt32(reader.GetOrdinal("DepId"));
-                                employee.EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"));
-                                employee.EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName"));
-                                employee.AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee"));
-                                employee.Phone = reader.GetString(reader.GetOrdinal("Phone"));
-                                employee.Email = reader.GetString(reader.GetOrdinal("Email"));
-                                employee.Gender = reader.GetString(reader.GetOrdinal("Gender"));
+                                EmployeeAndDepartmentReqDTO employee = new EmployeeAndDepartmentReqDTO
+                                {
+                                    //employee.DepId = reader.GetInt32(reader.GetOrdinal("DepId"));
+                                    EmployId = reader.GetInt32(reader.GetOrdinal("EmployId")),
+                                    EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName")),
+                                    AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee")),
+                                    Phone = reader.GetString(reader.GetOrdinal("Phone")),
+                                    Email = reader.GetString(reader.GetOrdinal("Email")),
+                                    Gender = reader.GetString(reader.GetOrdinal("Gender"))
+                                };
 
                                 employeeRes.Add(employee);
                             }
@@ -129,11 +134,13 @@ namespace HumanResource.src.Repository
             }
             catch (Exception ex)
             {
+                new Exception("Lỗi Phát Sinh Từ EmployeeRepository " + ex.Message);
+
                 return null;
             }
         }
 
-        internal bool findAndDelete(EmployeeReqDTO employeeReqDTO)
+        internal bool FindxAndDelete(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
@@ -153,11 +160,13 @@ namespace HumanResource.src.Repository
             }
             catch (Exception ex)
             {
+                new Exception("Lỗi Phát Sinh Từ EmployeeRepository " + ex.Message);
+
                 return false;
             }
         }
 
-        internal List<EmployeeReqDTO> findAndDetail(EmployeeReqDTO employeeReqDTO)
+        internal List<EmployeeReqDTO> FindAndDetail(EmployeeReqDTO employeeReqDTO)
         {
             List<EmployeeReqDTO> employees = new List<EmployeeReqDTO>();
             try
@@ -181,23 +190,25 @@ namespace HumanResource.src.Repository
                         {
                             while (reader.Read())
                             {
-                                EmployeeReqDTO employees1 = new EmployeeReqDTO();
-                                employees1.EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"));
-                                employees1.EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName"));
-                                employees1.AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee"));
-                                employees1.Phone = reader.GetString(reader.GetOrdinal("Phone"));
-                                employees1.Email = reader.GetString(reader.GetOrdinal("Email"));
-                                employees1.Gender = reader.GetString(reader.GetOrdinal("Gender"));
-                                employees1.DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
-                              
+                                EmployeeReqDTO employees1 = new EmployeeReqDTO
+                                {
+                                    EmployId = reader.GetInt32(reader.GetOrdinal("EmployId")),
+                                    EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName")),
+                                    AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee")),
+                                    Phone = reader.GetString(reader.GetOrdinal("Phone")),
+                                    Email = reader.GetString(reader.GetOrdinal("Email")),
+                                    Gender = reader.GetString(reader.GetOrdinal("Gender")),
+                                    DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
 
 
-                                employees1.EducationName = reader.IsDBNull(reader.GetOrdinal("EducationName")) ? string.Empty : reader.GetString(reader.GetOrdinal("EducationName"));
-                                employees1.DegreeName = reader.IsDBNull(reader.GetOrdinal("DegreeName")) ? string.Empty : reader.GetString(reader.GetOrdinal("DegreeName"));
-                                employees1.DepDesc = reader.IsDBNull(reader.GetOrdinal("DepDesc")) ? string.Empty : reader.GetString(reader.GetOrdinal("DepDesc"));
-                                employees1.RoleName = reader.IsDBNull(reader.GetOrdinal("RoleName")) ? string.Empty : reader.GetString(reader.GetOrdinal("RoleName"));
-                                employees1.RoleId = reader.IsDBNull(reader.GetOrdinal("RoleId")) ? 0 : reader.GetInt32(reader.GetOrdinal("RoleId"));
-                                employees1.DepId = reader.IsDBNull(reader.GetOrdinal("DepId")) ? 0 : reader.GetInt32(reader.GetOrdinal("DepId"));
+
+                                    EducationName = reader.IsDBNull(reader.GetOrdinal("EducationName")) ? string.Empty : reader.GetString(reader.GetOrdinal("EducationName")),
+                                    DegreeName = reader.IsDBNull(reader.GetOrdinal("DegreeName")) ? string.Empty : reader.GetString(reader.GetOrdinal("DegreeName")),
+                                    DepDesc = reader.IsDBNull(reader.GetOrdinal("DepDesc")) ? string.Empty : reader.GetString(reader.GetOrdinal("DepDesc")),
+                                    RoleName = reader.IsDBNull(reader.GetOrdinal("RoleName")) ? string.Empty : reader.GetString(reader.GetOrdinal("RoleName")),
+                                    RoleId = reader.IsDBNull(reader.GetOrdinal("RoleId")) ? 0 : reader.GetInt32(reader.GetOrdinal("RoleId")),
+                                    DepId = reader.IsDBNull(reader.GetOrdinal("DepId")) ? 0 : reader.GetInt32(reader.GetOrdinal("DepId"))
+                                };
                                 employees.Add(employees1);
                             }
                         }
@@ -209,11 +220,13 @@ namespace HumanResource.src.Repository
             }
             catch (Exception ex)
             {
+                new Exception("Lỗi Phát Sinh Từ EmployeeRepository " + ex.Message);
+
                 return null;
             }
         }
 
-        internal bool findAndUpdate(EmployeeReqDTO employeeReqDTO)
+        internal bool FindAndUpdate(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
@@ -243,6 +256,8 @@ namespace HumanResource.src.Repository
             }
             catch (Exception ex)
             {
+                new Exception("Lỗi Phát Sinh Từ EmployeeRepository " + ex.Message);
+
                 return false;
             }
         }
@@ -264,14 +279,16 @@ namespace HumanResource.src.Repository
                         {
                             while (reader.Read())
                             {
-                                Employees employees1 = new Employees();
-                                employees1.EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"));
-                                employees1.EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName"));
-                                employees1.AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee"));
-                                employees1.Phone = reader.GetString(reader.GetOrdinal("Phone"));
-                                employees1.Email = reader.GetString(reader.GetOrdinal("Email"));
-                                employees1.Avatar = reader.GetString(reader.GetOrdinal("Avatar"));
-                                employees1.Gender = reader.GetString(reader.GetOrdinal("Gender"));
+                                Employees employees1 = new Employees
+                                {
+                                    EmployId = reader.GetInt32(reader.GetOrdinal("EmployId")),
+                                    EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName")),
+                                    AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee")),
+                                    Phone = reader.GetString(reader.GetOrdinal("Phone")),
+                                    Email = reader.GetString(reader.GetOrdinal("Email")),
+                                    Avatar = reader.GetString(reader.GetOrdinal("Avatar")),
+                                    Gender = reader.GetString(reader.GetOrdinal("Gender"))
+                                };
                                 employees.Add(employees1);
                             }
                         }
@@ -283,12 +300,14 @@ namespace HumanResource.src.Repository
             }
             catch (Exception ex)
             {
+                new Exception("Lỗi Phát Sinh Từ EmployeeRepository " + ex.Message);
+
                 return null;
             }
 
         }
 
-        internal bool moveDepart(EmployeeReqDTO employeeReqDTO)
+        internal bool MoveDepart(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
@@ -310,8 +329,15 @@ namespace HumanResource.src.Repository
             }
             catch (Exception ex)
             {
+                new Exception("Lỗi Phát Sinh Từ EmployeeRepository " + ex.Message);
+
                 return false;
             }
+        }
+
+        internal bool findAndDelete(EmployeeReqDTO employeeReqDTO)
+        {
+            throw new NotImplementedException();
         }
     }
 }

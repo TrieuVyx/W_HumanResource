@@ -2,24 +2,22 @@
 using HumanResource.src.Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HumanResource.src.Service
 {
     internal class RoleService
     {
         private RoleRepository roleRepository;
-        public RoleService() {
-            roleRepository  = new RoleRepository();
+        public RoleService()
+        {
+            roleRepository = new RoleRepository();
         }
 
         internal List<RoleReqDTO> findAllList()
         {
             try
             {
-                return roleRepository.findAllList();
+                return roleRepository.FindAllList();
             }
             catch (Exception ex)
             {

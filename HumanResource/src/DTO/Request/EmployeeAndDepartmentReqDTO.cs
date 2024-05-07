@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HumanResource.src.DTO.Request
+﻿namespace HumanResource.src.DTO.Request
 {
     internal class EmployeeAndDepartmentReqDTO
     {
-        private int depId;
         private int employId;
         private string email;
         private string employeeName;
@@ -19,20 +12,15 @@ namespace HumanResource.src.DTO.Request
         {
 
         }
-        //public int DepId
-        //{
-        //    get { return depId; }
-        //    set { depId = value; }
-        //}
 
-       
+
         public int EmployId
         {
             get { return employId; }
             set { employId = value; }
         }
 
-        
+
 
         public string EmployeeName
         {
@@ -64,7 +52,7 @@ namespace HumanResource.src.DTO.Request
             get { return gender; }
             set { gender = value; }
         }
-       
+
 
     }
 }

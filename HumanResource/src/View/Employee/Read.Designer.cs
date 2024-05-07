@@ -241,7 +241,7 @@
             this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // label10
             // 
@@ -364,7 +364,7 @@
             this.txtClose.TabIndex = 23;
             this.txtClose.Text = "Close";
             this.txtClose.UseVisualStyleBackColor = false;
-            this.txtClose.Click += new System.EventHandler(this.txtClose_Click);
+            this.txtClose.Click += new System.EventHandler(this.TxtClose_Click);
             // 
             // Read
             // 

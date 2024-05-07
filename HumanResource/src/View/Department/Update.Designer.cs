@@ -60,7 +60,7 @@
             this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // label5
             // 
@@ -141,7 +141,7 @@
             this.btnDelete.TabIndex = 31;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // label3
             // 
@@ -172,7 +172,7 @@
             this.btnClose.TabIndex = 27;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // txtIDDepartment
             // 

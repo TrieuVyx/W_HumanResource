@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HumanResource.src.Entity
+﻿namespace HumanResource.src.Entity
 {
 
     internal class Employees
@@ -27,14 +20,14 @@ namespace HumanResource.src.Entity
 
         public Employees()
         { }
-       
+
         public string EmployeeName
         {
             get { return employeeName; }
             set { employeeName = value; }
         }
 
-     
+
         public string AddressEmployee
         {
             get { return addressEmployee; }
@@ -51,7 +44,7 @@ namespace HumanResource.src.Entity
             get { return email; }
             set { email = value; }
         }
-       
+
 
         public string Gender
         {

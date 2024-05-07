@@ -1,30 +1,24 @@
 ﻿using HumanResource.src.DbContext;
 using HumanResource.src.DTO.Request;
-using HumanResource.src.DTO.Response;
-using HumanResource.src.Entity;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HumanResource.src.Repository
 {
     internal class EmployeeHistoryRepository
     {
-        private Dbcontext dbcontext;
-        private EmployeeHistoryReqDTO employeeHistoryReqDTO;
+        private readonly Dbcontext dbcontext;
+        //private EmployeeHistoryReqDTO employeeHistoryReqDTO;
         public EmployeeHistoryRepository()
         {
             dbcontext = new Dbcontext();
-            employeeHistoryReqDTO = new EmployeeHistoryReqDTO();
+            //employeeHistoryReqDTO = new EmployeeHistoryReqDTO();
         }
 
         internal List<EmployeeHistoryReqDTO> FindHistory()
         {
-            List<EmployeeHistoryReqDTO> employeeHistoryReqDTO= new List<EmployeeHistoryReqDTO>();
+            List<EmployeeHistoryReqDTO> employeeHistoryReqDTO = new List<EmployeeHistoryReqDTO>();
             try
             {
 
@@ -39,11 +33,12 @@ namespace HumanResource.src.Repository
                         {
                             while (reader.Read())
                             {
-                                EmployeeHistoryReqDTO employeeHistoryReqDTO1 = new EmployeeHistoryReqDTO();
-
-                                employeeHistoryReqDTO1.HistoryId = reader.GetInt32(reader.GetOrdinal("HistoryId"));
-                                employeeHistoryReqDTO1.EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"));
-                                employeeHistoryReqDTO1.Staging = reader.GetString(reader.GetOrdinal("Staging"));
+                                EmployeeHistoryReqDTO employeeHistoryReqDTO1 = new EmployeeHistoryReqDTO
+                                {
+                                    HistoryId = reader.GetInt32(reader.GetOrdinal("HistoryId")),
+                                    EmployId = reader.GetInt32(reader.GetOrdinal("EmployId")),
+                                    Staging = reader.GetString(reader.GetOrdinal("Staging"))
+                                };
                                 int startDateOrdinal = reader.GetOrdinal("StartDate");
                                 int endDateOrdinal = reader.GetOrdinal("EndDate");
                                 if (!reader.IsDBNull(startDateOrdinal))
@@ -64,6 +59,8 @@ namespace HumanResource.src.Repository
             }
             catch (Exception ex)
             {
+                new Exception("Lỗi Phát Sinh Từ EmployeeHistoryRepository " + ex.Message);
+
                 return null;
             }
         }

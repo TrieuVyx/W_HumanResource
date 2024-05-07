@@ -1,12 +1,8 @@
 ﻿using HumanResource.src.DTO.Request;
-using HumanResource.src.DTO.Response;
 using HumanResource.src.Entity;
 using HumanResource.src.Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HumanResource.src.Service
 {
@@ -14,18 +10,19 @@ namespace HumanResource.src.Service
     {
         private readonly EmployeeRepository employeeRepository;
 
-        public EmployeeService() {
-            employeeRepository = new EmployeeRepository();  
+        public EmployeeService()
+        {
+            employeeRepository = new EmployeeRepository();
 
 
-        }    
-        
+        }
 
-        internal bool createUser(EmployeeReqDTO employeeReqDTO)
+
+        internal bool CreateUser(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
-                return employeeRepository.createUser(employeeReqDTO);
+                return employeeRepository.CreateUser(employeeReqDTO);
             }
             catch (Exception ex)
             {
@@ -33,11 +30,11 @@ namespace HumanResource.src.Service
             }
         }
 
-        internal List<Employees> findAllList()
+        internal List<Employees> FindAllList()
         {
             try
             {
-                return employeeRepository.findAllList();
+                return employeeRepository.FindAllList();
             }
             catch (Exception ex)
             {
@@ -57,7 +54,7 @@ namespace HumanResource.src.Service
             }
         }
 
-        internal bool findAndDelete(EmployeeReqDTO employeeReqDTO)
+        internal bool FindAndDelete(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
@@ -69,11 +66,11 @@ namespace HumanResource.src.Service
             }
         }
 
-        internal List<EmployeeReqDTO> findAndDetail(EmployeeReqDTO employeeReqDTO)
+        internal List<EmployeeReqDTO> FindAndDetail(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
-                return employeeRepository.findAndDetail(employeeReqDTO);
+                return employeeRepository.FindAndDetail(employeeReqDTO);
             }
             catch (Exception ex)
             {
@@ -81,11 +78,11 @@ namespace HumanResource.src.Service
             }
         }
 
-        internal bool findAndUpdate(EmployeeReqDTO employeeReqDTO)
+        internal bool FindAndUpdate(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
-                return employeeRepository.findAndUpdate(employeeReqDTO);
+                return employeeRepository.FindAndUpdate(employeeReqDTO);
             }
             catch (Exception ex)
             {
@@ -105,11 +102,11 @@ namespace HumanResource.src.Service
             }
         }
 
-        internal bool moveDepart(EmployeeReqDTO employeeReqDTO)
+        internal bool MoveDepart(EmployeeReqDTO employeeReqDTO)
         {
             try
             {
-                return employeeRepository.moveDepart(employeeReqDTO);
+                return employeeRepository.MoveDepart(employeeReqDTO);
             }
             catch (Exception ex)
             {

@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HumanResource.src.DTO.Request
+﻿namespace HumanResource.src.DTO.Request
 {
     internal class RoleReqDTO
     {
         private int roleId;
         private string roleDesc;
         private string roleName;
-        public RoleReqDTO() {  }
+        public RoleReqDTO() { }
         public int RoleId
         {
             get { return roleId; }

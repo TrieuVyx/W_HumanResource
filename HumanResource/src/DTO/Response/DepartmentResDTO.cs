@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HumanResource.src.DTO.Response
+﻿namespace HumanResource.src.DTO.Response
 {
     internal class DepartmentResDTO
 
@@ -13,7 +7,7 @@ namespace HumanResource.src.DTO.Response
         private string depDesc;
         private string depType;
         private string depPlace;
-        public DepartmentResDTO() {  }
+        public DepartmentResDTO() { }
 
         public int DepId
         {

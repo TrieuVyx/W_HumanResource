@@ -1,26 +1,24 @@
-﻿using HumanResource.src.DTO.Request;
+﻿using HumanResource.src.DbContext;
+using HumanResource.src.DTO.Request;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HumanResource.src.DbContext;
 
 namespace HumanResource.src.Repository
 {
     internal class RoleRepository
     {
-        private Dbcontext dbContext;
-        private RoleReqDTO roleReqDTO;
-        public RoleRepository() { 
+        private readonly Dbcontext dbContext;
+        //private RoleReqDTO roleReqDTO;
+        public RoleRepository()
+        {
             dbContext = new Dbcontext();
-            roleReqDTO = new RoleReqDTO();
+            //roleReqDTO = new RoleReqDTO();
         }
 
-        internal List<RoleReqDTO> findAllList()
+        internal List<RoleReqDTO> FindAllList()
         {
-            List<RoleReqDTO> roleReq= new List<RoleReqDTO>();
+            List<RoleReqDTO> roleReq = new List<RoleReqDTO>();
             try
             {
                 using (SqlConnection connection = dbContext.connectOpen())
@@ -34,11 +32,12 @@ namespace HumanResource.src.Repository
                         {
                             while (reader.Read())
                             {
-                                RoleReqDTO roles = new RoleReqDTO();
-
-                                roles.RoleId = reader.GetInt32(reader.GetOrdinal("RoleId"));
-                                roles.RoleDesc = reader.GetString(reader.GetOrdinal("RoleDesc"));
-                                roles.RoleName = reader.GetString(reader.GetOrdinal("RoleName"));
+                                RoleReqDTO roles = new RoleReqDTO
+                                {
+                                    RoleId = reader.GetInt32(reader.GetOrdinal("RoleId")),
+                                    RoleDesc = reader.GetString(reader.GetOrdinal("RoleDesc")),
+                                    RoleName = reader.GetString(reader.GetOrdinal("RoleName"))
+                                };
                                 roleReq.Add(roles);
                             }
                         }
@@ -49,6 +48,8 @@ namespace HumanResource.src.Repository
             }
             catch (Exception ex)
             {
+                new Exception("Lỗi Phát Sinh Từ RoleRepository " + ex.Message);
+
                 return null;
             }
         }

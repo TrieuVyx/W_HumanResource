@@ -1,19 +1,16 @@
 ﻿using HumanResource.src.DTO.Request;
-using HumanResource.src.DTO.Response;
 using HumanResource.src.Entity;
 using HumanResource.src.Service;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HumanResource.src.Controller
 {
     internal class EmployeeController
     {
         private readonly EmployeeService employeeService;
-        public EmployeeController() {
+        public EmployeeController()
+        {
             employeeService = new EmployeeService();
         }
 
@@ -21,7 +18,7 @@ namespace HumanResource.src.Controller
         {
             try
             {
-                return employeeService.createUser(employeeReqDTO);
+                return employeeService.CreateUser(employeeReqDTO);
             }
             catch (Exception ex)
             {
@@ -33,7 +30,7 @@ namespace HumanResource.src.Controller
         {
             try
             {
-                return employeeService.findAllList();
+                return employeeService.FindAllList();
             }
             catch (Exception ex)
             {
@@ -57,7 +54,7 @@ namespace HumanResource.src.Controller
         {
             try
             {
-                return employeeService.findAndDelete(employeeReqDTO);
+                return employeeService.FindAndDelete(employeeReqDTO);
             }
             catch (Exception ex)
             {
@@ -69,7 +66,7 @@ namespace HumanResource.src.Controller
         {
             try
             {
-                return employeeService.findAndDetail(employeeReqDTO);
+                return employeeService.FindAndDetail(employeeReqDTO);
             }
             catch (Exception ex)
             {
@@ -81,7 +78,7 @@ namespace HumanResource.src.Controller
         {
             try
             {
-                return employeeService.findAndUpdate(employeeReqDTO);
+                return employeeService.FindAndUpdate(employeeReqDTO);
             }
             catch (Exception ex)
             {
@@ -105,7 +102,7 @@ namespace HumanResource.src.Controller
         {
             try
             {
-                return employeeService.moveDepart(employeeReqDTO);
+                return employeeService.MoveDepart(employeeReqDTO);
             }
             catch (Exception ex)
             {

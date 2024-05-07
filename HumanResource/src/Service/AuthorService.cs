@@ -1,10 +1,6 @@
 ﻿using HumanResource.src.DTO.Request;
 using HumanResource.src.Repository;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HumanResource.src.Service
@@ -26,7 +22,7 @@ namespace HumanResource.src.Service
             try
             {
                 bool check = authorRepository.CheckLogin(loginReq);
-                if(check)
+                if (check)
                 {
                     return true;
                 }

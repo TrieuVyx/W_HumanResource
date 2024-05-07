@@ -2,9 +2,6 @@
 using HumanResource.src.Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HumanResource.src.Service
 {
@@ -13,7 +10,8 @@ namespace HumanResource.src.Service
         private EmployeeHistoryRepository employeeHistoryRepository;
         private EmployeeHistoryReqDTO employeeHistoryReqDTO;
 
-        public EmployeeHistoryService() {
+        public EmployeeHistoryService()
+        {
 
             employeeHistoryRepository = new EmployeeHistoryRepository();
             employeeHistoryReqDTO = new EmployeeHistoryReqDTO();

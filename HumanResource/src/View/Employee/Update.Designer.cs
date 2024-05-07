@@ -349,7 +349,7 @@
             this.btnRefer.TabIndex = 16;
             this.btnRefer.Text = "References";
             this.btnRefer.UseVisualStyleBackColor = true;
-            this.btnRefer.Click += new System.EventHandler(this.btnRefer_Click);
+            this.btnRefer.Click += new System.EventHandler(this.BtnRefer_Click);
             // 
             // txtBirthday
             // 

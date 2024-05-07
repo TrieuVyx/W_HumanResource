@@ -1,12 +1,7 @@
 ﻿using HumanResource.src.DTO.Request;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HumanResource.src.View.Employee
@@ -14,19 +9,19 @@ namespace HumanResource.src.View.Employee
 
     public partial class Read : Form
     {
-        private EmployeeReqDTO employeeReqDTO;
+        //private EmployeeReqDTO employeeReqDTO;
 
         public Read()
         {
             InitializeComponent();
-            employeeReqDTO = new EmployeeReqDTO();
+            //employeeReqDTO = new EmployeeReqDTO();
             Lock();
         }
-        int x = 175;
-        int y = 10;
-        int height = 470;
-        int width = 700;
-        internal void ControlAdded(List<EmployeeReqDTO> employeeReqDTO)
+        readonly int x = 175;
+        readonly int y = 10;
+        readonly int height = 470;
+        readonly int width = 700;
+        internal new void ControlAdded(List<EmployeeReqDTO> employeeReqDTO)
         {
             MainApplication mainApplication = new MainApplication();
             this.Bounds = new Rectangle(x, y, width, height);
@@ -38,7 +33,7 @@ namespace HumanResource.src.View.Employee
                 txtID.Text = employeeReq.EmployId.ToString();
                 txtEmail.Text = employeeReq.Email;
                 txtGender.Text = employeeReq.Gender;
-                txtPhone.Text = employeeReq.Phone;  
+                txtPhone.Text = employeeReq.Phone;
                 txtEmployeeeName.Text = employeeReq.EmployeeName;
                 txtAddress.Text = employeeReq.AddressEmployee;
                 txtBirthday.Text = employeeReq.DateOfBirth.ToString();
@@ -49,13 +44,14 @@ namespace HumanResource.src.View.Employee
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void BtnUpdate_Click(object sender, EventArgs e)
         {
 
 
         }
 
-        private void Lock() {
+        private void Lock()
+        {
             txtAddress.ReadOnly = true;
             txtAddress.Enabled = false;
             txtBirthday.ReadOnly = true;
@@ -80,7 +76,7 @@ namespace HumanResource.src.View.Employee
             txtPhone.Enabled = false;
         }
 
-        private void txtClose_Click(object sender, EventArgs e)
+        private void TxtClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }

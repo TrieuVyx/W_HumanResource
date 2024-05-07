@@ -2,20 +2,15 @@
 using HumanResource.src.DTO.Request;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HumanResource.src.View.Employee
 {
     public partial class Update : Form
     {
-        private RoleController roleController;
-        private EmployeeController employeeController;
+        private readonly RoleController roleController;
+        private readonly EmployeeController employeeController;
         private EmployeeReqDTO employeeReqDTO;
         public Update()
         {
@@ -28,11 +23,12 @@ namespace HumanResource.src.View.Employee
             ListComboBox();
             Lock();
         }
-        int x = 175;
-        int y = 10;
-        int height = 470;
-        int width = 700;
-        internal void ControlAdded(List<EmployeeReqDTO> employeeReqs)
+        readonly int x = 175;
+        readonly int y = 10;
+        readonly int height = 470;
+        readonly int width = 700;
+
+        internal new void ControlAdded(List<EmployeeReqDTO> employeeReqs)
         {
             MainApplication mainApplication = new MainApplication();
             this.Bounds = new Rectangle(x, y, width, height);
@@ -76,7 +72,7 @@ namespace HumanResource.src.View.Employee
             txtComboDep.Enabled = false;
         }
 
-        private void btnRefer_Click(object sender, EventArgs e)
+        private void BtnRefer_Click(object sender, EventArgs e)
         {
 
         }
@@ -139,7 +135,7 @@ namespace HumanResource.src.View.Employee
                 MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
             }
         }
-    
+
         private void ListComboBox()
         {
             try
@@ -165,7 +161,7 @@ namespace HumanResource.src.View.Employee
                 }
                 else
                 {
-                     txtCboRole.SelectedIndex = -1;
+                    txtCboRole.SelectedIndex = -1;
                     txtCboRole.DataSource = null;
                     MessageBox.Show("Lỗi không tồn tại danh sách ");
                 }
@@ -176,6 +172,6 @@ namespace HumanResource.src.View.Employee
 
             }
         }
-    
+
     }
 }

@@ -1,13 +1,8 @@
 ﻿using HumanResource.src.DTO.Request;
 using HumanResource.src.DTO.Response;
-using HumanResource.src.Entity;
 using HumanResource.src.Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace HumanResource.src.Service
 {
@@ -39,7 +34,7 @@ namespace HumanResource.src.Service
         {
             try
             {
-                return departmentRepository.findAllList();
+                return departmentRepository.FindAllList();
             }
             catch (Exception ex)
             {
@@ -51,7 +46,7 @@ namespace HumanResource.src.Service
         {
             try
             {
-                return departmentRepository.findIdDepartMent(departmentReqDTO);
+                return departmentRepository.FindIdDepartMent(departmentReqDTO);
             }
             catch (Exception ex)
             {
@@ -64,7 +59,7 @@ namespace HumanResource.src.Service
         {
             try
             {
-                return departmentRepository.findAndDelete(employeeResDTO);
+                return departmentRepository.FindAndDelete(employeeResDTO);
             }
             catch (Exception ex)
             {
@@ -76,7 +71,7 @@ namespace HumanResource.src.Service
         {
             try
             {
-                return departmentRepository.findAndUpdate(departmentReqDTO);
+                return departmentRepository.FindAndUpdate(departmentReqDTO);
             }
             catch (Exception ex)
             {

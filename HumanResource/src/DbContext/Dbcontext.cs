@@ -1,20 +1,20 @@
-﻿using System.Configuration;
-using System;
+﻿using System;
+using System.Configuration;
 using System.Data.SqlClient;
-using System.Windows.Forms;
-using System.Data;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows.Forms;
 namespace HumanResource.src.DbContext
 {
-    
+
     class Dbcontext
     {
         string connectStringDb = "";
         private SqlConnection connection;
 
 
-        public SqlConnection connectOpen() { 
+        public SqlConnection connectOpen()
+        {
             connectStringDb = ConfigurationManager.ConnectionStrings["connectStringDb"].ConnectionString;
             connection = new SqlConnection(connectStringDb);
             return connection;

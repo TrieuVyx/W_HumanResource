@@ -3,38 +3,33 @@ using HumanResource.src.DTO.Request;
 using HumanResource.src.DTO.Response;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HumanResource.src.View.Department
 {
     public partial class Update : Form
     {
-        private List<DepartmentResDTO> departmentRes;
-        private EmployeeResDTO employeeResDTO;
-        private DepartmentController departmentController;
+        //private List<DepartmentResDTO> departmentRes;
+        private readonly EmployeeResDTO employeeResDTO;
+        private readonly DepartmentController departmentController;
         private DepartmentReqDTO departmentReqDTO;
-        private EmployeeReqDTO employeeReqDTO;
+        //private EmployeeReqDTO employeeReqDTO;
 
         public Update()
         {
             InitializeComponent();
-            departmentRes = new List<DepartmentResDTO>();
+            //departmentRes = new List<DepartmentResDTO>();
             employeeResDTO = new EmployeeResDTO();
             departmentController = new DepartmentController();
             departmentReqDTO = new DepartmentReqDTO();
-            employeeReqDTO = new EmployeeReqDTO();
+            //employeeReqDTO = new EmployeeReqDTO();
         }
-        int x = 175;
-        int y = 10;
-        int height = 470;
-        int width = 700;
-        internal void ControlAdded(List<DepartmentResDTO> departmentRes)
+        readonly int x = 175;
+        readonly int y = 10;
+        readonly int height = 470;
+        readonly int width = 700;
+        internal new void ControlAdded(List<DepartmentResDTO> departmentRes)
         {
             MainApplication mainApplication = new MainApplication();
             this.Bounds = new Rectangle(x, y, width, height);
@@ -49,11 +44,11 @@ namespace HumanResource.src.View.Department
                 txtDesc.Text = department.DepDesc;
                 txtDepPlace.Text = department.DepPlace;
                 txtDepType.Text = department.DepType;
-                employeeDep(txtDesc.Text);
+                EmployeeDep(txtDesc.Text);
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void BtnUpdate_Click(object sender, EventArgs e)
         {
             try
             {
@@ -101,12 +96,12 @@ namespace HumanResource.src.View.Department
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void employeeDep(string DepDecs)
+        private void EmployeeDep(string DepDecs)
         {
             departmentReqDTO = new DepartmentReqDTO();
 
@@ -141,7 +136,7 @@ namespace HumanResource.src.View.Department
             txtIDEmployee.Text = dataGridViewRow.Cells[0].Value.ToString();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             try
             {

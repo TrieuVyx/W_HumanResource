@@ -1,13 +1,6 @@
 ﻿using HumanResource.src.Controller;
 using HumanResource.src.DTO.Request;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HumanResource.src.View.Auth
@@ -17,12 +10,12 @@ namespace HumanResource.src.View.Auth
         private LoginReqDTO loginReqDTO;
         private AuthorController authorController;
         private MainApplication mainApplication;
-        
+
         public LoginForm()
         {
             InitializeComponent();
             authorController = new AuthorController();
-            mainApplication = new MainApplication();    
+            mainApplication = new MainApplication();
 
         }
         public LoginForm(AuthorController authorController, LoginReqDTO loginReqDTO)
@@ -55,12 +48,12 @@ namespace HumanResource.src.View.Auth
                     loginReqDTO.InEmail = InEmail;
                     loginReqDTO.InPass = InPass;
                     bool isAuthenticated = authorController.Authorization(loginReqDTO);
-                    if(isAuthenticated )
+                    if (isAuthenticated)
                     {
                         MessageBox.Show(isAuthenticated.ToString());
                         mainApplication.Show();
-                        this.Hide();    
-                    } 
+                        this.Hide();
+                    }
                 }
 
             }
@@ -70,6 +63,6 @@ namespace HumanResource.src.View.Auth
             }
         }
 
-       
+
     }
 }

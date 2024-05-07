@@ -1,15 +1,9 @@
 ﻿using HumanResource.src.Controller;
 using HumanResource.src.DTO.Request;
-using HumanResource.src.DTO.Response;
 using HumanResource.src.Entity;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HumanResource.src.View.Employee
@@ -24,7 +18,7 @@ namespace HumanResource.src.View.Employee
             InitializeComponent();
             employeeController = new EmployeeController();
             employee = new Employees();
-            employeeReqDTO = new EmployeeReqDTO();  
+            employeeReqDTO = new EmployeeReqDTO();
             GridViewEmployee.CellContentClick += ChooseItem;
             ShowEmployee();
         }
@@ -55,7 +49,7 @@ namespace HumanResource.src.View.Employee
             txtAmout.ReadOnly = true;
             txtAmout.Enabled = false;
             txtId.ReadOnly = true;
-            txtId.Enabled = false;   
+            txtId.Enabled = false;
         }
         private void GridViewLock()
         {
@@ -97,14 +91,14 @@ namespace HumanResource.src.View.Employee
         }
         private void btnReset_Click_1(object sender, EventArgs e)
         {
-            ShowEmployee(); 
+            ShowEmployee();
             txtSearchBox.Clear();
         }
         int x = 175;
         int y = 10;
         int height = 470;
         int width = 700;
-        MoreEmployee MoreEmployee   = new MoreEmployee();   
+        MoreEmployee MoreEmployee = new MoreEmployee();
         private void btnCreate_Click(object sender, EventArgs e)
         {
             MoreEmployee.StartPosition = FormStartPosition.Manual;

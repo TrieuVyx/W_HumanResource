@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using HumanResource.src.DbContext;
+﻿using HumanResource.src.DbContext;
 using HumanResource.src.DTO.Request;
+using System;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace HumanResource.src.Repository
 {
     internal class AuthorRepository
     {
-        private Dbcontext dbContext;
-        private GetQuery getQuery;
+        private readonly Dbcontext dbContext;
+        //private GetQuery getQuery;
         public AuthorRepository()
         {
             dbContext = new Dbcontext();
-            getQuery = new GetQuery();
+            //getQuery = new GetQuery();
 
         }
         public AuthorRepository(Dbcontext dbContext)
@@ -60,6 +56,6 @@ namespace HumanResource.src.Repository
             }
 
         }
-      
+
     }
 }

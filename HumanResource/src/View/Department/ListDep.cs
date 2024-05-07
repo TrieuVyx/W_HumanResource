@@ -1,21 +1,9 @@
 ﻿using HumanResource.src.Controller;
 using HumanResource.src.DTO.Request;
+using HumanResource.src.DTO.Response;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using HumanResource.src.Entity;
-using HumanResource.src.Service;
-using HumanResource.src.DTO.Response;
-using System.Web.UI.WebControls;
-using Microsoft.IdentityModel.Tokens;
-using HumanResource.src.View.Department;
-using System.Web.Security;
 
 namespace HumanResource.src.View.Department
 {
@@ -31,12 +19,12 @@ namespace HumanResource.src.View.Department
             InitializeComponent();
             departmentController = new DepartmentController();
             departmentReqDTO = new DepartmentReqDTO();
-            employeeResDTO = new EmployeeResDTO();  
-            employeeReqDTO = new EmployeeReqDTO();  
+            employeeResDTO = new EmployeeResDTO();
+            employeeReqDTO = new EmployeeReqDTO();
             employeeController = new EmployeeController();
             ShowDepartment();
         }
-      
+
         private void ShowDepartment()
         {
             try
@@ -48,7 +36,7 @@ namespace HumanResource.src.View.Department
                 txtComboDep.ValueMember = "DepId";
                 txtComboDep.SelectedIndex = 1;
                 txtAmout.Text = departments.Count.ToString();
-                txtSearch.Clear();  
+                txtSearch.Clear();
                 AutoMode();
                 GridViewLock();
             }
@@ -130,9 +118,9 @@ namespace HumanResource.src.View.Department
                         update.ControlAdded(departmentRes);
                         this.Hide();
                     }
-                    else      
+                    else
                     {
-                        MessageBox.Show("Không tìm thấy");                       
+                        MessageBox.Show("Không tìm thấy");
                     }
                 }
                 else

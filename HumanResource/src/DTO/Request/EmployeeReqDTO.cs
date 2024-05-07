@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HumanResource.src.DTO.Request
 {
@@ -40,7 +35,7 @@ namespace HumanResource.src.DTO.Request
             set { employeeName = value; }
         }
 
-      
+
 
         public string AddressEmployee
         {
@@ -91,7 +86,7 @@ namespace HumanResource.src.DTO.Request
             get { return degreeName; }
             set { degreeName = value; }
         }
-       
+
         public int DepId
         {
             get { return depId; }

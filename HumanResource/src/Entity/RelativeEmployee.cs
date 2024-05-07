@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HumanResource.src.Entity
+﻿namespace HumanResource.src.Entity
 {
-   
+
     internal class RelativeEmployee
     {
         private int relativeId;
