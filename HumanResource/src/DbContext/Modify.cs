@@ -1,12 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace HumanResource.src.DbContext
 {
@@ -19,7 +13,7 @@ namespace HumanResource.src.DbContext
         {
             this.dbcontext = new Dbcontext();
         }
-      public List<NTAccount> Taikhoans(string query)
+        public List<NTAccount> Taikhoans(string query)
         {
             List<NTAccount> taikhoans = new List<NTAccount>();
             using (SqlConnection connection = dbcontext.ConnectOpen())

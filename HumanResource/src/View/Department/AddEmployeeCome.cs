@@ -9,25 +9,21 @@ namespace HumanResource.src.View.Department
 {
     public partial class AddEmployeeCome : Form
     {
-        private EmployeeAndDepartmentReqDTO employeeAndDepartmentReqDTO;
-        private DepartmentController departmentController;
-        private DepartmentResDTO departmentResDTO;
-        private EmployeeController employeeController;
+        private readonly DepartmentController departmentController;
+        private readonly EmployeeController employeeController;
         private EmployeeReqDTO employeeReqDTO;
         private DepartmentReqDTO departmentReqDTO;
         public AddEmployeeCome()
         {
             InitializeComponent();
             departmentController = new DepartmentController();
-            departmentResDTO = new DepartmentResDTO();
-            employeeAndDepartmentReqDTO = new EmployeeAndDepartmentReqDTO();
             employeeController = new EmployeeController();
             employeeReqDTO = new EmployeeReqDTO();
             departmentReqDTO = new DepartmentReqDTO();
             List();
         }
 
-        private void btnTransfer_Click(object sender, EventArgs e)
+        private void BtnTransfer_Click(object sender, EventArgs e)
         {
             try
             {
@@ -71,10 +67,10 @@ namespace HumanResource.src.View.Department
         {
             List<DepartmentResDTO> departments = departmentController.FindAllList();
             dataGridDepartMent.DataSource = departments;
-            dataGridDepartMent.CellContentClick += addId;
+            dataGridDepartMent.CellContentClick += AddId;
             List<EmployeeAndDepartmentReqDTO> employeeAndDepartmentReqDTO = employeeController.FindAllUserNotDep();
             dataGridEmployee.DataSource = employeeAndDepartmentReqDTO;
-            dataGridEmployee.CellContentClick += addIDEmploy;
+            dataGridEmployee.CellContentClick += AddIDEmploy;
             txtAmout.Text = employeeAndDepartmentReqDTO.Count.ToString();
             txtAmout.ReadOnly = true;
             txtAmout.Enabled = false;
@@ -87,14 +83,14 @@ namespace HumanResource.src.View.Department
 
         }
 
-        private void addIDEmploy(object sender, DataGridViewCellEventArgs e)
+        private void AddIDEmploy(object sender, DataGridViewCellEventArgs e)
         {
             int indexOfContent = e.RowIndex;
             DataGridViewRow dataEmploy = dataGridEmployee.Rows[indexOfContent];
             txtEmployeeId.Text = dataEmploy.Cells[0].Value.ToString();
         }
 
-        private void addId(object sender, DataGridViewCellEventArgs e)
+        private void AddId(object sender, DataGridViewCellEventArgs e)
         {
             int indexOfContent = e.RowIndex;
             DataGridViewRow dataDep = dataGridDepartMent.Rows[indexOfContent];
@@ -102,7 +98,7 @@ namespace HumanResource.src.View.Department
             txtListEmployInDepartment.Text = dataDep.Cells[1].Value.ToString();
         }
 
-        private void btbReset_Click(object sender, EventArgs e)
+        private void BtbReset_Click(object sender, EventArgs e)
         {
             List();
             txtAmout.Clear();
@@ -112,19 +108,19 @@ namespace HumanResource.src.View.Department
             txtDepartmentId.Clear();
         }
 
-        private void btnWatch_Click(object sender, EventArgs e)
+        private void BtnWatch_Click(object sender, EventArgs e)
         {
             string DepName = txtListEmployInDepartment.Text;
             if (!string.IsNullOrEmpty(DepName))
             {
-                employeeDep(DepName);
+                EmployeeDep(DepName);
             }
             else
             {
                 MessageBox.Show("Tên Phòng Ban không được trống: ");
             }
         }
-        private void employeeDep(string DepDecs)
+        private void EmployeeDep(string DepDecs)
         {
             departmentReqDTO = new DepartmentReqDTO();
 

@@ -7,21 +7,18 @@ namespace HumanResource.src.Service
 {
     internal class AuthorService
     {
-        private AuthorRepository authorRepository;
+        private readonly AuthorRepository authorRepository;
 
         public AuthorService()
         {
             authorRepository = new AuthorRepository();
         }
-        public AuthorService(AuthorRepository authorRepository)
-        {
-            this.authorRepository = authorRepository;
-        }
-        internal bool Authenticate(LoginReqDTO loginReq)
+
+        internal bool Authorization(LoginReqDTO loginReqDTO)
         {
             try
             {
-                bool check = authorRepository.CheckLogin(loginReq);
+                bool check = authorRepository.Authorization(loginReqDTO);
                 if (check)
                 {
                     return true;

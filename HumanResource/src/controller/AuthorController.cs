@@ -18,11 +18,11 @@ namespace HumanResource.src.Controller
             this.authorService = authorService;
         }
 
-        internal bool Authorization(LoginReqDTO loginReq)
+        internal bool Authorization(LoginReqDTO loginReqDTO)
         {
             try
             {
-                bool author = authorService.Authenticate(loginReq);
+                bool author = authorService.Authorization(loginReqDTO);
                 if (author)
                 {
                     return true;

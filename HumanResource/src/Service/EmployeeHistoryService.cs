@@ -7,14 +7,13 @@ namespace HumanResource.src.Service
 {
     internal class EmployeeHistoryService
     {
-        private EmployeeHistoryRepository employeeHistoryRepository;
-        private EmployeeHistoryReqDTO employeeHistoryReqDTO;
+        private readonly EmployeeHistoryRepository employeeHistoryRepository;
+
 
         public EmployeeHistoryService()
         {
 
             employeeHistoryRepository = new EmployeeHistoryRepository();
-            employeeHistoryReqDTO = new EmployeeHistoryReqDTO();
         }
 
         internal List<EmployeeHistoryReqDTO> FindHistory()

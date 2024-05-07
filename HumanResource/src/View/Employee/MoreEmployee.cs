@@ -3,7 +3,6 @@ using HumanResource.src.DTO.Request;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Roles = HumanResource.src.Entity.Roles;
 
 namespace HumanResource.src.View.Employee
 {

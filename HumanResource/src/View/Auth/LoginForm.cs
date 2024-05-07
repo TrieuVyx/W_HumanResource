@@ -10,19 +10,22 @@ namespace HumanResource.src.View.Auth
         private LoginReqDTO loginReqDTO;
         private readonly AuthorController authorController;
         private readonly MainApplication mainApplication;
+        private readonly RegisterForm registerForm;
 
         public LoginForm()
         {
             InitializeComponent();
             authorController = new AuthorController();
             mainApplication = new MainApplication();
+            registerForm = new RegisterForm();
 
         }
-        public LoginForm(AuthorController authorController, LoginReqDTO loginReqDTO)
-        {
-            this.authorController = authorController;
-            this.loginReqDTO = loginReqDTO;
-        }
+        //public LoginForm(AuthorController authorController, LoginReqDTO loginReqDTO)
+        //{
+        //    this.authorController = authorController;
+        //    this.loginReqDTO = loginReqDTO;
+        //}
+
 
         private void Login_Load(object sender, EventArgs e)
         {
@@ -48,11 +51,16 @@ namespace HumanResource.src.View.Auth
                     loginReqDTO.InEmail = InEmail;
                     loginReqDTO.InPass = InPass;
                     bool isAuthenticated = authorController.Authorization(loginReqDTO);
-                    if (isAuthenticated)
+                    if (isAuthenticated == true)
                     {
-                        MessageBox.Show(isAuthenticated.ToString());
+                        //MessageBox.Show(isAuthenticated.ToString());
                         mainApplication.Show();
                         this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("thông tin đăng nhập không chính xác ");
+
                     }
                 }
 
@@ -65,6 +73,12 @@ namespace HumanResource.src.View.Auth
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+            registerForm.Show();
             this.Close();
         }
     }

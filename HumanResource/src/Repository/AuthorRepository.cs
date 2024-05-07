@@ -20,7 +20,7 @@ namespace HumanResource.src.Repository
         {
             this.dbContext = dbContext;
         }
-        internal bool CheckLogin(LoginReqDTO loginReq)
+        internal bool Authorization(LoginReqDTO loginReqDTO)
         {
             try
             {
@@ -31,9 +31,9 @@ namespace HumanResource.src.Repository
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
                     //using (SqlCommand sqlCommand = getQuery.QueryLogin())
                     {
-                        string password = dbContext.HashMD5(loginReq.InPass);
-                        sqlCommand.Parameters.AddWithValue("@Email", loginReq.InEmail);
-                        sqlCommand.Parameters.AddWithValue("@PassWords", dbContext.HashMD5(loginReq.InPass));
+                        string password = dbContext.HashMD5(loginReqDTO.InPass);
+                        sqlCommand.Parameters.AddWithValue("@Email", loginReqDTO.InEmail);
+                        sqlCommand.Parameters.AddWithValue("@PassWords", dbContext.HashMD5(loginReqDTO.InPass));
                         //sqlCommand.Parameters.AddWithValue("@PassWords", loginReq.InPass);
                         connection.Open();
                         int count = (int)sqlCommand.ExecuteScalar();

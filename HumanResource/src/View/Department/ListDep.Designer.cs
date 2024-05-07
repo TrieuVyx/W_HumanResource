@@ -125,7 +125,7 @@
             this.btnMoveHouse.TabIndex = 23;
             this.btnMoveHouse.Text = "Move";
             this.btnMoveHouse.UseVisualStyleBackColor = true;
-            this.btnMoveHouse.Click += new System.EventHandler(this.btnMoveHouse_Click);
+            this.btnMoveHouse.Click += new System.EventHandler(this.BtnMoveHouse_Click);
             // 
             // label2
             // 
@@ -145,7 +145,7 @@
             this.btnReset.TabIndex = 19;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
             // btnUpdateDepartment
             // 
@@ -155,7 +155,7 @@
             this.btnUpdateDepartment.TabIndex = 18;
             this.btnUpdateDepartment.Text = "Update";
             this.btnUpdateDepartment.UseVisualStyleBackColor = true;
-            this.btnUpdateDepartment.Click += new System.EventHandler(this.btnUpdateDepartment_Click);
+            this.btnUpdateDepartment.Click += new System.EventHandler(this.BtnUpdateDepartment_Click);
             // 
             // label6
             // 
@@ -224,7 +224,7 @@
             this.btnSearchDepart.Size = new System.Drawing.Size(45, 32);
             this.btnSearchDepart.TabIndex = 4;
             this.btnSearchDepart.UseVisualStyleBackColor = true;
-            this.btnSearchDepart.Click += new System.EventHandler(this.btnSearchDepart_Click);
+            this.btnSearchDepart.Click += new System.EventHandler(this.BtnSearchDepart_Click);
             // 
             // ListDep
             // 

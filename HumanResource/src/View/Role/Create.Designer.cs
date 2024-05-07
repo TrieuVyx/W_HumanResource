@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnCreate = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,15 +41,15 @@
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // BtnCreate
             // 
-            this.button2.BackColor = System.Drawing.Color.Yellow;
-            this.button2.Location = new System.Drawing.Point(74, 394);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 37);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Create";
-            this.button2.UseVisualStyleBackColor = false;
+            this.BtnCreate.BackColor = System.Drawing.Color.Yellow;
+            this.BtnCreate.Location = new System.Drawing.Point(74, 394);
+            this.BtnCreate.Name = "BtnCreate";
+            this.BtnCreate.Size = new System.Drawing.Size(97, 37);
+            this.BtnCreate.TabIndex = 17;
+            this.BtnCreate.Text = "Create";
+            this.BtnCreate.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -88,13 +88,12 @@
             this.label3.Size = new System.Drawing.Size(51, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Role";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.richTextBox2);
             this.panel3.Controls.Add(this.richTextBox1);
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.BtnCreate);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.richTextBox4);
             this.panel3.Controls.Add(this.label4);
@@ -130,7 +129,6 @@
             this.label1.Size = new System.Drawing.Size(272, 54);
             this.label1.TabIndex = 1;
             this.label1.Text = "Create Role";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -159,7 +157,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnCreate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox richTextBox4;
         private System.Windows.Forms.Label label4;

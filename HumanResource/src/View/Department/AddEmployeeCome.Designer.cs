@@ -84,7 +84,7 @@
             this.btnTransfer.TabIndex = 4;
             this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseVisualStyleBackColor = true;
-            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
+            this.btnTransfer.Click += new System.EventHandler(this.BtnTransfer_Click);
             // 
             // btbReset
             // 
@@ -94,7 +94,7 @@
             this.btbReset.TabIndex = 6;
             this.btbReset.Text = "Reset";
             this.btbReset.UseVisualStyleBackColor = true;
-            this.btbReset.Click += new System.EventHandler(this.btbReset_Click);
+            this.btbReset.Click += new System.EventHandler(this.BtbReset_Click);
             // 
             // txtDepartmentId
             // 
@@ -130,7 +130,7 @@
             this.btnWatch.TabIndex = 10;
             this.btnWatch.Text = "Watch";
             this.btnWatch.UseVisualStyleBackColor = true;
-            this.btnWatch.Click += new System.EventHandler(this.btnWatch_Click);
+            this.btnWatch.Click += new System.EventHandler(this.BtnWatch_Click);
             // 
             // label2
             // 

@@ -17,7 +17,7 @@ namespace HumanResource.src.Controller
         {
             try
             {
-                return roleService.findAllList();
+                return roleService.FindAllList();
             }
             catch (Exception ex)
             {

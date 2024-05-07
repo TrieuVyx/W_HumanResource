@@ -7,13 +7,13 @@ namespace HumanResource.src.Service
 {
     internal class RoleService
     {
-        private RoleRepository roleRepository;
+        private readonly RoleRepository roleRepository;
         public RoleService()
         {
             roleRepository = new RoleRepository();
         }
 
-        internal List<RoleReqDTO> findAllList()
+        internal List<RoleReqDTO> FindAllList()
         {
             try
             {

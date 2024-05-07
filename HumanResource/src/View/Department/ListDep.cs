@@ -10,10 +10,10 @@ namespace HumanResource.src.View.Department
     public partial class ListDep : Form
     {
         private DepartmentReqDTO departmentReqDTO;
-        private DepartmentController departmentController;
-        private EmployeeResDTO employeeResDTO;
+        private readonly DepartmentController departmentController;
+        private readonly EmployeeResDTO employeeResDTO;
         private EmployeeReqDTO employeeReqDTO;
-        private EmployeeController employeeController;
+        private readonly EmployeeController employeeController;
         public ListDep()
         {
             InitializeComponent();
@@ -45,7 +45,7 @@ namespace HumanResource.src.View.Department
                 MessageBox.Show("Lỗi Phát Sinh Từ ListDep " + ex.Message);
             }
         }
-        private void btnSearchDepart_Click(object sender, EventArgs e)
+        private void BtnSearchDepart_Click(object sender, EventArgs e)
         {
             string txtSearchValue = txtSearch.Text;
             departmentReqDTO = new DepartmentReqDTO();
@@ -78,7 +78,7 @@ namespace HumanResource.src.View.Department
                 MessageBox.Show("Lỗi Phát Sinh Từ ListDep " + ex.Message);
             }
         }
-        private void btnReset_Click(object sender, EventArgs e)
+        private void BtnReset_Click(object sender, EventArgs e)
         {
             ShowDepartment();
         }
@@ -103,7 +103,7 @@ namespace HumanResource.src.View.Department
             txtID.Text = dataGridViewRow.Cells[0].Value.ToString();
             txtDepartmentName.Text = dataGridViewRow.Cells[1].Value.ToString();
         }
-        private void btnUpdateDepartment_Click(object sender, EventArgs e)
+        private void BtnUpdateDepartment_Click(object sender, EventArgs e)
         {
             try
             {
@@ -133,7 +133,7 @@ namespace HumanResource.src.View.Department
                 MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
             }
         }
-        private void btnDeleteEmploy_Click(object sender, EventArgs e)
+        private void BtnDeleteEmploy_Click(object sender, EventArgs e)
         {
             try
             {
@@ -155,13 +155,12 @@ namespace HumanResource.src.View.Department
             }
         }
 
-        private void btnMoveHouse_Click(object sender, EventArgs e)
+        private void BtnMoveHouse_Click(object sender, EventArgs e)
         {
             try
             {
-                int DepId;
                 employeeReqDTO = new EmployeeReqDTO();
-                if (int.TryParse(txtComboDep.SelectedValue.ToString(), out DepId))
+                if (int.TryParse(txtComboDep.SelectedValue.ToString(), out int DepId))
                 {
                     employeeReqDTO.DepId = DepId;
                 }

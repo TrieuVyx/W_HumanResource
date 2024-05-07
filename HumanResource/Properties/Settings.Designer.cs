@@ -27,21 +27,20 @@ namespace HumanResource.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("server=ANDREW;database=HumanResource;Integrated Security=True;")]
-        public string HumanResource {
+        public string HumanResourceVy {
             get {
-                return ((string)(this["HumanResource"]));
+                return ((string)(this["HumanResourceVy"]));
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Setting {
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-EIIG3BE\\\\SQLEXPRESS;Initial Catalog=HumanResource;Integrated " +
+            "Security=True;Encrypt=False")]
+        public string HumanResourcePhat {
             get {
-                return ((string)(this["Setting"]));
-            }
-            set {
-                this["Setting"] = value;
+                return ((string)(this["HumanResourcePhat"]));
             }
         }
     }

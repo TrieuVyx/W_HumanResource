@@ -1,22 +1,18 @@
 ﻿using HumanResource.src.DbContext;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HumanResource.src.View.Auth
 {
     public partial class RegisterForm : Form
     {
+        private readonly LoginForm loginForm;
         public RegisterForm()
         {
             InitializeComponent();
+            loginForm = new LoginForm();
+
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -56,6 +52,12 @@ namespace HumanResource.src.View.Auth
             {
                 MessageBox.Show("Ten tk da duong dang ky");
             }
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+            loginForm.Show();
+            this.Close();
         }
     }
 }

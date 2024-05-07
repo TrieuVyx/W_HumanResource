@@ -9,10 +9,7 @@ namespace HumanResource.src.Service
     internal class DepartmentService
     {
         private readonly DepartmentRepository departmentRepository;
-        public DepartmentService(DepartmentRepository departmentRepository)
-        {
-            this.departmentRepository = departmentRepository;
-        }
+
         public DepartmentService()
         {
             departmentRepository = new DepartmentRepository();
