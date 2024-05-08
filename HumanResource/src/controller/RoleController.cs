@@ -13,6 +13,11 @@ namespace HumanResource.src.Controller
             roleService = new RoleService();
         }
 
+        internal List<RoleReqDTO> FindAllList()
+        {
+            throw new NotImplementedException();
+        }
+
         internal List<RoleReqDTO> FindAllRole()
         {
             try

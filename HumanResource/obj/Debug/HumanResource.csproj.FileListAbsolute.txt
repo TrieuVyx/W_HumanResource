@@ -143,3 +143,4 @@ C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\NoBug\W_HumanResource\Hum
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\NoBug\W_HumanResource\HumanResource\obj\Debug\HumanResource.exe
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\NoBug\W_HumanResource\HumanResource\obj\Debug\HumanResource.pdb
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\NoBug\W_HumanResource\HumanResource\bin\Debug\HumanResource.pdb
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\NoBug\W_HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Role.ListRole.resources

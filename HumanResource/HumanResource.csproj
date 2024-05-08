@@ -370,6 +370,7 @@
     <Compile Include="src\Controller\EmployeeController.cs" />
     <Compile Include="src\Controller\EmployeeHistoryController.cs" />
     <Compile Include="src\Controller\RoleController.cs" />
+    <Compile Include="src\Controller\SalaryController.cs" />
     <Compile Include="src\DbContext\Dbcontext.cs" />
     <Compile Include="src\DbContext\GetQuery.cs" />
     <Compile Include="src\DbContext\Modify.cs" />
@@ -382,6 +383,7 @@
     <Compile Include="src\DTO\Response\DepartmentResDTO.cs" />
     <Compile Include="src\DTO\Response\EmployeeResDTO.cs" />
     <Compile Include="src\DTO\Response\LoginResDTO.cs" />
+    <Compile Include="src\DTO\Response\SalaryResDTO.cs" />
     <Compile Include="src\Entity\Account.cs" />
     <Compile Include="src\Entity\Degree.cs" />
     <Compile Include="src\Entity\Department.cs" />
@@ -396,11 +398,13 @@
     <Compile Include="src\Repository\EmployeeHistoryRepository.cs" />
     <Compile Include="src\Repository\EmployeeRepository.cs" />
     <Compile Include="src\Repository\RoleRepository.cs" />
+    <Compile Include="src\Repository\SalaryrRepository.cs" />
     <Compile Include="src\Service\AuthorService.cs" />
     <Compile Include="src\Service\DepartmentService.cs" />
     <Compile Include="src\Service\EmployeeHistoryService.cs" />
     <Compile Include="src\Service\EmployeeService.cs" />
     <Compile Include="src\Service\RoleService.cs" />
+    <Compile Include="src\Service\SalaryService.cs" />
     <Compile Include="src\View\Auth\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -467,6 +471,12 @@
     <Compile Include="src\View\Role\Create.Designer.cs">
       <DependentUpon>Create.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\View\Role\ListRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\Role\ListRole.Designer.cs">
+      <DependentUpon>ListRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\View\Salary\ListSalary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -518,6 +528,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Role\Create.resx">
       <DependentUpon>Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\Role\ListRole.resx">
+      <DependentUpon>ListRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Salary\ListSalary.resx">
       <DependentUpon>ListSalary.cs</DependentUpon>

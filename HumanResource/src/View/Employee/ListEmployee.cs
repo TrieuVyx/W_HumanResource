@@ -10,9 +10,10 @@ namespace HumanResource.src.View.Employee
 {
     public partial class ListEmployee : Form
     {
-        private readonly EmployeeController employeeController;
         private Employees employee;
+        private readonly EmployeeController employeeController;
         private readonly EmployeeReqDTO employeeReqDTO;
+
         public ListEmployee()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace HumanResource.src.View.Employee
         }
         private void ShowEmployee()
         {
+
             try
             {
                 List<Employees> employeeRes = employeeController.FindAllList();

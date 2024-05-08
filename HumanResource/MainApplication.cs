@@ -1,6 +1,8 @@
 ﻿using HumanResource.src.View;
+using HumanResource.src.View.Auth;
 using HumanResource.src.View.Department;
 using HumanResource.src.View.Employee;
+using HumanResource.src.View.Role;
 using HumanResource.src.View.Salary;
 using System;
 using System.Drawing;
@@ -17,14 +19,15 @@ namespace HumanResource
         readonly Dashboard dashboard = new Dashboard();
         readonly ListSalary listSalary = new ListSalary();
         readonly AddEmployeeCome employeeCome = new AddEmployeeCome();
+        readonly ListRole role = new ListRole();
         readonly int height = 470;
         readonly int width = 700;
-
+        readonly RegisterForm registerForm;
         private bool buttonFormSalary = false;
         private bool buttonFormDepartment = false;
         private bool buttonFormEmployee = false;
         private bool buttonFormDashboard = true;
-        //private bool buttonRole = false;
+        private bool buttonFormRole = false;
         private bool buttonEmployDepartment = false;
 
         public MainApplication()
@@ -37,14 +40,12 @@ namespace HumanResource
                 dashboard.MdiParent = this;
                 dashboard.StartPosition = FormStartPosition.Manual;
                 dashboard.Bounds = new Rectangle(175, 10, width, height);
-
-
                 dashboard.Show();
                 employee.Hide();
                 department.Hide();
                 listSalary.Hide();
                 employeeCome.Hide();
-
+                role.Hide();
             }
 
         }
@@ -63,6 +64,7 @@ namespace HumanResource
                 dashboard.Hide();
                 listSalary.Show();
                 employeeCome.Hide();
+                role.Hide();
                 buttonFormDepartment = false;
                 buttonFormDashboard = false;
             }
@@ -83,7 +85,7 @@ namespace HumanResource
                 dashboard.Hide();
                 listSalary.Hide();
                 employeeCome.Show();
-
+                role.Hide();    
             }
 
         }
@@ -102,7 +104,7 @@ namespace HumanResource
                 dashboard.Hide();
                 listSalary.Hide();
                 employeeCome.Hide();
-
+                role.Hide();    
                 buttonFormDepartment = false;
                 buttonFormDashboard = false;
 
@@ -131,7 +133,7 @@ namespace HumanResource
                 dashboard.Hide();
                 listSalary.Hide();
                 employeeCome.Hide();
-
+                role.Hide();
 
             }
 
@@ -153,13 +155,47 @@ namespace HumanResource
                 department.Hide();
                 listSalary.Hide();
                 employeeCome.Hide();
-
+                role.Hide() ;   
             }
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            ShowRegister();
             this.Close();
+        }
+
+        private void ShowRegister()
+        {
+            try
+            {
+                registerForm.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void BtnRole_Click(object sender, EventArgs e)
+        {
+            buttonFormRole = true;
+
+            if (buttonFormRole)
+            {
+                dashboard.MdiParent = this;
+                dashboard.StartPosition = FormStartPosition.Manual;
+                dashboard.Bounds = new Rectangle(175, 10, width, height);
+                buttonFormDepartment = false;
+                buttonFormEmployee = false;
+                dashboard.Hide();
+                employee.Hide();
+                department.Hide();
+                listSalary.Hide();
+                employeeCome.Hide();
+                role.Show();    
+            }
         }
     }
 }

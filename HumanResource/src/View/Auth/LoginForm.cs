@@ -60,10 +60,8 @@ namespace HumanResource.src.View.Auth
                     else
                     {
                         MessageBox.Show("thông tin đăng nhập không chính xác ");
-
                     }
                 }
-
             }
             catch (Exception ex)
             {
