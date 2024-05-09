@@ -1,9 +1,14 @@
 ﻿using HumanResource.src.Controller;
 using HumanResource.src.DTO.Request;
 using HumanResource.src.DTO.Response;
+using HumanResource.src.Entity.Extend;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using DataTable = System.Data.DataTable;
 
 namespace HumanResource.src.View.Department
 {
@@ -11,8 +16,13 @@ namespace HumanResource.src.View.Department
     {
         private readonly DepartmentController departmentController;
         private readonly EmployeeController employeeController;
+        //private readonly ImportExportController importExportController;
         private EmployeeReqDTO employeeReqDTO;
         private DepartmentReqDTO departmentReqDTO;
+        private readonly ExcelEntity _excelEntity;
+        private readonly SaveFileDialog _saveFileDialog;
+        private readonly DataTable _dataTable;
+
         public AddEmployeeCome()
         {
             InitializeComponent();
@@ -20,6 +30,10 @@ namespace HumanResource.src.View.Department
             employeeController = new EmployeeController();
             employeeReqDTO = new EmployeeReqDTO();
             departmentReqDTO = new DepartmentReqDTO();
+            _excelEntity = new ExcelEntity();
+            _saveFileDialog= new SaveFileDialog();
+            _dataTable = new DataTable();
+            //importExportController = new ImportExportController();
             List();
         }
 
@@ -139,7 +153,7 @@ namespace HumanResource.src.View.Department
                 {
                     dataEmployeeDepart.DataSource = null;
                     MessageBox.Show("Không tìm thấy nhân viên nào trong phòng ban này.");
-                }   
+                }
 
             }
             catch (Exception ex)
@@ -150,17 +164,39 @@ namespace HumanResource.src.View.Department
 
         private void BtnExport_Click(object sender, EventArgs e)
         {
-            try {
-                int IDDepartment = int.Parse(txtDepartmentId.Text);
-                if (int.TryParse(txtDepartmentId.Text, out int DepId))
+            try
+            {
+                for (int i = 0; i < dataEmployeeDepart.Columns.Count; i++)
                 {
+                    
+                    _dataTable.Columns.Add(dataEmployeeDepart.Columns[i].HeaderText);
                 }
-                else
+                foreach (DataGridViewRow row in dataEmployeeDepart.Rows)
                 {
-                    MessageBox.Show("đã xảy ra lỗi trong quá trình xuất mời thử lại ");
+                    DataRow dataRow = _dataTable.NewRow();
+                    for (int i = 0; i < dataEmployeeDepart.Columns.Count; i++)
+                    {
+                        dataRow[i] = row.Cells[i].Value;
+                    }
+                    _dataTable.Rows.Add(dataRow);
+                }
+
+                _saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                if (_saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = _saveFileDialog.FileName;
+                   
+                    List<string> visibleColumns = new List<string>();
+
+                    visibleColumns.AddRange(_dataTable.Columns.Contains("EmployId") ? new[] { "EmployId" } : new string[0]);
+                    visibleColumns.AddRange(_dataTable.Columns.Contains("DepDesc") ? new[] { "DepDesc" } : new string[0]);
+                    visibleColumns.AddRange(_dataTable.Columns.Contains("EmployeeName") ? new[] { "EmployeeName" } : new string[0]);
+                    visibleColumns.AddRange(_dataTable.Columns.Contains("AddressEmployee") ? new[] { "AddressEmployee" } : new string[0]);
+
+                    _excelEntity.ExportDataTableToExcel(_dataTable, filePath, visibleColumns);
+                    MessageBox.Show("Bạn đã xuất thành công");
 
                 }
-
             }
             catch (Exception ex)
             {
