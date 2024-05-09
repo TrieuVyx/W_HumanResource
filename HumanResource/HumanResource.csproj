@@ -372,6 +372,7 @@
     <Compile Include="src\Controller\DepartmentController.cs" />
     <Compile Include="src\Controller\EmployeeController.cs" />
     <Compile Include="src\Controller\EmployeeHistoryController.cs" />
+    <Compile Include="src\Controller\ImportExportController.cs" />
     <Compile Include="src\Controller\RoleController.cs" />
     <Compile Include="src\Controller\SalaryController.cs" />
     <Compile Include="src\DbContext\Dbcontext.cs" />
@@ -403,12 +404,14 @@
     <Compile Include="src\Repository\DepartmentRepository.cs" />
     <Compile Include="src\Repository\EmployeeHistoryRepository.cs" />
     <Compile Include="src\Repository\EmployeeRepository.cs" />
+    <Compile Include="src\Repository\ImportExportRepository.cs" />
     <Compile Include="src\Repository\RoleRepository.cs" />
     <Compile Include="src\Repository\SalaryrRepository.cs" />
     <Compile Include="src\Service\AuthorService.cs" />
     <Compile Include="src\Service\DepartmentService.cs" />
     <Compile Include="src\Service\EmployeeHistoryService.cs" />
     <Compile Include="src\Service\EmployeeService.cs" />
+    <Compile Include="src\Service\ImportExportService.cs" />
     <Compile Include="src\Service\RoleService.cs" />
     <Compile Include="src\Service\SalaryService.cs" />
     <Compile Include="src\View\Auth\LoginForm.cs">

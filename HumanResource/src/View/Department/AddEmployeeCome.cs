@@ -154,7 +154,6 @@ namespace HumanResource.src.View.Department
                 int IDDepartment = int.Parse(txtDepartmentId.Text);
                 if (int.TryParse(txtDepartmentId.Text, out int DepId))
                 {
-
                 }
                 else
                 {

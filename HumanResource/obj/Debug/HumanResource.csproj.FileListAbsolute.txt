@@ -122,8 +122,6 @@ C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\Hu
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.csproj.AssemblyReference.cache
-C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.csproj.SuggestedBindingRedirects.cache
-C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.exe.config
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.MainApplication.resources
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.Properties.Resources.resources
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Auth.LoginForm.resources

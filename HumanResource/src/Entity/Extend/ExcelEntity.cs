@@ -8,8 +8,14 @@ namespace HumanResource.src.Entity.Extend
 {
     internal class ExcelEntity
     {
-        public ExcelEntity() { }    
-        //private Workbook workbook;
-
+        private readonly Excel.Workbook _workbook;
+        private readonly Excel.Worksheet _worksheet;
+        private readonly Excel.Application _application;
+        public ExcelEntity()
+        {
+            _application = new Excel.Application();
+            _workbook = _application.Workbooks.Add();
+            _worksheet = (Excel.Worksheet)_workbook.ActiveSheet;
+        }
     }
 }
