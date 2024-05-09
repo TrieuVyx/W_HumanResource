@@ -180,6 +180,7 @@
             this.BtnExport.TabIndex = 15;
             this.BtnExport.Text = "Export";
             this.BtnExport.UseVisualStyleBackColor = true;
+            this.BtnExport.Click += new System.EventHandler(this.BtnExport_Click);
             // 
             // AddEmployeeCome
             // 

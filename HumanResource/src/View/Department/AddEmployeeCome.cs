@@ -139,6 +139,27 @@ namespace HumanResource.src.View.Department
                 {
                     dataEmployeeDepart.DataSource = null;
                     MessageBox.Show("Không tìm thấy nhân viên nào trong phòng ban này.");
+                }   
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
+            }
+        }
+
+        private void BtnExport_Click(object sender, EventArgs e)
+        {
+            try {
+                int IDDepartment = int.Parse(txtDepartmentId.Text);
+                if (int.TryParse(txtDepartmentId.Text, out int DepId))
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("đã xảy ra lỗi trong quá trình xuất mời thử lại ");
+
                 }
 
             }
