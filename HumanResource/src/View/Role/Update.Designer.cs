@@ -173,7 +173,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button Close;
+        private new System.Windows.Forms.Button Close;
         private System.Windows.Forms.RichTextBox txtRoleId;
         private System.Windows.Forms.RichTextBox txtRoleName;
         private System.Windows.Forms.Button BtnUpdate;

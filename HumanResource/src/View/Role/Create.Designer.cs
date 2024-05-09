@@ -190,6 +190,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox txtRoleId;
         private System.Windows.Forms.RichTextBox txtRoleName;
-        private System.Windows.Forms.Button Close;
+        private new System.Windows.Forms.Button Close;
     }
 }

@@ -20,7 +20,7 @@ namespace HumanResource
         readonly ListSalary listSalary = new ListSalary();
         readonly AddEmployeeCome employeeCome = new AddEmployeeCome();
         readonly ListRole role = new ListRole();
-        readonly RegisterForm registerForm;
+        //readonly RegisterForm registerForm;
         readonly int height = 470;
         readonly int width = 700;
         private bool buttonFormSalary = false;
@@ -169,7 +169,7 @@ namespace HumanResource
         {
             try
             {
-                registerForm.Show();
+                //registerForm.Show();
 
             }
             catch (Exception ex)
