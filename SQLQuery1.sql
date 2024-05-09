@@ -145,4 +145,12 @@ WHERE DepId IS NULL;
 
 
 SELECT * FROM EmployeeHistory
+SELECT * FROM Roles r , Employee e WHERE r.RoleId = e.RoleId
+
+
+
+
+
+
+
 */

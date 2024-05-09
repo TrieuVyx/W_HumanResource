@@ -1,4 +1,5 @@
 ﻿using HumanResource.src.DTO.Request;
+using HumanResource.src.DTO.Response;
 using HumanResource.src.Service;
 using System;
 using System.Windows.Forms;
@@ -29,6 +30,25 @@ namespace HumanResource.src.Controller
                 }
                 return false;
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Phát Sinh Từ AuthorController " + ex.Message);
+                return false;
+            }
+        }
+
+        internal bool RegisterAccount(RegisterReqDTO registerReqDTO)
+        {
+            try
+            {
+
+                bool author = authorService.RegisterAccount(registerReqDTO);
+                if (author)
+                {
+                    return true;
+                }
+                return false;
             }
             catch (Exception ex)
             {

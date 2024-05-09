@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-
+using HumanResource.src.View.Auth;
 namespace HumanResource
 {
     internal static class Program
@@ -13,7 +13,7 @@ namespace HumanResource
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainApplication());
+            Application.Run(new SignUpForm());
         }
     }
 }

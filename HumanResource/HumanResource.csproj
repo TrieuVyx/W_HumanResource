@@ -378,6 +378,7 @@
     <Compile Include="src\DTO\Request\EmployeeHistoryReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeReqDTO.cs" />
     <Compile Include="src\DTO\Request\LoginReqDTO.cs" />
+    <Compile Include="src\DTO\Request\RegisterReqDTO.cs" />
     <Compile Include="src\DTO\Request\RoleReqDTO.cs" />
     <Compile Include="src\DTO\Response\DepartmentResDTO.cs" />
     <Compile Include="src\DTO\Response\EmployeeResDTO.cs" />
@@ -416,6 +417,12 @@
     </Compile>
     <Compile Include="src\View\Auth\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\Auth\SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\Auth\SignUpForm.Designer.cs">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="src\View\Department\AddEmployeeCome.cs">
       <SubType>Form</SubType>
@@ -507,6 +514,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Auth\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\Auth\SignUpForm.resx">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

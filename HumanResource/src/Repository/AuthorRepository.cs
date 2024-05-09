@@ -1,5 +1,6 @@
 ﻿using HumanResource.src.DbContext;
 using HumanResource.src.DTO.Request;
+using HumanResource.src.DTO.Response;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -9,17 +10,16 @@ namespace HumanResource.src.Repository
     internal class AuthorRepository
     {
         private readonly Dbcontext dbContext;
+        
         //private GetQuery getQuery;
         public AuthorRepository()
         {
             dbContext = new Dbcontext();
             //getQuery = new GetQuery();
 
+
         }
-        public AuthorRepository(Dbcontext dbContext)
-        {
-            this.dbContext = dbContext;
-        }
+       
         internal bool Authorization(LoginReqDTO loginReqDTO)
         {
             try
@@ -57,5 +57,35 @@ namespace HumanResource.src.Repository
 
         }
 
+        internal bool RegisterAccount(RegisterReqDTO registerReqDTO)
+        {
+            try
+            {
+                using (SqlConnection connection = dbContext.ConnectOpen())
+                {
+                    //string query = "SELECT COUNT(*) FROM Account WHERE Email = @Email AND PassWords = CONVERT(nvarchar(max), HASHBYTES('MD5', @PassWords), 2)";
+                    string query = "INSERT INTO Account (Email, FullName, PassWords) VALUES (@Email, @FullName, @PassWords);";
+                    using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                    //using (SqlCommand sqlCommand = getQuery.QueryLogin())
+                    {
+                        string password = dbContext.HashMD5(registerReqDTO.PassWords);
+                        sqlCommand.Parameters.AddWithValue("@Email", registerReqDTO.Email);
+                        sqlCommand.Parameters.AddWithValue("@FullName", registerReqDTO.FullName);
+                        sqlCommand.Parameters.AddWithValue("@PassWords", password);
+                        connection.Open();
+                        sqlCommand.ExecuteNonQuery();
+                        sqlCommand.Parameters.Clear();
+                        connection.Close();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Phát Sinh Từ AuthorRepository " + ex.Message);
+                return false;
+            }
+
+        }
     }
 }

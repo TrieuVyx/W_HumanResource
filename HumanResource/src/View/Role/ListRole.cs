@@ -1,16 +1,8 @@
 ﻿using HumanResource.src.Controller;
 using HumanResource.src.DTO.Request;
 using HumanResource.src.DTO.Response;
-using HumanResource.src.Entity;
-using HumanResource.src.View.Employee;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HumanResource.src.View.Role
@@ -18,8 +10,8 @@ namespace HumanResource.src.View.Role
     public partial class ListRole : Form
     {
         private readonly RoleController roleController = new RoleController();
-        private  RoleReqDTO roleReqDTO;
-        private RoleResDTO roleResDTO;
+        private readonly RoleReqDTO roleReqDTO;
+        private readonly RoleResDTO roleResDTO;
         public ListRole()
         {
             InitializeComponent();
