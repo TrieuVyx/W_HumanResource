@@ -16,6 +16,7 @@ namespace HumanResource.src.View.Salary
             salaryController = new SalaryController();
             DataSalary.ReadOnly = true;
             DataSalary.Enabled = false;
+            
         }
 
         private void BtnWatch_Click(object sender, EventArgs e)

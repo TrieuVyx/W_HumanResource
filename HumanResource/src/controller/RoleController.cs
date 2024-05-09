@@ -1,4 +1,5 @@
 ﻿using HumanResource.src.DTO.Request;
+using HumanResource.src.DTO.Response;
 using HumanResource.src.Service;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,19 @@ namespace HumanResource.src.Controller
             roleService = new RoleService();
         }
 
-        internal List<RoleReqDTO> FindAllList()
+        internal bool CreateUser(RoleReqDTO roleReqDTO)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return roleService.CreateUser(roleReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ RoleController " + ex.Message);
+            }
         }
+
+  
 
         internal List<RoleReqDTO> FindAllRole()
         {
@@ -26,7 +36,55 @@ namespace HumanResource.src.Controller
             }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi Phát Sinh Từ RoleService " + ex.Message);
+                throw new Exception("Lỗi Phát Sinh Từ RoleController " + ex.Message);
+            }
+        }
+
+        internal bool FindAndDelete(RoleReqDTO roleReqDTO)
+        {
+            try
+            {
+                return roleService.FindAndDelete(roleReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ RoleController " + ex.Message);
+            }
+        }
+
+        internal List<RoleReqDTO> FindAndDetail(RoleReqDTO roleReqDTO)
+        {
+            try
+            {
+                return roleService.FindAndDetail(roleReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ RoleController " + ex.Message);
+            }
+        }
+
+        internal List<RoleResDTO> FindAndWatch(RoleResDTO roleResDTO)
+        {
+            try
+            {
+                return roleService.FindAndWatch(roleResDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ RoleController " + ex.Message);
+            }
+        }
+
+        internal bool UpdateUser(RoleReqDTO roleReqDTO)
+        {
+            try
+            {
+                return roleService.UpdateUser(roleReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ RoleController " + ex.Message);
             }
         }
     }

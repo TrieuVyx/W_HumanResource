@@ -383,6 +383,7 @@
     <Compile Include="src\DTO\Response\DepartmentResDTO.cs" />
     <Compile Include="src\DTO\Response\EmployeeResDTO.cs" />
     <Compile Include="src\DTO\Response\LoginResDTO.cs" />
+    <Compile Include="src\DTO\Response\RoleResDTO.cs" />
     <Compile Include="src\DTO\Response\SalaryResDTO.cs" />
     <Compile Include="src\Entity\Account.cs" />
     <Compile Include="src\Entity\Degree.cs" />
@@ -477,6 +478,12 @@
     <Compile Include="src\View\Role\ListRole.Designer.cs">
       <DependentUpon>ListRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\View\Role\Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\Role\Update.Designer.cs">
+      <DependentUpon>Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\View\Salary\ListSalary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -531,6 +538,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Role\ListRole.resx">
       <DependentUpon>ListRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\Role\Update.resx">
+      <DependentUpon>Update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Salary\ListSalary.resx">
       <DependentUpon>ListSalary.cs</DependentUpon>

@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.BtnUpdate = new System.Windows.Forms.Button();
-            this.BtnDetail = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.txtIdAmount = new System.Windows.Forms.RichTextBox();
             this.ViewDataEmployee = new System.Windows.Forms.DataGridView();
@@ -48,26 +47,30 @@
             // ViewRoleData
             // 
             this.ViewRoleData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewRoleData.Location = new System.Drawing.Point(27, 171);
+            this.ViewRoleData.Location = new System.Drawing.Point(34, 144);
+            this.ViewRoleData.Margin = new System.Windows.Forms.Padding(4);
             this.ViewRoleData.Name = "ViewRoleData";
-            this.ViewRoleData.Size = new System.Drawing.Size(371, 248);
+            this.ViewRoleData.RowHeadersWidth = 51;
+            this.ViewRoleData.Size = new System.Drawing.Size(437, 305);
             this.ViewRoleData.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 18);
+            this.label1.Location = new System.Drawing.Point(28, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 25);
+            this.label1.Size = new System.Drawing.Size(70, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Role";
             // 
             // BtnAdd
             // 
-            this.BtnAdd.Location = new System.Drawing.Point(27, 142);
+            this.BtnAdd.Location = new System.Drawing.Point(34, 110);
+            this.BtnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(75, 23);
+            this.BtnAdd.Size = new System.Drawing.Size(100, 28);
             this.BtnAdd.TabIndex = 2;
             this.BtnAdd.Text = "Create";
             this.BtnAdd.UseVisualStyleBackColor = true;
@@ -75,61 +78,60 @@
             // 
             // BtnUpdate
             // 
-            this.BtnUpdate.Location = new System.Drawing.Point(108, 142);
+            this.BtnUpdate.Location = new System.Drawing.Point(142, 109);
+            this.BtnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.BtnUpdate.Name = "BtnUpdate";
-            this.BtnUpdate.Size = new System.Drawing.Size(59, 23);
+            this.BtnUpdate.Size = new System.Drawing.Size(79, 28);
             this.BtnUpdate.TabIndex = 3;
             this.BtnUpdate.Text = "Update";
             this.BtnUpdate.UseVisualStyleBackColor = true;
             this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
-            // BtnDetail
-            // 
-            this.BtnDetail.Location = new System.Drawing.Point(173, 142);
-            this.BtnDetail.Name = "BtnDetail";
-            this.BtnDetail.Size = new System.Drawing.Size(75, 23);
-            this.BtnDetail.TabIndex = 4;
-            this.BtnDetail.Text = "Detail";
-            this.BtnDetail.UseVisualStyleBackColor = true;
-            // 
             // BtnDelete
             // 
-            this.BtnDelete.Location = new System.Drawing.Point(254, 142);
+            this.BtnDelete.Location = new System.Drawing.Point(229, 110);
+            this.BtnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(67, 23);
+            this.BtnDelete.Size = new System.Drawing.Size(82, 28);
             this.BtnDelete.TabIndex = 5;
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // txtIdAmount
             // 
-            this.txtIdAmount.Location = new System.Drawing.Point(369, 142);
+            this.txtIdAmount.Location = new System.Drawing.Point(479, 110);
+            this.txtIdAmount.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdAmount.Name = "txtIdAmount";
-            this.txtIdAmount.Size = new System.Drawing.Size(29, 23);
+            this.txtIdAmount.Size = new System.Drawing.Size(37, 27);
             this.txtIdAmount.TabIndex = 6;
             this.txtIdAmount.Text = "";
             // 
             // ViewDataEmployee
             // 
             this.ViewDataEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewDataEmployee.Location = new System.Drawing.Point(420, 171);
+            this.ViewDataEmployee.Location = new System.Drawing.Point(479, 144);
+            this.ViewDataEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.ViewDataEmployee.Name = "ViewDataEmployee";
-            this.ViewDataEmployee.Size = new System.Drawing.Size(368, 248);
+            this.ViewDataEmployee.RowHeadersWidth = 51;
+            this.ViewDataEmployee.Size = new System.Drawing.Size(441, 305);
             this.ViewDataEmployee.TabIndex = 7;
             // 
             // txtIdEmployee
             // 
-            this.txtIdEmployee.Location = new System.Drawing.Point(420, 142);
+            this.txtIdEmployee.Location = new System.Drawing.Point(524, 110);
+            this.txtIdEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdEmployee.Name = "txtIdEmployee";
-            this.txtIdEmployee.Size = new System.Drawing.Size(29, 23);
+            this.txtIdEmployee.Size = new System.Drawing.Size(73, 27);
             this.txtIdEmployee.TabIndex = 8;
             this.txtIdEmployee.Text = "";
             // 
             // BtnReset
             // 
-            this.BtnReset.Location = new System.Drawing.Point(455, 142);
+            this.BtnReset.Location = new System.Drawing.Point(319, 110);
+            this.BtnReset.Margin = new System.Windows.Forms.Padding(4);
             this.BtnReset.Name = "BtnReset";
-            this.BtnReset.Size = new System.Drawing.Size(75, 23);
+            this.BtnReset.Size = new System.Drawing.Size(79, 28);
             this.BtnReset.TabIndex = 9;
             this.BtnReset.Text = "Reset";
             this.BtnReset.UseVisualStyleBackColor = true;
@@ -137,9 +139,10 @@
             // 
             // BtnWatch
             // 
-            this.BtnWatch.Location = new System.Drawing.Point(536, 142);
+            this.BtnWatch.Location = new System.Drawing.Point(712, 106);
+            this.BtnWatch.Margin = new System.Windows.Forms.Padding(4);
             this.BtnWatch.Name = "BtnWatch";
-            this.BtnWatch.Size = new System.Drawing.Size(75, 23);
+            this.BtnWatch.Size = new System.Drawing.Size(100, 28);
             this.BtnWatch.TabIndex = 10;
             this.BtnWatch.Text = "Watch";
             this.BtnWatch.UseVisualStyleBackColor = true;
@@ -147,9 +150,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(617, 142);
+            this.button1.Location = new System.Drawing.Point(820, 106);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 11;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
@@ -157,18 +161,19 @@
             // 
             // txtIdRole
             // 
-            this.txtIdRole.Location = new System.Drawing.Point(327, 142);
+            this.txtIdRole.Location = new System.Drawing.Point(434, 110);
+            this.txtIdRole.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdRole.Name = "txtIdRole";
-            this.txtIdRole.Size = new System.Drawing.Size(29, 23);
+            this.txtIdRole.Size = new System.Drawing.Size(37, 27);
             this.txtIdRole.TabIndex = 12;
             this.txtIdRole.Text = "";
             // 
             // ListRole
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(961, 476);
             this.Controls.Add(this.txtIdRole);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnWatch);
@@ -177,12 +182,12 @@
             this.Controls.Add(this.ViewDataEmployee);
             this.Controls.Add(this.txtIdAmount);
             this.Controls.Add(this.BtnDelete);
-            this.Controls.Add(this.BtnDetail);
             this.Controls.Add(this.BtnUpdate);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ViewRoleData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListRole";
             this.Text = "ListRole";
             ((System.ComponentModel.ISupportInitialize)(this.ViewRoleData)).EndInit();
@@ -198,7 +203,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.Button BtnUpdate;
-        private System.Windows.Forms.Button BtnDetail;
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.RichTextBox txtIdAmount;
         private System.Windows.Forms.DataGridView ViewDataEmployee;

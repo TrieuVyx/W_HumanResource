@@ -16,13 +16,13 @@ namespace HumanResource
 
         readonly ListEmployee employee = new ListEmployee();
         readonly ListDep department = new ListDep();
-        readonly Dashboard dashboard = new Dashboard();
+        readonly Dashboard _dashboard = new Dashboard();
         readonly ListSalary listSalary = new ListSalary();
         readonly AddEmployeeCome employeeCome = new AddEmployeeCome();
         readonly ListRole role = new ListRole();
+        readonly RegisterForm registerForm;
         readonly int height = 470;
         readonly int width = 700;
-        readonly RegisterForm registerForm;
         private bool buttonFormSalary = false;
         private bool buttonFormDepartment = false;
         private bool buttonFormEmployee = false;
@@ -37,10 +37,10 @@ namespace HumanResource
             this.IsMdiContainer = true;
             if (buttonFormDashboard)
             {
-                dashboard.MdiParent = this;
-                dashboard.StartPosition = FormStartPosition.Manual;
-                dashboard.Bounds = new Rectangle(175, 10, width, height);
-                dashboard.Show();
+                _dashboard.MdiParent = this;
+                _dashboard.StartPosition = FormStartPosition.Manual;
+                _dashboard.Bounds = new Rectangle(175, 10, width, height);
+                _dashboard.Show();
                 employee.Hide();
                 department.Hide();
                 listSalary.Hide();
@@ -61,7 +61,7 @@ namespace HumanResource
                 listSalary.Bounds = new Rectangle(175, 10, width, height);
                 employee.Hide();
                 department.Hide();
-                dashboard.Hide();
+                _dashboard.Hide();
                 listSalary.Show();
                 employeeCome.Hide();
                 role.Hide();
@@ -82,7 +82,7 @@ namespace HumanResource
                 buttonFormDashboard = false;
                 department.Hide();
                 employee.Hide();
-                dashboard.Hide();
+                _dashboard.Hide();
                 listSalary.Hide();
                 employeeCome.Show();
                 role.Hide();    
@@ -101,7 +101,7 @@ namespace HumanResource
                 employee.Bounds = new Rectangle(175, 10, width, height);
                 employee.Show();
                 department.Hide();
-                dashboard.Hide();
+                _dashboard.Hide();
                 listSalary.Hide();
                 employeeCome.Hide();
                 role.Hide();    
@@ -130,7 +130,7 @@ namespace HumanResource
                 buttonFormDashboard = false;
                 department.Show();
                 employee.Hide();
-                dashboard.Hide();
+                _dashboard.Hide();
                 listSalary.Hide();
                 employeeCome.Hide();
                 role.Hide();
@@ -145,12 +145,12 @@ namespace HumanResource
 
             if (buttonFormDashboard)
             {
-                dashboard.MdiParent = this;
-                dashboard.StartPosition = FormStartPosition.Manual;
-                dashboard.Bounds = new Rectangle(175, 10, width, height);
+                _dashboard.MdiParent = this;
+                _dashboard.StartPosition = FormStartPosition.Manual;
+                _dashboard.Bounds = new Rectangle(175, 10, width, height);
                 buttonFormDepartment = false;
                 buttonFormEmployee = false;
-                dashboard.Show();
+                _dashboard.Show();
                 employee.Hide();
                 department.Hide();
                 listSalary.Hide();
@@ -184,12 +184,12 @@ namespace HumanResource
 
             if (buttonFormRole)
             {
-                dashboard.MdiParent = this;
-                dashboard.StartPosition = FormStartPosition.Manual;
-                dashboard.Bounds = new Rectangle(175, 10, width, height);
+                role.MdiParent = this;
+                role.StartPosition = FormStartPosition.Manual;
+                role.Bounds = new Rectangle(175, 10, width, height);
                 buttonFormDepartment = false;
                 buttonFormEmployee = false;
-                dashboard.Hide();
+                _dashboard.Hide();
                 employee.Hide();
                 department.Hide();
                 listSalary.Hide();
