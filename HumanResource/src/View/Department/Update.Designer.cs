@@ -35,8 +35,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.txtIDEmployee = new System.Windows.Forms.RichTextBox();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.GridViewEmployee = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
             this.txtIDDepartment = new System.Windows.Forms.RichTextBox();
@@ -46,6 +44,7 @@
             this.txtDepPlace = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,7 +65,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(36, 340);
+            this.label5.Location = new System.Drawing.Point(36, 332);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(158, 25);
             this.label5.TabIndex = 9;
@@ -74,9 +73,9 @@
             // 
             // txtDepType
             // 
-            this.txtDepType.Location = new System.Drawing.Point(41, 368);
+            this.txtDepType.Location = new System.Drawing.Point(41, 360);
             this.txtDepType.Name = "txtDepType";
-            this.txtDepType.Size = new System.Drawing.Size(290, 40);
+            this.txtDepType.Size = new System.Drawing.Size(354, 40);
             this.txtDepType.TabIndex = 8;
             this.txtDepType.Text = "";
             // 
@@ -84,7 +83,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(36, 272);
+            this.label4.Location = new System.Drawing.Point(36, 261);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 25);
             this.label4.TabIndex = 7;
@@ -92,10 +91,9 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.txtIDEmployee);
-            this.panel3.Controls.Add(this.btnDelete);
-            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.GridViewEmployee);
             this.panel3.Controls.Add(this.btnClose);
             this.panel3.Controls.Add(this.txtIDDepartment);
@@ -118,40 +116,19 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(748, 89);
+            this.label7.Location = new System.Drawing.Point(226, 119);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 25);
+            this.label7.Size = new System.Drawing.Size(118, 25);
             this.label7.TabIndex = 33;
-            this.label7.Text = "ID";
+            this.label7.Text = "IDEmployee";
             // 
             // txtIDEmployee
             // 
-            this.txtIDEmployee.Location = new System.Drawing.Point(785, 89);
+            this.txtIDEmployee.Location = new System.Drawing.Point(231, 147);
             this.txtIDEmployee.Name = "txtIDEmployee";
-            this.txtIDEmployee.Size = new System.Drawing.Size(54, 40);
+            this.txtIDEmployee.Size = new System.Drawing.Size(164, 40);
             this.txtIDEmployee.TabIndex = 32;
             this.txtIDEmployee.Text = "";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnDelete.Location = new System.Drawing.Point(742, 430);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(97, 37);
-            this.btnDelete.TabIndex = 31;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(436, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 25);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Employee ";
             // 
             // GridViewEmployee
             // 
@@ -160,13 +137,13 @@
             this.GridViewEmployee.Name = "GridViewEmployee";
             this.GridViewEmployee.RowHeadersWidth = 51;
             this.GridViewEmployee.RowTemplate.Height = 24;
-            this.GridViewEmployee.Size = new System.Drawing.Size(403, 278);
+            this.GridViewEmployee.Size = new System.Drawing.Size(403, 337);
             this.GridViewEmployee.TabIndex = 28;
             // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnClose.Location = new System.Drawing.Point(155, 430);
+            this.btnClose.Location = new System.Drawing.Point(298, 430);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(97, 37);
             this.btnClose.TabIndex = 27;
@@ -176,9 +153,9 @@
             // 
             // txtIDDepartment
             // 
-            this.txtIDDepartment.Location = new System.Drawing.Point(42, 158);
+            this.txtIDDepartment.Location = new System.Drawing.Point(41, 147);
             this.txtIDDepartment.Name = "txtIDDepartment";
-            this.txtIDDepartment.Size = new System.Drawing.Size(54, 40);
+            this.txtIDDepartment.Size = new System.Drawing.Size(172, 40);
             this.txtIDDepartment.TabIndex = 26;
             this.txtIDDepartment.Text = "";
             // 
@@ -186,17 +163,17 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 130);
+            this.label2.Location = new System.Drawing.Point(37, 119);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 25);
+            this.label2.Size = new System.Drawing.Size(132, 25);
             this.label2.TabIndex = 25;
-            this.label2.Text = "ID";
+            this.label2.Text = "IDDepartment";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(37, 201);
+            this.label6.Location = new System.Drawing.Point(36, 190);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(215, 25);
             this.label6.TabIndex = 24;
@@ -204,17 +181,17 @@
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(42, 229);
+            this.txtDesc.Location = new System.Drawing.Point(41, 218);
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(289, 40);
+            this.txtDesc.Size = new System.Drawing.Size(354, 40);
             this.txtDesc.TabIndex = 23;
             this.txtDesc.Text = "";
             // 
             // txtDepPlace
             // 
-            this.txtDepPlace.Location = new System.Drawing.Point(41, 300);
+            this.txtDepPlace.Location = new System.Drawing.Point(41, 289);
             this.txtDepPlace.Name = "txtDepPlace";
-            this.txtDepPlace.Size = new System.Drawing.Size(290, 40);
+            this.txtDepPlace.Size = new System.Drawing.Size(354, 40);
             this.txtDepPlace.TabIndex = 19;
             this.txtDepPlace.Text = "";
             // 
@@ -233,11 +210,21 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::HumanResource.Properties.Resources.image2;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 77);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 130);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(427, 438);
+            this.pictureBox1.Size = new System.Drawing.Size(427, 337);
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.Location = new System.Drawing.Point(168, 430);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 37);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Delete";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // Update
             // 
@@ -273,9 +260,8 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView GridViewEmployee;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RichTextBox txtIDEmployee;
+        private System.Windows.Forms.Button button1;
     }
 }

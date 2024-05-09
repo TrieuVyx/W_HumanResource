@@ -115,6 +115,7 @@ namespace HumanResource.src.View.Department
                     GridViewEmployee.CellContentClick += GridViewEmployee_CellContentClick;
                     txtIDEmployee.ReadOnly = true;
                     txtIDEmployee.Enabled = false;
+                    GridViewEmployee.ReadOnly = true;
                 }
                 else
                 {

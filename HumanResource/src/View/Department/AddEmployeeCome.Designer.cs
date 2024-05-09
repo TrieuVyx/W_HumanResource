@@ -41,6 +41,7 @@
             this.txtAmout = new System.Windows.Forms.RichTextBox();
             this.txtListEmployInDepartment = new System.Windows.Forms.RichTextBox();
             this.txtAmoutEmploy = new System.Windows.Forms.RichTextBox();
+            this.BtnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDepartMent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataEmployeeDepart)).BeginInit();
@@ -53,14 +54,14 @@
             this.dataGridEmployee.Name = "dataGridEmployee";
             this.dataGridEmployee.RowHeadersWidth = 51;
             this.dataGridEmployee.RowTemplate.Height = 24;
-            this.dataGridEmployee.Size = new System.Drawing.Size(386, 227);
+            this.dataGridEmployee.Size = new System.Drawing.Size(420, 227);
             this.dataGridEmployee.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 9);
+            this.label1.Location = new System.Drawing.Point(21, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 32);
             this.label1.TabIndex = 2;
@@ -69,16 +70,16 @@
             // dataGridDepartMent
             // 
             this.dataGridDepartMent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDepartMent.Location = new System.Drawing.Point(509, 64);
+            this.dataGridDepartMent.Location = new System.Drawing.Point(453, 64);
             this.dataGridDepartMent.Name = "dataGridDepartMent";
             this.dataGridDepartMent.RowHeadersWidth = 51;
             this.dataGridDepartMent.RowTemplate.Height = 24;
-            this.dataGridDepartMent.Size = new System.Drawing.Size(376, 227);
+            this.dataGridDepartMent.Size = new System.Drawing.Size(432, 227);
             this.dataGridDepartMent.TabIndex = 3;
             // 
             // btnTransfer
             // 
-            this.btnTransfer.Location = new System.Drawing.Point(419, 64);
+            this.btnTransfer.Location = new System.Drawing.Point(801, 532);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(84, 43);
             this.btnTransfer.TabIndex = 4;
@@ -88,9 +89,9 @@
             // 
             // btbReset
             // 
-            this.btbReset.Location = new System.Drawing.Point(419, 150);
+            this.btbReset.Location = new System.Drawing.Point(567, 532);
             this.btbReset.Name = "btbReset";
-            this.btbReset.Size = new System.Drawing.Size(84, 55);
+            this.btbReset.Size = new System.Drawing.Size(84, 43);
             this.btbReset.TabIndex = 6;
             this.btbReset.Text = "Reset";
             this.btbReset.UseVisualStyleBackColor = true;
@@ -98,24 +99,26 @@
             // 
             // txtDepartmentId
             // 
-            this.txtDepartmentId.Location = new System.Drawing.Point(419, 211);
+            this.txtDepartmentId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDepartmentId.Location = new System.Drawing.Point(453, 17);
             this.txtDepartmentId.Name = "txtDepartmentId";
-            this.txtDepartmentId.Size = new System.Drawing.Size(84, 31);
+            this.txtDepartmentId.Size = new System.Drawing.Size(95, 41);
             this.txtDepartmentId.TabIndex = 7;
             this.txtDepartmentId.Text = "";
             // 
             // txtEmployeeId
             // 
-            this.txtEmployeeId.Location = new System.Drawing.Point(419, 113);
+            this.txtEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmployeeId.Location = new System.Drawing.Point(238, 17);
             this.txtEmployeeId.Name = "txtEmployeeId";
-            this.txtEmployeeId.Size = new System.Drawing.Size(84, 31);
+            this.txtEmployeeId.Size = new System.Drawing.Size(99, 41);
             this.txtEmployeeId.TabIndex = 8;
             this.txtEmployeeId.Text = "";
             // 
             // dataEmployeeDepart
             // 
             this.dataEmployeeDepart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataEmployeeDepart.Location = new System.Drawing.Point(27, 300);
+            this.dataEmployeeDepart.Location = new System.Drawing.Point(27, 297);
             this.dataEmployeeDepart.Name = "dataEmployeeDepart";
             this.dataEmployeeDepart.RowHeadersWidth = 51;
             this.dataEmployeeDepart.RowTemplate.Height = 24;
@@ -124,7 +127,7 @@
             // 
             // btnWatch
             // 
-            this.btnWatch.Location = new System.Drawing.Point(419, 248);
+            this.btnWatch.Location = new System.Drawing.Point(685, 532);
             this.btnWatch.Name = "btnWatch";
             this.btnWatch.Size = new System.Drawing.Size(84, 43);
             this.btnWatch.TabIndex = 10;
@@ -136,7 +139,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(678, 9);
+            this.label2.Location = new System.Drawing.Point(666, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(207, 32);
             this.label2.TabIndex = 11;
@@ -144,34 +147,47 @@
             // 
             // txtAmout
             // 
-            this.txtAmout.Location = new System.Drawing.Point(298, 27);
+            this.txtAmout.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmout.Location = new System.Drawing.Point(27, 532);
             this.txtAmout.Name = "txtAmout";
-            this.txtAmout.Size = new System.Drawing.Size(115, 31);
+            this.txtAmout.Size = new System.Drawing.Size(102, 41);
             this.txtAmout.TabIndex = 12;
             this.txtAmout.Text = "";
             // 
             // txtListEmployInDepartment
             // 
-            this.txtListEmployInDepartment.Location = new System.Drawing.Point(509, 27);
+            this.txtListEmployInDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtListEmployInDepartment.Location = new System.Drawing.Point(135, 532);
             this.txtListEmployInDepartment.Name = "txtListEmployInDepartment";
-            this.txtListEmployInDepartment.Size = new System.Drawing.Size(163, 31);
+            this.txtListEmployInDepartment.Size = new System.Drawing.Size(312, 41);
             this.txtListEmployInDepartment.TabIndex = 13;
             this.txtListEmployInDepartment.Text = "";
             // 
             // txtAmoutEmploy
             // 
-            this.txtAmoutEmploy.Location = new System.Drawing.Point(213, 27);
+            this.txtAmoutEmploy.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmoutEmploy.Location = new System.Drawing.Point(343, 17);
             this.txtAmoutEmploy.Name = "txtAmoutEmploy";
-            this.txtAmoutEmploy.Size = new System.Drawing.Size(79, 31);
+            this.txtAmoutEmploy.Size = new System.Drawing.Size(104, 41);
             this.txtAmoutEmploy.TabIndex = 14;
             this.txtAmoutEmploy.Text = "";
+            // 
+            // BtnExport
+            // 
+            this.BtnExport.Location = new System.Drawing.Point(453, 532);
+            this.BtnExport.Name = "BtnExport";
+            this.BtnExport.Size = new System.Drawing.Size(84, 43);
+            this.BtnExport.TabIndex = 15;
+            this.BtnExport.Text = "Export";
+            this.BtnExport.UseVisualStyleBackColor = true;
             // 
             // AddEmployeeCome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(909, 546);
+            this.ClientSize = new System.Drawing.Size(909, 612);
+            this.Controls.Add(this.BtnExport);
             this.Controls.Add(this.txtAmoutEmploy);
             this.Controls.Add(this.txtListEmployInDepartment);
             this.Controls.Add(this.txtAmout);
@@ -211,5 +227,6 @@
         private System.Windows.Forms.RichTextBox txtAmout;
         private System.Windows.Forms.RichTextBox txtListEmployInDepartment;
         private System.Windows.Forms.RichTextBox txtAmoutEmploy;
+        private System.Windows.Forms.Button BtnExport;
     }
 }

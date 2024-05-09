@@ -41,11 +41,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.BtnLogin = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnLogin);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.BtnClose);
             this.groupBox1.Controls.Add(this.button2);
@@ -168,6 +170,17 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "FullName";
             // 
+            // BtnLogin
+            // 
+            this.BtnLogin.Location = new System.Drawing.Point(66, 241);
+            this.BtnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnLogin.Name = "BtnLogin";
+            this.BtnLogin.Size = new System.Drawing.Size(90, 23);
+            this.BtnLogin.TabIndex = 30;
+            this.BtnLogin.Text = "Login";
+            this.BtnLogin.UseVisualStyleBackColor = true;
+            this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
+            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -199,5 +212,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button BtnLogin;
     }
 }
