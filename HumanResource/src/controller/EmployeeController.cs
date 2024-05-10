@@ -1,4 +1,5 @@
 ﻿using HumanResource.src.DTO.Request;
+using HumanResource.src.DTO.Response;
 using HumanResource.src.Entity;
 using HumanResource.src.Service;
 using System;
@@ -25,6 +26,43 @@ namespace HumanResource.src.Controller
                 throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
             }
         }
+
+        internal List<EmployeeResProfile> ExportPositionHistory(EmployeeResProfile employeeResProfile)
+        {
+        
+            try
+            {
+                return employeeService.ExportPositionHistory(employeeResProfile);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
+            }
+        }
+
+        internal List<EmployeeHistoryResDTO> ExportWorkHistory(EmployeeHistoryResDTO employeeHistoryRes)
+        {
+            try
+            {
+                return employeeService.ExportWorkHistory(employeeHistoryRes);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
+            }
+        }
+
+        //internal List<EmployeeResProfile> ExportPositionHistory(EmployeeReqDTO employeeReqDTO)
+        //{
+        //    try
+        //    {
+        //        return employeeService.ExportPositionHistory(employeeReqDTO);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
+        //    }
+        //}
 
         internal List<Employees> FindAllList()
         {

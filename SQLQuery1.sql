@@ -151,6 +151,60 @@ SELECT * FROM Roles r , Employee e WHERE r.RoleId = e.RoleId
 
 
 
+solution 11 xuất lịch sử làm việc
+EmployeeName: Tên của nhân viên.
+StartDate: Ngày bắt đầu làm việc.
+EndDate: Ngày kết thúc làm việc.
+Staging: Thông tin về giai đoạn công việc.
+
+SELECT E.EmployeeName, EH.StartDate, EH.EndDate, EH.Staging
+FROM Employee E
+INNER JOIN EmployeeHistory EH ON E.EmployId = EH.EmployId
+ORDER BY E.EmployeeName, EH.StartDate ASC
 
 
+
+
+SELECT E.EmployeeName, EC.StartDate, EC.EndDate, EC.Staging
+FROM Employee E
+INNER JOIN EmployeeHistory EC ON E.EmployId = EC.EmployId
+ORDER BY E.EmployeeName, EC.StartDate ASC
+
+
+
+
+solution 12 xuất lý lịch nhân viên
+DECLARE @EmployId INTEGER = 2
+SELECT E.EmployId, E.EmployeeName, E.Email,  E.AddressEmployee, E.DateOfBirth, E.Phone, 
+       E.Gender, R.RoleName, D.DepDesc, S.SalaryAmount, Edu.EducationName, Deg.DegreeName, 
+       RE.FullName as RelativeName, RE.Relationship, RE.PhoneNumber, RE.AddressRelative
+FROM Employee E
+LEFT JOIN Roles R ON E.RoleId = R.RoleId
+LEFT JOIN Department D ON E.DepId = D.DepId
+LEFT JOIN Salary S ON E.SalaryId = S.SalaryId
+LEFT JOIN Education Edu ON E.EducationId = Edu.EducationId
+LEFT JOIN Degree Deg ON E.DegreeId = Deg.DegreeId
+LEFT JOIN RelativeEmployee RE ON E.RelativeId = RE.RelativeId
+WHERE E.EmployId = @EmployId
+
+
+
+solution 13   xuất lịch sử luân chuyển nahan viên
+
+DECLARE @EmployId INTEGER = 5
+SELECT EH.StartDate, EH.EndDate, EH.Staging
+FROM EmployeeHistory EH, Employee E
+WHERE E.EmployId = EH.EmployId 
+AND  E.EmployId = @EmployId
+ORDER BY EH.StartDate;
+
+
+
+solution 14 xuất lịch sử làm việc
+DECLARE @EmployId INTEGER = 5
+SELECT E.EmployId, E.EmployeeName, EH.StartDate, EH.EndDate, EH.Staging
+FROM Employee E
+INNER JOIN EmployeeHistory EH ON E.EmployId = EH.EmployId
+WHERE E.EmployId =  @EmployId 
+ORDER BY EH.StartDate;
 */

@@ -1,5 +1,6 @@
 ﻿using HumanResource.src.DbContext;
 using HumanResource.src.DTO.Request;
+using HumanResource.src.DTO.Response;
 using HumanResource.src.Entity;
 using System;
 using System.Collections.Generic;
@@ -338,6 +339,122 @@ namespace HumanResource.src.Repository
         internal bool FindAndDelete(EmployeeReqDTO employeeReqDTO)
         {
             throw new NotImplementedException();
+        }
+
+
+        internal List<EmployeeResProfile> ExportPositionHistory(EmployeeResProfile employeeResProfile)
+        {
+            List<EmployeeResProfile> employees = new List<EmployeeResProfile>();
+            try
+            {
+                using (SqlConnection connection = dbContext.ConnectOpen())
+                {
+                    string query = @"SELECT E.EmployId, E.EmployeeName, E.Email,  E.AddressEmployee, E.DateOfBirth, E.Phone, 
+                                           E.Gender, R.RoleName, D.DepDesc, S.SalaryAmount, Edu.EducationName, Deg.DegreeName, 
+                                           RE.FullName as RelativeName, RE.Relationship, RE.PhoneNumber, RE.AddressRelative
+                                    FROM Employee E
+                                    LEFT JOIN Roles R ON E.RoleId = R.RoleId
+                                    LEFT JOIN Department D ON E.DepId = D.DepId
+                                    LEFT JOIN Salary S ON E.SalaryId = S.SalaryId
+                                    LEFT JOIN Education Edu ON E.EducationId = Edu.EducationId
+                                    LEFT JOIN Degree Deg ON E.DegreeId = Deg.DegreeId
+                                    LEFT JOIN RelativeEmployee RE ON E.RelativeId = RE.RelativeId
+                                    WHERE E.EmployId = @EmployId";
+                    
+                    using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@EmployId", employeeResProfile.EmployId);
+                        connection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                EmployeeResProfile employees1 = new EmployeeResProfile
+                                {
+
+                                    EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName")),
+                                    AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee")),
+                                    Phone = reader.GetString(reader.GetOrdinal("Phone")),
+                                    Email = reader.GetString(reader.GetOrdinal("Email")),
+                                    Gender = reader.GetString(reader.GetOrdinal("Gender")),
+                                    RoleName = reader.IsDBNull(reader.GetOrdinal("RoleName")) ? string.Empty : reader.GetString(reader.GetOrdinal("RoleName")),
+                                    DegreeName = reader.IsDBNull(reader.GetOrdinal("DegreeName")) ? string.Empty : reader.GetString(reader.GetOrdinal("DegreeName")),
+                                    EducationName = reader.IsDBNull(reader.GetOrdinal("EducationName")) ? string.Empty : reader.GetString(reader.GetOrdinal("EducationName")),
+                                    DepDesc = reader.IsDBNull(reader.GetOrdinal("DepDesc")) ? string.Empty : reader.GetString(reader.GetOrdinal("DepDesc")),
+                                    //FullName = reader.IsDBNull(reader.GetOrdinal("FullName")) ? string.Empty : reader.GetString(reader.GetOrdinal("FullName")),
+                                    EmployId = reader.GetInt32(reader.GetOrdinal("EmployId")),
+                                    DateOfBirth = reader.IsDBNull(reader.GetOrdinal("DateOfBirth")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
+                                    SalaryAmount = reader.IsDBNull(reader.GetOrdinal("SalaryAmount")) ? 0 : reader.GetInt32(reader.GetOrdinal("SalaryAmount")),
+                                    RelationShip = reader.IsDBNull(reader.GetOrdinal("RelationShip")) ? string.Empty : reader.GetString(reader.GetOrdinal("Relationship")),
+                                    PhoneNumber = reader.IsDBNull(reader.GetOrdinal("PhoneNumber")) ? string.Empty : reader.GetString(reader.GetOrdinal("PhoneNumber")),
+                                    AddressRelative = reader.IsDBNull(reader.GetOrdinal("AddressRelative")) ? string.Empty : reader.GetString(reader.GetOrdinal("AddressRelative")),
+
+                                };
+                                employees.Add(employees1);
+                            }
+                        }
+                        connection.Close();
+                    }
+                    return (employees);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Lỗi Phát Sinh Từ EmployeeRepository " + ex.Message);
+
+                return null;
+            }
+        }
+
+        internal List<EmployeeHistoryResDTO> ExportWorkHistory(EmployeeHistoryResDTO employeeHistoryRes)
+        {
+            List<EmployeeHistoryResDTO> employees = new List<EmployeeHistoryResDTO>();
+            try
+            {
+                using (SqlConnection connection = dbContext.ConnectOpen())
+                {
+                    string query = @"SELECT E.EmployId, E.EmployeeName, EH.StartDate, EH.EndDate, EH.Staging
+                                    FROM Employee E
+                                    INNER JOIN EmployeeHistory EH ON E.EmployId = EH.EmployId
+                                    WHERE E.EmployId =  @EmployId 
+                                    ORDER BY EH.StartDate;";
+
+                    using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@EmployId", employeeHistoryRes.EmployId);
+                        connection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                EmployeeHistoryResDTO employees1 = new EmployeeHistoryResDTO
+                                {
+
+                                    EmployId = reader.GetInt32(reader.GetOrdinal("EmployId")),
+                                    StartDate = reader.IsDBNull(reader.GetOrdinal("StartDate")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("StartDate")),
+                                    EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName")),
+                                    EndDate = reader.IsDBNull(reader.GetOrdinal("EndDate")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("EndDate")),
+                                    Staging = reader.GetString(reader.GetOrdinal("Staging")),
+
+                                };
+                                employees.Add(employees1);
+                            }
+                        }
+                        connection.Close();
+                    }
+                    return (employees);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Lỗi Phát Sinh Từ EmployeeRepository " + ex.Message);
+
+                return null;
+            }
         }
     }
 }

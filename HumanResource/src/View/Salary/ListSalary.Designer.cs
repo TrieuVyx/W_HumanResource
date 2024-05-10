@@ -32,19 +32,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BtnWatch = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataSalaryEmployee = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.DataSalary)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSalaryEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // DataSalary
             // 
             this.DataSalary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataSalary.Location = new System.Drawing.Point(16, 117);
-            this.DataSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataSalary.Margin = new System.Windows.Forms.Padding(4);
             this.DataSalary.Name = "DataSalary";
             this.DataSalary.RowHeadersWidth = 51;
-            this.DataSalary.Size = new System.Drawing.Size(379, 319);
+            this.DataSalary.Size = new System.Drawing.Size(758, 319);
             this.DataSalary.TabIndex = 0;
             // 
             // label1
@@ -61,7 +59,7 @@
             // BtnWatch
             // 
             this.BtnWatch.Location = new System.Drawing.Point(16, 81);
-            this.BtnWatch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnWatch.Margin = new System.Windows.Forms.Padding(4);
             this.BtnWatch.Name = "BtnWatch";
             this.BtnWatch.Size = new System.Drawing.Size(100, 28);
             this.BtnWatch.TabIndex = 2;
@@ -72,7 +70,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(124, 81);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 3;
@@ -80,23 +78,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // dataSalaryEmployee
-            // 
-            this.dataSalaryEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataSalaryEmployee.Location = new System.Drawing.Point(403, 117);
-            this.dataSalaryEmployee.Margin = new System.Windows.Forms.Padding(4);
-            this.dataSalaryEmployee.Name = "dataSalaryEmployee";
-            this.dataSalaryEmployee.RowHeadersWidth = 51;
-            this.dataSalaryEmployee.Size = new System.Drawing.Size(379, 319);
-            this.dataSalaryEmployee.TabIndex = 4;
-            // 
             // ListSalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataSalaryEmployee);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnWatch);
             this.Controls.Add(this.label1);
@@ -106,7 +93,6 @@
             this.Name = "ListSalary";
             this.Text = "ListSalary";
             ((System.ComponentModel.ISupportInitialize)(this.DataSalary)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSalaryEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,6 +104,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnWatch;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataSalaryEmployee;
     }
 }

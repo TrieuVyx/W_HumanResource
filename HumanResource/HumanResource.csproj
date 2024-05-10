@@ -386,7 +386,9 @@
     <Compile Include="src\DTO\Request\RegisterReqDTO.cs" />
     <Compile Include="src\DTO\Request\RoleReqDTO.cs" />
     <Compile Include="src\DTO\Response\DepartmentResDTO.cs" />
+    <Compile Include="src\DTO\Response\EmployeeHistoryResDTO.cs" />
     <Compile Include="src\DTO\Response\EmployeeResDTO.cs" />
+    <Compile Include="src\DTO\Response\EmployeeResProfile.cs" />
     <Compile Include="src\DTO\Response\LoginResDTO.cs" />
     <Compile Include="src\DTO\Response\RoleResDTO.cs" />
     <Compile Include="src\DTO\Response\SalaryResDTO.cs" />

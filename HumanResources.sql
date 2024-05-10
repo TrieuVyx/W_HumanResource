@@ -195,14 +195,13 @@ VALUES
     ( 'NguyenPhanBaoQuy@example.com', N'Nguyễn Phan Bảo Quý', 'avatar7.jpg', '654 KLM Street', '1111111111', 8, 7, 6, 7, 1, 4, 7, '1989-07-15', 'Male'),
     ( 'HuynhPhuocTri@example.com', N'Huỳnh Phước Trí', 'avatar9.jpg', '789 PQR Street', '8888888888', 5, 9, 8, 9, 4, 3, 9, '1994-02-14', 'Male');
 
-INSERT INTO EmployeeHistory (  StartDate, EndDate, Staging)
+INSERT INTO EmployeeHistory (EmployId, StartDate, EndDate, Staging)
 VALUES
-    ( '2019-01-01', '2021-12-31', 'Inactive'),
-    ('2020-03-15', '2022-06-30', 'Active'),
-    ( '2018-06-20', NULL, 'Inactive'),
-    ('2022-01-01', '2023-12-31', 'Inactive'),
-    ( '2023-03-15', NULL, 'Active'),
-    ( '2021-06-20', '2024-05-04', 'Inactive'),
-    ( '2020-09-01', '2022-08-31', 'Active'),
-    ('2024-01-01', NULL, 'Inactive'),
-    ( '2022-03-15', '2023-06-30', 'Active');
+    (1, '2019-01-01', '2021-12-31', 'Inactive'),
+    (2, '2020-03-15', '2022-06-30', 'Active'),
+    (3, '2018-06-20', NULL, 'Inactive'),
+    (4, '2022-01-01', '2023-12-31', 'Inactive'),
+    (5, '2023-03-15', NULL, 'Active'),
+    (6, '2021-06-20', '2024-05-04', 'Inactive'),
+    (7, '2020-09-01', '2022-08-31', 'Active'),
+    (8, '2024-01-01', NULL, 'Inactive')

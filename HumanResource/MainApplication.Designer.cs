@@ -52,18 +52,18 @@
             this.panel1.Controls.Add(this.BtnRole);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Location = new System.Drawing.Point(0, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(154, 487);
+            this.panel1.Size = new System.Drawing.Size(205, 599);
             this.panel1.TabIndex = 1;
             // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button8.Location = new System.Drawing.Point(0, 299);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
+            this.button8.Location = new System.Drawing.Point(0, 368);
+            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(150, 32);
+            this.button8.Size = new System.Drawing.Size(200, 39);
             this.button8.TabIndex = 8;
             this.button8.Text = "Transfer Management ";
             this.button8.UseVisualStyleBackColor = false;
@@ -73,12 +73,12 @@
             // 
             this.button7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(2, 191);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
+            this.button7.Location = new System.Drawing.Point(3, 235);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(150, 32);
+            this.button7.Size = new System.Drawing.Size(200, 39);
             this.button7.TabIndex = 7;
-            this.button7.Text = "DashBoard";
+            this.button7.Text = "History Management";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.ButtonDashboard);
             // 
@@ -86,10 +86,10 @@
             // 
             this.pictureBox1.BackgroundImage = global::HumanResource.Properties.Resources._2ac7013cfd3e1cc86b60ec9be2f8ef97;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 28);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 34);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 142);
+            this.pictureBox1.Size = new System.Drawing.Size(197, 175);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -97,10 +97,10 @@
             // 
             this.button6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(0, 227);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
+            this.button6.Location = new System.Drawing.Point(0, 279);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(150, 32);
+            this.button6.Size = new System.Drawing.Size(200, 39);
             this.button6.TabIndex = 5;
             this.button6.Text = "Salary Management";
             this.button6.UseVisualStyleBackColor = false;
@@ -109,10 +109,10 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button5.Location = new System.Drawing.Point(2, 263);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Location = new System.Drawing.Point(3, 324);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(150, 32);
+            this.button5.Size = new System.Drawing.Size(200, 39);
             this.button5.TabIndex = 4;
             this.button5.Text = "Department Management";
             this.button5.UseVisualStyleBackColor = false;
@@ -121,10 +121,10 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button4.Location = new System.Drawing.Point(2, 335);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Location = new System.Drawing.Point(3, 412);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 32);
+            this.button4.Size = new System.Drawing.Size(200, 39);
             this.button4.TabIndex = 3;
             this.button4.Text = "Employee Management";
             this.button4.UseVisualStyleBackColor = false;
@@ -133,10 +133,10 @@
             // BtnRole
             // 
             this.BtnRole.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnRole.Location = new System.Drawing.Point(2, 371);
-            this.BtnRole.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnRole.Location = new System.Drawing.Point(3, 457);
+            this.BtnRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnRole.Name = "BtnRole";
-            this.BtnRole.Size = new System.Drawing.Size(150, 32);
+            this.BtnRole.Size = new System.Drawing.Size(200, 39);
             this.BtnRole.TabIndex = 2;
             this.BtnRole.Text = "Role Management";
             this.BtnRole.UseVisualStyleBackColor = false;
@@ -145,10 +145,10 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button2.Location = new System.Drawing.Point(0, 407);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(0, 501);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 32);
+            this.button2.Size = new System.Drawing.Size(200, 39);
             this.button2.TabIndex = 1;
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = false;
@@ -156,12 +156,12 @@
             // 
             // MainApplication
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(899, 488);
+            this.ClientSize = new System.Drawing.Size(1199, 601);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainApplication";
             this.Text = "Quản Lý Nhân Sự";
             this.Load += new System.EventHandler(this.MainApplication_Load);
