@@ -381,12 +381,14 @@
     <Compile Include="src\DTO\Request\DepartmentReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeAndDepartmentReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeHistoryReqDTO.cs" />
+    <Compile Include="src\DTO\Request\EmployeeRotationReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeReqDTO.cs" />
     <Compile Include="src\DTO\Request\LoginReqDTO.cs" />
     <Compile Include="src\DTO\Request\RegisterReqDTO.cs" />
     <Compile Include="src\DTO\Request\RoleReqDTO.cs" />
     <Compile Include="src\DTO\Response\DepartmentResDTO.cs" />
     <Compile Include="src\DTO\Response\EmployeeHistoryResDTO.cs" />
+    <Compile Include="src\DTO\Response\EmployeeRotationResDTO.cs" />
     <Compile Include="src\DTO\Response\EmployeeResDTO.cs" />
     <Compile Include="src\DTO\Response\EmployeeResProfile.cs" />
     <Compile Include="src\DTO\Response\LoginResDTO.cs" />

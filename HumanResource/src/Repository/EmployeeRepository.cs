@@ -456,5 +456,53 @@ namespace HumanResource.src.Repository
                 return null;
             }
         }
+
+        internal List<EmployeeRotationResDTO> ExportRotationHistory(EmployeeRotationReqDTO employeeRotationReqDTO)
+        {
+            List<EmployeeRotationResDTO> employees = new List<EmployeeRotationResDTO>();
+            try
+            {
+                using (SqlConnection connection = dbContext.ConnectOpen())
+                {
+                    string query = @"SELECT E.EmployId, E.EmployeeName, EH.StartDate, EH.EndDate, EH.Staging
+                                    FROM Employee E
+                                    INNER JOIN EmployeeHistory EH ON E.EmployId = EH.EmployId
+                                    WHERE E.EmployId =  @EmployId 
+                                    ORDER BY EH.StartDate;";
+
+                    using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@EmployId", employeeRotationReqDTO.EmployId);
+                        connection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                EmployeeRotationResDTO employees1 = new EmployeeRotationResDTO
+                                {
+
+                                    EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName")),
+                                    StartDate = reader.IsDBNull(reader.GetOrdinal("StartDate")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("StartDate")),
+                                    EndDate = reader.IsDBNull(reader.GetOrdinal("EndDate")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("EndDate")),
+                                    Staging = reader.GetString(reader.GetOrdinal("Staging")),
+
+                                };
+                                employees.Add(employees1);
+                            }
+                        }
+                        connection.Close();
+                    }
+                    return (employees);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Lỗi Phát Sinh Từ EmployeeRepository " + ex.Message);
+
+                return null;
+            }
+        }
     }
 }

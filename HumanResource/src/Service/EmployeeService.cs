@@ -43,6 +43,18 @@ namespace HumanResource.src.Service
             }
         }
 
+        internal List<EmployeeRotationResDTO> ExportRotationHistory(EmployeeRotationReqDTO employeeRotationReqDTO)
+        {
+            try
+            {
+                return employeeRepository.ExportRotationHistory(employeeRotationReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
+            }
+        }
+
         internal List<EmployeeHistoryResDTO> ExportWorkHistory(EmployeeHistoryResDTO employeeHistoryRes)
         {
             try

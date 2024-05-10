@@ -10,7 +10,7 @@
         private string addressEmployee;
         private string phone;
         private string gender;
-
+     
 
         public int EmployId
         {

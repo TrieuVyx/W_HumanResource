@@ -14,6 +14,7 @@ namespace HumanResource.src.View
         private readonly EmployeeController employeeController;
         private readonly EmployeeResProfile employeeResProfile;
         private readonly EmployeeHistoryResDTO employeeHistoryRes;
+        private readonly EmployeeRotationReqDTO employeeRotationReqDTO;
         public Dashboard()
         {
             InitializeComponent();
@@ -22,9 +23,10 @@ namespace HumanResource.src.View
             employeeController = new EmployeeController();
             employeeResProfile= new EmployeeResProfile();
             employeeHistoryRes = new EmployeeHistoryResDTO();
+            employeeRotationReqDTO= new EmployeeRotationReqDTO();
             txtId.ReadOnly = true;
             txtId.Enabled = false;
-
+            dataHistoryEmployee.ReadOnly = true;
         }
 
         private void BtnWatch_Click(object sender, EventArgs e)
@@ -146,43 +148,15 @@ namespace HumanResource.src.View
                 MessageBox.Show("đã xảy ra lỗi BtnPosiition_Click: " + ex.Message);
             }
         }
-        //private void BtnPosiition_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (!string.IsNullOrEmpty(txtId.Text))
-        //        {
-        //            employeeReqDTO.EmployId = int.Parse(txtId.Text);
-        //            List<EmployeeReqDTO> employeeReqs = employeeController.ExportPositionHistory(employeeReqDTO);
-        //            if (employeeReqs.Count > 0)
-        //            {
-        //                dataShowHistory.DataSource = employeeReqs;
-        //            }
-        //            else
-        //            {
-        //                dataShowHistory.DataSource = null;
 
-        //                MessageBox.Show("Không tìm thấy");
-        //            }
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("ID không được để trống: ");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("đã xảy ra lỗi BtnPosiition_Click: " + ex.Message);
-        //    }
-        //}
         private void BtnRotation_Click(object sender, EventArgs e)
         {
             try
             {
                 if (!string.IsNullOrEmpty(txtId.Text))
                 {
-                    employeeResProfile.EmployId = int.Parse(txtId.Text);
-                    List<EmployeeReqDTO> employeeReqs = employeeController.FindAndDetail(employeeReqDTO);
+                    employeeRotationReqDTO.EmployId = int.Parse(txtId.Text);
+                    List<EmployeeRotationResDTO> employeeReqs = employeeController.ExportRotationHistory(employeeRotationReqDTO);
                     if (employeeReqs.Count > 0)
                     {
                         dataShowHistory.DataSource = employeeReqs;
