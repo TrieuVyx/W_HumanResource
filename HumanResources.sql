@@ -172,29 +172,36 @@ VALUES
     ( 'Doctorate'),
     ( 'Engineer'),
     ('Professor');
-    INSERT INTO RelativeEmployee (  FullName, Relationship, PhoneNumber, AddressRelative)
+INSERT INTO RelativeEmployee (  FullName, Relationship, PhoneNumber, AddressRelative)
 VALUES
-    ('Relative 1', 'Sibling', '1111111111', '123 ABC Street'),
-    (  'Relative 2', 'Spouse', '2222222222', '456 XYZ Street'),
-    ( 'Relative 3', 'Parent', '3333333333', '789 PQR Street'),
-    ( 'Relative 4', 'Child', '4444444444', '321 DEF Street'),
-    ( 'Relative 5', 'Sibling', '5555555555', '654 UVW Street'),
-    ( 'Relative 6', 'Spouse', '6666666666', '987 HIJ Street'),
-    ( 'Relative 7', 'Parent', '7777777777', '654 KLM Street'),
-    ( 'Relative 8', 'Child', '8888888888', '321 XYZ Street'),
-    (  'Relative 9', 'Sibling', '9999999999', '789 PQR Street');
+    (N'Nguyễn Văn An', N'Cha', '1111111111', '123 ABC Street'),
+    (N'Trần Thị Bình', N'Mẹ', '2222222222', '456 XYZ Street'),
+    (N'Lê Văn Cường', N'Anh trai', '3333333333', '789 PQR Street'),
+    (N'Phạm Thị Diễm', N'Chị gái', '4444444444', '321 DEF Street'),
+    (N'Hoàng Văn Dũng', N'Chồng', '5555555555', '654 UVW Street'),
+    (N'Vũ Thị Hà', N'Vợ', '6666666666', '987 HIJ Street'),
+    (N'Đặng Văn Giang', N'Ông', '7777777777', '654 KLM Street'),
+    (N'Bùi Thị Hoa', N'Bà', '8888888888', '321 XYZ Street'),
+    (N'Đỗ Văn Huy', N'Cô', '9999999999', '789 PQR Street');
 
 INSERT INTO Employee ( Email, EmployeeName, Avatar, AddressEmployee, Phone, RoleId, AccountId, DepId, SalaryId, EducationId, DegreeId, RelativeId, DateOfBirth, Gender)
 VALUES 
-    ( 'NguyenNgocHieu@example.com', N'Nguyễn Ngọc Hiếu', 'avatar1.jpg', '123 ABC Street', '1234567890', 3, 1, 1, 3, 4, 1, 1, '1990-01-01', 'Male'),
-    ( 'NguyenNgocTrung@example.com', N'Nguyễn Ngọc Trung', 'avatar2.jpg', '456 XYZ Street', '9876543210', 3, 2, 1, 3, 4, 2, 2, '1992-03-15', 'Male'),
-    ( 'NgoDangDangTrung@example.com', N'Ngô Đặng Đăng Trung', 'avatar3.jpg', '789 PQR Street', '5555555555', 2, 3, 2, 2, 4, 1, 3, '1988-06-20', 'Male'),
-    ( 'HoQuocThang@example.com', N'Hồ Quốc Thắng', 'avatar4.jpg', '321 DEF Street', '4444444444', 4, 4, 3, 4, 5, 3, 4, '1995-09-10', 'Male'),
-    ( 'DangDinhHuy@example.com', N'Đặng Đình Huy', 'avatar5.jpg', '654 UVW Street', '3333333333', 6, 5, 4, 5, 3, 2, 5, '1993-12-25', 'Male'),
-    ( 'TranVanPhong@example.com', N'Trần Văn Phong', 'avatar6.jpg', '987 HIJ Street', '2222222222', 7, 6, 5, 6, 2, 1, 6, '1991-04-05', 'Male'),
-    ( 'NguyenPhanBaoQuy@example.com', N'Nguyễn Phan Bảo Quý', 'avatar7.jpg', '654 KLM Street', '1111111111', 8, 7, 6, 7, 1, 4, 7, '1989-07-15', 'Male'),
-    ( 'HuynhPhuocTri@example.com', N'Huỳnh Phước Trí', 'avatar9.jpg', '789 PQR Street', '8888888888', 5, 9, 8, 9, 4, 3, 9, '1994-02-14', 'Male');
-
+ ('NguyenNgocHieu@example.com', N'Nguyễn Ngọc Hiếu', 'avatar1.jpg', N'Tên đường A, Hồ Chí Minh', '0987654321', 3, 1, 1, 3, 4, 1, 1, '1990-01-01', 'Male'),
+    ('NguyenNgocTrung@example.com', N'Nguyễn Ngọc Trung', 'avatar2.jpg', N'Tên đường B, Đà Nẵng', '0987654321', 3, 2, 1, 3, 4, 2, 2, '1992-03-15', 'Male'),
+    ('NgoDangDangTrung@example.com', N'Ngô Đặng Đăng Trung', 'avatar3.jpg', N'Tên đường C, Hải Phòng', '0987654321', 2, 3, 2, 2, 4, 1, 3, '1988-06-20', 'Male'),
+    ('HoQuocThang@example.com', N'Hồ Quốc Thắng', 'avatar4.jpg', N'Tên đường D, Huế', '0987654321', 4, 4, 3, 4, 5, 3, 4, '1995-09-10', 'Male'),
+    ('DangDinhHuy@example.com', N'Đặng Đình Huy', 'avatar5.jpg', N'Tên đường E, Nha Trang', '0987654321', 6, 5, 4, 5, 3, 2, 5, '1993-12-25', 'Male'),
+    ('TranVanPhong@example.com', N'Trần Văn Phong', 'avatar6.jpg', N'Tên đường F, Cần Thơ', '0987654321', 7, 6, 5, 6, 2, 1, 6, '1991-04-05', 'Male'),
+    ('NguyenPhanBaoQuy@example.com', N'Nguyễn Phan Bảo Quý', 'avatar7.jpg', N'Tên đường G, Vũng Tàu', '0987654321', 8, 7, 6, 7, 1, 4, 7, '1989-07-15', 'Male'),
+    ('HuynhPhuocTri@example.com', N'Huỳnh Phước Trí', 'avatar9.jpg', N'Tên đường H, Hà Nội', '0987654321', 5, 9, 8, 9, 4, 3, 9, '1994-02-14', 'Male'),
+    ('NguyenThiThap@example.com', N'Nguyễn Thị Thập', 'avatar1.jpg', N'Tên đường A, Hồ Chí Minh', '0987654321', 3, 1, 1, 3, 4, 1, 1, '1990-01-01', 'Female'),
+    ('NguyenVanCu@example.com', N'Nguyễn Văn Cừ', 'avatar2.jpg', N'Tên đường B, Đà Nẵng', '0987654321', 3, 2, 1, 3, 4, 2, 2, '1992-03-15', 'Male'),
+    ('PhamVanLinh@example.com', N'Phạm Văn Linh', 'avatar3.jpg', N'Tên đường C, Hải Phòng', '0987654321', 2, 3, 2, 2, 4, 1, 3, '1988-06-20', 'Male'),
+    ('NguyenThiThu@example.com', N'Nguyễn Thị Thu', 'avatar4.jpg', N'Tên đường D, Huế', '0987654321', 4, 4, 3, 4, 5, 3, 4, '1995-09-10', 'Female'),
+    ('TranVanBinh@example.com', N'Trần Văn Bình', 'avatar5.jpg', N'Tên đường E, Nha Trang', '0987654321', 6, 5, 4, 5, 3, 2, 5, '1993-12-25', 'Male'),
+    ('LeThiMinh@example.com', N'Lê Thị Minh', 'avatar6.jpg', N'Tên đường F, Cần Thơ', '0987654321', 7, 6, 5, 6, 2, 1, 6, '1991-04-05', 'Female'),
+    ('HoangVanNam@example.com', N'Hoàng Văn Nam', 'avatar7.jpg', N'Tên đường G, Vũng Tàu', '0987654321', 8, 7, 6, 7, 1, 4, 7, '1989-07-15', 'Male'),
+    ('TranThiMy@example.com', N'Trần Thị Mỹ', 'avatar9.jpg', N'Tên đường H, Hà Nội', '0987654321', 5, 9, 8, 9, 4, 3, 9, '1994-02-14', 'Female');
 INSERT INTO EmployeeHistory (EmployId, StartDate, EndDate, Staging)
 VALUES
     (1, '2019-01-01', '2021-12-31', 'Inactive'),
