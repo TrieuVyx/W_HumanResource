@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ReportViewer
 {
-    public partial class UserControl1: UserControl
+    public partial class EmployeeReport: UserControl
     {
-        public UserControl1()
+        public EmployeeReport()
         {
             InitializeComponent();
         }
