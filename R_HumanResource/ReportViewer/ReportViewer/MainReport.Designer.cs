@@ -56,7 +56,7 @@
             this.educationReportToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1276, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(1031, 28);
             this.menuStrip2.TabIndex = 0;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -125,10 +125,11 @@
             // 
             // MainReport
             // 
-            this.ClientSize = new System.Drawing.Size(1276, 508);
+            this.ClientSize = new System.Drawing.Size(1031, 508);
             this.Controls.Add(this.menuStrip2);
             this.MainMenuStrip = this.menuStrip2;
             this.Name = "MainReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Nhân Sự";
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();

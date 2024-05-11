@@ -40,7 +40,7 @@ namespace ReportViewer
         }
 
 
-        private bool BtnEmployeeReport_Clicks = false;
+        private bool BtnEmployeeReport_Clicks= false;
         private bool BtnDepartmentReport_Clicks = false;
         private bool BtnSalaryReport_Clicks = false;
         private bool BtnRolesReport_Clicks = false;
@@ -50,54 +50,189 @@ namespace ReportViewer
         private bool BtnRelativeEmployeeReport_Clicks = false;
         private bool BtnAccountReport_Clicks = false;
 
+        int width = 600;
+        int height = 450;
+        int x = 180;
+        int y = 10;
         private void BtnEmployeeReport_Click(object sender, EventArgs e)
         {
             BtnEmployeeReport_Clicks=true;
             if (BtnEmployeeReport_Clicks)
             {
-
+                employeeForm.MdiParent = this;
+                employeeForm.StartPosition = FormStartPosition.Manual;
+                employeeForm.Bounds = new Rectangle(x, y, width, height);
+                employeeForm.Show();
+                roleForm.Hide();
+                educationForm.Hide();
+                degreeForm.Hide(); 
+                salaryForm.Hide();   
+                departmentForm.Hide();
+                relavtiveEmployeeForm.Hide();
+                employeeHistoryForm.Hide();
+                accountForm.Hide();
             }
 
         }
 
         private void BtnDepartmentReport_Click(object sender, EventArgs e)
         {
-
+            BtnDepartmentReport_Clicks = true;
+            if (BtnDepartmentReport_Clicks)
+            {
+                departmentForm.MdiParent = this;
+                departmentForm.StartPosition = FormStartPosition.Manual;
+                departmentForm.Bounds = new Rectangle(x, y, width, height);
+                employeeForm.Hide();
+                roleForm.Hide();
+                educationForm.Hide();
+                degreeForm.Hide();
+                salaryForm.Hide();
+                departmentForm.Show();
+                relavtiveEmployeeForm.Hide();
+                employeeHistoryForm.Hide();
+                accountForm.Hide();
+            }
         }
 
         private void BtnSalaryReport_Click(object sender, EventArgs e)
         {
-
+            BtnSalaryReport_Clicks = true;
+            if (BtnSalaryReport_Clicks)
+            {
+                salaryForm.MdiParent = this;
+                salaryForm.StartPosition = FormStartPosition.Manual;
+                salaryForm.Bounds = new Rectangle(x, y, width, height);
+                employeeForm.Hide();
+                roleForm.Hide();
+                educationForm.Hide();
+                degreeForm.Hide();
+                salaryForm.Show();
+                departmentForm.Hide();
+                relavtiveEmployeeForm.Hide();
+                employeeHistoryForm.Hide();
+                accountForm.Hide();
+            }
         }
 
         private void BtnRolesReport_Click(object sender, EventArgs e)
         {
-
+            BtnRolesReport_Clicks = true;
+            if (BtnRolesReport_Clicks)
+            {
+                roleForm.MdiParent = this;
+                roleForm.StartPosition = FormStartPosition.Manual;
+                roleForm.Bounds = new Rectangle(x, y, width, height);
+                employeeForm.Hide();
+                roleForm.Show();
+                educationForm.Hide();
+                degreeForm.Hide();
+                salaryForm.Hide();
+                departmentForm.Hide();
+                relavtiveEmployeeForm.Hide();
+                employeeHistoryForm.Hide();
+                accountForm.Hide();
+            }
         }
 
         private void BtnEducationReport_Click(object sender, EventArgs e)
         {
-
+            BtnEducationReport_Clicks = true;
+            if (BtnEducationReport_Clicks)
+            {
+                educationForm.MdiParent = this;
+                educationForm.StartPosition = FormStartPosition.Manual;
+                educationForm.Bounds = new Rectangle(x, y, width, height);
+                employeeForm.Hide();
+                roleForm.Hide();
+                educationForm.Show();
+                degreeForm.Hide();
+                salaryForm.Hide();
+                departmentForm.Hide();
+                relavtiveEmployeeForm.Hide();
+                employeeHistoryForm.Hide();
+                accountForm.Hide();
+            }
         }
 
         private void BtnDegreeReport_Click(object sender, EventArgs e)
         {
-
+            BtnDegreeReport_Clicks = true;
+            if (BtnDegreeReport_Clicks)
+            {
+                degreeForm.MdiParent = this;
+                degreeForm.StartPosition = FormStartPosition.Manual;
+                degreeForm.Bounds = new Rectangle(x, y, width, height);
+                employeeForm.Hide();
+                roleForm.Hide();
+                educationForm.Hide();
+                degreeForm.Show();
+                salaryForm.Hide();
+                departmentForm.Hide();
+                relavtiveEmployeeForm.Hide();
+                employeeHistoryForm.Hide();
+                accountForm.Hide();
+            }
         }
 
         private void BtnEmployeeHistoryReport_Click(object sender, EventArgs e)
         {
-
+            BtnEmployeeHistoryReport_Clicks = true;
+            if (BtnEmployeeHistoryReport_Clicks)
+            {
+                employeeHistoryForm.MdiParent = this;
+                employeeHistoryForm.StartPosition = FormStartPosition.Manual;
+                employeeHistoryForm.Bounds = new Rectangle(x, y, width, height);
+                employeeForm.Hide();
+                roleForm.Hide();
+                educationForm.Hide();
+                degreeForm.Hide();
+                salaryForm.Hide();
+                departmentForm.Hide();
+                relavtiveEmployeeForm.Hide();
+                employeeHistoryForm.Show();
+                accountForm.Hide();
+            }
         }
 
         private void BtnRelativeEmployeeReport_Click(object sender, EventArgs e)
         {
-
+            BtnRelativeEmployeeReport_Clicks = true;
+            if (BtnRelativeEmployeeReport_Clicks)
+            {
+                relavtiveEmployeeForm.MdiParent = this;
+                relavtiveEmployeeForm.StartPosition = FormStartPosition.Manual;
+                relavtiveEmployeeForm.Bounds = new Rectangle(x, y, width, height);
+                employeeForm.Hide();
+                roleForm.Hide();
+                educationForm.Hide();
+                degreeForm.Hide();
+                salaryForm.Hide();
+                departmentForm.Hide();
+                relavtiveEmployeeForm.Show();
+                employeeHistoryForm.Hide();
+                accountForm.Hide();
+            }
         }
 
         private void BtnAccountReport_Click(object sender, EventArgs e)
         {
-
+            BtnAccountReport_Clicks = true;
+            if (BtnAccountReport_Clicks)
+            {
+                accountForm.MdiParent = this;
+                accountForm.StartPosition = FormStartPosition.Manual;
+                accountForm.Bounds = new Rectangle(x, y, width, height);
+                employeeForm.Hide();
+                roleForm.Hide();
+                educationForm.Hide();
+                degreeForm.Hide();
+                salaryForm.Hide();
+                departmentForm.Hide();
+                relavtiveEmployeeForm.Hide();
+                employeeHistoryForm.Hide();
+                accountForm.Show();
+            }
         }
     }
 }
