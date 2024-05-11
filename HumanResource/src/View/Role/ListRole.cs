@@ -21,8 +21,6 @@ namespace HumanResource.src.View.Role
             txtIdRole.Enabled = false;
             txtIdAmount.ReadOnly = true;
             txtIdRole.ReadOnly = true;
-            txtIdEmployee.ReadOnly = true;
-            txtIdEmployee.Enabled = false;
             ShowRole();
         }
         private void ShowRole()
@@ -45,7 +43,6 @@ namespace HumanResource.src.View.Role
             int indexOfContent = e.RowIndex;
             DataGridViewRow dataGridViewRow = ViewRoleData.Rows[indexOfContent];
             txtIdRole.Text = dataGridViewRow.Cells[0].Value.ToString();
-            txtIdEmployee.Text = dataGridViewRow.Cells[1].Value.ToString();
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -74,9 +71,9 @@ namespace HumanResource.src.View.Role
         {
             try
             {
-                if (!string.IsNullOrEmpty(txtIdEmployee.Text))
+                if (!string.IsNullOrEmpty(txtIdRole.Text))
                 {
-                    roleResDTO.EmployId = int.Parse(txtIdEmployee.Text);
+                    roleResDTO.RoleId = int.Parse(txtIdRole.Text);
                     List<RoleResDTO> employeeRes = roleController.FindAndWatch(roleResDTO);
                     if (employeeRes.Count > 0)
                     {
@@ -101,9 +98,7 @@ namespace HumanResource.src.View.Role
         private void BtnReset_Click(object sender, EventArgs e)
         {
             ShowRole();
-            txtIdAmount.Clear();
             txtIdRole.Clear();
-            txtIdEmployee.Clear();
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)
@@ -173,6 +168,11 @@ namespace HumanResource.src.View.Role
             {
                 MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
             }
+        }
+
+        private void ViewRoleData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

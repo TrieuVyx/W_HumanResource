@@ -185,6 +185,7 @@ LEFT JOIN Salary S ON E.SalaryId = S.SalaryId
 LEFT JOIN Education Edu ON E.EducationId = Edu.EducationId
 LEFT JOIN Degree Deg ON E.DegreeId = Deg.DegreeId
 LEFT JOIN RelativeEmployee RE ON E.RelativeId = RE.RelativeId
+LEFT JOIN Account ac ON E.AccountId = ac.AccountId
 WHERE E.EmployId = @EmployId
 
 
@@ -207,4 +208,78 @@ FROM Employee E
 INNER JOIN EmployeeHistory EH ON E.EmployId = EH.EmployId
 WHERE E.EmployId =  @EmployId 
 ORDER BY EH.StartDate;
+
+
+
+SELECT * FROM Salary
+
+
+
+solution 15 tìm nhân chứa mức lương
+DECLARE @SalaryId INTEGER = 4
+SELECT *
+FROM Salary s
+LEFT JOIN Employee e ON e.SalaryId = s.SalaryId
+WHERE s.SalaryId = @SalaryId
+
+
+
+SELECT * FROM Roles r , Employee e WHERE r.RoleId = e.RoleId
+
+DECLARE @EmployId INTEGER = 5
+
+SELECT *
+FROM Employee e
+LEFT JOIN Department d ON e.DepId = d.DepId
+LEFT JOIN Education ed ON e.EducationId = ed.EducationId
+LEFT JOIN Degree de ON e.DegreeId = de.DegreeId
+LEFT JOIN Roles r ON e.RoleId = r.RoleId
+LEFT JOIN EmployeeHistory eh ON e.EmployId = eh.EmployId
+LEFT JOIN Salary s ON e.SalaryId = s.SalaryId
+WHERE e.EmployId = @EmployId
+
+
+DECLARE @EmployId INTEGER = 5
+SELECT *
+FROM Employee e
+LEFT JOIN Department d ON e.DepId = d.DepId
+LEFT JOIN Education ed ON e.EducationId = ed.EducationId
+LEFT JOIN Degree de ON e.DegreeId = de.DegreeId
+LEFT JOIN Roles r ON e.RoleId = r.RoleId
+LEFT JOIN EmployeeHistory eh ON e.EmployId = eh.EmployId
+LEFT JOIN Salary s ON e.SalaryId = s.SalaryId
+LEFT JOIN Account ac ON e.AccountId = ac.AccountId
+WHERE e.EmployId = @EmployId
+
+
+
+
+DECLARE @EmployId INTEGER = 2
+DECLARE @DepId INTEGER = 1
+DECLARE @RoleId INTEGER = 1
+DECLARE @EducationId INTEGER = 1
+DECLARE @AccountId INTEGER = 1
+DECLARE @DegreeId INTEGER = 1
+DECLARE @EmployeeName NVARCHAR(255) = 'Tên nhân viên';
+DECLARE @AddressEmployee NVARCHAR(255)  = 'Địa chỉ nhân viên';
+DECLARE @Phone NVARCHAR(255) = 'Số điện thoại';
+DECLARE @Email NVARCHAR(255)= 'Email';
+DECLARE @DateOfBirth DATETIME  = '1990-01-01';
+DECLARE @Gender NVARCHAR(255) = 'Male';
+
+
+UPDATE Employee 
+SET EmployeeName = @EmployeeName, 
+AddressEmployee = @AddressEmployee, 
+Phone = @Phone, 
+Email = @Email, 
+DateOfBirth = @DateOfBirth , 
+Gender = @Gender  , 
+AccountId = @AccountId ,
+DepId = @DepId , 
+EducationId = @EducationId, 
+RoleId = @RoleId, 
+DegreeId = @DegreeId
+WHERE EmployId = @EmployId 
+
 */

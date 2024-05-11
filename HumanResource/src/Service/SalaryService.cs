@@ -1,4 +1,5 @@
-﻿using HumanResource.src.DTO.Response;
+﻿using HumanResource.src.DTO.Request;
+using HumanResource.src.DTO.Response;
 using HumanResource.src.Repository;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,19 @@ namespace HumanResource.src.Service
             catch (Exception ex)
             {
                 throw new Exception("Lỗi Phát Sinh Từ SalaryService " + ex.Message);
+            }
+        }
+
+        internal List<SalaryEmployeeResDTO> FindEmployee(SalaryReqDTO salaryReqDTO)
+        {
+            try
+            {
+
+                return _salaryrRepository.FindEmployee(salaryReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ SalaryController " + ex.Message);
             }
         }
     }

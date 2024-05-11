@@ -41,16 +41,24 @@
             this.BtnWork = new System.Windows.Forms.Button();
             this.BtnPosiition = new System.Windows.Forms.Button();
             this.BtnRotation = new System.Windows.Forms.Button();
-            this.dataShowHistory = new System.Windows.Forms.DataGridView();
+            this.dataShowHistoryWork = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataViewPosition = new System.Windows.Forms.DataGridView();
+            this.dataViewRotation = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataHistoryEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataRenderEmployee)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataShowHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataShowHistoryWork)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewPosition)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewRotation)).BeginInit();
             this.SuspendLayout();
             // 
             // dataHistoryEmployee
             // 
             this.dataHistoryEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataHistoryEmployee.Location = new System.Drawing.Point(16, 69);
+            this.dataHistoryEmployee.Location = new System.Drawing.Point(16, 49);
             this.dataHistoryEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataHistoryEmployee.Name = "dataHistoryEmployee";
             this.dataHistoryEmployee.RowHeadersWidth = 51;
@@ -60,7 +68,7 @@
             // 
             // btnWatch
             // 
-            this.btnWatch.Location = new System.Drawing.Point(332, 24);
+            this.btnWatch.Location = new System.Drawing.Point(328, 6);
             this.btnWatch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnWatch.Name = "btnWatch";
             this.btnWatch.Size = new System.Drawing.Size(119, 43);
@@ -82,7 +90,7 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(765, 24);
+            this.btnExport.Location = new System.Drawing.Point(640, 6);
             this.btnExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(119, 43);
@@ -94,7 +102,7 @@
             // 
             this.btnSearchDepart.BackgroundImage = global::HumanResource.Properties.Resources.search;
             this.btnSearchDepart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearchDepart.Location = new System.Drawing.Point(12, 33);
+            this.btnSearchDepart.Location = new System.Drawing.Point(26, 11);
             this.btnSearchDepart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchDepart.Name = "btnSearchDepart";
             this.btnSearchDepart.Size = new System.Drawing.Size(45, 32);
@@ -104,7 +112,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(63, 33);
+            this.txtSearch.Location = new System.Drawing.Point(77, 11);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(225, 34);
@@ -115,7 +123,7 @@
             // 
             this.a.AutoSize = true;
             this.a.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.a.Location = new System.Drawing.Point(12, 9);
+            this.a.Location = new System.Drawing.Point(12, 38);
             this.a.Name = "a";
             this.a.Size = new System.Drawing.Size(150, 22);
             this.a.TabIndex = 7;
@@ -124,7 +132,7 @@
             // dataRenderEmployee
             // 
             this.dataRenderEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataRenderEmployee.Location = new System.Drawing.Point(452, 69);
+            this.dataRenderEmployee.Location = new System.Drawing.Point(452, 49);
             this.dataRenderEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataRenderEmployee.Name = "dataRenderEmployee";
             this.dataRenderEmployee.RowHeadersWidth = 51;
@@ -135,7 +143,7 @@
             // txtId
             // 
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(453, 24);
+            this.txtId.Location = new System.Drawing.Point(453, 6);
             this.txtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(56, 43);
@@ -144,7 +152,7 @@
             // 
             // btnWatchEmployee
             // 
-            this.btnWatchEmployee.Location = new System.Drawing.Point(515, 24);
+            this.btnWatchEmployee.Location = new System.Drawing.Point(515, 6);
             this.btnWatchEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnWatchEmployee.Name = "btnWatchEmployee";
             this.btnWatchEmployee.Size = new System.Drawing.Size(119, 43);
@@ -186,16 +194,82 @@
             this.BtnRotation.UseVisualStyleBackColor = true;
             this.BtnRotation.Click += new System.EventHandler(this.BtnRotation_Click);
             // 
-            // dataShowHistory
+            // dataShowHistoryWork
             // 
-            this.dataShowHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataShowHistory.Location = new System.Drawing.Point(12, 287);
-            this.dataShowHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataShowHistory.Name = "dataShowHistory";
-            this.dataShowHistory.RowHeadersWidth = 51;
-            this.dataShowHistory.RowTemplate.Height = 24;
-            this.dataShowHistory.Size = new System.Drawing.Size(867, 248);
-            this.dataShowHistory.TabIndex = 14;
+            this.dataShowHistoryWork.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataShowHistoryWork.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataShowHistoryWork.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dataShowHistoryWork.Location = new System.Drawing.Point(12, 287);
+            this.dataShowHistoryWork.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataShowHistoryWork.Name = "dataShowHistoryWork";
+            this.dataShowHistoryWork.RowHeadersWidth = 51;
+            this.dataShowHistoryWork.RowTemplate.Height = 24;
+            this.dataShowHistoryWork.Size = new System.Drawing.Size(290, 248);
+            this.dataShowHistoryWork.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(729, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 22);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Employee History";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 276);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 22);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Work History";
+            // 
+            // dataViewPosition
+            // 
+            this.dataViewPosition.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataViewPosition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataViewPosition.Location = new System.Drawing.Point(308, 287);
+            this.dataViewPosition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataViewPosition.Name = "dataViewPosition";
+            this.dataViewPosition.RowHeadersWidth = 51;
+            this.dataViewPosition.RowTemplate.Height = 24;
+            this.dataViewPosition.Size = new System.Drawing.Size(280, 248);
+            this.dataViewPosition.TabIndex = 17;
+            // 
+            // dataViewRotation
+            // 
+            this.dataViewRotation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataViewRotation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataViewRotation.Location = new System.Drawing.Point(594, 287);
+            this.dataViewRotation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataViewRotation.Name = "dataViewRotation";
+            this.dataViewRotation.RowHeadersWidth = 51;
+            this.dataViewRotation.RowTemplate.Height = 24;
+            this.dataViewRotation.Size = new System.Drawing.Size(285, 248);
+            this.dataViewRotation.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(308, 276);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(135, 22);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Position History";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(594, 276);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(180, 22);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Staff Rotation History";
             // 
             // Dashboard
             // 
@@ -203,7 +277,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(891, 601);
-            this.Controls.Add(this.dataShowHistory);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dataViewRotation);
+            this.Controls.Add(this.dataViewPosition);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataShowHistoryWork);
             this.Controls.Add(this.BtnRotation);
             this.Controls.Add(this.BtnPosiition);
             this.Controls.Add(this.BtnWork);
@@ -223,7 +303,9 @@
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.dataHistoryEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataRenderEmployee)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataShowHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataShowHistoryWork)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewPosition)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewRotation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,6 +326,12 @@
         private System.Windows.Forms.Button BtnWork;
         private System.Windows.Forms.Button BtnPosiition;
         private System.Windows.Forms.Button BtnRotation;
-        private System.Windows.Forms.DataGridView dataShowHistory;
+        private System.Windows.Forms.DataGridView dataShowHistoryWork;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataViewPosition;
+        private System.Windows.Forms.DataGridView dataViewRotation;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

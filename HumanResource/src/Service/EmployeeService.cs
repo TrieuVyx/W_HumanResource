@@ -31,7 +31,7 @@ namespace HumanResource.src.Service
             }
         }
 
-        internal List<EmployeeResProfile> ExportPositionHistory(EmployeeResProfile employeeResProfile)
+        internal List<EmployeeResProfileDTO> ExportPositionHistory(EmployeeResProfileDTO employeeResProfile)
         {
             try
             {

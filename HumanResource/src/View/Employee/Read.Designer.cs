@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtStartDate = new System.Windows.Forms.RichTextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtRole = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -37,6 +39,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtSalary = new System.Windows.Forms.RichTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtClose = new System.Windows.Forms.Button();
             this.txtEducation = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtDegreee = new System.Windows.Forms.RichTextBox();
@@ -57,13 +62,14 @@
             this.txtEmail = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.RichTextBox();
-            this.txtClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtStartDate);
+            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtRole);
             this.panel1.Controls.Add(this.label7);
@@ -74,6 +80,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(247, 515);
             this.panel1.TabIndex = 0;
+            // 
+            // txtStartDate
+            // 
+            this.txtStartDate.Location = new System.Drawing.Point(19, 474);
+            this.txtStartDate.Name = "txtStartDate";
+            this.txtStartDate.Size = new System.Drawing.Size(206, 34);
+            this.txtStartDate.TabIndex = 17;
+            this.txtStartDate.Text = "";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(14, 446);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(99, 25);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Start Date";
             // 
             // label8
             // 
@@ -89,7 +113,7 @@
             // 
             this.txtRole.Location = new System.Drawing.Point(19, 409);
             this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(219, 34);
+            this.txtRole.Size = new System.Drawing.Size(206, 34);
             this.txtRole.TabIndex = 14;
             this.txtRole.Text = "";
             // 
@@ -108,7 +132,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.Location = new System.Drawing.Point(19, 253);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(219, 44);
+            this.button1.Size = new System.Drawing.Size(206, 44);
             this.button1.TabIndex = 1;
             this.button1.Text = "Click To Change Avatar";
             this.button1.UseVisualStyleBackColor = false;
@@ -117,7 +141,7 @@
             // 
             this.txtDepartment.Location = new System.Drawing.Point(19, 339);
             this.txtDepartment.Name = "txtDepartment";
-            this.txtDepartment.Size = new System.Drawing.Size(219, 34);
+            this.txtDepartment.Size = new System.Drawing.Size(206, 34);
             this.txtDepartment.TabIndex = 12;
             this.txtDepartment.Text = "";
             // 
@@ -125,9 +149,9 @@
             // 
             this.panel2.BackgroundImage = global::HumanResource.Properties.Resources._5faf49f042395c7404637803e8d62136;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(35, 37);
+            this.panel2.Location = new System.Drawing.Point(19, 37);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(176, 166);
+            this.panel2.Size = new System.Drawing.Size(206, 194);
             this.panel2.TabIndex = 1;
             // 
             // label1
@@ -142,6 +166,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.txtSalary);
+            this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.txtClose);
             this.panel3.Controls.Add(this.txtEducation);
             this.panel3.Controls.Add(this.label12);
@@ -168,6 +194,36 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(626, 515);
             this.panel3.TabIndex = 2;
+            // 
+            // txtSalary
+            // 
+            this.txtSalary.Location = new System.Drawing.Point(353, 385);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(219, 34);
+            this.txtSalary.TabIndex = 25;
+            this.txtSalary.Text = "";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(348, 357);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 25);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "Salary";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // txtClose
+            // 
+            this.txtClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.txtClose.Location = new System.Drawing.Point(353, 458);
+            this.txtClose.Name = "txtClose";
+            this.txtClose.Size = new System.Drawing.Size(97, 37);
+            this.txtClose.TabIndex = 23;
+            this.txtClose.Text = "Close";
+            this.txtClose.UseVisualStyleBackColor = false;
+            this.txtClose.Click += new System.EventHandler(this.TxtClose_Click);
             // 
             // txtEducation
             // 
@@ -355,17 +411,6 @@
             this.txtID.TabIndex = 2;
             this.txtID.Text = "";
             // 
-            // txtClose
-            // 
-            this.txtClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.txtClose.Location = new System.Drawing.Point(338, 458);
-            this.txtClose.Name = "txtClose";
-            this.txtClose.Size = new System.Drawing.Size(97, 37);
-            this.txtClose.TabIndex = 23;
-            this.txtClose.Text = "Close";
-            this.txtClose.UseVisualStyleBackColor = false;
-            this.txtClose.Click += new System.EventHandler(this.TxtClose_Click);
-            // 
             // Read
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -417,5 +462,9 @@
         private System.Windows.Forms.RichTextBox txtDegreee;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button txtClose;
+        private System.Windows.Forms.RichTextBox txtStartDate;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.RichTextBox txtSalary;
+        private System.Windows.Forms.Label label13;
     }
 }

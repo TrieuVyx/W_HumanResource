@@ -32,10 +32,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtRoleDesc = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Close = new System.Windows.Forms.Button();
-            this.txtRoleId = new System.Windows.Forms.RichTextBox();
             this.txtRoleName = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -57,7 +55,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(69, 289);
+            this.label5.Location = new System.Drawing.Point(69, 235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 25);
             this.label5.TabIndex = 9;
@@ -66,7 +64,7 @@
             // 
             // txtRoleDesc
             // 
-            this.txtRoleDesc.Location = new System.Drawing.Point(74, 317);
+            this.txtRoleDesc.Location = new System.Drawing.Point(74, 263);
             this.txtRoleDesc.Name = "txtRoleDesc";
             this.txtRoleDesc.Size = new System.Drawing.Size(423, 40);
             this.txtRoleDesc.TabIndex = 8;
@@ -77,34 +75,21 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(69, 221);
+            this.label4.Location = new System.Drawing.Point(69, 167);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "RoleName";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(69, 156);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 25);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "RoleId";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.Close);
-            this.panel3.Controls.Add(this.txtRoleId);
             this.panel3.Controls.Add(this.txtRoleName);
             this.panel3.Controls.Add(this.BtnCreate);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.txtRoleDesc);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(348, 11);
             this.panel3.Name = "panel3";
@@ -123,18 +108,9 @@
             this.Close.UseVisualStyleBackColor = false;
             this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
-            // txtRoleId
-            // 
-            this.txtRoleId.Location = new System.Drawing.Point(74, 178);
-            this.txtRoleId.Name = "txtRoleId";
-            this.txtRoleId.Size = new System.Drawing.Size(423, 40);
-            this.txtRoleId.TabIndex = 20;
-            this.txtRoleId.Text = "";
-            this.txtRoleId.TextChanged += new System.EventHandler(this.txtRoleId_TextChanged);
-            // 
             // txtRoleName
             // 
-            this.txtRoleName.Location = new System.Drawing.Point(74, 249);
+            this.txtRoleName.Location = new System.Drawing.Point(74, 195);
             this.txtRoleName.Name = "txtRoleName";
             this.txtRoleName.Size = new System.Drawing.Size(423, 40);
             this.txtRoleName.TabIndex = 19;
@@ -145,7 +121,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(65, 82);
+            this.label1.Location = new System.Drawing.Point(65, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(272, 54);
             this.label1.TabIndex = 1;
@@ -184,11 +160,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox txtRoleDesc;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox txtRoleId;
         private System.Windows.Forms.RichTextBox txtRoleName;
         private new System.Windows.Forms.Button Close;
     }

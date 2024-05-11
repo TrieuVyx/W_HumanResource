@@ -5,7 +5,7 @@
         private int salaryId;
         private int salaryAmount;
         private string salaryDesc;
-
+     
         public int SalaryId
         {
             get { return salaryId; }

@@ -41,6 +41,8 @@ namespace HumanResource.src.View.Employee
                 txtDepartment.Text = employeeReq.DepDesc;
                 txtEducation.Text = employeeReq.EducationName;
                 txtRole.Text = employeeReq.RoleName;
+                txtSalary.Text = employeeReq.SalaryAmount.ToString();
+                txtStartDate.Text = employeeReq.StartDate.ToString();
             }
         }
 
@@ -74,6 +76,10 @@ namespace HumanResource.src.View.Employee
             txtDegreee.Enabled = false;
             txtPhone.ReadOnly = true;
             txtPhone.Enabled = false;
+            txtStartDate.ReadOnly = true;   
+            txtStartDate.Enabled = false;   
+            txtSalary.ReadOnly = true;
+            txtSalary.Enabled = false;
         }
 
         private void TxtClose_Click(object sender, EventArgs e)

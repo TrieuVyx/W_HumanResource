@@ -26,7 +26,6 @@ namespace HumanResource.src.View.Employee
             string Phone = txtsodienthoai.Text;
             string Email = TXTemail.Text;
             string Address = txtAddress.Text;
-            string Id = txtid.Text;
             string valueCboGender = cboGioiTinh.SelectedItem.ToString();
             DateTime selectedDate = txtBirthDay.Value;
             employeeReqDTO = new EmployeeReqDTO();
@@ -40,15 +39,13 @@ namespace HumanResource.src.View.Employee
                     string.IsNullOrEmpty(Phone) &&
                     string.IsNullOrEmpty(Email) &&
                     string.IsNullOrEmpty(Address) &&
-                    string.IsNullOrEmpty(FullName) &&
-                    string.IsNullOrEmpty(Id)
+                    string.IsNullOrEmpty(FullName) 
                     )
                 {
                     MessageBox.Show("Vui lòng nhập các trường và không được để trông");
                 }
                 else
                 {
-                    employeeReqDTO.EmployId = int.Parse(Id);
                     employeeReqDTO.AddressEmployee = Address;
                     employeeReqDTO.Phone = Phone;
                     employeeReqDTO.Email = Email;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HumanResource.src.DTO.Response
 {
-    internal class EmployeeResProfile
+    internal class EmployeeResProfileDTO
     {
         private int employId;
         private string employeeName;
@@ -17,7 +17,7 @@ namespace HumanResource.src.DTO.Response
         private string phone;
         private string gender;
         private string roleName;
-        //private string fullName;
+        private string fullName;
         private string depDesc;
         private string educationName;
         private string degreeName;
@@ -90,11 +90,11 @@ namespace HumanResource.src.DTO.Response
         }
 
 
-        //public string FullName
-        //{
-        //    get { return fullName; }
-        //    set { fullName = value; }
-        //}
+        public string FullName
+        {
+            get { return fullName; }
+            set { fullName = value; }
+        }
 
         public int SalaryAmount
         {

@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.ViewRoleData = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.BtnUpdate = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.txtIdAmount = new System.Windows.Forms.RichTextBox();
             this.ViewDataEmployee = new System.Windows.Forms.DataGridView();
-            this.txtIdEmployee = new System.Windows.Forms.RichTextBox();
             this.BtnReset = new System.Windows.Forms.Button();
             this.BtnWatch = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtIdRole = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ViewRoleData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ViewDataEmployee)).BeginInit();
             this.SuspendLayout();
@@ -53,21 +53,11 @@
             this.ViewRoleData.RowHeadersWidth = 51;
             this.ViewRoleData.Size = new System.Drawing.Size(437, 305);
             this.ViewRoleData.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 36);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 31);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Role";
+            this.ViewRoleData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewRoleData_CellContentClick);
             // 
             // BtnAdd
             // 
-            this.BtnAdd.Location = new System.Drawing.Point(34, 110);
+            this.BtnAdd.Location = new System.Drawing.Point(211, 457);
             this.BtnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(100, 28);
@@ -78,7 +68,7 @@
             // 
             // BtnUpdate
             // 
-            this.BtnUpdate.Location = new System.Drawing.Point(142, 109);
+            this.BtnUpdate.Location = new System.Drawing.Point(124, 457);
             this.BtnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(79, 28);
@@ -89,7 +79,7 @@
             // 
             // BtnDelete
             // 
-            this.BtnDelete.Location = new System.Drawing.Point(229, 110);
+            this.BtnDelete.Location = new System.Drawing.Point(34, 457);
             this.BtnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(82, 28);
@@ -117,18 +107,9 @@
             this.ViewDataEmployee.Size = new System.Drawing.Size(441, 305);
             this.ViewDataEmployee.TabIndex = 7;
             // 
-            // txtIdEmployee
-            // 
-            this.txtIdEmployee.Location = new System.Drawing.Point(524, 110);
-            this.txtIdEmployee.Margin = new System.Windows.Forms.Padding(4);
-            this.txtIdEmployee.Name = "txtIdEmployee";
-            this.txtIdEmployee.Size = new System.Drawing.Size(73, 27);
-            this.txtIdEmployee.TabIndex = 8;
-            this.txtIdEmployee.Text = "";
-            // 
             // BtnReset
             // 
-            this.BtnReset.Location = new System.Drawing.Point(319, 110);
+            this.BtnReset.Location = new System.Drawing.Point(733, 457);
             this.BtnReset.Margin = new System.Windows.Forms.Padding(4);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(79, 28);
@@ -139,7 +120,7 @@
             // 
             // BtnWatch
             // 
-            this.BtnWatch.Location = new System.Drawing.Point(712, 106);
+            this.BtnWatch.Location = new System.Drawing.Point(479, 457);
             this.BtnWatch.Margin = new System.Windows.Forms.Padding(4);
             this.BtnWatch.Name = "BtnWatch";
             this.BtnWatch.Size = new System.Drawing.Size(100, 28);
@@ -150,7 +131,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(820, 106);
+            this.button1.Location = new System.Drawing.Point(820, 457);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
@@ -168,23 +149,43 @@
             this.txtIdRole.TabIndex = 12;
             this.txtIdRole.Text = "";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(815, 128);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 25);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Employee";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(41, 128);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 25);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Role";
+            // 
             // ListRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(961, 476);
+            this.ClientSize = new System.Drawing.Size(961, 560);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtIdRole);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnWatch);
             this.Controls.Add(this.BtnReset);
-            this.Controls.Add(this.txtIdEmployee);
             this.Controls.Add(this.ViewDataEmployee);
             this.Controls.Add(this.txtIdAmount);
             this.Controls.Add(this.BtnDelete);
             this.Controls.Add(this.BtnUpdate);
             this.Controls.Add(this.BtnAdd);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.ViewRoleData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -200,16 +201,16 @@
         #endregion
 
         private System.Windows.Forms.DataGridView ViewRoleData;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.Button BtnUpdate;
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.RichTextBox txtIdAmount;
         private System.Windows.Forms.DataGridView ViewDataEmployee;
-        private System.Windows.Forms.RichTextBox txtIdEmployee;
         private System.Windows.Forms.Button BtnReset;
         private System.Windows.Forms.Button BtnWatch;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox txtIdRole;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

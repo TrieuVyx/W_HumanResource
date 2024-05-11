@@ -46,10 +46,7 @@ namespace HumanResource.src.Entity.Extend
                 }
             }
 
-            // Lưu workbook vào tệp Excel
             _workbook.SaveAs(filePath);
-
-            // Đóng workbook và ứng dụng Excel
             _workbook.Close();
             _application.Quit();
         }

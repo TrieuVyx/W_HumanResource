@@ -24,7 +24,7 @@ namespace HumanResource.src.Repository
             {
                 using (SqlConnection connection = dbContext.ConnectOpen())
                 {
-                    string query = "INSERT INTO Roles (RoleId, RoleName, RoleDesc) VALUES (@RoleId, @RoleName, @RoleDesc)";
+                    string query = "INSERT INTO Roles (RoleName, RoleDesc) VALUES ( @RoleName, @RoleDesc)";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
                     {
 
@@ -54,7 +54,7 @@ namespace HumanResource.src.Repository
             {
                 using (SqlConnection connection = dbContext.ConnectOpen())
                 {
-                    string query = "SELECT * FROM Roles r , Employee e WHERE r.RoleId = e.RoleId";
+                    string query = "SELECT * FROM Roles";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
                     {
                         connection.Open();
@@ -68,7 +68,6 @@ namespace HumanResource.src.Repository
                                     RoleId = reader.GetInt32(reader.GetOrdinal("RoleId")),
                                     RoleDesc = reader.GetString(reader.GetOrdinal("RoleDesc")),
                                     RoleName = reader.GetString(reader.GetOrdinal("RoleName")),
-                                    EmployId = reader.GetInt32(reader.GetOrdinal("EmployId"))
                                 };
                                 roleReq.Add(roles);
                             }
@@ -167,11 +166,10 @@ namespace HumanResource.src.Repository
                         FROM Employee e
                         LEFT JOIN Account a ON e.AccountId = a.AccountId
                         LEFT JOIN Roles r ON e.RoleId = r.RoleId
-
-                        WHERE e.EmployId = @EmployId";
+                        WHERE e.RoleId = @RoleId";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
                     {
-                        sqlCommand.Parameters.AddWithValue("@EmployId", roleResDTO.EmployId);
+                        sqlCommand.Parameters.AddWithValue("@RoleId", roleResDTO.RoleId);
                         connection.Open();
 
                         using (SqlDataReader reader = sqlCommand.ExecuteReader())
@@ -180,12 +178,12 @@ namespace HumanResource.src.Repository
                             {
                                 RoleResDTO roleRes = new RoleResDTO
                                 {
-                                    EmployId = reader.GetInt32(reader.GetOrdinal("EmployId")),
+                                   RoleId = reader.GetInt32(reader.GetOrdinal("RoleId")),
                                     AccountId = reader.GetInt32(reader.GetOrdinal("AccountId")),
                                     RoleName = reader.GetString(reader.GetOrdinal("RoleName")),
                                     EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName"))
-                            
-    };
+
+                                };
                                 roleReqs.Add(roleRes);
                             }
                         }
@@ -209,7 +207,7 @@ namespace HumanResource.src.Repository
             {
                 using (SqlConnection connection = dbContext.ConnectOpen())
                 {
-                    string query = "UPDATE Roles SET RoleId = @RoleId, RoleName = @RoleName, RoleDesc = @RoleDesc WHERE RoleId = @RoleId";
+                    string query = "UPDATE Roles SET  RoleName = @RoleName, RoleDesc = @RoleDesc WHERE RoleId = @RoleId";
                     using (SqlCommand sqlCommand = new SqlCommand(query, connection))
                     {
                         sqlCommand.Parameters.AddWithValue("@RoleId", roleReqDTO.RoleId);

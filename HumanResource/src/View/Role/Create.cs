@@ -29,7 +29,6 @@ namespace HumanResource.src.View.Role
 
         private void BtnCreate_Click(object sender, EventArgs e)
         {
-            string RoleId = txtRoleId.Text;
             string RoleName = txtRoleName.Text;
             string RoleDesc = txtRoleDesc.Text;
             roleReqDTO = new RoleReqDTO();
@@ -38,15 +37,13 @@ namespace HumanResource.src.View.Role
             
                 if (
                     string.IsNullOrEmpty(RoleName) &&
-                    string.IsNullOrEmpty(RoleDesc) &&
-                    string.IsNullOrEmpty(RoleId)
+                    string.IsNullOrEmpty(RoleDesc)
                     )
                 {
                     MessageBox.Show("Vui lòng nhập các trường và không được để trông");
                 }
                 else
                 {
-                    roleReqDTO.RoleId = int.Parse(RoleId);
                     roleReqDTO.RoleName = RoleName;
                     roleReqDTO.RoleDesc = RoleDesc;
                     bool role = roleController.CreateUser(roleReqDTO);

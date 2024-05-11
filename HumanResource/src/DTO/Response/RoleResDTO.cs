@@ -11,13 +11,13 @@ namespace HumanResource.src.DTO.Response
     {
         private string roleName;
         private string employeeName;
-        private int employId;
+        private int roleId;
         private int accountId;
         public RoleResDTO() { }
-        public int EmployId
+        public int RoleId
         {
-            get { return employId; }
-            set { employId = value; }
+            get { return roleId; }
+            set { roleId = value; }
         }
         public int AccountId
         {

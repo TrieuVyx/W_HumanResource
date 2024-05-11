@@ -1,5 +1,6 @@
 ﻿using HumanResource.src.Controller;
 using HumanResource.src.DTO.Request;
+using HumanResource.src.DTO.Response;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,15 +10,28 @@ namespace HumanResource.src.View.Employee
 {
     public partial class Update : Form
     {
+        private EmployeeReqDTO employeeReqDTO;
         private readonly RoleController roleController;
         private readonly EmployeeController employeeController;
-        private EmployeeReqDTO employeeReqDTO;
+        private readonly DepartmentController departmentController;
+        private readonly AccountController accountController;
+        private readonly EducationController educationController;
+        private readonly DegreeController degreeController;
         public Update()
         {
             InitializeComponent();
             employeeReqDTO = new EmployeeReqDTO();
+
+
+
             employeeController = new EmployeeController();
             roleController = new RoleController();
+            departmentController = new DepartmentController();
+            accountController = new AccountController();    
+            educationController = new EducationController();    
+            degreeController = new DegreeController();  
+
+
             txtBirthday.Format = DateTimePickerFormat.Custom;
             txtBirthday.CustomFormat = "dd/MM/yyyy";
             ListComboBox();
@@ -43,6 +57,11 @@ namespace HumanResource.src.View.Employee
                 TxtID.Text = employeeReq.EmployId.ToString();
                 TxtPhone.Text = employeeReq.Phone;
                 txtBirthday.Value = employeeReq.DateOfBirth;
+                txtCboRole.SelectedValue = employeeReq.RoleId;
+                txtComboDep.SelectedValue = employeeReq.DepId;
+                txtComboDegree.SelectedValue = employeeReq.DegreeId;
+                txtComboEdu.SelectedValue = employeeReq.EducationId;
+                txtComboAccount.SelectedValue = employeeReq.AccountId;
 
                 if (employeeReq.Gender == "Male")
                 {
@@ -52,9 +71,77 @@ namespace HumanResource.src.View.Employee
                 {
                     RdFemale.Checked = false;
                 }
+
             }
         }
+        private void ListComboBox()
+        {
+            try
+            {
+                List<RoleReqDTO> roleReqDTO = roleController.FindAllRole();
+                List<DepartmentResDTO> departments = departmentController.FindAllList();
+                List<AccountResDTO> account = accountController.FindAllAccount();
+                List<EducationResDTO> education = educationController.FindAllEducation();
+                List<DegreeResDTO> degree = degreeController.FindAllDegree();
 
+
+                if (roleReqDTO.Count > 0)
+                {
+                    txtCboRole.DataSource = roleReqDTO;
+                    txtCboRole.DisplayMember = "RoleName";
+                    txtCboRole.ValueMember = "RoleId";
+                    txtCboRole.SelectedIndex = 1;
+
+
+                    txtComboDep.DataSource = departments;
+                    txtComboDep.DisplayMember = "DepDesc";
+                    txtComboDep.ValueMember = "DepId";
+                    txtComboDep.SelectedIndex = 1;
+
+                    txtComboAccount.DataSource = account;
+                    txtComboAccount.DisplayMember = "FullName";
+                    txtComboAccount.ValueMember = "AccountId";
+                    txtComboAccount.SelectedIndex = 1;
+
+                    txtComboEdu.DataSource = education;
+                    txtComboEdu.DisplayMember = "EducationName";
+                    txtComboEdu.ValueMember = "EducationId";
+                    txtComboEdu.SelectedIndex = 1;
+
+                    txtComboDegree.DataSource = degree;
+                    txtComboDegree.DisplayMember = "DegreeName";
+                    txtComboDegree.ValueMember = "DegreeId";
+                    txtComboDegree.SelectedIndex = 1;
+
+                }
+                else
+                {
+                    txtCboRole.SelectedIndex = -1;
+                    txtCboRole.DataSource = null;
+
+                    txtComboDep.SelectedIndex = -1;
+                    txtComboDep.DataSource = null;
+
+                    txtComboAccount.SelectedIndex = -1;
+                    txtComboAccount.DataSource = null;
+
+
+                    txtComboDegree.SelectedIndex = -1;
+                    txtComboDegree.DataSource = null;
+
+
+                    txtComboEdu.SelectedIndex = -1;
+                    txtComboEdu.DataSource = null;
+
+                    MessageBox.Show("Lỗi không tồn tại danh sách ");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Phát Sinh Từ UPDATE " + ex.Message);
+
+            }
+        }
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -65,11 +152,11 @@ namespace HumanResource.src.View.Employee
             TxtID.ReadOnly = true;
             TxtID.Enabled = false;
 
-            txtCboRole.Enabled = false;
-            txtComboAccount.Enabled = false;
-            txtComboDegree.Enabled = false;
-            txtComboEdu.Enabled = false;
-            txtComboDep.Enabled = false;
+            //txtCboRole.Enabled = false;
+            //txtComboAccount.Enabled = false;
+            //txtComboDegree.Enabled = false;
+            //txtComboEdu.Enabled = false;
+            //txtComboDep.Enabled = false;
         }
 
         private void BtnRefer_Click(object sender, EventArgs e)
@@ -101,6 +188,26 @@ namespace HumanResource.src.View.Employee
                     employeeReqDTO.EmployId = int.Parse(TxtID.Text);
                     DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn cập nhật không?!", "Xác nhận câp nhật", MessageBoxButtons.YesNo);
 
+                    if (int.TryParse(txtCboRole.SelectedValue.ToString(), out int roleId))
+                    {
+                        employeeReqDTO.RoleId = roleId;
+                    }
+                    if (int.TryParse(txtComboDep.SelectedValue.ToString(), out int depId))
+                    {
+                        employeeReqDTO.DepId = depId;
+                    }
+                    if (int.TryParse(txtComboEdu.SelectedValue.ToString(), out int educationId))
+                    {
+                        employeeReqDTO.EducationId = educationId;
+                    }
+                    if (int.TryParse(txtComboDegree.SelectedValue.ToString(), out int degreeId))
+                    {
+                        employeeReqDTO.DegreeId = degreeId;
+                    }
+                    if (int.TryParse(txtComboAccount.SelectedValue.ToString(), out int accountId))
+                    {
+                        employeeReqDTO.AccountId = accountId;
+                    }
                     if (result == DialogResult.Yes)
                     {
                         employeeReqDTO.EmployId = int.Parse(Id);
@@ -110,6 +217,12 @@ namespace HumanResource.src.View.Employee
                         employeeReqDTO.EmployeeName = FullName;
                         employeeReqDTO.DateOfBirth = selectedDate;
                         employeeReqDTO.Gender = Gender;
+                        employeeReqDTO.RoleId = roleId;
+                        employeeReqDTO.EducationId = educationId;
+                        employeeReqDTO.DepId = depId;
+                        employeeReqDTO.DegreeId = degreeId;
+                        employeeReqDTO.AccountId = accountId;
+
                         bool employeeReqs = employeeController.FindAndUpdate(employeeReqDTO);
                         if (employeeReqs)
                         {
@@ -136,42 +249,7 @@ namespace HumanResource.src.View.Employee
             }
         }
 
-        private void ListComboBox()
-        {
-            try
-            {
-                List<RoleReqDTO> roleReqDTO = roleController.FindAllRole();
-                if (roleReqDTO.Count > 0)
-                {
-                    //txtCboRole.DataSource = roleReqDTO;
-                    //txtCboRole.DisplayMember = "RoleName";
-                    //txtCboRole.ValueMember = "RoleId";
-                    //int defaultIndex = -1;
-
-                    //for (int i = 0; i < roleReqDTO.Count; i++)
-                    //{
-                    //    if (roleReqDTO[i].RoleName == roleReqDTO.RoleName)
-                    //    {
-                    //        defaultIndex = i;
-                    //        break;
-                    //    }
-                    //}
-
-                    //txtCboRole.SelectedIndex = defaultIndex;
-                }
-                else
-                {
-                    txtCboRole.SelectedIndex = -1;
-                    txtCboRole.DataSource = null;
-                    MessageBox.Show("Lỗi không tồn tại danh sách ");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi Phát Sinh Từ MoreEmployee " + ex.Message);
-
-            }
-        }
+    
 
     }
 }

@@ -12,7 +12,7 @@ namespace HumanResource.src.View
         private readonly EmployeeHistoryController employeeHistoryController;
         private readonly EmployeeReqDTO employeeReqDTO;
         private readonly EmployeeController employeeController;
-        private readonly EmployeeResProfile employeeResProfile;
+        private readonly EmployeeResProfileDTO employeeResProfile;
         private readonly EmployeeHistoryResDTO employeeHistoryRes;
         private readonly EmployeeRotationReqDTO employeeRotationReqDTO;
         public Dashboard()
@@ -21,7 +21,7 @@ namespace HumanResource.src.View
             employeeHistoryController = new EmployeeHistoryController();
             employeeReqDTO = new EmployeeReqDTO();
             employeeController = new EmployeeController();
-            employeeResProfile= new EmployeeResProfile();
+            employeeResProfile= new EmployeeResProfileDTO();
             employeeHistoryRes = new EmployeeHistoryResDTO();
             employeeRotationReqDTO= new EmployeeRotationReqDTO();
             txtId.ReadOnly = true;
@@ -102,7 +102,7 @@ namespace HumanResource.src.View
                     List<EmployeeHistoryResDTO> employeeReqs = employeeController.ExportWorkHistory(employeeHistoryRes);
                     if (employeeReqs.Count > 0)
                     {
-                        dataShowHistory.DataSource = employeeReqs;
+                        dataShowHistoryWork.DataSource = employeeReqs;
                     }
                     else
                     {
@@ -127,10 +127,10 @@ namespace HumanResource.src.View
                 if (!string.IsNullOrEmpty(txtId.Text))
                 {
                     employeeResProfile.EmployId = int.Parse(txtId.Text);
-                    List<EmployeeResProfile> employeeReqs = employeeController.ExportPositionHistory(employeeResProfile);
+                    List<EmployeeResProfileDTO> employeeReqs = employeeController.ExportPositionHistory(employeeResProfile);
                     if (employeeReqs.Count > 0)
                     {
-                        dataShowHistory.DataSource = employeeReqs;
+                        dataViewPosition.DataSource = employeeReqs;
                     }
                     else
                     {
@@ -159,7 +159,7 @@ namespace HumanResource.src.View
                     List<EmployeeRotationResDTO> employeeReqs = employeeController.ExportRotationHistory(employeeRotationReqDTO);
                     if (employeeReqs.Count > 0)
                     {
-                        dataShowHistory.DataSource = employeeReqs;
+                        dataViewRotation.DataSource = employeeReqs;
                     }
                     else
                     {

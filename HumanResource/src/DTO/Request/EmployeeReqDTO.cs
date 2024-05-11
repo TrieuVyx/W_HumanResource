@@ -17,6 +17,17 @@ namespace HumanResource.src.DTO.Request
         private string depDesc;
         private string educationName;
         private string degreeName;
+        private DateTime? startDate;
+        private int salaryAmount;
+        private int accountId;
+        private int educationId;
+        private int degreeId;
+        public DateTime? StartDate
+        {
+            get { return startDate; }
+            set { startDate = value; }
+        }
+
         public int EmployId
         {
             get { return employId; }
@@ -35,6 +46,11 @@ namespace HumanResource.src.DTO.Request
             set { employeeName = value; }
         }
 
+        public int AccountId
+        {
+            get { return accountId; }
+            set { accountId = value; }
+        }
 
 
         public string AddressEmployee
@@ -53,6 +69,11 @@ namespace HumanResource.src.DTO.Request
         {
             get { return phone; }
             set { phone = value; }
+        }
+        public int EducationId
+        {
+            get { return educationId; }
+            set { educationId = value; }
         }
 
         public string Gender
@@ -91,6 +112,17 @@ namespace HumanResource.src.DTO.Request
         {
             get { return depId; }
             set { depId = value; }
+        }
+
+        public int DegreeId
+        {
+            get { return degreeId; }
+            set { degreeId = value; }
+        }
+        public int SalaryAmount
+        {
+            get { return salaryAmount; }
+            set { salaryAmount = value; }
         }
     }
 }
