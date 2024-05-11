@@ -94,6 +94,18 @@
     <Compile Include="EnityForm\EmployeeHistoryForm.Designer.cs">
       <DependentUpon>EmployeeHistoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EnityForm\RelavtiveEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnityForm\RelavtiveEmployeeForm.Designer.cs">
+      <DependentUpon>RelavtiveEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnityForm\RoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnityForm\RoleForm.Designer.cs">
+      <DependentUpon>RoleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EnityForm\SalaryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,8 +142,32 @@
     <Compile Include="src\EmpoyeeReport.Designer.cs">
       <DependentUpon>EmpoyeeReport.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EnityForm\AccountForm.resx">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnityForm\DegreeForm.resx">
+      <DependentUpon>DegreeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnityForm\DepartmentForm.resx">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnityForm\EducationForm.resx">
+      <DependentUpon>EducationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EnityForm\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnityForm\EmployeeHistoryForm.resx">
+      <DependentUpon>EmployeeHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnityForm\RelavtiveEmployeeForm.resx">
+      <DependentUpon>RelavtiveEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnityForm\RoleForm.resx">
+      <DependentUpon>RoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnityForm\SalaryForm.resx">
+      <DependentUpon>SalaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainReport.resx">
       <DependentUpon>MainReport.cs</DependentUpon>
@@ -145,6 +181,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RDLC\Account.rdlc" />
+    <EmbeddedResource Include="RDLC\Degree.rdlc" />
+    <EmbeddedResource Include="RDLC\Department.rdlc" />
+    <EmbeddedResource Include="RDLC\Education.rdlc" />
+    <EmbeddedResource Include="RDLC\Employee.rdlc" />
+    <EmbeddedResource Include="RDLC\EmployeeHistory.rdlc" />
+    <EmbeddedResource Include="RDLC\RelativeEmployee.rdlc" />
+    <EmbeddedResource Include="RDLC\Role.rdlc" />
+    <EmbeddedResource Include="RDLC\Salary.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

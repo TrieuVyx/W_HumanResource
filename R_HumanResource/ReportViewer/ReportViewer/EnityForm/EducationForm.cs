@@ -16,5 +16,11 @@ namespace ReportViewer.EnityForm
         {
             InitializeComponent();
         }
+
+        private void EducationForm_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

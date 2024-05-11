@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ReportViewer.EnityForm;
+using ReportViewer.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +15,31 @@ namespace ReportViewer
 {
     public partial class MainReport : Form
     {
+        private readonly EmployeeForm employeeForm;
+        private readonly EmployeeHistoryForm employeeHistoryForm;
+        private readonly SalaryForm salaryForm;
+        private readonly AccountForm accountForm;
+        private readonly EducationForm educationForm;
+        private readonly RelavtiveEmployeeForm relavtiveEmployeeForm;
+        private readonly DegreeForm degreeForm;
+        private readonly RoleForm roleForm;
+        private readonly DepartmentForm departmentForm;
         public MainReport()
         {
             InitializeComponent();
             IsMdiContainer = true;  
+            employeeForm = new EmployeeForm();
+            employeeHistoryForm = new EmployeeHistoryForm();
+            relavtiveEmployeeForm = new RelavtiveEmployeeForm();
+            departmentForm = new DepartmentForm();  
+            roleForm = new RoleForm();
+            degreeForm = new DegreeForm();
+            salaryForm = new SalaryForm();
+            accountForm = new AccountForm();
+            educationForm = new EducationForm();
         }
+
+
         private bool BtnEmployeeReport_Clicks = false;
         private bool BtnDepartmentReport_Clicks = false;
         private bool BtnSalaryReport_Clicks = false;
