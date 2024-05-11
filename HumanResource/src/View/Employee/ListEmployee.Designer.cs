@@ -39,16 +39,18 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearchBox = new System.Windows.Forms.RichTextBox();
             this.GridViewEmployee = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRefer = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnRefer);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.txtId);
             this.panel3.Controls.Add(this.btnCreate);
@@ -64,7 +66,7 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(12, 22);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(869, 496);
+            this.panel3.Size = new System.Drawing.Size(869, 567);
             this.panel3.TabIndex = 6;
             // 
             // label2
@@ -87,7 +89,7 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(621, 69);
+            this.btnCreate.Location = new System.Drawing.Point(408, 475);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(79, 39);
             this.btnCreate.TabIndex = 21;
@@ -97,7 +99,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(281, 69);
+            this.btnReset.Location = new System.Drawing.Point(323, 474);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(79, 39);
             this.btnReset.TabIndex = 20;
@@ -125,7 +127,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(536, 69);
+            this.btnDelete.Location = new System.Drawing.Point(663, 475);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(79, 39);
             this.btnDelete.TabIndex = 7;
@@ -135,7 +137,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(451, 69);
+            this.btnUpdate.Location = new System.Drawing.Point(578, 475);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(79, 39);
             this.btnUpdate.TabIndex = 6;
@@ -145,24 +147,13 @@
             // 
             // btnDetail
             // 
-            this.btnDetail.Location = new System.Drawing.Point(366, 69);
+            this.btnDetail.Location = new System.Drawing.Point(493, 475);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(79, 39);
             this.btnDetail.TabIndex = 5;
             this.btnDetail.Text = "Detail";
             this.btnDetail.UseVisualStyleBackColor = true;
             this.btnDetail.Click += new System.EventHandler(this.BtnDetail_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = global::HumanResource.Properties.Resources.search;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Location = new System.Drawing.Point(21, 69);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(45, 39);
-            this.btnSearch.TabIndex = 4;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // txtSearchBox
             // 
@@ -200,12 +191,34 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "List Employee";
             // 
+            // btnRefer
+            // 
+            this.btnRefer.Location = new System.Drawing.Point(749, 475);
+            this.btnRefer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefer.Name = "btnRefer";
+            this.btnRefer.Size = new System.Drawing.Size(93, 39);
+            this.btnRefer.TabIndex = 24;
+            this.btnRefer.Text = "References";
+            this.btnRefer.UseVisualStyleBackColor = true;
+            this.btnRefer.Click += new System.EventHandler(this.BtnRefer_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::HumanResource.Properties.Resources.search;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Location = new System.Drawing.Point(21, 69);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(45, 39);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
             // ListEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(893, 544);
+            this.ClientSize = new System.Drawing.Size(893, 601);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -235,5 +248,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox txtId;
         private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnRefer;
     }
 }

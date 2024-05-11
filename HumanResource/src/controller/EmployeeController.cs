@@ -148,6 +148,18 @@ namespace HumanResource.src.Controller
             }
         }
 
+        internal List<EmployeeReferencesResDTO> FindReferences(EmployeeReferenceReqDTO employeeReferenceReqDTO)
+        {
+            try
+            {
+                return employeeService.FindReferences(employeeReferenceReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
+            }
+        }
+
         internal bool MoveDepart(EmployeeReqDTO employeeReqDTO)
         {
             try

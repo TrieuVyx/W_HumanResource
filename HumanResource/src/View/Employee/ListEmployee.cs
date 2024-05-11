@@ -1,5 +1,6 @@
 ﻿using HumanResource.src.Controller;
 using HumanResource.src.DTO.Request;
+using HumanResource.src.DTO.Response;
 using HumanResource.src.Entity;
 using System;
 using System.Collections.Generic;
@@ -13,13 +14,14 @@ namespace HumanResource.src.View.Employee
         private Employees employee;
         private readonly EmployeeController employeeController;
         private readonly EmployeeReqDTO employeeReqDTO;
-
+        private readonly EmployeeReferenceReqDTO employeeReferenceReqDTO;   
         public ListEmployee()
         {
             InitializeComponent();
             employeeController = new EmployeeController();
             employee = new Employees();
             employeeReqDTO = new EmployeeReqDTO();
+            employeeReferenceReqDTO = new EmployeeReferenceReqDTO();    
             GridViewEmployee.CellContentClick += ChooseItem;
             ShowEmployee();
         }
@@ -210,6 +212,38 @@ namespace HumanResource.src.View.Employee
                 MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
             }
 
+        }
+
+
+        private void BtnRefer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(txtId.Text))
+                {
+                    employeeReferenceReqDTO.EmployId = int.Parse(txtId.Text);
+
+                    List<EmployeeReferencesResDTO> employeeReqs = employeeController.FindReferences(employeeReferenceReqDTO);
+                    if (employeeReqs.Count > 0)
+                    {
+                        References read = new References();
+                        read.ControlAdded(employeeReqs);
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ID không được để trống: ");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("đã xảy ra lỗi: " + ex.Message);
+            }
         }
     }
 }

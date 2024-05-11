@@ -47,7 +47,7 @@
             this.DataSalary.Margin = new System.Windows.Forms.Padding(4);
             this.DataSalary.Name = "DataSalary";
             this.DataSalary.RowHeadersWidth = 51;
-            this.DataSalary.Size = new System.Drawing.Size(439, 319);
+            this.DataSalary.Size = new System.Drawing.Size(867, 196);
             this.DataSalary.TabIndex = 0;
             // 
             // label1
@@ -63,7 +63,7 @@
             // 
             // BtnWatch
             // 
-            this.BtnWatch.Location = new System.Drawing.Point(567, 376);
+            this.BtnWatch.Location = new System.Drawing.Point(568, 469);
             this.BtnWatch.Margin = new System.Windows.Forms.Padding(4);
             this.BtnWatch.Name = "BtnWatch";
             this.BtnWatch.Size = new System.Drawing.Size(100, 28);
@@ -74,7 +74,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(783, 376);
+            this.button1.Location = new System.Drawing.Point(783, 469);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
@@ -86,18 +86,18 @@
             // EmployeeList
             // 
             this.EmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmployeeList.Location = new System.Drawing.Point(463, 49);
+            this.EmployeeList.Location = new System.Drawing.Point(16, 263);
             this.EmployeeList.Margin = new System.Windows.Forms.Padding(4);
             this.EmployeeList.Name = "EmployeeList";
             this.EmployeeList.RowHeadersWidth = 51;
-            this.EmployeeList.Size = new System.Drawing.Size(420, 319);
+            this.EmployeeList.Size = new System.Drawing.Size(867, 184);
             this.EmployeeList.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(733, 28);
+            this.label2.Location = new System.Drawing.Point(749, 249);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 31);
@@ -106,7 +106,7 @@
             // 
             // BtnShow
             // 
-            this.BtnShow.Location = new System.Drawing.Point(675, 376);
+            this.BtnShow.Location = new System.Drawing.Point(676, 469);
             this.BtnShow.Margin = new System.Windows.Forms.Padding(4);
             this.BtnShow.Name = "BtnShow";
             this.BtnShow.Size = new System.Drawing.Size(100, 28);
@@ -117,7 +117,7 @@
             // 
             // TxTId
             // 
-            this.TxTId.Location = new System.Drawing.Point(413, 28);
+            this.TxTId.Location = new System.Drawing.Point(842, 28);
             this.TxTId.Name = "TxTId";
             this.TxTId.Size = new System.Drawing.Size(42, 31);
             this.TxTId.TabIndex = 7;
@@ -128,7 +128,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(896, 450);
+            this.ClientSize = new System.Drawing.Size(896, 541);
             this.Controls.Add(this.TxTId);
             this.Controls.Add(this.BtnShow);
             this.Controls.Add(this.label2);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,9 +11,9 @@ namespace HumanResource.src.Entity.Extend
 {
     internal class ExcelEntity
     {
-        private readonly Excel.Workbook _workbook;
-        private readonly Excel.Worksheet _worksheet;
-        private readonly Excel.Application _application;
+        private  Excel.Workbook _workbook;
+        private  Excel.Worksheet _worksheet;
+        private  Excel.Application _application;
         public ExcelEntity()
         {
             _application = new Excel.Application();
@@ -47,8 +48,18 @@ namespace HumanResource.src.Entity.Extend
             }
 
             _workbook.SaveAs(filePath);
-            _workbook.Close();
+            _workbook.Close(false);
             _application.Quit();
+
+            Marshal.ReleaseComObject(_worksheet);
+            Marshal.ReleaseComObject(_workbook);
+            Marshal.ReleaseComObject(_application);
+            _worksheet = null;
+            _workbook = null;
+            _application = null;
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+
         }
     }
 }

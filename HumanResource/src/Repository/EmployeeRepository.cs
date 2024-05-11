@@ -346,7 +346,28 @@ namespace HumanResource.src.Repository
 
         internal bool FindAndDelete(EmployeeReqDTO employeeReqDTO)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (SqlConnection connection = dbContext.ConnectOpen())
+                {
+                    string query = "DELETE FROM Employee WHERE EmployId = @EmployId";
+                    using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@EmployId", employeeReqDTO.EmployId);
+                        connection.Open();
+                        sqlCommand.ExecuteNonQuery();
+                        sqlCommand.Parameters.Clear();
+                        connection.Close();
+                    }
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Lỗi Phát Sinh Từ EmployeeRepository " + ex.Message);
+
+                return false;
+            }
         }
 
 
@@ -494,6 +515,54 @@ namespace HumanResource.src.Repository
                                     StartDate = reader.IsDBNull(reader.GetOrdinal("StartDate")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("StartDate")),
                                     EndDate = reader.IsDBNull(reader.GetOrdinal("EndDate")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("EndDate")),
                                     Staging = reader.GetString(reader.GetOrdinal("Staging")),
+
+                                };
+                                employees.Add(employees1);
+                            }
+                        }
+                        connection.Close();
+                    }
+                    return (employees);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Lỗi Phát Sinh Từ EmployeeRepository " + ex.Message);
+
+                return null;
+            }
+        }
+
+        internal List<EmployeeReferencesResDTO> FindReferences(EmployeeReferenceReqDTO employeeReferenceReqDTO)
+        {
+            List<EmployeeReferencesResDTO> employees = new List<EmployeeReferencesResDTO>();
+            try
+            {
+                using (SqlConnection connection = dbContext.ConnectOpen())
+                {
+                    string query = @"SELECT * FROM Employee E 
+                                    LEFT JOIN RelativeEmployee RE ON E.RelativeId = RE.RelativeId
+                                    WHERE EmployId = @EmployId";
+
+                    using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@EmployId", employeeReferenceReqDTO.EmployId);
+                        connection.Open();
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                EmployeeReferencesResDTO employees1 = new EmployeeReferencesResDTO
+                                {
+
+                                    EmployId = reader.GetInt32(reader.GetOrdinal("EmployId")),
+                                    RelativeId = reader.GetInt32(reader.GetOrdinal("RelativeId")),
+                                    FullName = reader.GetString(reader.GetOrdinal("FullName")),
+                                    AddressRelative = reader.GetString(reader.GetOrdinal("AddressRelative")),
+                                    Relationship = reader.GetString(reader.GetOrdinal("Relationship")),
+                                    PhoneNumber = reader.GetString(reader.GetOrdinal("PhoneNumber")),
 
                                 };
                                 employees.Add(employees1);

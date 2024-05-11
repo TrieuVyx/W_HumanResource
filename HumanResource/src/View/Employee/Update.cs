@@ -10,7 +10,7 @@ namespace HumanResource.src.View.Employee
 {
     public partial class Update : Form
     {
-        private EmployeeReqDTO employeeReqDTO;
+        private DTO.Request.EmployeeReqDTO employeeReqDTO;
         private readonly RoleController roleController;
         private readonly EmployeeController employeeController;
         private readonly DepartmentController departmentController;

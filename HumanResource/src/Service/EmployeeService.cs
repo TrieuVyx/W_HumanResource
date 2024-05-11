@@ -151,6 +151,18 @@ namespace HumanResource.src.Service
             }
         }
 
+        internal List<EmployeeReferencesResDTO> FindReferences(EmployeeReferenceReqDTO employeeReferenceReqDTO)
+        {
+            try
+            {
+                return employeeRepository.FindReferences(employeeReferenceReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeService " + ex.Message);
+            }
+        }
+
         internal bool MoveDepart(EmployeeReqDTO employeeReqDTO)
         {
             try

@@ -47,11 +47,11 @@
             // ViewRoleData
             // 
             this.ViewRoleData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewRoleData.Location = new System.Drawing.Point(34, 144);
+            this.ViewRoleData.Location = new System.Drawing.Point(34, 65);
             this.ViewRoleData.Margin = new System.Windows.Forms.Padding(4);
             this.ViewRoleData.Name = "ViewRoleData";
             this.ViewRoleData.RowHeadersWidth = 51;
-            this.ViewRoleData.Size = new System.Drawing.Size(437, 305);
+            this.ViewRoleData.Size = new System.Drawing.Size(886, 184);
             this.ViewRoleData.TabIndex = 0;
             this.ViewRoleData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewRoleData_CellContentClick);
             // 
@@ -90,7 +90,7 @@
             // 
             // txtIdAmount
             // 
-            this.txtIdAmount.Location = new System.Drawing.Point(479, 110);
+            this.txtIdAmount.Location = new System.Drawing.Point(883, 251);
             this.txtIdAmount.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdAmount.Name = "txtIdAmount";
             this.txtIdAmount.Size = new System.Drawing.Size(37, 27);
@@ -100,11 +100,11 @@
             // ViewDataEmployee
             // 
             this.ViewDataEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewDataEmployee.Location = new System.Drawing.Point(479, 144);
+            this.ViewDataEmployee.Location = new System.Drawing.Point(34, 263);
             this.ViewDataEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.ViewDataEmployee.Name = "ViewDataEmployee";
             this.ViewDataEmployee.RowHeadersWidth = 51;
-            this.ViewDataEmployee.Size = new System.Drawing.Size(441, 305);
+            this.ViewDataEmployee.Size = new System.Drawing.Size(886, 186);
             this.ViewDataEmployee.TabIndex = 7;
             // 
             // BtnReset
@@ -142,7 +142,7 @@
             // 
             // txtIdRole
             // 
-            this.txtIdRole.Location = new System.Drawing.Point(434, 110);
+            this.txtIdRole.Location = new System.Drawing.Point(883, 48);
             this.txtIdRole.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdRole.Name = "txtIdRole";
             this.txtIdRole.Size = new System.Drawing.Size(37, 27);
@@ -153,7 +153,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(815, 128);
+            this.label2.Location = new System.Drawing.Point(17, 253);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 25);
             this.label2.TabIndex = 13;
@@ -163,7 +163,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 128);
+            this.label3.Location = new System.Drawing.Point(29, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 25);
             this.label3.TabIndex = 14;

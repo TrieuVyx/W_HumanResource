@@ -384,6 +384,7 @@
     <Compile Include="src\DTO\Request\DepartmentReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeAndDepartmentReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeHistoryReqDTO.cs" />
+    <Compile Include="src\DTO\Request\EmployeeReferenceReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeRotationReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeReqDTO.cs" />
     <Compile Include="src\DTO\Request\LoginReqDTO.cs" />
@@ -395,6 +396,7 @@
     <Compile Include="src\DTO\Response\DepartmentResDTO.cs" />
     <Compile Include="src\DTO\Response\EducationResDTO.cs" />
     <Compile Include="src\DTO\Response\EmployeeHistoryResDTO.cs" />
+    <Compile Include="src\DTO\Response\EmployeeReferencesResDTO.cs" />
     <Compile Include="src\DTO\Response\EmployeeRotationResDTO.cs" />
     <Compile Include="src\DTO\Response\EmployeeResDTO.cs" />
     <Compile Include="src\DTO\Response\EmployeeResProfileDTO.cs" />
@@ -486,6 +488,12 @@
     <Compile Include="src\View\Employee\Read.Designer.cs">
       <DependentUpon>Read.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\View\Employee\References.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\Employee\References.Designer.cs">
+      <DependentUpon>References.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\View\Employee\Update.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -564,6 +572,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Employee\Read.resx">
       <DependentUpon>Read.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\Employee\References.resx">
+      <DependentUpon>References.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Employee\Update.resx">
       <DependentUpon>Update.cs</DependentUpon>

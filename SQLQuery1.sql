@@ -282,4 +282,12 @@ RoleId = @RoleId,
 DegreeId = @DegreeId
 WHERE EmployId = @EmployId 
 
+
+DECLARE @EmployId INTEGER = 2
+
+SELECT * FROM Employee E 
+LEFT JOIN RelativeEmployee RE ON E.RelativeId = RE.RelativeId
+WHERE EmployId = @EmployId
+
+
 */

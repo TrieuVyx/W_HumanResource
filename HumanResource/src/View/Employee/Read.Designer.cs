@@ -48,8 +48,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtGender = new System.Windows.Forms.RichTextBox();
             this.txtBirthday = new System.Windows.Forms.RichTextBox();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -175,8 +173,6 @@
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.txtGender);
             this.panel3.Controls.Add(this.txtBirthday);
-            this.panel3.Controls.Add(this.btnDelete);
-            this.panel3.Controls.Add(this.btnUpdate);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label6);
@@ -217,7 +213,7 @@
             // txtClose
             // 
             this.txtClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.txtClose.Location = new System.Drawing.Point(353, 458);
+            this.txtClose.Location = new System.Drawing.Point(92, 446);
             this.txtClose.Name = "txtClose";
             this.txtClose.Size = new System.Drawing.Size(97, 37);
             this.txtClose.TabIndex = 23;
@@ -277,27 +273,6 @@
             this.txtBirthday.Size = new System.Drawing.Size(219, 34);
             this.txtBirthday.TabIndex = 19;
             this.txtBirthday.Text = "";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnDelete.Location = new System.Drawing.Point(214, 458);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(97, 37);
-            this.btnDelete.TabIndex = 18;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.Yellow;
-            this.btnUpdate.Location = new System.Drawing.Point(92, 458);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(97, 37);
-            this.btnUpdate.TabIndex = 17;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // label10
             // 
@@ -452,8 +427,6 @@
         private System.Windows.Forms.RichTextBox txtAddress;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.RichTextBox txtBirthday;
         private System.Windows.Forms.RichTextBox txtGender;
         private System.Windows.Forms.RichTextBox txtDepartment;
