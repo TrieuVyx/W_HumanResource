@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using HumanResource.src.View.Auth;
+using 
 namespace HumanResource
 {
     internal static class Program
