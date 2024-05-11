@@ -119,13 +119,8 @@ INSERT INTO Salary ( SalaryAmount, SalaryDesc)
 VALUES ( 5000, 'Junior Salary'),
        ( 8000, 'Senior Salary'),
        (3000, 'Intern Salary'),
-       (6000, 'Mid-level Salary'),
-       ( 9000, 'Senior Salary'),
-       (4000, 'Junior Salary'),
-       ( 7000, 'Mid-level Salary'),
-       ( 3500, 'Intern Salary'),
-       ( 5500, 'Junior Salary'),
-       ( 7500, 'Mid-level Salary');
+       (6000, 'Mid-level Salary')
+      
 
 INSERT INTO Department ( DepDesc, DepType, DepPlace)
 VALUES ( 'IT Department', 'Technical', 'Headquarters'),
