@@ -50,7 +50,7 @@ namespace ReportViewer
         private bool BtnRelativeEmployeeReport_Clicks = false;
         private bool BtnAccountReport_Clicks = false;
 
-        int width = 600;
+        int width = 800;
         int height = 450;
         int x = 180;
         int y = 10;

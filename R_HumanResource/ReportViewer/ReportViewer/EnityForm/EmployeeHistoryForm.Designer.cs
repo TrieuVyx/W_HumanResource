@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.EmployeeHistoryFor = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // EmployeeHistoryFor
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
-            this.reportViewer1.TabIndex = 0;
+            this.EmployeeHistoryFor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EmployeeHistoryFor.Location = new System.Drawing.Point(0, 0);
+            this.EmployeeHistoryFor.Name = "EmployeeHistoryFor";
+            this.EmployeeHistoryFor.ServerReport.BearerToken = null;
+            this.EmployeeHistoryFor.Size = new System.Drawing.Size(800, 450);
+            this.EmployeeHistoryFor.TabIndex = 0;
             // 
             // EmployeeHistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.EmployeeHistoryFor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeHistoryForm";
-            this.Text = "EmployeeHistoryForm";
+            this.Text = "EmployeeHistoryFor";
             this.Load += new System.EventHandler(this.EmployeeHistoryForm_Load);
             this.ResumeLayout(false);
 
@@ -56,6 +56,6 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer EmployeeHistoryFor;
     }
 }

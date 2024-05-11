@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.EmployeeFor = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // EmployeeFor
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
-            this.reportViewer1.TabIndex = 0;
+            this.EmployeeFor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EmployeeFor.Location = new System.Drawing.Point(0, 0);
+            this.EmployeeFor.Name = "EmployeeFor";
+            this.EmployeeFor.ServerReport.BearerToken = null;
+            this.EmployeeFor.Size = new System.Drawing.Size(800, 450);
+            this.EmployeeFor.TabIndex = 0;
             // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.EmployeeFor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeForm";
-            this.Text = "EmployeeF";
+            this.Text = "EmployeeFor";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             this.ResumeLayout(false);
 
@@ -56,6 +56,6 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer EmployeeFor;
     }
 }
