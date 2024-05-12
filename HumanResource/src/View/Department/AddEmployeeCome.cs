@@ -19,7 +19,7 @@ namespace HumanResource.src.View.Department
         //private readonly ImportExportController importExportController;
         private EmployeeReqDTO employeeReqDTO;
         private DepartmentReqDTO departmentReqDTO;
-        private readonly ExcelEntity _excelEntity;
+        //private readonly ExcelEntity _excelEntity;
         private readonly SaveFileDialog _saveFileDialog;
         private readonly DataTable _dataTable;
 
@@ -30,7 +30,6 @@ namespace HumanResource.src.View.Department
             employeeController = new EmployeeController();
             employeeReqDTO = new EmployeeReqDTO();
             departmentReqDTO = new DepartmentReqDTO();
-            _excelEntity = new ExcelEntity();
             _saveFileDialog= new SaveFileDialog();
             _dataTable = new DataTable();
             //importExportController = new ImportExportController();
@@ -168,9 +167,10 @@ namespace HumanResource.src.View.Department
         {
             try
             {
+                ExcelEntity _excelEntity = new ExcelEntity();
+
                 for (int i = 0; i < dataEmployeeDepart.Columns.Count; i++)
                 {
-                    
                     _dataTable.Columns.Add(dataEmployeeDepart.Columns[i].HeaderText);
                 }
                 foreach (DataGridViewRow row in dataEmployeeDepart.Rows)
@@ -183,9 +183,9 @@ namespace HumanResource.src.View.Department
                     _dataTable.Rows.Add(dataRow);
                 }
 
-                _saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
                 if (_saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
+                    _saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
                     string filePath = _saveFileDialog.FileName;
                    
                     List<string> visibleColumns = new List<string>();

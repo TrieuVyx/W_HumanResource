@@ -10,13 +10,12 @@ namespace HumanResource.src.View.Auth
     {
         private  RegisterReqDTO _registerReqDTO;
         private readonly AuthorController _authorController;
-        private readonly LoginForm _loginForm;
+        //private readonly LoginForm _loginForm;
         public SignUpForm()
         {
             InitializeComponent(); ;
             _registerReqDTO = new RegisterReqDTO();
             _authorController = new AuthorController();
-            _loginForm = new LoginForm();
         }
         public bool ChecKAccount(string ac)
         {
@@ -56,8 +55,10 @@ namespace HumanResource.src.View.Auth
             }
         }
 
+        readonly LoginForm _loginForm = new LoginForm();
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+
             _loginForm.Show();
             this.Hide();
         }
