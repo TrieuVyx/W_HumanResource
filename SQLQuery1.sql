@@ -289,5 +289,12 @@ SELECT * FROM Employee
 LEFT JOIN RelativeEmployee RE ON E.RelativeId = RE.RelativeId
 WHERE EmployId = @EmployId
 
+DECLARE @Email NVARCHAR(255) = 'HoQuocThang@example.com'
+
+SELECT *
+FROM Employee e
+LEFT JOIN Roles r ON e.RoleId = r.RoleId
+LEFT JOIN Account a ON e.AccountId = a.AccountId
+WHERE a.Email = @Email
 
 */

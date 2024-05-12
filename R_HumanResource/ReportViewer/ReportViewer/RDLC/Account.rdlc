@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Account Report</Value>
+                <Value>Danh Sách Tài Khoản</Value>
                 <Style>
                   <FontFamily>Times New Roman</FontFamily>
                   <FontSize>20pt</FontSize>
@@ -20,10 +20,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.89167in</Top>
-        <Left>3.74445in</Left>
+        <Top>0.91944in</Top>
+        <Left>3.31112in</Left>
         <Height>0.375in</Height>
-        <Width>2.1in</Width>
+        <Width>2.7in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -82,9 +82,6 @@
             <TablixColumn>
               <Width>1in</Width>
             </TablixColumn>
-            <TablixColumn>
-              <Width>1in</Width>
-            </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
@@ -99,7 +96,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Account Id</Value>
+                              <Value>Chỉ Mục</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -129,7 +126,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Full Name</Value>
+                              <Value>Tên đầy đủ</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -159,7 +156,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Pass Words</Value>
+                              <Value>Mật Khẩu</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -167,36 +164,6 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox22</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox24">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Role Id</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox24</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -337,36 +304,6 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="RoleId">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!RoleId.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>RoleId</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="Email">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -405,7 +342,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -420,9 +356,9 @@
         </TablixRowHierarchy>
         <DataSetName>AccountDataSet</DataSetName>
         <Top>1.68in</Top>
-        <Left>2.45278in</Left>
+        <Left>2.74445in</Left>
         <Height>0.5in</Height>
-        <Width>5in</Width>
+        <Width>4in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>

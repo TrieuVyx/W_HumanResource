@@ -381,6 +381,7 @@
     <Compile Include="src\DbContext\Dbcontext.cs" />
     <Compile Include="src\DbContext\GetQuery.cs" />
     <Compile Include="src\DbContext\Modify.cs" />
+    <Compile Include="src\DTO\Request\AuthorResDTO.cs" />
     <Compile Include="src\DTO\Request\DepartmentReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeAndDepartmentReqDTO.cs" />
     <Compile Include="src\DTO\Request\EmployeeHistoryReqDTO.cs" />

@@ -84,7 +84,7 @@ namespace HumanResource.src.Repository
                                     Phone = reader.GetString(reader.GetOrdinal("Phone")),
                                     Email = reader.GetString(reader.GetOrdinal("Email")),
                                     Gender = reader.GetString(reader.GetOrdinal("Gender")),
-                                    Avatar = reader.GetString(reader.GetOrdinal("Avatar"))
+                                    //Avatar = reader.GetString(reader.GetOrdinal("Avatar"))
                                 };
                                 employeeRes.Add(employee);
                             }

@@ -197,5 +197,10 @@ namespace HumanResource
                 role.Show();    
             }
         }
+
+        internal new void ControlAdded(bool isAuthenticated)
+        {
+            MessageBox.Show(isAuthenticated.ToString());
+        }
     }
 }

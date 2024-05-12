@@ -37,12 +37,14 @@
             this.button4 = new System.Windows.Forms.Button();
             this.BtnRole = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -60,7 +62,7 @@
             // button8
             // 
             this.button8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button8.Location = new System.Drawing.Point(0, 368);
+            this.button8.Location = new System.Drawing.Point(3, 424);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(200, 39);
@@ -73,7 +75,7 @@
             // 
             this.button7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(3, 235);
+            this.button7.Location = new System.Drawing.Point(6, 295);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(200, 39);
@@ -86,7 +88,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::HumanResource.Properties.Resources._2ac7013cfd3e1cc86b60ec9be2f8ef97;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 40);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(197, 175);
@@ -97,7 +99,7 @@
             // 
             this.button6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(0, 279);
+            this.button6.Location = new System.Drawing.Point(3, 338);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(200, 39);
@@ -109,7 +111,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button5.Location = new System.Drawing.Point(3, 324);
+            this.button5.Location = new System.Drawing.Point(0, 381);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(200, 39);
@@ -121,7 +123,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button4.Location = new System.Drawing.Point(3, 412);
+            this.button4.Location = new System.Drawing.Point(2, 467);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(200, 39);
@@ -133,7 +135,7 @@
             // BtnRole
             // 
             this.BtnRole.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnRole.Location = new System.Drawing.Point(3, 457);
+            this.BtnRole.Location = new System.Drawing.Point(2, 510);
             this.BtnRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnRole.Name = "BtnRole";
             this.BtnRole.Size = new System.Drawing.Size(200, 39);
@@ -145,7 +147,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button2.Location = new System.Drawing.Point(0, 501);
+            this.button2.Location = new System.Drawing.Point(0, 553);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(200, 39);
@@ -153,6 +155,15 @@
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 227);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Name";
             // 
             // MainApplication
             // 
@@ -166,6 +177,7 @@
             this.Text = "Quản Lý Nhân Sự";
             this.Load += new System.EventHandler(this.MainApplication_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -181,6 +193,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label1;
     }
 }
 

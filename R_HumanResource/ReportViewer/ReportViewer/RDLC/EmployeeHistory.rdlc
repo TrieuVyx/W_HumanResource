@@ -41,7 +41,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>EmployeeHistory Report</Value>
+                <Value>Bảng Lịch Sử Nhân Viên</Value>
                 <Style>
                   <FontFamily>Times New Roman</FontFamily>
                   <FontSize>20pt</FontSize>

@@ -125,7 +125,7 @@
             // 
             // MainReport
             // 
-            this.ClientSize = new System.Drawing.Size(1031, 508);
+            this.ClientSize = new System.Drawing.Size(1031, 572);
             this.Controls.Add(this.menuStrip2);
             this.MainMenuStrip = this.menuStrip2;
             this.Name = "MainReport";

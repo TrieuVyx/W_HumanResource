@@ -1,7 +1,9 @@
 ﻿using HumanResource.src.DbContext;
 using HumanResource.src.DTO.Request;
 using HumanResource.src.DTO.Response;
+using HumanResource.src.Entity;
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -55,6 +57,45 @@ namespace HumanResource.src.Repository
                 return false;
             }
 
+        }
+
+        internal List<AuthorResDTO> Permission(LoginReqDTO loginReqDTO)
+        {
+            List<AuthorResDTO> authorRes = new List<AuthorResDTO>();
+            try
+            {
+                //employee
+                using (SqlConnection connection = dbContext.ConnectOpen())
+                {
+                    string query = "SELECT * FROM Employee ";
+                    using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@Email", loginReqDTO.InEmail);
+                        connection.Open();
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                AuthorResDTO authorResDTO = new AuthorResDTO
+                                {
+                                    FullName = reader.GetString(reader.GetOrdinal("FullName")),
+                                    RoleDesc = reader.GetString(reader.GetOrdinal("EmployeeName")),
+                                    RoleName = reader.GetString(reader.GetOrdinal("AddressEmployee")),
+                                };
+                                authorRes.Add(authorResDTO);
+                            }
+                        }
+                        connection.Close();
+                    }
+                    return authorRes;
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Lỗi Phát Sinh Từ AuthorRepository " + ex.Message);
+
+                return null;
+            }
         }
 
         internal bool RegisterAccount(RegisterReqDTO registerReqDTO)

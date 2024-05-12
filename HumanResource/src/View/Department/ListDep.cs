@@ -172,6 +172,7 @@ namespace HumanResource.src.View.Department
                         employeeReqDTO.DepId = DepId;
                         employeeReqDTO.EmployId = int.Parse(txtID.Text);
                         bool employees = employeeController.MoveDepart(employeeReqDTO);
+                        bool insertHistory = employeeController.UpdateHistory(employeeReqDTO);
                         if (employees)
                         {
                             MessageBox.Show("Bạn đã di chuyển nhân viên đến nơi khác ^, vui lòng reset lại để cập nhật");

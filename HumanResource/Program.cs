@@ -15,8 +15,8 @@ namespace HumanResource
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new SignUpForm());
-            Application.Run(new LoginForm());
+            Application.Run(new SignUpForm());
+            //Application.Run(new LoginForm());
             //Application.Run(new MainApplication());
         }
     }

@@ -14,14 +14,17 @@ namespace HumanResource.src.View.Employee
         private Employees employee;
         private readonly EmployeeController employeeController;
         private readonly EmployeeReqDTO employeeReqDTO;
-        private readonly EmployeeReferenceReqDTO employeeReferenceReqDTO;   
+        private readonly EmployeeReferenceReqDTO employeeReferenceReqDTO;
+        readonly MoreEmployee moreEmployee;
+
         public ListEmployee()
         {
             InitializeComponent();
             employeeController = new EmployeeController();
             employee = new Employees();
             employeeReqDTO = new EmployeeReqDTO();
-            employeeReferenceReqDTO = new EmployeeReferenceReqDTO();    
+            employeeReferenceReqDTO = new EmployeeReferenceReqDTO();
+            moreEmployee = new MoreEmployee();  
             GridViewEmployee.CellContentClick += ChooseItem;
             ShowEmployee();
         }
@@ -102,12 +105,11 @@ namespace HumanResource.src.View.Employee
         readonly int y = 10;
         readonly int height = 470;
         readonly int width = 700;
-        readonly MoreEmployee MoreEmployee = new MoreEmployee();
         private void BtnCreate_Click(object sender, EventArgs e)
         {
-            MoreEmployee.StartPosition = FormStartPosition.Manual;
-            MoreEmployee.Bounds = new Rectangle(x, y, width, height);
-            MoreEmployee.Show();
+            moreEmployee.StartPosition = FormStartPosition.Manual;
+            moreEmployee.Bounds = new Rectangle(x, y, width, height);
+            moreEmployee.Show();
             this.Hide();
         }
 

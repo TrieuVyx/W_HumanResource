@@ -20,8 +20,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.52083in</Top>
-        <Left>0.475in</Left>
+        <Top>0.27916in</Top>
+        <Left>0.725in</Left>
         <Height>0.54167in</Height>
         <Width>5.55in</Width>
         <Style>
@@ -41,7 +41,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Salary Report</Value>
+                <Value>Bảng Lương</Value>
                 <Style>
                   <FontFamily>Times New Roman</FontFamily>
                   <FontSize>20pt</FontSize>
@@ -52,8 +52,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.10417in</Top>
-        <Left>2.31667in</Left>
+        <Top>0.87639in</Top>
+        <Left>2.58334in</Left>
         <Height>0.375in</Height>
         <Width>2in</Width>
         <ZIndex>1</ZIndex>
@@ -291,8 +291,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>SalaryDataSet</DataSetName>
-        <Top>1.83833in</Top>
-        <Left>1.84667in</Left>
+        <Top>1.38in</Top>
+        <Left>1.99667in</Left>
         <Height>0.5in</Height>
         <Width>3in</Width>
         <ZIndex>2</ZIndex>

@@ -41,7 +41,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>RelativeEmployee Report</Value>
+                <Value>Bảng Người Tham Chiếu Nhân Viên</Value>
                 <Style>
                   <FontFamily>Times New Roman</FontFamily>
                   <FontSize>20pt</FontSize>
@@ -53,9 +53,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>1.13194in</Top>
-        <Left>1.79166in</Left>
+        <Left>1.225in</Left>
         <Height>0.375in</Height>
-        <Width>3.43334in</Width>
+        <Width>4.06667in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -484,7 +484,7 @@
         </TablixRowHierarchy>
         <DataSetName>RelativeEmployeeDataSet</DataSetName>
         <Top>1.64667in</Top>
-        <Left>0.225in</Left>
+        <Left>0.29167in</Left>
         <Height>0.5in</Height>
         <Width>6in</Width>
         <ZIndex>2</ZIndex>

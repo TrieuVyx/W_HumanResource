@@ -1,7 +1,9 @@
 ﻿using HumanResource.src.DTO.Request;
 using HumanResource.src.DTO.Response;
+using HumanResource.src.Repository;
 using HumanResource.src.Service;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace HumanResource.src.Controller
@@ -35,6 +37,18 @@ namespace HumanResource.src.Controller
             {
                 MessageBox.Show("Lỗi Phát Sinh Từ AuthorController " + ex.Message);
                 return false;
+            }
+        }
+
+        internal List<AuthorResDTO> Permission(LoginReqDTO loginReqDTO)
+        {
+            try
+            {
+                return authorService.Permission(loginReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ AuthorController " + ex.Message);
             }
         }
 

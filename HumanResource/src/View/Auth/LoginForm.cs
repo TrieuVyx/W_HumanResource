@@ -1,6 +1,7 @@
 ﻿using HumanResource.src.Controller;
 using HumanResource.src.DTO.Request;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace HumanResource.src.View.Auth
@@ -10,14 +11,14 @@ namespace HumanResource.src.View.Auth
         private LoginReqDTO loginReqDTO;
         private readonly AuthorController authorController;
         private readonly MainApplication mainApplication;
-        private readonly SignUpForm signUpForm;
+        //private readonly SignUpForm signUpForm;
 
         public LoginForm()
         {
             InitializeComponent();
             authorController = new AuthorController();
             mainApplication = new MainApplication();
-            signUpForm = new SignUpForm();
+            //signUpForm = new SignUpForm();
 
         }
 
@@ -46,10 +47,12 @@ namespace HumanResource.src.View.Auth
                     loginReqDTO.InEmail = InEmail;
                     loginReqDTO.InPass = InPass;
                     bool isAuthenticated = authorController.Authorization(loginReqDTO);
+                    //List<AuthorResDTO> permistion = authorController.Permission(loginReqDTO);
                     if (isAuthenticated == true)
                     {
                         //MessageBox.Show(isAuthenticated.ToString());
                         mainApplication.Show();
+                        mainApplication.ControlAdded(isAuthenticated);
                         this.Hide();
                     }
                     else
@@ -71,7 +74,7 @@ namespace HumanResource.src.View.Auth
 
         private void Label2_Click(object sender, EventArgs e)
         {
-            signUpForm.Show();  
+            //signUpForm.Show();
             this.Hide();
         }
     }

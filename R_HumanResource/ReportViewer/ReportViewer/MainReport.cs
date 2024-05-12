@@ -51,7 +51,7 @@ namespace ReportViewer
         private bool BtnAccountReport_Clicks = false;
 
         int width = 800;
-        int height = 450;
+        int height = 600;
         int x = 180;
         int y = 10;
         private void BtnEmployeeReport_Click(object sender, EventArgs e)
