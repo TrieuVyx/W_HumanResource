@@ -89,6 +89,7 @@ namespace HumanResource.src.Repository
                                 employeeRes.Add(employee);
                             }
                         }
+                        connection.Close(); 
                     }
                     return employeeRes;
                 }
@@ -132,6 +133,7 @@ namespace HumanResource.src.Repository
                                 employeeRes.Add(employee);
                             }
                         }
+                        connection.Close();
                     }
                     return employeeRes;
                 }
@@ -637,49 +639,6 @@ namespace HumanResource.src.Repository
                 }
             }
         }
-        //public Image GetEmployeeAvatarById(int employId)
-        //{
-        //    // Lấy chuỗi Base64 từ cơ sở dữ liệu
-        //    string connectionString = "YourConnectionString"; // Thay "YourConnectionString" bằng chuỗi kết nối tới cơ sở dữ liệu của bạn
-        //    string base64Image = null;
-
-        //    using (SqlConnection connection = new SqlConnection(connectionString))
-        //    {
-        //        connection.Open();
-
-        //        string query = "SELECT Avatar FROM Employee WHERE EmployId = @EmployId";
-
-        //        using (SqlCommand command = new SqlCommand(query, connection))
-        //        {
-        //            command.Parameters.AddWithValue("@EmployId", employId);
-
-        //            using (SqlDataReader reader = command.ExecuteReader())
-        //            {
-        //                if (reader.Read())
-        //                {
-        //                    int avatarIndex = reader.GetOrdinal("Avatar");
-
-        //                    if (!reader.IsDBNull(avatarIndex))
-        //                    {
-        //                        base64Image = reader.GetString(avatarIndex);
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-
-        //    // Chuyển đổi chuỗi Base64 thành mảng byte
-        //    if (!string.IsNullOrEmpty(base64Image))
-        //    {
-        //        byte[] imageBytes = Convert.FromBase64String(base64Image);
-
-        //        using (MemoryStream ms = new MemoryStream(imageBytes))
-        //        {
-        //            return Image.FromStream(ms);
-        //        }
-        //    }
-
-        //    return null;
-        //}
+       
     }
 }

@@ -440,9 +440,7 @@
     <Compile Include="src\View\Auth\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\View\Auth\RegisterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="src\View\Auth\RegisterForm.cs" />
     <Compile Include="src\View\Auth\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>

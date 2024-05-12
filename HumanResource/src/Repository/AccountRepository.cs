@@ -43,6 +43,7 @@ namespace HumanResource.src.Repository
                                 employeeRes.Add(employee);
                             }
                         }
+                        connection.Close();
                     }
                     return employeeRes;
                 }

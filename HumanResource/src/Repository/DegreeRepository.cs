@@ -11,7 +11,7 @@ namespace HumanResource.src.Repository
 {
     internal class DegreeRepository
     {
-        private Dbcontext dbcontext;
+        private readonly Dbcontext dbcontext;
         public DegreeRepository() { 
         dbcontext = new Dbcontext();
         
@@ -41,6 +41,7 @@ namespace HumanResource.src.Repository
                                 employeeRes.Add(employee);
                             }
                         }
+                        connection.Close(); 
                     }
                     return employeeRes;
                 }

@@ -10,21 +10,16 @@ namespace HumanResource.src.View.Auth
         private LoginReqDTO loginReqDTO;
         private readonly AuthorController authorController;
         private readonly MainApplication mainApplication;
-        private readonly RegisterForm registerForm;
+        private readonly SignUpForm signUpForm;
 
         public LoginForm()
         {
             InitializeComponent();
             authorController = new AuthorController();
             mainApplication = new MainApplication();
-            registerForm = new RegisterForm();
+            signUpForm = new SignUpForm();
 
         }
-        //public LoginForm(AuthorController authorController, LoginReqDTO loginReqDTO)
-        //{
-        //    this.authorController = authorController;
-        //    this.loginReqDTO = loginReqDTO;
-        //}
 
 
         private void Login_Load(object sender, EventArgs e)
@@ -76,8 +71,8 @@ namespace HumanResource.src.View.Auth
 
         private void Label2_Click(object sender, EventArgs e)
         {
-            registerForm.Show();
-            this.Close();
+            signUpForm.Show();  
+            this.Hide();
         }
     }
 }

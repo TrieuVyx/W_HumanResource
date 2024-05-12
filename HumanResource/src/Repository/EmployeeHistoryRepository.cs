@@ -52,6 +52,7 @@ namespace HumanResource.src.Repository
                                 employeeHistoryReqDTO.Add(employeeHistoryReqDTO1);
                             }
                         }
+                        connection.Close(); 
                     }
                     return employeeHistoryReqDTO;
 

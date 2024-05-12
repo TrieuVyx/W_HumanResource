@@ -52,6 +52,7 @@ namespace HumanResource.src.Repository
                                 departmentRes.Add(department);
                             }
                         }
+                        connection.Close(); 
                     }
                     return departmentRes;
 
