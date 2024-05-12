@@ -175,6 +175,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(961, 560);
+            this.Controls.Add(this.txtIdAmount);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtIdRole);
@@ -182,7 +183,6 @@
             this.Controls.Add(this.BtnWatch);
             this.Controls.Add(this.BtnReset);
             this.Controls.Add(this.ViewDataEmployee);
-            this.Controls.Add(this.txtIdAmount);
             this.Controls.Add(this.BtnDelete);
             this.Controls.Add(this.BtnUpdate);
             this.Controls.Add(this.BtnAdd);

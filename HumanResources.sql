@@ -68,7 +68,7 @@ CREATE TABLE Employee (
 	EmployId INTEGER IDENTITY(1,1) NOT NULL ,
 	Email NVARCHAR(255)  NULL,
 	EmployeeName NVARCHAR(255)  NULL,
-	Avatar NVARCHAR(255)  NULL,
+	Avatar NVARCHAR(MAX)  NULL,
 	AddressEmployee NVARCHAR(255)  NULL ,
 	DateOfBirth DATE NULL,
 	Phone VARCHAR(255)  NULL,

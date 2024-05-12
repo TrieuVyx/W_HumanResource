@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-
+using System.IO;
 namespace HumanResource.src.View.Employee
 {
     public partial class Update : Form
@@ -62,6 +62,16 @@ namespace HumanResource.src.View.Employee
                 txtComboDegree.SelectedValue = employeeReq.DegreeId;
                 txtComboEdu.SelectedValue = employeeReq.EducationId;
                 txtComboAccount.SelectedValue = employeeReq.AccountId;
+
+                byte[] imageData = Convert.FromBase64String(employeeReq.Avatar);
+
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    Image image = Image.FromStream(ms);
+                    AvatarImage.Image = image;
+                    AvatarImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                };
+
 
                 if (employeeReq.Gender == "Male")
                 {
@@ -151,12 +161,6 @@ namespace HumanResource.src.View.Employee
         {
             TxtID.ReadOnly = true;
             TxtID.Enabled = false;
-
-            //txtCboRole.Enabled = false;
-            //txtComboAccount.Enabled = false;
-            //txtComboDegree.Enabled = false;
-            //txtComboEdu.Enabled = false;
-            //txtComboDep.Enabled = false;
         }
 
         private void BtnRefer_Click(object sender, EventArgs e)
@@ -222,7 +226,7 @@ namespace HumanResource.src.View.Employee
                         employeeReqDTO.DepId = depId;
                         employeeReqDTO.DegreeId = degreeId;
                         employeeReqDTO.AccountId = accountId;
-
+                       
                         bool employeeReqs = employeeController.FindAndUpdate(employeeReqDTO);
                         if (employeeReqs)
                         {
@@ -249,7 +253,49 @@ namespace HumanResource.src.View.Employee
             }
         }
 
-    
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int Id = int.Parse(TxtID.Text);
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "Image Files (*.jpg, *.png, *.bmp)|*.jpg;*.png;*.bmp";
+                    openFileDialog.FilterIndex = 1;
+                    openFileDialog.RestoreDirectory = true;
+
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string filePath = openFileDialog.FileName;
+                        Image image = Image.FromFile(filePath);
+                        if (image != null)
+                        {
+                            MessageBox.Show("Hình ảnh đã tải thành công.");
+                            AvatarImage.Image = image;
+
+                            byte[] fileData;
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                                fileData = ms.ToArray();
+                            }
+                            int employeeId = int.Parse(TxtID.Text);
+                            employeeController.SaveFile(fileData, employeeId);
+
+                            MessageBox.Show("Hình ảnh đã được lưu trữ.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể tải hình ảnh.");
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("đã xảy ra lỗi" + ex.Message);
+            }
+        }
     }
 }

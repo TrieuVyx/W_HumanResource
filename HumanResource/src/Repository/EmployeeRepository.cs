@@ -5,6 +5,9 @@ using HumanResource.src.Entity;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
+using System.Windows.Forms;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace HumanResource.src.Repository
 {
@@ -80,7 +83,8 @@ namespace HumanResource.src.Repository
                                     AddressEmployee = reader.GetString(reader.GetOrdinal("AddressEmployee")),
                                     Phone = reader.GetString(reader.GetOrdinal("Phone")),
                                     Email = reader.GetString(reader.GetOrdinal("Email")),
-                                    Gender = reader.GetString(reader.GetOrdinal("Gender"))
+                                    Gender = reader.GetString(reader.GetOrdinal("Gender")),
+                                    Avatar = reader.GetString(reader.GetOrdinal("Avatar"))
                                 };
                                 employeeRes.Add(employee);
                             }
@@ -213,7 +217,9 @@ namespace HumanResource.src.Repository
                                     DepId = reader.IsDBNull(reader.GetOrdinal("DepId")) ? 0 : reader.GetInt32(reader.GetOrdinal("DepId")),
                                     AccountId = reader.IsDBNull(reader.GetOrdinal("AccountId")) ? 0 : reader.GetInt32(reader.GetOrdinal("AccountId")),
                                     SalaryAmount = reader.IsDBNull(reader.GetOrdinal("SalaryAmount")) ? 0 : reader.GetInt32(reader.GetOrdinal("SalaryAmount")),
-                                    StartDate = reader.IsDBNull(reader.GetOrdinal("StartDate")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("StartDate"))
+                                    StartDate = reader.IsDBNull(reader.GetOrdinal("StartDate")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("StartDate")),
+                                    Avatar = reader.IsDBNull(reader.GetOrdinal("Avatar")) ? string.Empty : reader.GetString(reader.GetOrdinal("Avatar")),
+
                                 };
                                 employees.Add(employees1);
                             }
@@ -611,5 +617,69 @@ namespace HumanResource.src.Repository
                 return false;
             }
         }
+
+        public void SaveFile(byte[] fileData, int employId)
+        {
+            
+            using (SqlConnection connection = dbContext.ConnectOpen())
+            {
+                string base64Image = Convert.ToBase64String(fileData);
+
+                string query = "UPDATE Employee SET Avatar = @Avatar WHERE EmployId = @EmployId";
+                using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@Avatar", base64Image);
+                    sqlCommand.Parameters.AddWithValue("@EmployId", employId);
+                    connection.Open();
+                    sqlCommand.ExecuteNonQuery();
+                    sqlCommand.Parameters.Clear();
+                    connection.Close();
+                }
+            }
+        }
+        //public Image GetEmployeeAvatarById(int employId)
+        //{
+        //    // Lấy chuỗi Base64 từ cơ sở dữ liệu
+        //    string connectionString = "YourConnectionString"; // Thay "YourConnectionString" bằng chuỗi kết nối tới cơ sở dữ liệu của bạn
+        //    string base64Image = null;
+
+        //    using (SqlConnection connection = new SqlConnection(connectionString))
+        //    {
+        //        connection.Open();
+
+        //        string query = "SELECT Avatar FROM Employee WHERE EmployId = @EmployId";
+
+        //        using (SqlCommand command = new SqlCommand(query, connection))
+        //        {
+        //            command.Parameters.AddWithValue("@EmployId", employId);
+
+        //            using (SqlDataReader reader = command.ExecuteReader())
+        //            {
+        //                if (reader.Read())
+        //                {
+        //                    int avatarIndex = reader.GetOrdinal("Avatar");
+
+        //                    if (!reader.IsDBNull(avatarIndex))
+        //                    {
+        //                        base64Image = reader.GetString(avatarIndex);
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+
+        //    // Chuyển đổi chuỗi Base64 thành mảng byte
+        //    if (!string.IsNullOrEmpty(base64Image))
+        //    {
+        //        byte[] imageBytes = Convert.FromBase64String(base64Image);
+
+        //        using (MemoryStream ms = new MemoryStream(imageBytes))
+        //        {
+        //            return Image.FromStream(ms);
+        //        }
+        //    }
+
+        //    return null;
+        //}
     }
 }

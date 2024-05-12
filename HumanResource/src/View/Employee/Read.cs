@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace HumanResource.src.View.Employee
@@ -43,6 +44,17 @@ namespace HumanResource.src.View.Employee
                 txtRole.Text = employeeReq.RoleName;
                 txtSalary.Text = employeeReq.SalaryAmount.ToString();
                 txtStartDate.Text = employeeReq.StartDate.ToString();
+
+
+                byte[] imageData = Convert.FromBase64String(employeeReq.Avatar);
+
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    Image image = Image.FromStream(ms);
+                    PictureAvatar.Image = image;
+
+                    PictureAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+                };
             }
         }
 

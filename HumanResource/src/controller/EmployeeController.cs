@@ -172,6 +172,18 @@ namespace HumanResource.src.Controller
             }
         }
 
+        internal void SaveFile(byte[] fileData, int id)
+        {
+            try
+            {
+                 employeeService.SaveFile(fileData, id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
+            }
+        }
+
         internal bool UpdateHistory(EmployeeReqDTO employeeReqDTO)
         {
             try

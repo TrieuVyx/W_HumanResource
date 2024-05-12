@@ -22,6 +22,7 @@ namespace HumanResource.src.DTO.Request
         private int accountId;
         private int educationId;
         private int degreeId;
+        private string avatar;
         public DateTime? StartDate
         {
             get { return startDate; }
@@ -123,6 +124,11 @@ namespace HumanResource.src.DTO.Request
         {
             get { return salaryAmount; }
             set { salaryAmount = value; }
+        }
+        public string Avatar
+        {
+            get { return avatar; }
+            set { avatar = value; }
         }
     }
 }

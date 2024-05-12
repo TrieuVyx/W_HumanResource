@@ -45,6 +45,7 @@
             this.TxtID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtComboDep = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtCboRole = new System.Windows.Forms.ComboBox();
@@ -58,15 +59,16 @@
             this.txtBirthday = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.AvatarImage = new System.Windows.Forms.PictureBox();
+            this.LinkFilePath = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarImage)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtPhone
             // 
             this.TxtPhone.Location = new System.Drawing.Point(513, 158);
-            this.TxtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.TxtPhone.Name = "TxtPhone";
             this.TxtPhone.Size = new System.Drawing.Size(347, 26);
             this.TxtPhone.TabIndex = 14;
@@ -84,7 +86,7 @@
             // TxtEmail
             // 
             this.TxtEmail.Location = new System.Drawing.Point(513, 103);
-            this.TxtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(347, 26);
             this.TxtEmail.TabIndex = 12;
@@ -103,7 +105,7 @@
             // 
             this.RdFemale.AutoSize = true;
             this.RdFemale.Location = new System.Drawing.Point(248, 366);
-            this.RdFemale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RdFemale.Margin = new System.Windows.Forms.Padding(4);
             this.RdFemale.Name = "RdFemale";
             this.RdFemale.Size = new System.Drawing.Size(91, 24);
             this.RdFemale.TabIndex = 10;
@@ -115,7 +117,7 @@
             // 
             this.RdMale.AutoSize = true;
             this.RdMale.Location = new System.Drawing.Point(141, 366);
-            this.RdMale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RdMale.Margin = new System.Windows.Forms.Padding(4);
             this.RdMale.Name = "RdMale";
             this.RdMale.Size = new System.Drawing.Size(70, 24);
             this.RdMale.TabIndex = 9;
@@ -136,7 +138,7 @@
             // TxtAddress
             // 
             this.TxtAddress.Location = new System.Drawing.Point(136, 210);
-            this.TxtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.TxtAddress.Name = "TxtAddress";
             this.TxtAddress.Size = new System.Drawing.Size(251, 26);
             this.TxtAddress.TabIndex = 7;
@@ -154,7 +156,7 @@
             // BtnCancel
             // 
             this.BtnCancel.Location = new System.Drawing.Point(721, 401);
-            this.BtnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(139, 46);
             this.BtnCancel.TabIndex = 3;
@@ -165,7 +167,7 @@
             // BtnUpdate
             // 
             this.BtnUpdate.Location = new System.Drawing.Point(558, 401);
-            this.BtnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(139, 46);
             this.BtnUpdate.TabIndex = 0;
@@ -186,7 +188,7 @@
             // TxtFullName
             // 
             this.TxtFullName.Location = new System.Drawing.Point(136, 103);
-            this.TxtFullName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtFullName.Margin = new System.Windows.Forms.Padding(4);
             this.TxtFullName.Name = "TxtFullName";
             this.TxtFullName.Size = new System.Drawing.Size(251, 26);
             this.TxtFullName.TabIndex = 3;
@@ -194,7 +196,7 @@
             // TxtID
             // 
             this.TxtID.Location = new System.Drawing.Point(136, 52);
-            this.TxtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtID.Margin = new System.Windows.Forms.Padding(4);
             this.TxtID.Name = "TxtID";
             this.TxtID.Size = new System.Drawing.Size(251, 26);
             this.TxtID.TabIndex = 1;
@@ -211,6 +213,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.LinkFilePath);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtComboDep);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.txtCboRole);
@@ -240,13 +244,24 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 78);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(908, 450);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Staff Information";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(512, 62);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(348, 33);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Update Image";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // txtComboDep
             // 
@@ -373,16 +388,26 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "UPDATE EMPLOYEE";
             // 
-            // pictureBox1
+            // AvatarImage
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(525, 26);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(347, 123);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.AvatarImage.Image = ((System.Drawing.Image)(resources.GetObject("AvatarImage.Image")));
+            this.AvatarImage.Location = new System.Drawing.Point(525, 26);
+            this.AvatarImage.Margin = new System.Windows.Forms.Padding(4);
+            this.AvatarImage.Name = "AvatarImage";
+            this.AvatarImage.Size = new System.Drawing.Size(347, 81);
+            this.AvatarImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AvatarImage.TabIndex = 8;
+            this.AvatarImage.TabStop = false;
+            // 
+            // LinkFilePath
+            // 
+            this.LinkFilePath.AutoSize = true;
+            this.LinkFilePath.Location = new System.Drawing.Point(508, 38);
+            this.LinkFilePath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LinkFilePath.Name = "LinkFilePath";
+            this.LinkFilePath.Size = new System.Drawing.Size(84, 20);
+            this.LinkFilePath.TabIndex = 30;
+            this.LinkFilePath.Text = "File Path";
             // 
             // Update
             // 
@@ -390,7 +415,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(933, 540);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.AvatarImage);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -399,7 +424,7 @@
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AvatarImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,7 +449,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox AvatarImage;
         private System.Windows.Forms.DateTimePicker txtBirthday;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -436,5 +461,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox txtComboDep;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label LinkFilePath;
     }
 }
