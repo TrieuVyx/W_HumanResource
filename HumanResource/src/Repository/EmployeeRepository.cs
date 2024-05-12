@@ -581,5 +581,35 @@ namespace HumanResource.src.Repository
                 return null;
             }
         }
+
+        internal bool UpdateHistory(EmployeeReqDTO employeeReqDTO)
+        {
+            try
+            {
+                using (SqlConnection connection = dbContext.ConnectOpen())
+                {
+                    string query = "INSERT INTO EmployeeHistory (EmployId, StartDate, Staging,Activities)\r\nVALUES \r\n    (@EmployId, @StartDate,@Staging,@Activities);";
+                    using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@EmployId", employeeReqDTO.EmployId);
+                        sqlCommand.Parameters.AddWithValue("@StartDate", DateTime.Now);
+                        sqlCommand.Parameters.AddWithValue("@Activities", "Transfer");
+                        sqlCommand.Parameters.AddWithValue("@Staging", "Active");
+
+                        connection.Open();
+                        sqlCommand.ExecuteNonQuery();
+                        sqlCommand.Parameters.Clear();
+                        connection.Close();
+                    }
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                new Exception("Lỗi Phát Sinh Từ EmployeeRepository " + ex.Message);
+
+                return false;
+            }
+        }
     }
 }

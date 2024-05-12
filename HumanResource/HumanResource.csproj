@@ -470,6 +470,12 @@
     <Compile Include="src\View\Department\ListDep.Designer.cs">
       <DependentUpon>ListDep.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\View\EmployeeHistory\PositionHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\EmployeeHistory\PositionHistory.Designer.cs">
+      <DependentUpon>PositionHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\View\Employee\ListEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -563,6 +569,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Department\ListDep.resx">
       <DependentUpon>ListDep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\EmployeeHistory\PositionHistory.resx">
+      <DependentUpon>PositionHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\View\Employee\ListEmployee.resx">
       <DependentUpon>ListEmployee.cs</DependentUpon>

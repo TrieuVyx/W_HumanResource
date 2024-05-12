@@ -171,5 +171,17 @@ namespace HumanResource.src.Controller
                 throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
             }
         }
+
+        internal bool UpdateHistory(EmployeeReqDTO employeeReqDTO)
+        {
+            try
+            {
+                return employeeService.UpdateHistory(employeeReqDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi Phát Sinh Từ EmployeeController " + ex.Message);
+            }
+        }
     }
 }

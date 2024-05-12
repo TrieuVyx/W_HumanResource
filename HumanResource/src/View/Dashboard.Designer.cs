@@ -44,14 +44,11 @@
             this.dataShowHistoryWork = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataViewPosition = new System.Windows.Forms.DataGridView();
             this.dataViewRotation = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataHistoryEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataRenderEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataShowHistoryWork)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataViewPosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewRotation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,7 +160,7 @@
             // 
             // BtnWork
             // 
-            this.BtnWork.Location = new System.Drawing.Point(469, 539);
+            this.BtnWork.Location = new System.Drawing.Point(433, 539);
             this.BtnWork.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnWork.Name = "BtnWork";
             this.BtnWork.Size = new System.Drawing.Size(119, 43);
@@ -174,12 +171,12 @@
             // 
             // BtnPosiition
             // 
-            this.BtnPosiition.Location = new System.Drawing.Point(594, 539);
+            this.BtnPosiition.Location = new System.Drawing.Point(558, 539);
             this.BtnPosiition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnPosiition.Name = "BtnPosiition";
-            this.BtnPosiition.Size = new System.Drawing.Size(119, 43);
+            this.BtnPosiition.Size = new System.Drawing.Size(155, 43);
             this.BtnPosiition.TabIndex = 12;
-            this.BtnPosiition.Text = "Position History";
+            this.BtnPosiition.Text = "Personal Information";
             this.BtnPosiition.UseVisualStyleBackColor = true;
             this.BtnPosiition.Click += new System.EventHandler(this.BtnPosiition_Click);
             // 
@@ -204,7 +201,7 @@
             this.dataShowHistoryWork.Name = "dataShowHistoryWork";
             this.dataShowHistoryWork.RowHeadersWidth = 51;
             this.dataShowHistoryWork.RowTemplate.Height = 24;
-            this.dataShowHistoryWork.Size = new System.Drawing.Size(290, 248);
+            this.dataShowHistoryWork.Size = new System.Drawing.Size(435, 248);
             this.dataShowHistoryWork.TabIndex = 14;
             // 
             // label1
@@ -227,39 +224,17 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Work History";
             // 
-            // dataViewPosition
-            // 
-            this.dataViewPosition.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataViewPosition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewPosition.Location = new System.Drawing.Point(308, 287);
-            this.dataViewPosition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataViewPosition.Name = "dataViewPosition";
-            this.dataViewPosition.RowHeadersWidth = 51;
-            this.dataViewPosition.RowTemplate.Height = 24;
-            this.dataViewPosition.Size = new System.Drawing.Size(280, 248);
-            this.dataViewPosition.TabIndex = 17;
-            // 
             // dataViewRotation
             // 
             this.dataViewRotation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataViewRotation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewRotation.Location = new System.Drawing.Point(594, 287);
+            this.dataViewRotation.Location = new System.Drawing.Point(453, 287);
             this.dataViewRotation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataViewRotation.Name = "dataViewRotation";
             this.dataViewRotation.RowHeadersWidth = 51;
             this.dataViewRotation.RowTemplate.Height = 24;
-            this.dataViewRotation.Size = new System.Drawing.Size(285, 248);
+            this.dataViewRotation.Size = new System.Drawing.Size(426, 248);
             this.dataViewRotation.TabIndex = 18;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(308, 276);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 22);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Position History";
             // 
             // label4
             // 
@@ -278,9 +253,7 @@
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(891, 601);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.dataViewRotation);
-            this.Controls.Add(this.dataViewPosition);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataShowHistoryWork);
@@ -304,7 +277,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataHistoryEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataRenderEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataShowHistoryWork)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataViewPosition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewRotation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -329,9 +301,7 @@
         private System.Windows.Forms.DataGridView dataShowHistoryWork;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataViewPosition;
         private System.Windows.Forms.DataGridView dataViewRotation;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
     }
 }

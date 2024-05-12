@@ -33,6 +33,7 @@
             this.txtDepType = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtIDEmployee = new System.Windows.Forms.RichTextBox();
             this.GridViewEmployee = new System.Windows.Forms.DataGridView();
@@ -44,7 +45,6 @@
             this.txtDepPlace = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -111,6 +111,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(882, 515);
             this.panel3.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.Location = new System.Drawing.Point(168, 430);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 37);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Delete";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // label7
             // 
@@ -215,16 +226,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(427, 337);
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.Location = new System.Drawing.Point(168, 430);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 37);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // Update
             // 

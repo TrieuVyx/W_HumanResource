@@ -19,6 +19,8 @@ namespace HumanResource.src.View.Salary
             salaryController = new SalaryController();
             salaryReqDTO = new SalaryReqDTO();  
             DataSalary.ReadOnly = true;
+            TxTId.Enabled = false;
+            TxTId.ReadOnly = true;
             //DataSalary.Enabled = false;
             
         }

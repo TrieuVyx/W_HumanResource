@@ -1,6 +1,8 @@
 ﻿using HumanResource.src.Controller;
 using HumanResource.src.DTO.Request;
 using HumanResource.src.DTO.Response;
+using HumanResource.src.View.Employee;
+using HumanResource.src.View.EmployeeHistory;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -130,7 +132,10 @@ namespace HumanResource.src.View
                     List<EmployeeResProfileDTO> employeeReqs = employeeController.ExportPositionHistory(employeeResProfile);
                     if (employeeReqs.Count > 0)
                     {
-                        dataViewPosition.DataSource = employeeReqs;
+                        //dataViewPosition.DataSource = employeeReqs;
+                        PositionHistory read = new PositionHistory();
+                        read.ControlAdded(employeeReqs);
+                        this.Hide();
                     }
                     else
                     {

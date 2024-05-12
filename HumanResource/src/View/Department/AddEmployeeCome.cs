@@ -53,7 +53,8 @@ namespace HumanResource.src.View.Department
                         employeeReqDTO.DepId = int.Parse(depId);
                         employeeReqDTO.EmployId = int.Parse(employId);
                         bool employees = employeeController.MoveDepart(employeeReqDTO);
-                        if (employees)
+                        bool insertHistory = employeeController.UpdateHistory(employeeReqDTO);
+                        if (employees && insertHistory)
                         {
                             MessageBox.Show("Bạn đã di chuyển nhân viên đến nơi khác ^, vui lòng reset lại để cập nhật");
                         }
@@ -85,7 +86,9 @@ namespace HumanResource.src.View.Department
             List<EmployeeAndDepartmentReqDTO> employeeAndDepartmentReqDTO = employeeController.FindAllUserNotDep();
             dataGridEmployee.DataSource = employeeAndDepartmentReqDTO;
             dataGridEmployee.CellContentClick += AddIDEmploy;
-            txtAmout.Text = employeeAndDepartmentReqDTO.Count.ToString();
+            txtAmoutEmploy.Text = employeeAndDepartmentReqDTO.Count.ToString();
+            txtAmoutEmploy.Enabled = false;
+            txtAmoutEmploy.ReadOnly = true;
             txtAmout.ReadOnly = true;
             txtAmout.Enabled = false;
             txtDepartmentId.ReadOnly = true;
@@ -94,7 +97,6 @@ namespace HumanResource.src.View.Department
             txtEmployeeId.Enabled = false;
             txtListEmployInDepartment.Enabled = false;
             txtListEmployInDepartment.Enabled = false;
-
         }
 
         private void AddIDEmploy(object sender, DataGridViewCellEventArgs e)

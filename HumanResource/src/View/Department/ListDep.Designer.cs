@@ -30,6 +30,7 @@
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtComboDep = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtID = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,14 +41,13 @@
             this.btnUpdateDepartment = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtAmout = new System.Windows.Forms.RichTextBox();
+            this.btnSearchDepart = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.RichTextBox();
             this.GridViewDepartment = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSearchDepart = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewDepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewDepartment)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -80,6 +80,16 @@
             this.txtComboDep.Name = "txtComboDep";
             this.txtComboDep.Size = new System.Drawing.Size(310, 24);
             this.txtComboDep.TabIndex = 32;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::HumanResource.Properties.Resources.Image1;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(530, 120);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(321, 416);
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
             // 
             // txtID
             // 
@@ -175,6 +185,17 @@
             this.txtAmout.TabIndex = 16;
             this.txtAmout.Text = "";
             // 
+            // btnSearchDepart
+            // 
+            this.btnSearchDepart.BackgroundImage = global::HumanResource.Properties.Resources.search;
+            this.btnSearchDepart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearchDepart.Location = new System.Drawing.Point(30, 82);
+            this.btnSearchDepart.Name = "btnSearchDepart";
+            this.btnSearchDepart.Size = new System.Drawing.Size(45, 32);
+            this.btnSearchDepart.TabIndex = 4;
+            this.btnSearchDepart.UseVisualStyleBackColor = true;
+            this.btnSearchDepart.Click += new System.EventHandler(this.BtnSearchDepart_Click);
+            // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,27 +226,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "List Department";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::HumanResource.Properties.Resources.Image1;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(530, 120);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(321, 444);
-            this.pictureBox1.TabIndex = 30;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnSearchDepart
-            // 
-            this.btnSearchDepart.BackgroundImage = global::HumanResource.Properties.Resources.search;
-            this.btnSearchDepart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearchDepart.Location = new System.Drawing.Point(30, 82);
-            this.btnSearchDepart.Name = "btnSearchDepart";
-            this.btnSearchDepart.Size = new System.Drawing.Size(45, 32);
-            this.btnSearchDepart.TabIndex = 4;
-            this.btnSearchDepart.UseVisualStyleBackColor = true;
-            this.btnSearchDepart.Click += new System.EventHandler(this.BtnSearchDepart_Click);
-            // 
             // ListDep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -238,8 +238,8 @@
             this.Text = "List Department";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewDepartment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewDepartment)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -145,3 +145,4 @@ C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\Hu
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.pdb
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Auth.SignUpForm.resources
 C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.src.View.Employee.References.resources
+C:\Users\trieu\OneDrive\Máy tính\DEADLINE\DeadLine 2\Source\W_HumanResource\HumanResource\obj\Debug\HumanResource.src.View.EmployeeHistory.PositionHistory.resources
